@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLP Mate – Privacy Policy</title>
+<style>
+  body { margin: 0; padding: 32px 20px; font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+         line-height: 1.55; color: #1c1c22; background: #fafafa; }
+  main { max-width: 760px; margin: 0 auto; }
+  h1 { color: #00696B; margin-bottom: 4px; }
+  h2 { color: #00696B; margin-top: 32px; font-size: 1.2rem; }
+  .meta { color: #555; margin-top: 0; }
+  ul { padding-left: 22px; }
+  li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<main>
+<h1>GLP Mate – Privacy Policy</h1>
+<p class="meta">App: GLP Mate (package es.schimpf.glp1)<br>
+Developer: Gerrit Schimpf<br>
+Effective date: 8 November 2026</p>
+
+<h2>Short version</h2>
+<ul>
+  <li>Everything you enter stays on your phone, in an encrypted database.</li>
+  <li>There is no account with us, no server of ours, no analytics, no ads and no crash reporting.</li>
+  <li>The developer never receives any of your data.</li>
+  <li>The app only uses the internet if you turn on the optional Google Drive backup. That backup is encrypted on your phone with a password only you know before it is uploaded.</li>
+</ul>
+
+<h2>What the app stores on your phone</h2>
+<p>GLP Mate is a personal diary. It stores what you type or choose in the app:</p>
+<ul>
+  <li>Medications, dose schedule, dose plan, logged doses (date, amount, injection site, pain, lot number, note).</li>
+  <li>Daily check-ins: food noise, hunger, fullness, mood, energy, sleep, bowel movement, side effects, notes.</li>
+  <li>Body data: weight, body measurements, height, start weight, goal range, and an optional name (only used on the doctor report).</li>
+  <li>Meals, favourite meals, water, and your daily targets.</li>
+  <li>Pens, vials and packs you track, with their expiry dates.</li>
+  <li>Progress photos you take or pick.</li>
+  <li>Settings such as units, reminders and app lock.</li>
+</ul>
+<p>This data is kept in an SQLCipher-encrypted database in the app's private storage. The database key is random and protected by the Android Keystore. Progress photos are stored as encrypted files in the app's private storage and are never added to your gallery. Android system backup and device-to-device transfer are turned off for this app.</p>
+
+<h2>Internet use: optional Google Drive backup</h2>
+<p>The app has internet permission for one purpose only: the optional cloud backup. It is off until you sign in with Google and choose a backup password.</p>
+<ul>
+  <li>Sign-in uses Google's Android sign-in. The app keeps your Google account email on this phone so it can run nightly backups. It is not sent to the developer.</li>
+  <li>The app asks only for access to its own hidden app folder in your Google Drive (<code>drive.appdata</code>). It cannot see your other Drive files.</li>
+  <li>Each backup contains your database, settings and photos. It is encrypted on your phone (AES-256-GCM, with a key derived from your password via PBKDF2) before upload, and sent over HTTPS. Google stores the encrypted file but cannot read it. Without your password nobody can open it, including the developer.</li>
+  <li>When on, a backup runs about once a night while you are online. The newest 4 are kept; older ones are deleted.</li>
+  <li>Google's handling of your Google account and Drive is covered by Google's own privacy policy.</li>
+</ul>
+
+<h2>Health Connect</h2>
+<p>If you connect Health Connect, GLP Mate:</p>
+<ul>
+  <li>reads weight, body fat and lean body mass (last 30 days) and steps, also in the background (about every 6 hours), to show your progress;</li>
+  <li>writes the weights and water you enter in the app, so other apps can use them.</li>
+</ul>
+<p>Data read from Health Connect is stored only in the app's encrypted database on your phone (and in your encrypted backups, if you make them). It is not used for advertising, not sold and not shared with anyone. You can change or remove these permissions at any time in Health Connect. GLP Mate's use of Health Connect data follows the Health Connect Permissions policy, including its Limited Use requirements.</p>
+
+<h2>Other permissions</h2>
+<ul>
+  <li><strong>Notifications:</strong> for dose, check-in, water and supply reminders. Texts are generic and hidden on the lock screen.</li>
+  <li><strong>Home screen widget (optional):</strong> shows when your next shot is due. It never names a medication or a dose, and shows nothing while the app lock is on.</li>
+  <li><strong>Run at startup:</strong> to set reminders again after a restart.</li>
+  <li><strong>Biometrics:</strong> for the optional app lock. Your fingerprint or face is checked by Android; the app only learns whether unlocking succeeded.</li>
+  <li><strong>Camera and photos:</strong> the app has no camera or storage permission. It uses Android's camera and photo picker, and only receives the photo you choose.</li>
+</ul>
+
+<h2>Files you create</h2>
+<p>You can create a doctor PDF report, a CSV export (a ZIP), and encrypted backup files, including an optional weekly backup to a folder you choose. These files go only where you save or share them. The CSV export is <strong>not</strong> encrypted; keep it somewhere safe. Once you share a file, the app has no control over it.</p>
+
+<h2>Sharing</h2>
+<p>The app shares no data with the developer or any third party. There are no advertising or analytics SDKs. Data only leaves your phone when you choose to: by sharing a report or export, by saving a backup, by turning on the Google Drive backup, or by allowing Health Connect to receive your weight and water.</p>
+
+<h2>Keeping and deleting your data</h2>
+<ul>
+  <li>Your data stays on your phone until you delete it.</li>
+  <li><strong>Delete all data</strong> (More → Privacy and security) removes every entry, photo and setting from the phone.</li>
+  <li>Uninstalling the app also removes all data on the phone.</li>
+  <li>Cloud backups: when you sign out in the app, you can choose "Also delete my cloud backups". You can also delete them in Google Drive (Settings → Manage apps → GLP Mate → Delete hidden app data).</li>
+  <li>Data the app wrote to Health Connect stays there until you delete it in Health Connect.</li>
+</ul>
+
+<h2>Medical note</h2>
+<p>GLP Mate is a diary, not a medical device. It gives no medical or dose advice.</p>
+
+<h2>Children</h2>
+<p>The app is meant for adults. It is not directed at children under 16, and it does not knowingly collect data from them.</p>
+
+<h2>Your rights</h2>
+<p>Because the developer does not receive or store any of your data, there is nothing held by the developer to access, correct or delete. You control all of your data in the app, in your Google Drive and in Health Connect as described above.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be published at this address with a new effective date.</p>
+
+<h2>Contact</h2>
+<p>Developer: Gerrit Schimpf. For privacy questions, please use the developer contact shown on the app's Google Play page.</p>
+</main>
+</body>
+</html>
