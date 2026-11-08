@@ -27,7 +27,7 @@ Effective date: 8 November 2026</p>
   <li>Everything you enter stays on your phone, in an encrypted database.</li>
   <li>There is no account with us, no server of ours, no analytics, no ads and no crash reporting.</li>
   <li>The developer never receives any of your data.</li>
-  <li>The app only uses the internet if you turn on the optional Google Drive backup. That backup is encrypted on your phone with a password only you know before it is uploaded.</li>
+  <li>The app uses the internet for two things only: the optional Google Drive backup, which is encrypted on your phone with a password only you know before it is uploaded, and Google Play, to check and make the optional premium purchase.</li>
 </ul>
 
 <h2>What the app stores on your phone</h2>
@@ -43,8 +43,17 @@ Effective date: 8 November 2026</p>
 </ul>
 <p>This data is kept in an SQLCipher-encrypted database in the app's private storage. The database key is random and protected by the Android Keystore. Progress photos are stored as encrypted files in the app's private storage and are never added to your gallery. Android system backup and device-to-device transfer are turned off for this app.</p>
 
+<h2>Optional premium purchase (Google Play)</h2>
+<ul>
+  <li>Premium is a one-time in-app purchase made through Google Play Billing. There is no subscription.</li>
+  <li>Google Play handles the payment. The app never sees your payment details.</li>
+  <li>Each time the app starts, it asks Google Play whether premium was bought on your Google Play account. Only a yes/no answer is stored on your phone, so premium also works offline. This answer is never put into a backup.</li>
+  <li>For each purchase, Google gives the developer the usual order record in the Play Console (for example order number, product, price, date and country). The developer does not use it for anything except handling payments, refunds and tax.</li>
+  <li>Google's handling of purchases is covered by Google's own privacy policy.</li>
+</ul>
+
 <h2>Internet use: optional Google Drive backup</h2>
-<p>The app has internet permission for one purpose only: the optional cloud backup. It is off until you sign in with Google and choose a backup password.</p>
+<p>Apart from Google Play purchases, the internet is used for the optional cloud backup. It is off until you sign in with Google and choose a backup password.</p>
 <ul>
   <li>Sign-in uses Google's Android sign-in. The app keeps your Google account email on this phone so it can run nightly backups. It is not sent to the developer.</li>
   <li>The app asks only for access to its own hidden app folder in your Google Drive (<code>drive.appdata</code>). It cannot see your other Drive files.</li>
@@ -74,7 +83,7 @@ Effective date: 8 November 2026</p>
 <p>You can create a doctor PDF report, a CSV export (a ZIP), and encrypted backup files, including an optional weekly backup to a folder you choose. These files go only where you save or share them. The CSV export is <strong>not</strong> encrypted; keep it somewhere safe. Once you share a file, the app has no control over it.</p>
 
 <h2>Sharing</h2>
-<p>The app shares no data with the developer or any third party. There are no advertising or analytics SDKs. Data only leaves your phone when you choose to: by sharing a report or export, by saving a backup, by turning on the Google Drive backup, or by allowing Health Connect to receive your weight and water.</p>
+<p>The app shares none of your diary data with the developer or any third party. There are no advertising or analytics SDKs. Diary data only leaves your phone when you choose to: by sharing a report or export, by saving a backup, by turning on the Google Drive backup, or by allowing Health Connect to receive your weight and water. A premium purchase is handled by Google Play as described above.</p>
 
 <h2>Keeping and deleting your data</h2>
 <ul>
@@ -92,7 +101,7 @@ Effective date: 8 November 2026</p>
 <p>The app is meant for adults. It is not directed at children under 16, and it does not knowingly collect data from them.</p>
 
 <h2>Your rights</h2>
-<p>Because the developer does not receive or store any of your data, there is nothing held by the developer to access, correct or delete. You control all of your data in the app, in your Google Drive and in Health Connect as described above.</p>
+<p>The developer does not receive or store any of your diary data, so there is nothing of it held by the developer to access, correct or delete. Purchase records are kept by Google Play. You control all of your data in the app, in your Google Drive and in Health Connect as described above.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the new version will be published at this address with a new effective date.</p>
