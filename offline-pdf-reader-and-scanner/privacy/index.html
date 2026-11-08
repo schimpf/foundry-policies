@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy – PDF Reader &amp; Scanner</title>
+<style>
+  body { margin: 0; background: #F9F9FF; color: #1A1C20; font: 16px/1.6 "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 28px; line-height: 1.25; margin: 0 0 4px; color: #2F4A75; }
+  h2 { font-size: 20px; margin: 32px 0 8px; color: #2F4A75; }
+  .meta { color: #44474E; margin: 0 0 24px; }
+  .summary { background: #D6E3FF; border-radius: 12px; padding: 16px 20px; }
+  .summary ul { margin: 0; padding-left: 20px; }
+  ul { padding-left: 22px; }
+  li { margin: 4px 0; }
+  a { color: #405F90; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy policy</h1>
+  <p class="meta">PDF Reader &amp; Scanner (Android, package es.schimpf.offlinepdfreaderandscanner)<br>
+  Developer: Gerrit Schimpf · Contact: <a href="mailto:apps@schimpf.es">apps@schimpf.es</a><br>
+  Effective date: 8 November 2026</p>
+
+  <div class="summary">
+    <ul>
+      <li>The app has no internet permission. It cannot send anything over the network itself.</li>
+      <li>No account, no ads, no analytics, no crash reporting, no tracking.</li>
+      <li>Your documents stay on your device unless you share or export them yourself.</li>
+      <li>The developer never receives any of your data.</li>
+    </ul>
+  </div>
+
+  <h2>1. Data the app stores on your device</h2>
+  <p>All of the following is kept in the app's private storage on your device. It is not sent to the developer or anyone else.</p>
+  <ul>
+    <li><strong>Scans and library copies:</strong> PDF files you scan, and copies created when you run text recognition, highlight or sign a document.</li>
+    <li><strong>Library details:</strong> document names you choose, dates, page counts, file sizes, small page thumbnails and the last page you read.</li>
+    <li><strong>Recent files:</strong> for PDFs you open from elsewhere, the app remembers a reference to the file (a content URI), its name, a thumbnail, the last page you read and when you opened it. It keeps at most 50 entries. The original file is only read, never changed.</li>
+    <li><strong>Signature:</strong> if you draw one (Pro), it is stored encrypted (AES-256-GCM) with a key held in the Android Keystore, which cannot be exported from the device.</li>
+    <li><strong>Settings:</strong> text recognition on or off, night pages, sort order.</li>
+    <li><strong>Pro status:</strong> whether Pro is unlocked, a one-way hash of the Google Play purchase token and the time it was last checked.</li>
+  </ul>
+  <p>App data is excluded from Android backup and device-to-device transfer, so it is not copied to Google Drive or a new phone.</p>
+  <p>If you add the app's home screen widget, it shows the names of your three most recent documents on your home screen.</p>
+
+  <h2>2. Permissions</h2>
+  <ul>
+    <li><strong>No internet or network-state permission.</strong> These are removed from the app on purpose.</li>
+    <li><strong>No storage or "all files" permission.</strong> The app only sees files you pick in the Android file picker or open with "Open with".</li>
+    <li><strong>No camera permission.</strong> The camera is used by the Google document scanner (see section 3), not by the app.</li>
+    <li><strong>Notifications:</strong> used only to show the progress of text recognition on longer documents.</li>
+    <li><strong>Foreground service:</strong> lets text recognition keep running while the progress notification is shown.</li>
+    <li><strong>Google Play billing:</strong> needed to buy Pro.</li>
+  </ul>
+
+  <h2>3. Google services the app uses</h2>
+  <ul>
+    <li><strong>Document scanner (Google ML Kit, part of Google Play services):</strong> when you tap Scan, Google Play services opens the camera, detects page edges and hands the result to the app as a PDF. The scanner runs in Google Play services on your device, not in this app.</li>
+    <li><strong>Text recognition (Google ML Kit, bundled model, Pro):</strong> runs inside the app on your device. Because the app has no internet permission, page images and recognized text cannot be sent anywhere by the app.</li>
+    <li><strong>Google Play Billing:</strong> if you buy Pro, the purchase is handled by Google Play. The app checks the purchase signature on the device; there is no developer server.</li>
+  </ul>
+  <p>Google Play services and the Google Play Store are separate apps with their own network access. Their handling of data is covered by Google's privacy policy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
+
+  <h2>4. Sharing and export</h2>
+  <p>A document leaves the app only when you choose Share or Export. Share hands a temporary, read-only copy to the app you pick; the temporary copy is deleted the next time the app starts. Export writes the file to a folder you choose. What happens next depends on the app or location you chose.</p>
+
+  <h2>5. What the developer collects</h2>
+  <p>Nothing. The developer does not collect, receive, sell or share any personal data, usage data, device identifiers or documents.</p>
+
+  <h2>6. Deleting your data</h2>
+  <ul>
+    <li>Delete a document from the library with its menu.</li>
+    <li>Remove recent files one by one or with "Clear recent files" in Settings. This also gives up the app's access to those files.</li>
+    <li>Replace your signature by drawing a new one.</li>
+    <li>Uninstalling the app, or clearing its storage in Android settings, deletes everything the app stored. Files you exported or shared are not affected.</li>
+  </ul>
+
+  <h2>7. Children</h2>
+  <p>The app is not directed at children and collects no data from anyone.</p>
+
+  <h2>8. Changes</h2>
+  <p>If this policy changes, the new version is published at this address with a new effective date.</p>
+
+  <h2>9. Contact</h2>
+  <p>Gerrit Schimpf · <a href="mailto:apps@schimpf.es">apps@schimpf.es</a></p>
+</main>
+</body>
+</html>
