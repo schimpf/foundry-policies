@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – Ad-Free Storage Analyzer</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.6;
+         max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; color: #1A1C19; background: #F6FBF3; }
+  h1 { font-size: 1.8em; margin-bottom: 0.2em; color: #2E6A44; }
+  h2 { font-size: 1.2em; margin-top: 2em; color: #2E6A44; }
+  .meta { color: #555; margin-top: 0; }
+  .box { background: #E3F2E6; border-left: 4px solid #2E6A44; padding: 12px 16px; border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid #CCD8CD; }
+  code { font-size: 0.9em; }
+  a { color: #2E6A44; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #111411; color: #E1E3DE; }
+    h1, h2, a { color: #96D5A6; }
+    .meta { color: #AAA; }
+    .box { background: #1F2A21; border-color: #96D5A6; }
+    th, td { border-color: #333; }
+  }
+</style>
+</head>
+<body>
+<h1>Privacy Policy</h1>
+<p class="meta">Ad-Free Storage Analyzer (<code>es.schimpf.adfreestorageanalyzer</code>)<br>
+Developer: Gerrit Schimpf · Contact: <a href="mailto:apps@schimpf.es">apps@schimpf.es</a><br>
+Effective date: 9 November 2026</p>
+
+<div class="box">
+  <strong>Short version:</strong> the app does not collect, send or share any data. It has no internet
+  permission, so Android does not let it go online. Everything it finds stays on your device.
+</div>
+
+<h2>1. No network access</h2>
+<p>The app does not request the <code>INTERNET</code> permission (or network state permissions). Without it,
+Android blocks all network access for the app. It contains no ads, no analytics, no crash reporting,
+no account, no cloud backup and no in-app purchases. You can check this in the app under
+Settings › No network access, or on Google Play under "About this app › App permissions".</p>
+
+<h2>2. What the app reads on your device</h2>
+<p>When you start a scan, the app reads your storage to measure it:</p>
+<ul>
+  <li>Folder and file names, paths, sizes, file types and last-modified dates on internal storage and SD card.</li>
+  <li>The content of files over 1 MB that have the same size as another file, only to compute a SHA-256
+      checksum and find exact duplicates. File contents are not stored or looked at in any other way.</li>
+  <li>On the Apps screen, if you grant Usage access: the app, data and cache size of each installed app
+      you can launch. Which apps you use, and when, is not read or stored.</li>
+</ul>
+<p>Scans only run when you start them, while the app is open.</p>
+
+<h2>3. What the app stores, and where</h2>
+<ul>
+  <li><strong>Latest scan results</strong> (folder sizes, paths and details of large, old and duplicate files,
+      checksums, volume totals) in a database in the app's private storage. A new scan replaces the old one.</li>
+  <li><strong>Settings</strong> (whether setup is done, scan mode) in the app's private storage.</li>
+  <li><strong>Trash:</strong> files you delete are moved into a trash folder on the same storage volume,
+      inside the app's own folder, with their original path. They are deleted for good after 7 days,
+      when you empty Trash, or when you uninstall the app.</li>
+  <li><strong>Home screen widget:</strong> shows used storage, the size that can be freed and the last scan
+      time. It shows no file names.</li>
+</ul>
+<p>The app turns off Android backup and device-to-device transfer, so this data is not copied to Google
+Drive or another phone. File paths are not written to logs.</p>
+
+<h2>4. Permissions</h2>
+<table>
+  <tr><th>Permission</th><th>Why</th></tr>
+  <tr><td>All files access (<code>MANAGE_EXTERNAL_STORAGE</code>); on Android 10, storage read/write</td>
+      <td>To measure every folder, find large, old and duplicate files, and move files you choose to Trash.
+      Optional: you can use limited mode instead.</td></tr>
+  <tr><td>Photos, videos, music (<code>READ_MEDIA_*</code> / <code>READ_EXTERNAL_STORAGE</code>)</td>
+      <td>Limited mode only: to measure the media files Android shares with apps.</td></tr>
+  <tr><td>Usage access (<code>PACKAGE_USAGE_STATS</code>)</td>
+      <td>Optional, asked only on the Apps screen: Android only gives app sizes to apps with this access.
+      Only sizes are read.</td></tr>
+  <tr><td>Run at startup, keep awake (added automatically by Android's WorkManager)</td>
+      <td>A daily job that deletes Trash items older than 7 days. It does not scan.</td></tr>
+</table>
+<p>You can turn off any of these in Android's system settings at any time.</p>
+
+<h2>5. Sharing</h2>
+<p>No data is shared with anyone, including the developer. The developer never receives any data from the app.</p>
+
+<h2>6. Google Play</h2>
+<p>The app is sold on Google Play. Purchases, downloads and any reviews are handled by Google under
+<a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. The developer receives only the
+usual anonymous sales and install reports from Google Play.</p>
+
+<h2>7. Deleting your data</h2>
+<p>All app data lives on your device. To delete it, clear the app's storage in Android settings or
+uninstall the app. Uninstalling also deletes everything in the app's Trash, so restore files you want to keep first.</p>
+
+<h2>8. Children</h2>
+<p>The app is not aimed at children and collects no data from anyone.</p>
+
+<h2>9. Changes</h2>
+<p>If this policy changes, the new version will be published at this address with a new effective date.</p>
+
+<h2>10. Contact</h2>
+<p>Gerrit Schimpf · <a href="mailto:apps@schimpf.es">apps@schimpf.es</a></p>
+</body>
+</html>
