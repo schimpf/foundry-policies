@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – Numeric IBS Symptom Scorer</title>
+<style>
+  :root { color-scheme: light dark; --accent: #00696D; }
+  body { font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; color: #1a1c1c; background: #fff; }
+  h1 { font-size: 1.8em; line-height: 1.25; margin: 0 0 4px; color: var(--accent); }
+  h2 { font-size: 1.2em; margin: 32px 0 8px; color: var(--accent); }
+  p, li { margin: 0 0 10px; }
+  .meta { color: #555; margin-bottom: 24px; }
+  .box { border-left: 4px solid var(--accent); background: #eef7f6; padding: 12px 16px; border-radius: 6px; }
+  a { color: var(--accent); }
+  @media (prefers-color-scheme: dark) {
+    :root { --accent: #80d4d8; }
+    body { background: #121414; color: #e1e3e2; }
+    .meta { color: #aaa; }
+    .box { background: #1c2a2a; }
+  }
+</style>
+</head>
+<body>
+<h1>Privacy Policy</h1>
+<p class="meta">Numeric IBS Symptom Scorer (Android, package es.schimpf.numericibssymptomscorer)<br>
+Developer: Gerrit Schimpf · Contact: <a href="mailto:apps@schimpf.es">apps@schimpf.es</a><br>
+Effective date: 9 November 2026</p>
+
+<div class="box">
+<p><strong>In short:</strong> your diary stays on your phone, in an encrypted database. The app has no account, no cloud, no server, no ads and no analytics. It does not even have permission to use the internet. We, the developer, never receive any of your data.</p>
+</div>
+
+<h2>1. What the app stores</h2>
+<p>You enter health information into the app. It is stored only on your device:</p>
+<ul>
+  <li>Symptom entries: time, scores from 0 to 10 for symptoms (fixed ones and up to 5 you name yourself), and an optional note.</li>
+  <li>Bowel movement entries: time, Bristol stool type, urgency, complete or incomplete, an optional blood or mucus flag, and an optional note.</li>
+  <li>Food entries: time, what you ate, and food tags you create.</li>
+  <li>Settings: for example the trigger time window, reminder time, whether the app lock is on, a salted hash of your app PIN (never the PIN itself), and whether Pro is unlocked.</li>
+</ul>
+<p>The diary is kept in a database encrypted with SQLCipher. Its key is protected by the Android Keystore. Settings are encrypted too.</p>
+
+<h2>2. What leaves your phone</h2>
+<p>Nothing, unless you send it yourself.</p>
+<ul>
+  <li><strong>No internet access.</strong> The app does not request the Android internet permission, so it cannot upload anything.</li>
+  <li><strong>No analytics, crash reporting, advertising or tracking.</strong> No such libraries are included.</li>
+  <li><strong>No cloud backup.</strong> Android automatic backup is turned off for this app.</li>
+</ul>
+
+<h2>3. Purchases (Google Play)</h2>
+<p>Pro is a one-time in-app purchase handled by Google Play. The app talks to the Google Play Store app on your phone to show the price, start the purchase and check whether you own Pro. Payment details are handled by Google and never reach the app or the developer. Google's own privacy policy applies to the purchase: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>. As the developer, Google Play shows me ordinary order records (such as an order number and the country), as for any Play purchase. They are not linked to your diary.</p>
+
+<h2>4. Files you create yourself</h2>
+<ul>
+  <li><strong>Export (Pro):</strong> PDF report and CSV files for a date range you choose. They are shared through the Android share sheet to the app or person you pick. <strong>Exported files are not encrypted.</strong> Share them only with people you trust. Temporary export files are deleted from the app's cache on the next start.</li>
+  <li><strong>Encrypted backup (Pro):</strong> a backup file protected with your password (AES-256-GCM). You choose where it is saved. Without the password it cannot be read or restored, and nobody can recover the password for you.</li>
+</ul>
+
+<h2>5. Permissions</h2>
+<ul>
+  <li><strong>Notifications:</strong> only for the optional daily reminder, which is off by default. The reminder text is generic and shows no health values.</li>
+  <li><strong>Run at startup:</strong> to set the reminder again after the phone restarts.</li>
+  <li><strong>Biometrics:</strong> for the optional app lock. Fingerprint or face checks are done by Android; the app never sees or stores biometric data.</li>
+  <li><strong>Google Play billing:</strong> for the Pro purchase (see section 3).</li>
+</ul>
+
+<h2>6. Screen and widget</h2>
+<p>The app blocks screenshots and hides its content in the recent apps view. The optional home screen widget shows your latest scores and today's bowel count to anyone who can see your screen, unless the app lock is on; then it shows no data.</p>
+
+<h2>7. Keeping and deleting your data</h2>
+<p>Your data stays on your phone until you delete it. You can delete single entries in the app. Uninstalling the app, or clearing its storage in Android settings, deletes all of it for good. Because the developer never receives your data, there is nothing for us to delete on our side. Backup and export files you saved elsewhere are under your control and must be deleted by you.</p>
+
+<h2>8. Not medical advice</h2>
+<p>The app does not diagnose anything. Possible food links it shows are statistics from your own entries, not medical advice.</p>
+
+<h2>9. Children</h2>
+<p>The app is meant for adults. It is not directed at children and does not knowingly collect any data from anyone.</p>
+
+<h2>10. Changes</h2>
+<p>If this policy changes, the new version is published on this page with a new effective date. If the app ever starts to send data anywhere, this will be stated here before the change is released.</p>
+
+<h2>11. Contact</h2>
+<p>Gerrit Schimpf · <a href="mailto:apps@schimpf.es">apps@schimpf.es</a></p>
+</body>
+</html>
