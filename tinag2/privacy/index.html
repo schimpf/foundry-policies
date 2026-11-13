@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tinag2 Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.6; color: #1f2937;
+         max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 1.8rem; } h2 { font-size: 1.2rem; margin-top: 2rem; }
+  code { background: #f3f4f6; padding: 1px 4px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<h1>Tinag2 Privacy Policy</h1>
+<p>Effective: 2026-11-13<br>
+App: Tinag2 (package <code>es.schimpf.tinag2</code>)<br>
+Developer: Gerrit Schimpf<br>
+Contact: <a href="mailto:apps@schimpf.es">apps@schimpf.es</a></p>
+
+<h2>Summary</h2>
+<p>Tinag2 is a client for your own Icinga 2 and Nagios/Naemon (Thruk) monitoring servers. The developer runs no server for this app, has no accounts, and receives no data from it. The app contains no advertising, no analytics and no crash reporting.</p>
+
+<h2>What the app connects to</h2>
+<p>The app connects only to the monitoring servers you enter yourself. It sends requests to read host and service states, and, when you ask for it, to acknowledge a problem, schedule a recheck or set a downtime. It sends your server user name and password to that server using HTTP basic authentication. No other network connections are made by the app.</p>
+<p>The app allows plain <code>http://</code> addresses because many monitoring servers sit on a local network. If you enter one, the app warns you that the password is then sent unencrypted. Use <code>https://</code> when you can. Optionally you can pin the SHA-256 fingerprint of a server's certificate, for self-signed servers.</p>
+
+<h2>What is stored on your device</h2>
+<ul>
+  <li>Your server entries: name, type, address, user name, optional certificate fingerprint. The password is encrypted with a key held in the Android Keystore.</li>
+  <li>Your alert settings, and a list of problems you were already notified about.</li>
+  <li>The latest problem list fetched from each server, kept so the app can show it when a server cannot be reached.</li>
+</ul>
+<p>This data stays on your device. Android backup is turned off for the app, so it is not copied to Google Drive or another device. Uninstalling the app or clearing its storage deletes all of it. You can also delete a server entry in the Instances screen.</p>
+
+<h2>Permissions</h2>
+<ul>
+  <li><b>Internet</b>: to reach the servers you configure.</li>
+  <li><b>Notifications</b>: to alert you about new or worse problems. You can deny it; the app then works without alerts.</li>
+</ul>
+<p>Background libraries used by the app (for example the Android work scheduler that runs the sync every 15 minutes) may add system permissions such as checking the network state. They are not used to collect personal data.</p>
+
+<h2>Sharing</h2>
+<p>The developer shares nothing, because the developer receives nothing. Data sent to your monitoring server is handled by whoever runs that server; check their policy. Host names, service names and check output shown in the app come from your server.</p>
+
+<h2>Children</h2>
+<p>The app is a tool for system administrators and is not directed at children.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version is published at this address with a new effective date.</p>
+
+<h2>Contact</h2>
+<p>Questions or requests: <a href="mailto:apps@schimpf.es">apps@schimpf.es</a></p>
+</body>
+</html>
