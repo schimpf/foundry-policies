@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alarm Clock: Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.6; color: #1b1b1f; max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; }
+  code { background: #eceefa; padding: 1px 5px; border-radius: 4px; }
+  @media (prefers-color-scheme: dark) { body { background: #121316; color: #e3e2e6; } code { background: #2a2c38; } }
+</style>
+</head>
+<body>
+<h1>Alarm Clock: Privacy Policy</h1>
+<p>Effective 2026-11-18. App: Alarm Clock (package <code>es.schimpf.alarmclock</code>). Developer: Gerrit Schimpf. Contact: <a href="mailto:apps@schimpf.es">apps@schimpf.es</a></p>
+
+<h2>Short version</h2>
+<p>The app does not collect, send or share any data. It has no internet permission, no account, no analytics, no crash reporting and no ads. Everything it stores stays on your phone.</p>
+
+<h2>Network</h2>
+<p>The app does not request the <code>INTERNET</code> permission and removes it from the build, even if a library asks for it. It cannot connect to any server. The source code link in Settings is shown as text only.</p>
+
+<h2>What is stored on your phone</h2>
+<ul>
+  <li>Your alarms: time, days, label, sound choice, volume, vibration, flashlight, snooze and mission settings.</li>
+  <li>Alarm state while an alarm rings (snooze count, failed attempts), so the alarm can recover after a reboot.</li>
+  <li>Your app settings, such as defaults for new alarms and whether setup is finished.</li>
+  <li>For the QR code mission: a name you give the code and a SHA-256 fingerprint of it. The content of the code is not saved.</li>
+</ul>
+<p>This data is kept in the app's private storage. It is placed in device-protected storage so alarms can ring after a restart before you unlock the phone. Android Auto Backup is turned off, so the data is not uploaded to your Google account. Other apps cannot read it on a normal device.</p>
+
+<h2>Permissions and why</h2>
+<ul>
+  <li><b>Exact alarms:</b> to ring on the minute.</li>
+  <li><b>Notifications and full-screen alerts:</b> to show the ringing alarm, also on the lock screen.</li>
+  <li><b>Run at startup:</b> to set your alarms again after a reboot or a time change.</li>
+  <li><b>Wake lock, foreground service, vibration:</b> to keep the alarm ringing and to vibrate.</li>
+  <li><b>Camera:</b> only to scan a QR code or barcode for the QR mission, and only while the scan screen is open. Images are processed on the device and are not saved. The flashlight strobe uses the torch and does not need this permission.</li>
+  <li><b>Physical activity:</b> only for the steps mission, to count steps with the step sensor. Counts are used on the spot and not stored.</li>
+  <li><b>Motion sensors:</b> for the shake mission and as a step counter fallback. Readings are not stored.</li>
+</ul>
+<p>Camera and activity permissions are asked only when you set up or use a mission that needs them.</p>
+
+<h2>Your own sound files</h2>
+<p>If you pick your own audio file, you choose it with the Android file picker. The app keeps read access to that one file so it can play it. It does not read other files and does not need storage permission. The file is not copied or sent anywhere.</p>
+
+<h2>Sharing, selling, ads</h2>
+<p>No data is shared with third parties. No data is sold. There are no ads and no advertising or tracking libraries.</p>
+
+<h2>Children</h2>
+<p>The app collects no personal data from anyone, including children.</p>
+
+<h2>Deleting your data</h2>
+<p>Delete alarms and QR codes in the app, or clear the app's storage or uninstall it in Android settings. All app data is removed. The developer holds no copy.</p>
+
+<h2>Google Play</h2>
+<p>If you install the app from Google Play, Google handles the purchase and install under its own privacy policy. The developer does not receive this data through the app.</p>
+
+<h2>Open source</h2>
+<p>The app is open source under the GNU GPL v3 or later, so these statements can be checked in the code.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be published at this address with a new effective date.</p>
+
+<h2>Contact</h2>
+<p>Gerrit Schimpf, <a href="mailto:apps@schimpf.es">apps@schimpf.es</a></p>
+</body>
+</html>
