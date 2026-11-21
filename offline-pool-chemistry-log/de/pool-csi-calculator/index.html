@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pool-CSI-Rechner: Sättigungsindex erklärt</title><meta name="description" content="Berechne den Calcit-Sättigungsindex (CSI) deines Poolwassers mit Formel und Rechenbeispiel und erfahre, was du bei einem Wert außerhalb ändern musst."><meta name="theme-color" content="#006a6a"><meta name="author" content="Gerrit Schimpf"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://apps.schimpf.es/offline-pool-chemistry-log/de/pool-csi-calculator/"><link rel="alternate" hreflang="en" href="https://apps.schimpf.es/offline-pool-chemistry-log/pool-csi-calculator/"><link rel="alternate" hreflang="de-DE" href="https://apps.schimpf.es/offline-pool-chemistry-log/de/pool-csi-calculator/"><link rel="alternate" hreflang="es-ES" href="https://apps.schimpf.es/offline-pool-chemistry-log/es/pool-csi-calculator/"><link rel="alternate" hreflang="x-default" href="https://apps.schimpf.es/offline-pool-chemistry-log/pool-csi-calculator/"><meta property="og:type" content="website"><meta property="og:site_name" content="Apps by Gerrit Schimpf"><meta property="og:locale" content="de_DE"><meta property="og:title" content="Pool-CSI-Rechner: Sättigungsindex erklärt"><meta property="og:description" content="Berechne den Calcit-Sättigungsindex (CSI) deines Poolwassers mit Formel und Rechenbeispiel und erfahre, was du bei einem Wert außerhalb ändern musst."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Pool-CSI-Rechner: Sättigungsindex erklärt"><meta name="twitter:description" content="Berechne den Calcit-Sättigungsindex (CSI) deines Poolwassers mit Formel und Rechenbeispiel und erfahre, was du bei einem Wert außerhalb ändern musst."><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="es_ES"><meta property="og:url" content="https://apps.schimpf.es/offline-pool-chemistry-log/de/pool-csi-calculator/"><meta property="og:image" content="https://apps.schimpf.es/offline-pool-chemistry-log/feature.png"><meta name="twitter:image" content="https://apps.schimpf.es/offline-pool-chemistry-log/feature.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="500"><meta property="og:image:alt" content="Pool Chem Log: Wassertests"><link rel="icon" href="../../icon.png"><link rel="apple-touch-icon" href="../../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Pool-CSI-Rechner: Sättigungsindex erklärt", "description": "Berechne den Calcit-Sättigungsindex (CSI) deines Poolwassers mit Formel und Rechenbeispiel und erfahre, was du bei einem Wert außerhalb ändern musst.", "datePublished": "2026-11-21", "dateModified": "2026-11-21", "inLanguage": "de", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "publisher": {"@type": "Person", "name": "Gerrit Schimpf"}, "about": {"@type": "MobileApplication", "name": "Pool Chem Log: Wassertests", "operatingSystem": "Android", "url": "https://apps.schimpf.es/offline-pool-chemistry-log/de/"}, "url": "https://apps.schimpf.es/offline-pool-chemistry-log/de/pool-csi-calculator/", "mainEntityOfPage": "https://apps.schimpf.es/offline-pool-chemistry-log/de/pool-csi-calculator/", "image": "https://apps.schimpf.es/offline-pool-chemistry-log/feature.png"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Alle Apps", "item": "https://apps.schimpf.es/"}, {"@type": "ListItem", "position": 2, "name": "Pool Chem Log: Wassertests", "item": "https://apps.schimpf.es/offline-pool-chemistry-log/de/"}, {"@type": "ListItem", "position": 3, "name": "Pool-CSI-Rechner: Sättigungsindex erklärt", "item": "https://apps.schimpf.es/offline-pool-chemistry-log/de/pool-csi-calculator/"}]}</script><style>
+:root{--bg:#0b0d0c;--bg2:#111413;--card:#161a19;--fg:#f2f4f3;--muted:#a1a8a4;--line:#252b29;--accent:#0f766e;--on:#fff;
+--hi:color-mix(in srgb,var(--accent) 55%,#fff);--soft:color-mix(in srgb,var(--accent) 18%,transparent);
+--frame:#050606;--edge:#2c3230;--shadow:0 40px 80px -30px rgba(0,0,0,.75)}
+@media (prefers-color-scheme:light){:root{--bg:#f7f7f5;--bg2:#eeefec;--card:#fff;--fg:#151816;--muted:#5a615d;--line:#e2e5e1;
+--hi:color-mix(in srgb,var(--accent) 80%,#000);--soft:color-mix(in srgb,var(--accent) 12%,transparent);
+--frame:#101312;--edge:#1f2422;--shadow:0 30px 60px -30px rgba(20,30,25,.45)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--hi)}img{max-width:100%;height:auto}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,5vw,3.6rem);overflow-wrap:break-word;font-weight:800}h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:750}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}@media (max-width:640px){.wrap{padding:0 16px}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--card);padding:8px 12px;z-index:9}.skip:focus{left:8px}
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 78%,transparent);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font-weight:700;min-width:0}
+.brand img{border-radius:9px;flex:none}.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.links{display:flex;gap:22px;margin-left:auto}.links a{color:var(--muted);text-decoration:none;font-size:.95rem}
+.links a:hover{color:var(--fg)}@media (max-width:760px){.links{display:none}.nav .btn{margin-left:auto}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on);padding:12px 22px;
+border-radius:999px;text-decoration:none;font-weight:650;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px var(--accent)}.nav .btn{padding:8px 16px;font-size:.9rem}
+.chip{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--soft);
+color:var(--hi);font-weight:600;font-size:.95rem}
+.band{padding:96px 0;position:relative}.band.alt{background:var(--bg2)}@media (max-width:640px){.band{padding:64px 0}}
+.eyebrow{display:block;color:var(--hi);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.lead{color:var(--muted);font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:640px}
+.hero{overflow:hidden;padding:72px 0 40px;background:
+radial-gradient(55% 60% at 78% 30%,color-mix(in srgb,var(--accent) 38%,transparent),transparent 70%),
+radial-gradient(40% 50% at 5% 100%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.hero .icon{border-radius:24px;box-shadow:0 20px 40px -18px var(--accent);margin-bottom:24px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.hero .actions .badge img{display:block;height:60px;width:auto}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr);text-align:center}.hero .lead{margin:0 auto}
+.hero .actions{justify-content:center}.hero .icon{margin:0 auto 20px}}
+.stack{display:flex;justify-content:center;align-items:flex-end;padding:20px 0 40px}
+.stack .phone{width:250px}.stack .phone:nth-child(2){width:280px;z-index:2}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(40px,30px)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-40px,30px)}
+@media (max-width:640px){.stack .phone{width:32vw;padding:6px;border-radius:26px}.stack .phone img{border-radius:21px}
+.stack .phone:nth-child(2){width:46vw}.stack .phone::before{top:12px;width:7px;height:7px;margin-left:-3.5px}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(9vw,4vw)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-9vw,4vw)}}
+.phone{position:relative;flex:none;margin:0;padding:9px;background:var(--frame);border-radius:42px;
+box-shadow:0 0 0 1.5px var(--edge),inset 0 0 0 1px #000,var(--shadow)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+background:#000;box-shadow:0 0 0 2px #111;z-index:1}
+.phone picture,.tablet picture{display:block}.phone img{display:block;width:100%;height:auto;border-radius:33px;background:#000}
+.tablet{max-width:860px;margin:0 auto;padding:14px;background:var(--frame);border-radius:30px;
+box-shadow:0 0 0 1.5px var(--edge),var(--shadow)}.tablet img{display:block;width:100%;border-radius:18px}
+.tablets{display:grid;gap:32px}
+.gallery{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px max(24px,calc(50vw - 576px)) 40px;
+scrollbar-width:thin}.gallery figure{margin:0;flex:none;width:240px;scroll-snap-align:center;text-align:center}
+.gallery figcaption{margin-top:18px;color:var(--muted);font-size:.95rem;font-weight:500}
+@media (max-width:640px){.gallery{gap:20px;padding:16px 16px 32px}.gallery figure{width:200px}}
+.head{max-width:720px;margin-bottom:48px}.center{text-align:center;margin-left:auto;margin-right:auto}
+.about p{max-width:720px;color:var(--muted);font-size:1.1rem}
+.features{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.fcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;transition:transform .25s,border-color .25s}
+.fcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.num{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--soft);color:var(--hi);
+font-weight:800;margin-bottom:18px}.fcard p{color:var(--muted);margin:0 0 12px}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:9px}.checks li{position:relative;padding-left:28px;color:var(--muted);font-size:.97rem}
+.checks li::before{content:"";position:absolute;left:0;top:.42em;width:16px;height:16px;border-radius:50%;background:var(--soft);
+box-shadow:inset 0 0 0 1.5px var(--hi)}
+.checks li::after{content:"";position:absolute;left:5.5px;top:calc(.42em + 4px);width:4px;height:7px;border:solid var(--hi);
+border-width:0 2px 2px 0;transform:rotate(45deg)}
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.cards li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:transform .2s,border-color .2s}
+.cards li:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.cards a{color:var(--fg);font-weight:700;text-decoration:none;font-size:1.08rem}.cards a::after{content:"";position:absolute;inset:0}
+.cards small{display:block;color:var(--muted);margin-top:6px;font-size:.93rem}
+.apps li{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--card)),var(--card) 60%)}
+.apps img{border-radius:14px;flex:none}.apps small{margin-top:2px}
+.cta-band{border-radius:32px;padding:64px 32px;text-align:center;border:1px solid var(--line);background:
+radial-gradient(70% 90% at 50% 0%,color-mix(in srgb,var(--accent) 35%,transparent),transparent 70%),var(--card)}
+.cta-band img.icon{border-radius:22px;margin-bottom:20px}.cta-band .lead{margin:0 auto 28px}.cta-band .badge img{height:60px;width:auto}
+.foot{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:.92rem}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}.foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+.foot a{color:var(--muted)}.foot a:hover{color:var(--fg)}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 20px;font-size:.92rem;color:var(--muted)}
+.crumbs li+li::before{content:"›";margin-right:6px}.crumbs a{color:var(--muted)}
+.ghero{padding:64px 0 32px;background:radial-gradient(60% 80% at 85% 0%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%)}
+.ghero h1{font-size:clamp(2rem,4.5vw,3.2rem);max-width:860px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start;padding-bottom:96px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+.guide{max-width:740px;font-size:1.06rem}.guide h2{font-size:1.7rem;margin-top:1.8em}.guide h3{margin-top:1.5em}
+.guide li{margin:.35em 0}.guide code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.9em}
+.table{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.96rem}th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:var(--shadow)}
+.calc input,.calc select,.calc button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
+.cta{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
+.cta .phone{width:170px;margin:0 auto 20px}.cta img.icon{border-radius:14px}.cta p{color:var(--muted);font-size:.95rem;margin:6px 0 16px}
+.cta .badge img{height:52px;width:auto;margin:12px auto 0;display:block}
+.faq{max-width:820px;display:grid;gap:12px}.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.faq summary{cursor:pointer;font-weight:650;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--hi);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}.faq details p{color:var(--muted);margin:12px 0 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:root{--accent:#006a6a;--on:#ffffff}</style></head><body><a class="skip" href="#main">Zum Inhalt</a><header class="nav"><div class="wrap"><a class="brand" href="../"><img src="../../icon.png" alt="" width="32" height="32"><span>Pool Chem Log: Wassertests</span></a><a class="btn" href="https://play.google.com/store/apps/details?id=es.schimpf.offlinepoolchemistrylog&amp;hl=de">App holen</a></div></header><main id="main"><section class="ghero"><div class="wrap"><ol class="crumbs"><li><a href="../../../">Alle Apps</a></li><li><a href="../">Pool Chem Log: Wassertests</a></li><li>Pool-CSI-Rechner: Sättigungsindex erklärt</li></ol><h1>Pool-CSI-Rechner: Sättigungsindex erklärt</h1><p class="lead">Berechne den Calcit-Sättigungsindex (CSI) deines Poolwassers mit Formel und Rechenbeispiel und erfahre, was du bei einem Wert außerhalb ändern musst.</p></div></section><div class="wrap layout"><article class="guide"><p>Der Calcit-Sättigungsindex (CSI) zeigt, ob dein Poolwasser eher Putz und Metall angreift oder Kalk absetzt. Ein CSI nahe null bedeutet ausgewogenes Wasser. Diese Seite bietet dir einen Rechner, die Formel und ein Rechenbeispiel.</p>
+<h2>CSI-Rechner</h2>
+<div class="calc"><form id="csi-form" onsubmit="return false;">
+  <p><label>pH <input id="csi-ph" type="number" step="any" inputmode="decimal"></label></p>
+  <p><label>Gesamtalkalinität, TA (ppm) <input id="csi-ta" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>Calciumhärte, CH (ppm) <input id="csi-ch" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>CYA (ppm, leer = 0) <input id="csi-cya" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>Borate (ppm, leer = 0) <input id="csi-bor" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>Salz (ppm, leer = 1000) <input id="csi-salt" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>Wassertemperatur (°C) <input id="csi-temp" type="number" step="any" inputmode="decimal"></label></p>
+  <p><button type="button" id="csi-go">CSI berechnen</button></p>
+  <p id="csi-result" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function num(id, fallback) {
+    var v = parseFloat($(id).value);
+    return isNaN(v) ? fallback : v;
+  }
+  function calc() {
+    var out = $("csi-result");
+    var ph = num("csi-ph", null), ta = num("csi-ta", null), ch = num("csi-ch", null), tf = num("csi-temp", null);
+    if (ph === null || ta === null || ch === null || tf === null) {
+      out.textContent = "Gib pH, TA, CH und Temperatur ein.";
+      return;
+    }
+    var cya = num("csi-cya", 0), borates = num("csi-bor", 0), salt = num("csi-salt", 1000);
+    if (ch <= 0) { out.textContent = "Der CSI lässt sich nicht berechnen: CH muss größer als 0 sein."; return; }
+    var t = tf;
+    var carbAlk = ta - 0.38772 * cya / (1 + Math.pow(10, 6.83 - ph)) - 4.63 * borates / (1 + Math.pow(10, 9.11 - ph));
+    if (carbAlk <= 0) { out.textContent = "Der CSI lässt sich nicht berechnen: Die Carbonat-Alkalinität ist 0 oder kleiner."; return; }
+    var ionic = (1.5 * ch + ta) / 50045 + salt / 58440;
+    var si = Math.sqrt(ionic);
+    var csi = ph - 6.9395 + Math.log10(ch) + Math.log10(carbAlk) - 2.56 * si / (1 + 1.65 * si) - 1412.5 / (t + 273.15);
+    var label = csi < -0.3 ? "Korrosiv" : (csi > 0.3 ? "Kalkabscheidend" : "Ausgewogen");
+    out.textContent = "CSI " + (csi >= 0 ? "+" : "") + csi.toFixed(2).replace(".", ",") + ": " + label + " (ausgewogen ist -0,3 bis +0,3).";
+  }
+  $("csi-go").addEventListener("click", calc);
+})();
+</script>
+</div>
+<h2>So liest du das Ergebnis</h2>
+<ul><li><strong>Unter -0,3:</strong> korrosiv. Das Wasser kann Putz anätzen, Fugen beschädigen und Metallteile angreifen.</li><li><strong>-0,3 bis +0,3:</strong> ausgewogen. Diesen Bereich nutzt Pool Chem Log als Ziel.</li><li><strong>Über +0,3:</strong> kalkabscheidend. Kalk kann sich an Fliesen, Oberflächen sowie in der Salzzelle oder der Heizung ablagern.</li></ul>
+<p>Der Bereich von -0,3 bis +0,3 ist ein praktisches Ziel. Pools mit Putzoberfläche profitieren am meisten davon, in ihm zu bleiben.</p>
+<h2>Was in den CSI eingeht</h2>
+<p>Der CSI nutzt diese Testergebnisse:</p>
+<ul><li>pH</li><li>Gesamtalkalinität (TA) in ppm (in Deutschland oft als Säurekapazität in mmol/l angegeben: 1 mmol/l entspricht etwa 50 ppm)</li><li>Calciumhärte (CH) in ppm (zeigt dein Test °dH, rechne um: 1 °dH entspricht etwa 17,8 ppm)</li><li>Cyanursäure (CYA) in ppm</li><li>Borate in ppm (optional)</li><li>Salz in ppm</li><li>Wassertemperatur in °C</li></ul>
+<p>Warmes Wasser scheidet eher Kalk ab, deshalb zählt die Temperatur. Salz wirkt über die Ionenstärke nur wenig. Wenn du deinen Salzgehalt nicht kennst, rechnet der Rechner mit 1.000 ppm. Das ist typisch für Füllwasser plus Chlor-Nebenprodukte. Lässt du CYA oder Borate leer, zählen sie als 0. 1 ppm entspricht 1 mg/l.</p>
+<h2>Die Formel</h2>
+<p>Die Formel ist die von Trouble Free Pool (TFP) und Pool Math, die dem Chemiker "chem geek" zugeschrieben wird.</p>
+<p>CSI = pH - 6,9395 + log10(CH) + log10(Carbonat-Alkalinität) - 2,56 × sqrt(I) / (1 + 1,65 × sqrt(I)) - 1412,5 / T</p>
+<p>Dabei gilt:</p>
+<ul><li><strong>Carbonat-Alkalinität</strong> = TA - 0,38772 × CYA / (1 + 10^(6,83 - pH)) - 4,63 × Borate / (1 + 10^(9,11 - pH)). CYA und Borate zählen im Testset zur TA, helfen aber nicht dem Carbonat-Gleichgewicht, deshalb werden sie abgezogen.</li><li><strong>I (Ionenstärke)</strong> = (1,5 × CH + TA) / 50045 + Salz / 58440.</li><li><strong>T</strong> ist die Wassertemperatur in Kelvin: Grad Celsius + 273,15.</li></ul>
+<p>Ist CH gleich 0 oder die Carbonat-Alkalinität 0 oder kleiner, lässt sich der CSI nicht berechnen.</p>
+<h2>Rechenbeispiel</h2>
+<p>Ein Pool mit Putzoberfläche hat diese Testwerte:</p>
+<ul><li>pH 7,5</li><li>TA 70 ppm</li><li>CH 350 ppm</li><li>CYA 40 ppm</li><li>Borate 0</li><li>Salz 1.000 ppm (angenommen)</li><li>Wasser 27 °C, das sind 300,15 K</li></ul>
+<p>Schritt für Schritt:</p>
+<ol><li>Carbonat-Alkalinität: 10^(6,83 - 7,5) = 0,2138, also CYA-Anteil = 0,38772 × 40 / 1,2138 = 12,78. Carbonat-Alkalinität = 70 - 12,78 = 57,22.</li><li>Ionenstärke: (1,5 × 350 + 70) / 50045 + 1000 / 58440 = 0,01189 + 0,01711 = 0,02900. Die Wurzel daraus ist 0,1703.</li><li>Ionen-Term: 2,56 × 0,1703 / (1 + 1,65 × 0,1703) = 0,4360 / 1,2810 = 0,3403.</li><li>Temperatur-Term: 1412,5 / 300,15 = 4,7060.</li><li>Logarithmen: log10(350) = 2,5441 und log10(57,22) = 1,7576.</li><li>Zusammenzählen: 7,5 - 6,9395 + 2,5441 + 1,7576 - 0,3403 - 4,7060 = -0,18.</li></ol>
+<p>Der CSI liegt bei etwa -0,18. Das ist im ausgewogenen Bereich, etwas zur weichen Seite.</p>
+<h2>Was du ändern kannst, wenn der CSI abweicht</h2>
+<p>Ist der CSI zu niedrig (korrosiv), erhöhe einen dieser Werte:</p>
+<ul><li><strong>Calciumhärte:</strong> der größte Hebel bei Pools mit Putzoberfläche. Calciumchlorid erhöht sie, aber langsam, deshalb gib es in Schritten zu.</li><li><strong>pH:</strong> Eine Erhöhung des pH um 0,1 erhöht den CSI um etwa 0,1.</li><li><strong>Gesamtalkalinität:</strong> Natron (Natriumhydrogencarbonat) erhöht sie.</li></ul>
+<p>Ist der CSI zu hoch (kalkabscheidend), senke den pH mit Säure oder senke die TA. Calcium zu senken heißt Wasser auszutauschen, denn kein Produkt entfernt es.</p>
+<p>Die Calciumziele in Pool Chem Log hängen von der Oberfläche ab:</p>
+<div class="table"><table><thead><tr><th>Oberfläche</th><th>CH-Bereich (ppm)</th></tr></thead><tbody><tr><td>Putz oder Kiesel</td><td>250 bis 650</td></tr><tr><td>Folie oder GFK</td><td>50 bis 350</td></tr><tr><td>Acryl</td><td>150 bis 250 (üblicher Bereich)</td></tr></tbody></table></div>
+<p>Die Bereiche für Putz, Kiesel, Folie und GFK folgen den TFP-Hinweisen. Der Bereich für Acryl ist ein in der Branche üblicher Bereich.</p>
+<h2>Borate und Salz</h2>
+<p>Borate sind optional. Manche Besitzer halten 30 bis 50 ppm als pH-Puffer. Wenn du sie nutzt, nimm sie in die Berechnung auf, denn Borate erhöhen den TA-Messwert, ohne das Gleichgewicht zu verbessern. Salzwasser-Pools sollten ihren tatsächlichen Salzgehalt eingeben.</p>
+<h2>Grenzen</h2>
+<p>Der CSI ist ein Modell und hängt von genauen Tests ab, besonders bei TA, CH und pH. Ein kleiner Messfehler kann den CSI um 0,1 oder mehr verschieben. Teste erneut, bevor du etwas Großes änderst, mische niemals Chemikalien, trage Schutzausrüstung und folge dem Etikett des Produkts.</p>
+<h2>CSI im Verlauf verfolgen</h2>
+<p>Pool Chem Log ist eine Android-App, die ohne Internet funktioniert. Sie berechnet den CSI bei jedem Test, den du einträgst, mit Boraten und Salz, und nimmt dafür die Temperatur aus dem letzten Test. Sie zeigt außerdem deine Zielwerte nach Oberfläche, berechnet Dosierungen für Calcium, Alkalinität und pH und führt einen Verlauf aller deiner Tests. Die Formel in der App ist dieselbe wie auf dieser Seite.</p></article><aside class="cta"><div class="phone"><picture><source type="image/webp" srcset="../../screen-1.webp"><img src="../../screen-1.png" alt="Pool Chem Log: Wassertests" width="1080" height="2160" loading="lazy" decoding="async"></picture></div><div><b>Pool Chem Log: Wassertests</b><p>Pool- und Spa-Wassertests protokollieren und FC/CYA-Dosierungen berechnen.</p><a href="../">Mehr zur App</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.offlinepoolchemistrylog&amp;hl=de"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside></div><section class="band alt"><div class="wrap"><div class="head"><h2>Weitere Ratgeber</h2></div><ul class="cards"><li><a href="../fc-cya-chart/">FC/CYA-Tabelle: Chlorwert im Pool nach Cyanursäure</a><small>FC/CYA-Tabelle für Pools: Mindest-, Ziel-, SLAM- und Senfalgen-Chlorwert für jeden CYA-Wert von 0 bis 100 ppm, mit Rechenbeispiel.</small></li><li><a href="../pool-volume-calculator/">Pool-Volumenrechner: Liter und m³ nach Form</a><small>Poolvolumen in m³ oder Litern berechnen für Rechteck-, Rund-, Oval-, Nieren- und Freiform-Pools, mit Formeln und Rechenbeispielen.</small></li></ul></div></section><section class="band"><div class="wrap"><div class="head"><h2>Weitere Apps</h2></div><ul class="cards apps"><li style="--accent:#4355b9"><img src="../../../alarm-clock/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../alarm-clock/">Alarm Clock: Wake-Up Missions</a><small>Reliable alarms for heavy sleepers. Solve a task to switch the alarm off.</small></span></li><li style="--accent:#3a6a2a"><img src="../../../german-allotment-club-ledger/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../german-allotment-club-ledger/">Allotment Club Ledger</a><small>Rent, dues, meters and receipts for allotment club treasurers</small></span></li><li style="--accent:#006a63"><img src="../../../anti-bucket-list/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../anti-bucket-list/">Anti-Bucket List: No Journal</a><small>Write down what you said no to and check later if you&#x27;re still glad.</small></span></li></ul></div></section></main><footer class="foot"><div class="wrap"><nav aria-label="Footer"><a href="../">Pool Chem Log: Wassertests</a><a href="../../privacy/">Datenschutz</a><a href="../../../">Alle Apps</a><a href="https://apps.schimpf.es/offline-pool-chemistry-log/pool-csi-calculator/" hreflang="en">EN</a><a href="https://apps.schimpf.es/offline-pool-chemistry-log/es/pool-csi-calculator/" hreflang="es-ES">ES</a></nav><span>© 2026 Gerrit Schimpf</span></div></footer></body></html>
