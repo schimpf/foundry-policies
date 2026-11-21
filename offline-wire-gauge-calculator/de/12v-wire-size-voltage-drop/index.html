@@ -95,7 +95,7 @@ table{border-collapse:collapse;width:100%;font-size:.96rem}th,td{padding:10px 14
 th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
 .calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:var(--shadow)}
 .calc input,.calc select,.calc button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
-.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
+.calc .ch{font-weight:700;font-size:1.1rem;margin:0 0 12px}.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
 .cta{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
 .cta .phone{width:170px;margin:0 auto 20px}.cta img.icon{border-radius:14px}.cta p{color:var(--muted);font-size:.95rem;margin:6px 0 16px}
 .cta .badge img{height:52px;width:auto;margin:12px auto 0;display:block}
@@ -111,7 +111,7 @@ th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
 <p>L ist die einfache Länge in Metern, I der Strom in Ampere und R der Leiterwiderstand in Ohm pro Meter (der Wert aus der Tabelle in Ω/km geteilt durch 1000). Bei Gleichstrom ergibt Watt geteilt durch Volt den Strom in Ampere.</p>
 <p>Ein gängiges Ziel für einen Abzweig ist 3 %. NFPA 70 (die NEC), Ausgabe 2023, nennt 3 % für einen Abzweigstromkreis und 5 % für Zuleitung und Abzweig zusammen, in Hinweisen (informational notes) zu Artikel 210 und 215. Diese Hinweise sind nur Empfehlungen. Sie können ein strengeres Ziel wählen, zum Beispiel für empfindliche Elektronik oder LED-Beleuchtung.</p>
 <h2>Kupferwiderstand für die Beispiele</h2>
-<p>Die Werte gelten für massives Kupfer bei 20 °C. Sie sind aus der öffentlichen AWG-Durchmesserformel und dem spezifischen Widerstand von geglühtem Kupfer berechnet. Wie das geht, steht in der <a href="awg-to-mm2-chart">AWG-mm²-Tabelle</a>.</p>
+<p>Die Werte gelten für massives Kupfer bei 20 °C. Sie sind aus der öffentlichen AWG-Durchmesserformel und dem spezifischen Widerstand von geglühtem Kupfer berechnet. Wie das geht, steht in der <a href="../awg-to-mm2-chart/">AWG-mm²-Tabelle</a>.</p>
 <div class="table"><table><thead><tr><th>AWG</th><th>mm²</th><th>Ω/km</th></tr></thead><tbody><tr><td>12</td><td>3,31</td><td>5,21</td></tr><tr><td>10</td><td>5,26</td><td>3,28</td></tr><tr><td>8</td><td>8,37</td><td>2,06</td></tr><tr><td>6</td><td>13,3</td><td>1,30</td></tr><tr><td>4</td><td>21,2</td><td>0,815</td></tr></tbody></table></div>
 <h2>Rechenbeispiel: 240 W Last, 5 m von der Batterie</h2>
 <p>Eine 12-V-Last nimmt 240 W auf. Die Leitung ist 5 m lang (einfach). Kupfer, Ziel 3 %.</p>

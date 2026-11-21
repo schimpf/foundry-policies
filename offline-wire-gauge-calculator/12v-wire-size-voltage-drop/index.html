@@ -95,7 +95,7 @@ table{border-collapse:collapse;width:100%;font-size:.96rem}th,td{padding:10px 14
 th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
 .calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:var(--shadow)}
 .calc input,.calc select,.calc button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
-.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
+.calc .ch{font-weight:700;font-size:1.1rem;margin:0 0 12px}.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
 .cta{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
 .cta .phone{width:170px;margin:0 auto 20px}.cta img.icon{border-radius:14px}.cta p{color:var(--muted);font-size:.95rem;margin:6px 0 16px}
 .cta .badge img{height:52px;width:auto;margin:12px auto 0;display:block}
@@ -111,7 +111,7 @@ th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
 <p>Here L is the one-way length in feet, I is the current in amps and R is the wire resistance in ohms per foot (the chart value per 1000 ft divided by 1000). For DC, watts divided by volts gives amps.</p>
 <p>A common target is 3 % for a branch circuit. NFPA 70 (the NEC), 2023 edition, suggests 3 % for a branch circuit and 5 % for feeder plus branch combined, in informational notes in Articles 210 and 215. They are informational notes and carry no requirement. Your own target can be stricter, for example for sensitive electronics or LED lighting.</p>
 <h2>Copper resistance used in the examples</h2>
-<p>These values are for solid copper at 20 °C, computed from the public AWG diameter formula and annealed copper resistivity. See the <a href="awg-to-mm2-chart">AWG to mm² chart</a> for how they are derived.</p>
+<p>These values are for solid copper at 20 °C, computed from the public AWG diameter formula and annealed copper resistivity. See the <a href="../awg-to-mm2-chart/">AWG to mm² chart</a> for how they are derived.</p>
 <div class="table"><table><thead><tr><th>AWG</th><th>Ω per 1000 ft</th></tr></thead><tbody><tr><td>12</td><td>1.59</td></tr><tr><td>10</td><td>0.999</td></tr><tr><td>8</td><td>0.628</td></tr><tr><td>6</td><td>0.395</td></tr><tr><td>4</td><td>0.248</td></tr></tbody></table></div>
 <h2>Worked example: a 240 W load, 15 ft from the battery</h2>
 <p>A 12 V load draws 240 W. The run is 15 ft one way. Copper wire, 3 % target.</p>
