@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fórmula del tiempo estándar con ejemplo resuelto</title><meta name="description" content="Cómo calcular el tiempo normal y el tiempo estándar a partir de lecturas del cronómetro, valoración y suplemento, con ejemplo resuelto y calculadora."><meta name="theme-color" content="#1b5e8c"><meta name="author" content="Gerrit Schimpf"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://apps.schimpf.es/time-study-stopwatch/es/standard-time-formula-example/"><link rel="alternate" hreflang="en" href="https://apps.schimpf.es/time-study-stopwatch/standard-time-formula-example/"><link rel="alternate" hreflang="de-DE" href="https://apps.schimpf.es/time-study-stopwatch/de/standard-time-formula-example/"><link rel="alternate" hreflang="es-ES" href="https://apps.schimpf.es/time-study-stopwatch/es/standard-time-formula-example/"><link rel="alternate" hreflang="x-default" href="https://apps.schimpf.es/time-study-stopwatch/standard-time-formula-example/"><meta property="og:type" content="website"><meta property="og:site_name" content="Apps by Gerrit Schimpf"><meta property="og:locale" content="es_ES"><meta property="og:title" content="Fórmula del tiempo estándar con ejemplo resuelto"><meta property="og:description" content="Cómo calcular el tiempo normal y el tiempo estándar a partir de lecturas del cronómetro, valoración y suplemento, con ejemplo resuelto y calculadora."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Fórmula del tiempo estándar con ejemplo resuelto"><meta name="twitter:description" content="Cómo calcular el tiempo normal y el tiempo estándar a partir de lecturas del cronómetro, valoración y suplemento, con ejemplo resuelto y calculadora."><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:url" content="https://apps.schimpf.es/time-study-stopwatch/es/standard-time-formula-example/"><meta property="og:image" content="https://apps.schimpf.es/time-study-stopwatch/feature.png"><meta name="twitter:image" content="https://apps.schimpf.es/time-study-stopwatch/feature.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="500"><meta property="og:image:alt" content="Estudio de Tiempos Cronómetro"><link rel="icon" href="../../icon.png"><link rel="apple-touch-icon" href="../../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Fórmula del tiempo estándar con ejemplo resuelto", "description": "Cómo calcular el tiempo normal y el tiempo estándar a partir de lecturas del cronómetro, valoración y suplemento, con ejemplo resuelto y calculadora.", "datePublished": "2026-11-21", "dateModified": "2026-11-21", "inLanguage": "es", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "publisher": {"@type": "Person", "name": "Gerrit Schimpf"}, "about": {"@type": "MobileApplication", "name": "Estudio de Tiempos Cronómetro", "operatingSystem": "Android", "url": "https://apps.schimpf.es/time-study-stopwatch/es/"}, "url": "https://apps.schimpf.es/time-study-stopwatch/es/standard-time-formula-example/", "mainEntityOfPage": "https://apps.schimpf.es/time-study-stopwatch/es/standard-time-formula-example/", "image": "https://apps.schimpf.es/time-study-stopwatch/feature.png"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Todas las apps", "item": "https://apps.schimpf.es/"}, {"@type": "ListItem", "position": 2, "name": "Estudio de Tiempos Cronómetro", "item": "https://apps.schimpf.es/time-study-stopwatch/es/"}, {"@type": "ListItem", "position": 3, "name": "Fórmula del tiempo estándar con ejemplo resuelto", "item": "https://apps.schimpf.es/time-study-stopwatch/es/standard-time-formula-example/"}]}</script><style>
+:root{--bg:#0b0d0c;--bg2:#111413;--card:#161a19;--fg:#f2f4f3;--muted:#a1a8a4;--line:#252b29;--accent:#0f766e;--on:#fff;
+--hi:color-mix(in srgb,var(--accent) 55%,#fff);--soft:color-mix(in srgb,var(--accent) 18%,transparent);
+--frame:#050606;--edge:#2c3230;--shadow:0 40px 80px -30px rgba(0,0,0,.75)}
+@media (prefers-color-scheme:light){:root{--bg:#f7f7f5;--bg2:#eeefec;--card:#fff;--fg:#151816;--muted:#5a615d;--line:#e2e5e1;
+--hi:color-mix(in srgb,var(--accent) 80%,#000);--soft:color-mix(in srgb,var(--accent) 12%,transparent);
+--frame:#101312;--edge:#1f2422;--shadow:0 30px 60px -30px rgba(20,30,25,.45)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--hi)}img{max-width:100%;height:auto}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,5vw,3.6rem);overflow-wrap:break-word;font-weight:800}h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:750}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}@media (max-width:640px){.wrap{padding:0 16px}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--card);padding:8px 12px;z-index:9}.skip:focus{left:8px}
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 78%,transparent);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font-weight:700;min-width:0}
+.brand img{border-radius:9px;flex:none}.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.links{display:flex;gap:22px;margin-left:auto}.links a{color:var(--muted);text-decoration:none;font-size:.95rem}
+.links a:hover{color:var(--fg)}@media (max-width:760px){.links{display:none}.nav .btn{margin-left:auto}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on);padding:12px 22px;
+border-radius:999px;text-decoration:none;font-weight:650;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px var(--accent)}.nav .btn{padding:8px 16px;font-size:.9rem}
+.chip{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--soft);
+color:var(--hi);font-weight:600;font-size:.95rem}
+.band{padding:96px 0;position:relative}.band.alt{background:var(--bg2)}@media (max-width:640px){.band{padding:64px 0}}
+.eyebrow{display:block;color:var(--hi);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.lead{color:var(--muted);font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:640px}
+.hero{overflow:hidden;padding:72px 0 40px;background:
+radial-gradient(55% 60% at 78% 30%,color-mix(in srgb,var(--accent) 38%,transparent),transparent 70%),
+radial-gradient(40% 50% at 5% 100%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.hero .icon{border-radius:24px;box-shadow:0 20px 40px -18px var(--accent);margin-bottom:24px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.hero .actions .badge img{display:block;height:60px;width:auto}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr);text-align:center}.hero .lead{margin:0 auto}
+.hero .actions{justify-content:center}.hero .icon{margin:0 auto 20px}}
+.stack{display:flex;justify-content:center;align-items:flex-end;padding:20px 0 40px}
+.stack .phone{width:250px}.stack .phone:nth-child(2){width:280px;z-index:2}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(40px,30px)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-40px,30px)}
+@media (max-width:640px){.stack .phone{width:32vw;padding:6px;border-radius:26px}.stack .phone img{border-radius:21px}
+.stack .phone:nth-child(2){width:46vw}.stack .phone::before{top:12px;width:7px;height:7px;margin-left:-3.5px}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(9vw,4vw)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-9vw,4vw)}}
+.phone{position:relative;flex:none;margin:0;padding:9px;background:var(--frame);border-radius:42px;
+box-shadow:0 0 0 1.5px var(--edge),inset 0 0 0 1px #000,var(--shadow)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+background:#000;box-shadow:0 0 0 2px #111;z-index:1}
+.phone picture,.tablet picture{display:block}.phone img{display:block;width:100%;height:auto;border-radius:33px;background:#000}
+.tablet{max-width:860px;margin:0 auto;padding:14px;background:var(--frame);border-radius:30px;
+box-shadow:0 0 0 1.5px var(--edge),var(--shadow)}.tablet img{display:block;width:100%;border-radius:18px}
+.tablets{display:grid;gap:32px}
+.gallery{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px max(24px,calc(50vw - 576px)) 40px;
+scrollbar-width:thin}.gallery figure{margin:0;flex:none;width:240px;scroll-snap-align:center;text-align:center}
+.gallery figcaption{margin-top:18px;color:var(--muted);font-size:.95rem;font-weight:500}
+@media (max-width:640px){.gallery{gap:20px;padding:16px 16px 32px}.gallery figure{width:200px}}
+.head{max-width:720px;margin-bottom:48px}.center{text-align:center;margin-left:auto;margin-right:auto}
+.about p{max-width:720px;color:var(--muted);font-size:1.1rem}
+.features{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.fcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;transition:transform .25s,border-color .25s}
+.fcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.num{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--soft);color:var(--hi);
+font-weight:800;margin-bottom:18px}.fcard p{color:var(--muted);margin:0 0 12px}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:9px}.checks li{position:relative;padding-left:28px;color:var(--muted);font-size:.97rem}
+.checks li::before{content:"";position:absolute;left:0;top:.42em;width:16px;height:16px;border-radius:50%;background:var(--soft);
+box-shadow:inset 0 0 0 1.5px var(--hi)}
+.checks li::after{content:"";position:absolute;left:5.5px;top:calc(.42em + 4px);width:4px;height:7px;border:solid var(--hi);
+border-width:0 2px 2px 0;transform:rotate(45deg)}
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.cards li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:transform .2s,border-color .2s}
+.cards li:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.cards a{color:var(--fg);font-weight:700;text-decoration:none;font-size:1.08rem}.cards a::after{content:"";position:absolute;inset:0}
+.cards small{display:block;color:var(--muted);margin-top:6px;font-size:.93rem}
+.apps li{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--card)),var(--card) 60%)}
+.apps img{border-radius:14px;flex:none}.apps small{margin-top:2px}
+.cta-band{border-radius:32px;padding:64px 32px;text-align:center;border:1px solid var(--line);background:
+radial-gradient(70% 90% at 50% 0%,color-mix(in srgb,var(--accent) 35%,transparent),transparent 70%),var(--card)}
+.cta-band img.icon{border-radius:22px;margin-bottom:20px}.cta-band .lead{margin:0 auto 28px}.cta-band .badge img{height:60px;width:auto}
+.foot{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:.92rem}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}.foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+.foot a{color:var(--muted)}.foot a:hover{color:var(--fg)}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 20px;font-size:.92rem;color:var(--muted)}
+.crumbs li+li::before{content:"›";margin-right:6px}.crumbs a{color:var(--muted)}
+.ghero{padding:64px 0 32px;background:radial-gradient(60% 80% at 85% 0%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%)}
+.ghero h1{font-size:clamp(2rem,4.5vw,3.2rem);max-width:860px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start;padding-bottom:96px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+.guide{max-width:740px;font-size:1.06rem}.guide h2{font-size:1.7rem;margin-top:1.8em}.guide h3{margin-top:1.5em}
+.guide li{margin:.35em 0}.guide code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.9em}
+.table{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.96rem}th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:var(--shadow)}
+.calc input,.calc select,.calc button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
+.cta{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
+.cta .phone{width:170px;margin:0 auto 20px}.cta img.icon{border-radius:14px}.cta p{color:var(--muted);font-size:.95rem;margin:6px 0 16px}
+.cta .badge img{height:52px;width:auto;margin:12px auto 0;display:block}
+.faq{max-width:820px;display:grid;gap:12px}.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.faq summary{cursor:pointer;font-weight:650;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--hi);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}.faq details p{color:var(--muted);margin:12px 0 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:root{--accent:#1b5e8c;--on:#ffffff}</style></head><body><a class="skip" href="#main">Ir al contenido</a><header class="nav"><div class="wrap"><a class="brand" href="../"><img src="../../icon.png" alt="" width="32" height="32"><span>Estudio de Tiempos Cronómetro</span></a><a class="btn" href="../">Más sobre la app</a></div></header><main id="main"><section class="ghero"><div class="wrap"><ol class="crumbs"><li><a href="../../../">Todas las apps</a></li><li><a href="../">Estudio de Tiempos Cronómetro</a></li><li>Fórmula del tiempo estándar con ejemplo resuelto</li></ol><h1>Fórmula del tiempo estándar con ejemplo resuelto</h1><p class="lead">Cómo calcular el tiempo normal y el tiempo estándar a partir de lecturas del cronómetro, valoración y suplemento, con ejemplo resuelto y calculadora.</p></div></section><div class="wrap layout"><article class="guide"><p>El tiempo estándar es el que necesita un operario formado para hacer una tarea a ritmo normal, más el tiempo de descanso y de demoras inevitables. Es la cifra que hay detrás de los estándares de mano de obra, el equilibrado de líneas y la planificación de capacidad. Esta página da la fórmula, un ejemplo resuelto con números reales y una calculadora que puedes usar ahora mismo.</p>
+<h2>La fórmula</h2>
+<p>El tiempo estándar se calcula en dos pasos.</p>
+<ol><li>Tiempo normal = tiempo observado × valoración ÷ 100</li><li>Tiempo estándar = tiempo normal × (1 + suplemento ÷ 100)</li></ol>
+<p>Donde:</p>
+<ul><li>El tiempo observado es lo que marca el cronómetro para un elemento.</li><li>La valoración es tu juicio sobre el ritmo del operario. 100 % significa ritmo normal. Más de 100 % es más rápido que lo normal, menos de 100 % es más lento.</li><li>El suplemento es el tiempo extra para necesidades personales, fatiga y demoras (PF&amp;D), como porcentaje del tiempo normal.</li></ul>
+<p>El método sigue los manuales clásicos de medición del trabajo, por ejemplo Niebel y Freivalds, *Methods, Standards, and Work Design* (McGraw-Hill, 12.ª edición, 2009), y la Oficina Internacional del Trabajo, *Introducción al estudio del trabajo* (4.ª edición, 1992).</p>
+<h3>Reglas que usan la app y esta página</h3>
+<ul><li>El tiempo normal se calcula por elemento. Cada observación se multiplica por su valoración y después se hace la media.</li><li>Los tiempos normales de todos los elementos se suman para obtener el tiempo normal del ciclo.</li><li>El suplemento es un recargo sobre el tiempo normal. Un suplemento del 15 % multiplica el tiempo normal por 1,15.</li><li>El suplemento se acepta de 0 a 100 %.</li><li>La valoración se acepta de 50 a 200 %.</li></ul>
+<p>Algunas fuentes definen el suplemento como una parte de toda la jornada. En esa versión, tiempo estándar = tiempo normal ÷ (1 − suplemento ÷ 100), que da resultados distintos. La fórmula de esta página es la del recargo.</p>
+<h2>Ejemplo resuelto</h2>
+<p>Se cronometra a un operario de empaquetado en una tarea con dos elementos, durante tres ciclos. Cada observación tiene una valoración.</p>
+<div class="table"><table><thead><tr><th>Elemento</th><th>Ciclo</th><th>Observado (s)</th><th>Valoración (%)</th><th>Observado × valoración (s)</th></tr></thead><tbody><tr><td>1. Coger el artículo</td><td>1</td><td>20</td><td>110</td><td>22,00</td></tr><tr><td>1. Coger el artículo</td><td>2</td><td>22</td><td>100</td><td>22,00</td></tr><tr><td>1. Coger el artículo</td><td>3</td><td>18</td><td>120</td><td>21,60</td></tr><tr><td>2. Embalar y cerrar</td><td>1</td><td>40</td><td>90</td><td>36,00</td></tr><tr><td>2. Embalar y cerrar</td><td>2</td><td>44</td><td>100</td><td>44,00</td></tr><tr><td>2. Embalar y cerrar</td><td>3</td><td>42</td><td>95</td><td>39,90</td></tr></tbody></table></div>
+<h3>Paso 1: tiempo normal por elemento</h3>
+<ul><li>Elemento 1: (22,00 + 22,00 + 21,60) ÷ 3 = 21,87 s</li><li>Elemento 2: (36,00 + 44,00 + 39,90) ÷ 3 = 39,97 s</li></ul>
+<h3>Paso 2: tiempo normal del ciclo</h3>
+<ul><li>21,87 + 39,97 = 61,83 s</li></ul>
+<p>Compáralo con la media observada sin valorar: 20 s + 42 s = 62 s. La valoración cambió poco el resultado porque los valores altos y bajos se compensan en parte. Con un operario que sea siempre rápido o siempre lento, la diferencia es mayor.</p>
+<h3>Paso 3: aplicar el suplemento</h3>
+<p>Con un suplemento del 15 %:</p>
+<ul><li>61,83 × 1,15 = 71,11 s</li></ul>
+<p>El tiempo estándar de un ciclo de embalaje es de unos 71,1 segundos. Con ese estándar, un operario hace unos 50 ciclos por hora (3600 ÷ 71,11 = 50,6).</p>
+<h2>Calculadora</h2>
+<div class="calc"><form id="tsCalc">
+  <p><label>Observaciones, una por línea: <code>elemento, segundos, valoración %</code> (la valoración es opcional, por defecto 100, decimales con punto)<br>
+  <textarea id="tsObs" rows="8" cols="40">Coger el artículo, 20, 110
+Coger el artículo, 22, 100
+Coger el artículo, 18, 120
+Embalar y cerrar, 40, 90
+Embalar y cerrar, 44, 100
+Embalar y cerrar, 42, 95</textarea></label></p>
+  <p><label>Suplemento % (0 a 100)<br>
+  <input id="tsAllow" type="number" min="0" max="100" step="any" value="15"></label></p>
+  <p><button type="submit">Calcular</button></p>
+  <p id="tsOut" role="status"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("tsCalc");
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var out = document.getElementById("tsOut");
+    var allow = parseFloat(document.getElementById("tsAllow").value.replace(",", "."));
+    if (!isFinite(allow) || allow < 0 || allow > 100) { out.textContent = "El suplemento debe estar entre 0 y 100."; return; }
+    var lines = document.getElementById("tsObs").value.split("\n");
+    var groups = {}, order = [];
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i].trim();
+      if (!line) continue;
+      var p = line.split(",");
+      if (p.length < 2) { out.textContent = "Línea " + (i + 1) + ": usa elemento, segundos, valoración."; return; }
+      var name = p[0].trim();
+      var sec = parseFloat(p[1].replace(",", "."));
+      var rating = p.length > 2 && p[2].trim() !== "" ? parseFloat(p[2]) : 100;
+      if (!name || !isFinite(sec) || sec <= 0) { out.textContent = "Línea " + (i + 1) + ": elemento o segundos no válidos."; return; }
+      if (!isFinite(rating) || rating < 50 || rating > 200) { out.textContent = "Línea " + (i + 1) + ": la valoración debe estar entre 50 y 200."; return; }
+      if (!groups[name]) { groups[name] = []; order.push(name); }
+      groups[name].push({ ms: Math.round(sec * 1000), rating: rating });
+    }
+    if (!order.length) { out.textContent = "Introduce al menos una observación."; return; }
+    var normalMs = 0, parts = [];
+    order.forEach(function (n) {
+      var g = groups[n], sum = 0;
+      g.forEach(function (o) { sum += o.ms * o.rating / 100; });
+      var el = Math.round(sum / g.length);
+      normalMs += el;
+      parts.push(n + ": " + (el / 1000).toFixed(2) + " s");
+    });
+    var stdMs = Math.round(normalMs * (1 + allow / 100));
+    out.textContent = "Tiempo normal por elemento: " + parts.join("; ") +
+      ". Tiempo normal del ciclo: " + (normalMs / 1000).toFixed(2) + " s. Tiempo estándar: " + (stdMs / 1000).toFixed(2) + " s.";
+  });
+})();
+</script>
+</div>
+<h2>Errores frecuentes</h2>
+<ul><li>Valorar al trabajador en lugar del ritmo. Valora la velocidad y el esfuerzo del trabajo que ves. Valora cada observación mientras la miras.</li><li>Saltarse la valoración. Sin ella obtienes la media de cómo trabajó este operario ese día, que todavía no es un estándar.</li><li>Mezclar métodos de suplemento. Comprueba si tu empresa define el suplemento sobre el tiempo normal o sobre toda la jornada antes de comparar cifras.</li><li>Muy pocos ciclos. Tres ciclos bastan para una demostración. Para un estándar real, usa más ciclos y mira la dispersión. Una desviación estándar grande indica que el método o los elementos aún no son estables.</li><li>Cronometrar ciclos incompletos. Cuenta solo los ciclos en los que se cronometró cada elemento, para que el total del ciclo no quede por debajo.</li></ul>
+<h2>Hazlo en la app</h2>
+<p>Time Study Stopwatch aplica esta misma fórmula en la pantalla de resultados. Defines los elementos de trabajo una vez, tocas el botón grande de vuelta cada vez que termina un elemento y ajustas una valoración por observación. Introduce el suplemento en la pantalla de configuración del estudio y la app muestra el tiempo normal por elemento, el tiempo normal del ciclo y el tiempo estándar.</p>
+<p>Media, mínimo, máximo y desviación estándar por elemento vienen incluidos en la app. La valoración (50 a 200 %), el suplemento y el tiempo estándar forman parte de Time Study Pro, una compra única en Google Play. Tus datos se quedan en el dispositivo, y la exportación CSV te permite llevar las cifras a una hoja de cálculo.</p></article><aside class="cta"><div class="phone"><picture><source type="image/webp" srcset="../../screen-1.webp"><img src="../../screen-1.png" alt="Estudio de Tiempos Cronómetro" width="1080" height="2160" loading="lazy" decoding="async"></picture></div><div><b>Estudio de Tiempos Cronómetro</b><p>Cronometra cada elemento con un toque. Medias, valoración y tiempo estándar.</p><a href="../">Más sobre la app</a></div></aside></div><section class="band alt"><div class="wrap"><div class="head"><h2>Más guías</h2></div><ul class="cards"><li><a href="../how-to-do-a-time-study/">Cómo hacer un estudio de tiempos paso a paso</a><small>Guía para hacer un estudio de tiempos con cronómetro. Define elementos, mide ciclos, valora el ritmo, añade suplementos y calcula el tiempo estándar.</small></li></ul></div></section><section class="band"><div class="wrap"><div class="head"><h2>Más apps</h2></div><ul class="cards apps"><li style="--accent:#4355b9"><img src="../../../alarm-clock/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../alarm-clock/">Alarm Clock: Wake-Up Missions</a><small>Reliable alarms for heavy sleepers. Solve a task to switch the alarm off.</small></span></li><li style="--accent:#3a6a2a"><img src="../../../german-allotment-club-ledger/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../german-allotment-club-ledger/">Allotment Club Ledger</a><small>Rent, dues, meters and receipts for allotment club treasurers</small></span></li><li style="--accent:#006a63"><img src="../../../anti-bucket-list/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../anti-bucket-list/">Anti-Bucket List: No Journal</a><small>Write down what you said no to and check later if you&#x27;re still glad.</small></span></li></ul></div></section></main><footer class="foot"><div class="wrap"><nav aria-label="Footer"><a href="../">Estudio de Tiempos Cronómetro</a><a href="../../privacy/">Privacidad</a><a href="../../../">Todas las apps</a><a href="https://apps.schimpf.es/time-study-stopwatch/standard-time-formula-example/" hreflang="en">EN</a><a href="https://apps.schimpf.es/time-study-stopwatch/de/standard-time-formula-example/" hreflang="de-DE">DE</a></nav><span>© 2026 Gerrit Schimpf</span></div></footer></body></html>
