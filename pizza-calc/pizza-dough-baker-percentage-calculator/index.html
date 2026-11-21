@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pizza Dough Baker&#x27;s Percentage Calculator, Worked Example</title><meta name="description" content="Turn baker&#x27;s percentages into grams of flour, water, salt, oil, sugar and yeast for any dough weight. Formula, worked example and calculator."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/pizza-calc/pizza-dough-baker-percentage-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Pizza Dough Baker&#x27;s Percentage Calculator, Worked Example"><meta property="og:description" content="Turn baker&#x27;s percentages into grams of flour, water, salt, oil, sugar and yeast for any dough weight. Formula, worked example and calculator."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/pizza-calc/pizza-dough-baker-percentage-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/pizza-calc/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Pizza Dough Baker's Percentage Calculator, Worked Example", "description": "Turn baker's percentages into grams of flour, water, salt, oil, sugar and yeast for any dough weight. Formula, worked example and calculator.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/pizza-calc/pizza-dough-baker-percentage-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Pizza Calc: Dough Calculator</a></p><h1>Pizza Dough Baker&#x27;s Percentage Calculator, Worked Example</h1><article class="guide"><p>Pizza recipes are often written in baker's percentages: every ingredient is a percent of the flour weight. It is the easiest way to scale a recipe up or down, and to compare styles. This page shows the formula, a worked example and a small calculator that turns percentages into grams.</p>
+<h2>What baker's percentage means</h2>
+<p>Flour is always 100 %. Everything else is measured against the flour:</p>
+<ul><li>Hydration 62 % means 62 g of water per 100 g of flour.</li><li>Salt 2.2 % means 2.2 g of salt per 100 g of flour.</li><li>The percentages add up to more than 100 %. That is normal.</li></ul>
+<p>See Jeffrey Hamelman, *Bread: A Baker's Book of Techniques and Recipes*, 2nd edition, 2012, for the standard description of the method.</p>
+<h2>From percentages to grams</h2>
+<p>You know how much dough you want and the percentages. You need the flour weight first.</p>
+<ol><li><strong>Total dough weight</strong> = number of balls × weight per ball × (1 + bowl loss ÷ 100).</li><li><strong>Sum of percentages</strong> = hydration + salt + oil + sugar + yeast.</li><li><strong>Flour</strong> = total dough weight ÷ (1 + sum of percentages ÷ 100).</li><li><strong>Each other ingredient</strong> = flour × its percentage ÷ 100.</li></ol>
+<p>Bowl loss is the dough that sticks to the bowl and your hands. Adding about 2 % means you do not come up short.</p>
+<p>For pans, the dough weight is pan area × thickness × number of pans. Thickness is in grams per cm². A rectangular pan of 40 × 30 cm at 0.6 g/cm² needs 40 × 30 × 0.6 = 720 g of dough.</p>
+<h2>Worked example: two New York–style pizzas</h2>
+<p>Two balls of 340 g each, 2 % bowl loss. Percentages: hydration 62 %, salt 2.2 %, oil 2 %, sugar 1.5 %, yeast 0.2 %.</p>
+<ol><li>Total dough: 2 × 340 × 1.02 = <strong>693.6 g</strong>.</li><li>Sum of percentages: 62 + 2.2 + 2 + 1.5 + 0.2 = <strong>67.9 %</strong>.</li><li>Flour: 693.6 ÷ 1.679 = <strong>413.1 g</strong>.</li></ol>
+<div class="table"><table><thead><tr><th>Ingredient</th><th>Percent</th><th>Grams</th></tr></thead><tbody><tr><td>Flour</td><td>100</td><td>413.1</td></tr><tr><td>Water</td><td>62</td><td>256.1</td></tr><tr><td>Salt</td><td>2.2</td><td>9.1</td></tr><tr><td>Oil</td><td>2</td><td>8.3</td></tr><tr><td>Sugar</td><td>1.5</td><td>6.2</td></tr><tr><td>Yeast</td><td>0.2</td><td>0.8</td></tr><tr><td><strong>Total</strong></td><td>167.9</td><td><strong>693.6</strong></td></tr></tbody></table></div>
+<p>The grams add up to the total dough weight, which is a good check.</p>
+<h2>Try it</h2>
+<div class="calc"><form id="bp" onsubmit="return false">
+  <p><label>Number of balls <input id="bp-count" type="number" min="1" step="1" value="2"></label></p>
+  <p><label>Weight per ball (g) <input id="bp-weight" type="number" min="1" step="1" value="340"></label></p>
+  <p><label>Bowl loss (%) <input id="bp-loss" type="number" min="0" step="0.5" value="2"></label></p>
+  <p><label>Hydration (%) <input id="bp-hyd" type="number" min="0" step="0.5" value="62"></label></p>
+  <p><label>Salt (%) <input id="bp-salt" type="number" min="0" step="0.1" value="2.2"></label></p>
+  <p><label>Oil (%) <input id="bp-oil" type="number" min="0" step="0.5" value="2"></label></p>
+  <p><label>Sugar (%) <input id="bp-sugar" type="number" min="0" step="0.5" value="1.5"></label></p>
+  <p><label>Yeast (%) <input id="bp-yeast" type="number" min="0" step="0.01" value="0.2"></label></p>
+  <table>
+    <tr><th>Ingredient</th><th>Grams</th></tr>
+    <tr><td>Flour</td><td id="bp-o-flour"></td></tr>
+    <tr><td>Water</td><td id="bp-o-water"></td></tr>
+    <tr><td>Salt</td><td id="bp-o-salt"></td></tr>
+    <tr><td>Oil</td><td id="bp-o-oil"></td></tr>
+    <tr><td>Sugar</td><td id="bp-o-sugar"></td></tr>
+    <tr><td>Yeast</td><td id="bp-o-yeast"></td></tr>
+    <tr><td><strong>Total dough</strong></td><td id="bp-o-total"></td></tr>
+  </table>
+</form>
+<script>
+(function () {
+  var inputs = ["count", "weight", "loss", "hyd", "salt", "oil", "sugar", "yeast"];
+  function num(k) { var v = parseFloat(document.getElementById("bp-" + k).value); return isNaN(v) || v < 0 ? 0 : v; }
+  function set(k, v, d) { document.getElementById("bp-o-" + k).textContent = v.toFixed(d); }
+  function update() {
+    var total = num("count") * num("weight") * (1 + num("loss") / 100);
+    var sum = num("hyd") + num("salt") + num("oil") + num("sugar") + num("yeast");
+    var flour = total / (1 + sum / 100);
+    set("flour", flour, 1);
+    set("water", flour * num("hyd") / 100, 1);
+    set("salt", flour * num("salt") / 100, 1);
+    set("oil", flour * num("oil") / 100, 1);
+    set("sugar", flour * num("sugar") / 100, 1);
+    set("yeast", flour * num("yeast") / 100, 2);
+    set("total", total, 1);
+  }
+  inputs.forEach(function (k) {
+    document.getElementById("bp-" + k).addEventListener("input", update);
+  });
+  update();
+})();
+</script>
+</div>
+<h2>Typical percentages by style</h2>
+<p>Starting values from Pizza Calc's style presets. Hydration ranges are the span the app treats as normal for the style.</p>
+<div class="table"><table><thead><tr><th>Style</th><th>Hydration</th><th>Salt</th><th>Oil</th><th>Sugar</th></tr></thead><tbody><tr><td>Neapolitan</td><td>60 % (58–65)</td><td>2.8 %</td><td>0</td><td>0</td></tr><tr><td>New York</td><td>62 % (58–65)</td><td>2.2 %</td><td>2 %</td><td>1.5 %</td></tr><tr><td>Roman</td><td>55 % (50–60)</td><td>2.2 %</td><td>4 %</td><td>0.5 %</td></tr><tr><td>Detroit</td><td>75 % (70–78)</td><td>2.2 %</td><td>1 %</td><td>0</td></tr><tr><td>Focaccia</td><td>80 % (75–90)</td><td>2.2 %</td><td>4 %</td><td>1 %</td></tr><tr><td>Deep dish</td><td>50 % (45–55)</td><td>1.8 %</td><td>15 %</td><td>2 %</td></tr></tbody></table></div>
+<p>These are starting points, not rules. Flour strength changes how much water the dough takes.</p>
+<h2>Common mistakes</h2>
+<ul><li><strong>Using total dough weight as 100 %.</strong> Percentages are of the flour, not the dough.</li><li><strong>Forgetting yeast in the sum.</strong> It is small but it is part of the total.</li><li><strong>Mixing yeast types.</strong> Fresh, active dry and instant yeast need different amounts for the same effect. State which one your percentage is for.</li><li><strong>Ignoring preferments.</strong> If part of the flour sits in a poolish or biga, the final dough holds less flour and water. The totals stay the same.</li></ul>
+<h2>Use it in Pizza Calc</h2>
+<p>Pizza Calc does these steps for you. Pick one of 16 styles or start blank, then set hydration, salt, oil and sugar with sliders. Choose dough balls or pans, and set bowl loss. The totals panel lists grams of flour, water, salt, yeast or starter, oil and sugar. With a poolish, biga or starter, it splits the dough into the preferment and the final dough. Yeast is worked out from your fermentation schedule, and you can override it by hand.</p>
+<p>It works offline on Android and can save your recipes and back them up to a file.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Pizza Calc: Dough Calculator</b><p>Pizza dough in grams: 16 styles, yeast for any schedule, preferments.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.pizzacalc&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Pizza Calc: Dough Calculator</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
