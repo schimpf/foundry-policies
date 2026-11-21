@@ -1,62 +1,103 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GLP Mate: GLP-1-Tagebuch</title><meta name="description" content="Privates GLP-1-Tagebuch: Spritzen, Nebenwirkungen, Gewicht, Essen, Vorrat."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/glp1/de/"><link rel="alternate" hreflang="en" href="https://schimpf.github.io/foundry-policies/glp1/"><link rel="alternate" hreflang="de-DE" href="https://schimpf.github.io/foundry-policies/glp1/de/"><link rel="alternate" hreflang="es-ES" href="https://schimpf.github.io/foundry-policies/glp1/es/"><link rel="alternate" hreflang="x-default" href="https://schimpf.github.io/foundry-policies/glp1/"><meta property="og:type" content="website"><meta property="og:title" content="GLP Mate: GLP-1-Tagebuch"><meta property="og:description" content="Privates GLP-1-Tagebuch: Spritzen, Nebenwirkungen, Gewicht, Essen, Vorrat."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/glp1/de/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/glp1/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "GLP Mate: GLP-1-Tagebuch", "description": "Privates GLP-1-Tagebuch: Spritzen, Nebenwirkungen, Gewicht, Essen, Vorrat.", "operatingSystem": "Android", "applicationCategory": "Health & Fitness", "inLanguage": "de", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/glp1/de/", "image": "https://schimpf.github.io/foundry-policies/glp1/feature.png", "screenshot": ["https://schimpf.github.io/foundry-policies/glp1/screen-1.png", "https://schimpf.github.io/foundry-policies/glp1/screen-2.png", "https://schimpf.github.io/foundry-policies/glp1/screen-3.png", "https://schimpf.github.io/foundry-policies/glp1/screen-4.png", "https://schimpf.github.io/foundry-policies/glp1/screen-5.png"], "installUrl": "https://play.google.com/store/apps/details?id=es.schimpf.glp1"}</script><style>
-:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
-@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
-font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
-.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
-h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
-.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
-.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
-.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
-.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
-text-decoration:none;font-weight:600;margin:8px 0 16px}
-footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
-.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
-.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
-border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
-.apps small{display:block;color:var(--muted)}
-.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
-.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
-.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
-.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
-.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
-</style></head><body><main><header class="hero"><img src="../icon.png" alt="" width="96" height="96"><div><h1>GLP Mate: GLP-1-Tagebuch</h1><p class="tag">Privates GLP-1-Tagebuch: Spritzen, Nebenwirkungen, Gewicht, Essen, Vorrat.</p></div></header><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.glp1&amp;hl=de"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a><img class="feature" src="../feature.png" alt="GLP Mate: GLP-1-Tagebuch" width="1024" height="500"><div class="shots"><img src="../screen-1.png" alt="Screenshot 1" width="1080" height="2160" loading="lazy"><img src="../screen-2.png" alt="Screenshot 2" width="1080" height="2160" loading="lazy"><img src="../screen-3.png" alt="Screenshot 3" width="1080" height="2160" loading="lazy"><img src="../screen-4.png" alt="Screenshot 4" width="1080" height="2160" loading="lazy"><img src="../screen-5.png" alt="Screenshot 5" width="1080" height="2160" loading="lazy"></div><h2>Über die App</h2><p class="desc">GLP Mate ist ein privates Tagebuch für Menschen, die GLP-1-Medikamente wie Semaglutid, Tirzepatid oder Liraglutid nehmen, ob als Pen, Tablette oder Vial aus der Apotheke. Alles, was du einträgst, bleibt verschlüsselt auf deinem Handy. Kein Konto, keine Werbung, kein Tracking.
-
-SPRITZEN UND DOSEN
-Lege ein oder mehrere Medikamente an, jedes mit eigenem Rhythmus: wöchentlich, täglich oder alle paar Tage, zur Uhrzeit deiner Wahl. Trage jede Dosis mit Zeit, Menge in mg, Einstichstelle, Schmerz, Chargennummer und Notiz ein. Die App schlägt die nächste Einstichstelle nach deiner eigenen Reihenfolge vor. Ein Dosisplan kann aus der Fachinformation vorbefüllt werden; du bestätigst oder änderst ihn. GLP Mate empfiehlt nie eine Dosis.
-
-ERINNERUNGEN
-Eine Erinnerung, wenn eine Spritze fällig ist, mit Knöpfen zum Eintragen oder Verschieben. Optional: abendlicher Check-in, Wasser und Vorrat. Die Texte sind diskret und erscheinen nie auf dem Sperrbildschirm.
-
-TÄGLICHER CHECK-IN
-Bewerte Food Noise von 0 bis 10, dazu nach Wunsch Hunger, Sättigung, Stimmung, Energie, Schlaf und Stuhlgang. Erfasse 13 häufige Nebenwirkungen oder eigene, jeweils leicht, mittel oder stark. Bei starkem Erbrechen oder starken Bauchschmerzen zeigt die App einen deutlichen Hinweis, ärztliche Hilfe zu suchen.
-
-KÖRPER
-Gewicht mit 7-Tage-Durchschnitt, Körpermaße, BMI und ein Zielbereich.
-
-ESSEN UND WASSER
-Trage Mahlzeiten mit optionalem Eiweiß, Ballaststoffen und Kalorien ein, wiederhole Lieblingsmahlzeiten mit einem Tipp und setze Tagesziele für Eiweiß, Ballaststoffe, Wasser und Schritte.
-
-VORRAT
-Verwalte jeden Pen, jedes Vial und jede Packung. Eingetragene Dosen werden vom aktuellen Vorrat abgezogen, und du bekommst einen Hinweis, wenn der Vorrat knapp wird oder etwas bald abläuft.
-
-HEUTE UND AUSWERTUNG
-Heute zeigt deine nächste Spritze, eine Tagesliste und was demnächst ansteht. Die Auswertung zeigt dein Gewicht der letzten bis zu 3 Monate mit Dosiswechseln. Jedes Diagramm gibt es auch als Tabelle. Abzeichen gibt es für regelmäßiges Eintragen, nie für verlorene Kilos.
-
-HEALTH CONNECT
-Lies auf Wunsch Gewicht, Körperfett, Magermasse und Schritte aus Health Connect und speichere dort die Gewichte und das Wasser, die du in der App einträgst.
-
-FÜR DIE ARZTPRAXIS
-Erstelle einen übersichtlichen PDF-Bericht für einen beliebigen Zeitraum und teile ihn, wie du willst, oder exportiere alle Einträge als CSV.
-
-DATENSCHUTZ UND BACKUP
-Der Datenbankschlüssel ist durch den Android Keystore geschützt. Eine optionale App-Sperre nutzt Fingerabdruck, Gesicht oder Displaysperre. Erstelle eine verschlüsselte Sicherungsdatei mit deinem eigenen Passwort, sichere wöchentlich in einen Ordner deiner Wahl oder nachts in einen versteckten App-Ordner in deinem eigenen Google Drive, vorher auf dem Handy verschlüsselt. Keine Analyse, nichts geht an den Entwickler, und ein Knopf löscht alle Daten.
-
-PREMIUM (OPTIONAL, EINMALKAUF)
-Alles Eintragen, Erinnerungen, Backups und der Basis-Arztbericht sind kostenlos. Ein einmaliger In-App-Kauf ohne Abo schaltet frei: geschätzter Wirkstoffspiegel je Wirkstoff, Food Noise und Hunger nach Tagen seit der Spritze, eine Übersicht der Nebenwirkungen, Gewichtsdiagramme über 6 Monate und gesamt, verschlüsselte Fortschrittsfotos mit Vergleich nebeneinander und zusätzliche Berichtsseiten.
-
-Auf Deutsch, Englisch und Spanisch, mit metrischen oder imperialen Einheiten.
-
-GLP Mate ist ein persönliches Tagebuch und kein Medizinprodukt. Die App gibt keinen medizinischen Rat, stellt keine Diagnosen und empfiehlt keine Dosen. Schätzungen und Diagramme dienen nur zur Information. Halte dich immer an deine Ärztin oder deinen Arzt und an die Packungsbeilage.</p><footer><a href="../privacy/">Privacy policy</a> · <a href="../../">All apps</a> · <a href="mailto:apps@schimpf.es">Contact</a> · <a href="https://schimpf.github.io/foundry-policies/glp1/" hreflang="en">EN</a> · <a href="https://schimpf.github.io/foundry-policies/glp1/es/" hreflang="es">ES</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GLP Mate: GLP-1-Tagebuch</title><meta name="description" content="Privates GLP-1-Tagebuch: Spritzen, Nebenwirkungen, Gewicht, Essen, Vorrat."><meta name="theme-color" content="#5b4bd6"><meta name="author" content="Gerrit Schimpf"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/glp1/de/"><link rel="alternate" hreflang="en" href="https://schimpf.github.io/foundry-policies/glp1/"><link rel="alternate" hreflang="de-DE" href="https://schimpf.github.io/foundry-policies/glp1/de/"><link rel="alternate" hreflang="es-ES" href="https://schimpf.github.io/foundry-policies/glp1/es/"><link rel="alternate" hreflang="x-default" href="https://schimpf.github.io/foundry-policies/glp1/"><meta property="og:type" content="website"><meta property="og:site_name" content="Apps by Gerrit Schimpf"><meta property="og:locale" content="de_DE"><meta property="og:title" content="GLP Mate: GLP-1-Tagebuch"><meta property="og:description" content="Privates GLP-1-Tagebuch: Spritzen, Nebenwirkungen, Gewicht, Essen, Vorrat."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="GLP Mate: GLP-1-Tagebuch"><meta name="twitter:description" content="Privates GLP-1-Tagebuch: Spritzen, Nebenwirkungen, Gewicht, Essen, Vorrat."><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="es_ES"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/glp1/de/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/glp1/feature.png"><meta name="twitter:image" content="https://schimpf.github.io/foundry-policies/glp1/feature.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="500"><meta property="og:image:alt" content="GLP Mate: GLP-1-Tagebuch: Privates GLP-1-Tagebuch: Spritzen, Nebenwirkungen, Gewicht, Essen, Vorrat."><link rel="icon" href="../icon.png"><link rel="apple-touch-icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "GLP Mate: GLP-1-Tagebuch", "description": "Privates GLP-1-Tagebuch: Spritzen, Nebenwirkungen, Gewicht, Essen, Vorrat.", "operatingSystem": "Android", "applicationCategory": "Health & Fitness", "inLanguage": "de", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "publisher": {"@type": "Person", "name": "Gerrit Schimpf"}, "featureList": ["Spritzen und dosen", "Erinnerungen", "Täglicher check-in", "Körper", "Essen und wasser", "Vorrat", "Heute und auswertung", "Health connect", "Für die arztpraxis", "Datenschutz und backup", "Premium (OPTIONAL, EINMALKAUF)"], "url": "https://schimpf.github.io/foundry-policies/glp1/de/", "image": "https://schimpf.github.io/foundry-policies/glp1/feature.png", "screenshot": ["https://schimpf.github.io/foundry-policies/glp1/screen-1.png", "https://schimpf.github.io/foundry-policies/glp1/screen-2.png", "https://schimpf.github.io/foundry-policies/glp1/screen-3.png", "https://schimpf.github.io/foundry-policies/glp1/screen-4.png", "https://schimpf.github.io/foundry-policies/glp1/screen-5.png"], "installUrl": "https://play.google.com/store/apps/details?id=es.schimpf.glp1"}</script><style>
+:root{--bg:#0b0d0c;--bg2:#111413;--card:#161a19;--fg:#f2f4f3;--muted:#a1a8a4;--line:#252b29;--accent:#0f766e;--on:#fff;
+--hi:color-mix(in srgb,var(--accent) 55%,#fff);--soft:color-mix(in srgb,var(--accent) 18%,transparent);
+--frame:#050606;--edge:#2c3230;--shadow:0 40px 80px -30px rgba(0,0,0,.75)}
+@media (prefers-color-scheme:light){:root{--bg:#f7f7f5;--bg2:#eeefec;--card:#fff;--fg:#151816;--muted:#5a615d;--line:#e2e5e1;
+--hi:color-mix(in srgb,var(--accent) 80%,#000);--soft:color-mix(in srgb,var(--accent) 12%,transparent);
+--frame:#101312;--edge:#1f2422;--shadow:0 30px 60px -30px rgba(20,30,25,.45)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--hi)}img{max-width:100%;height:auto}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,5vw,3.6rem);overflow-wrap:break-word;font-weight:800}h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:750}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}@media (max-width:640px){.wrap{padding:0 16px}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--card);padding:8px 12px;z-index:9}.skip:focus{left:8px}
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 78%,transparent);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font-weight:700;min-width:0}
+.brand img{border-radius:9px;flex:none}.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.links{display:flex;gap:22px;margin-left:auto}.links a{color:var(--muted);text-decoration:none;font-size:.95rem}
+.links a:hover{color:var(--fg)}@media (max-width:760px){.links{display:none}.nav .btn{margin-left:auto}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on);padding:12px 22px;
+border-radius:999px;text-decoration:none;font-weight:650;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px var(--accent)}.nav .btn{padding:8px 16px;font-size:.9rem}
+.chip{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--soft);
+color:var(--hi);font-weight:600;font-size:.95rem}
+.band{padding:96px 0;position:relative}.band.alt{background:var(--bg2)}@media (max-width:640px){.band{padding:64px 0}}
+.eyebrow{display:block;color:var(--hi);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.lead{color:var(--muted);font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:640px}
+.hero{overflow:hidden;padding:72px 0 40px;background:
+radial-gradient(55% 60% at 78% 30%,color-mix(in srgb,var(--accent) 38%,transparent),transparent 70%),
+radial-gradient(40% 50% at 5% 100%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.hero .icon{border-radius:24px;box-shadow:0 20px 40px -18px var(--accent);margin-bottom:24px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.hero .actions .badge img{display:block;height:60px;width:auto}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr);text-align:center}.hero .lead{margin:0 auto}
+.hero .actions{justify-content:center}.hero .icon{margin:0 auto 20px}}
+.stack{display:flex;justify-content:center;align-items:flex-end;padding:20px 0 40px}
+.stack .phone{width:250px}.stack .phone:nth-child(2){width:280px;z-index:2}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(40px,30px)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-40px,30px)}
+@media (max-width:640px){.stack .phone{width:32vw;padding:6px;border-radius:26px}.stack .phone img{border-radius:21px}
+.stack .phone:nth-child(2){width:46vw}.stack .phone::before{top:12px;width:7px;height:7px;margin-left:-3.5px}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(9vw,4vw)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-9vw,4vw)}}
+.phone{position:relative;flex:none;margin:0;padding:9px;background:var(--frame);border-radius:42px;
+box-shadow:0 0 0 1.5px var(--edge),inset 0 0 0 1px #000,var(--shadow)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+background:#000;box-shadow:0 0 0 2px #111;z-index:1}
+.phone img{display:block;width:100%;height:auto;border-radius:33px;background:#000}
+.tablet{max-width:860px;margin:0 auto;padding:14px;background:var(--frame);border-radius:30px;
+box-shadow:0 0 0 1.5px var(--edge),var(--shadow)}.tablet img{display:block;width:100%;border-radius:18px}
+.tablets{display:grid;gap:32px}
+.gallery{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px max(24px,calc(50vw - 576px)) 40px;
+scrollbar-width:thin}.gallery figure{margin:0;flex:none;width:240px;scroll-snap-align:center;text-align:center}
+.gallery figcaption{margin-top:18px;color:var(--muted);font-size:.95rem;font-weight:500}
+@media (max-width:640px){.gallery{gap:20px;padding:16px 16px 32px}.gallery figure{width:200px}}
+.head{max-width:720px;margin-bottom:48px}.center{text-align:center;margin-left:auto;margin-right:auto}
+.about p{max-width:720px;color:var(--muted);font-size:1.1rem}
+.features{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.fcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;transition:transform .25s,border-color .25s}
+.fcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.num{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--soft);color:var(--hi);
+font-weight:800;margin-bottom:18px}.fcard p{color:var(--muted);margin:0 0 12px}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:9px}.checks li{position:relative;padding-left:28px;color:var(--muted);font-size:.97rem}
+.checks li::before{content:"";position:absolute;left:0;top:.42em;width:16px;height:16px;border-radius:50%;background:var(--soft);
+box-shadow:inset 0 0 0 1.5px var(--hi)}
+.checks li::after{content:"";position:absolute;left:5.5px;top:calc(.42em + 4px);width:4px;height:7px;border:solid var(--hi);
+border-width:0 2px 2px 0;transform:rotate(45deg)}
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.cards li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:transform .2s,border-color .2s}
+.cards li:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.cards a{color:var(--fg);font-weight:700;text-decoration:none;font-size:1.08rem}.cards a::after{content:"";position:absolute;inset:0}
+.cards small{display:block;color:var(--muted);margin-top:6px;font-size:.93rem}
+.apps li{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--card)),var(--card) 60%)}
+.apps img{border-radius:14px;flex:none}.apps small{margin-top:2px}
+.cta-band{border-radius:32px;padding:64px 32px;text-align:center;border:1px solid var(--line);background:
+radial-gradient(70% 90% at 50% 0%,color-mix(in srgb,var(--accent) 35%,transparent),transparent 70%),var(--card)}
+.cta-band img.icon{border-radius:22px;margin-bottom:20px}.cta-band .lead{margin:0 auto 28px}.cta-band .badge img{height:60px;width:auto}
+.foot{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:.92rem}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}.foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+.foot a{color:var(--muted)}.foot a:hover{color:var(--fg)}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 20px;font-size:.92rem;color:var(--muted)}
+.crumbs li+li::before{content:"›";margin-right:6px}.crumbs a{color:var(--muted)}
+.ghero{padding:64px 0 32px;background:radial-gradient(60% 80% at 85% 0%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%)}
+.ghero h1{font-size:clamp(2rem,4.5vw,3.2rem);max-width:860px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start;padding-bottom:96px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+.guide{max-width:740px;font-size:1.06rem}.guide h2{font-size:1.7rem;margin-top:1.8em}.guide h3{margin-top:1.5em}
+.guide li{margin:.35em 0}.guide code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.9em}
+.table{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.96rem}th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:var(--shadow)}
+.calc input,.calc select,.calc button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
+.cta{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
+.cta .phone{width:170px;margin:0 auto 20px}.cta img.icon{border-radius:14px}.cta p{color:var(--muted);font-size:.95rem;margin:6px 0 16px}
+.cta .badge img{height:52px;width:auto;margin:12px auto 0;display:block}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:root{--accent:#5b4bd6;--on:#ffffff}</style></head><body><a class="skip" href="#main">Zum Inhalt</a><header class="nav"><div class="wrap"><a class="brand" href="./"><img src="../icon.png" alt="" width="32" height="32"><span>GLP Mate: GLP-1-Tagebuch</span></a><nav class="links" aria-label="Sections"><a href="#screens">Screenshots</a><a href="#features">Funktionen</a></nav><a class="btn" href="https://play.google.com/store/apps/details?id=es.schimpf.glp1&amp;hl=de">App holen</a></div></header><main id="main"><section class="hero"><div class="wrap"><div><img class="icon" src="../icon.png" alt="GLP Mate: GLP-1-Tagebuch icon" width="96" height="96" fetchpriority="high"><h1>GLP Mate: GLP-1-Tagebuch</h1><p class="lead">Privates GLP-1-Tagebuch: Spritzen, Nebenwirkungen, Gewicht, Essen, Vorrat.</p><div class="actions"><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.glp1&amp;hl=de"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></div><div class="stack" aria-hidden="true"><div class="phone"><img src="../screen-2.png" alt="GLP Mate: GLP-1-Tagebuch screenshot 2" width="1080" height="2160" loading="lazy" decoding="async"></div><div class="phone"><img src="../screen-1.png" alt="GLP Mate: GLP-1-Tagebuch screenshot 1" width="1080" height="2160" fetchpriority="high" decoding="async"></div><div class="phone"><img src="../screen-3.png" alt="GLP Mate: GLP-1-Tagebuch screenshot 3" width="1080" height="2160" loading="lazy" decoding="async"></div></div></div></section><section class="band alt" id="screens"><div class="wrap head center"><span class="eyebrow">Screenshots</span><h2>Ein genauerer Blick</h2></div><div class="gallery"><figure><div class="phone"><img src="../screen-1.png" alt="GLP Mate: GLP-1-Tagebuch screenshot 1" width="1080" height="2160" loading="lazy" decoding="async"></div><figcaption>GLP Mate: GLP-1-Tagebuch screenshot 1</figcaption></figure><figure><div class="phone"><img src="../screen-2.png" alt="GLP Mate: GLP-1-Tagebuch screenshot 2" width="1080" height="2160" loading="lazy" decoding="async"></div><figcaption>GLP Mate: GLP-1-Tagebuch screenshot 2</figcaption></figure><figure><div class="phone"><img src="../screen-3.png" alt="GLP Mate: GLP-1-Tagebuch screenshot 3" width="1080" height="2160" loading="lazy" decoding="async"></div><figcaption>GLP Mate: GLP-1-Tagebuch screenshot 3</figcaption></figure><figure><div class="phone"><img src="../screen-4.png" alt="GLP Mate: GLP-1-Tagebuch screenshot 4" width="1080" height="2160" loading="lazy" decoding="async"></div><figcaption>GLP Mate: GLP-1-Tagebuch screenshot 4</figcaption></figure><figure><div class="phone"><img src="../screen-5.png" alt="GLP Mate: GLP-1-Tagebuch screenshot 5" width="1080" height="2160" loading="lazy" decoding="async"></div><figcaption>GLP Mate: GLP-1-Tagebuch screenshot 5</figcaption></figure></div></section><section class="band" id="features"><div class="wrap"><div class="head about"><span class="eyebrow">Funktionen</span><h2>Was sie kann</h2><p>GLP Mate ist ein privates Tagebuch für Menschen, die GLP-1-Medikamente wie Semaglutid, Tirzepatid oder Liraglutid nehmen, ob als Pen, Tablette oder Vial aus der Apotheke. Alles, was du einträgst, bleibt verschlüsselt auf deinem Handy. Kein Konto, keine Werbung, kein Tracking.</p></div><div class="features"><article class="fcard"><span class="num">01</span><h3>Spritzen und dosen</h3><p>Lege ein oder mehrere Medikamente an, jedes mit eigenem Rhythmus: wöchentlich, täglich oder alle paar Tage, zur Uhrzeit deiner Wahl. Trage jede Dosis mit Zeit, Menge in mg, Einstichstelle, Schmerz, Chargennummer und Notiz ein. Die App schlägt die nächste Einstichstelle nach deiner eigenen Reihenfolge vor. Ein Dosisplan kann aus der Fachinformation vorbefüllt werden; du bestätigst oder änderst ihn. GLP Mate empfiehlt nie eine Dosis.</p></article><article class="fcard"><span class="num">02</span><h3>Erinnerungen</h3><p>Eine Erinnerung, wenn eine Spritze fällig ist, mit Knöpfen zum Eintragen oder Verschieben. Optional: abendlicher Check-in, Wasser und Vorrat. Die Texte sind diskret und erscheinen nie auf dem Sperrbildschirm.</p></article><article class="fcard"><span class="num">03</span><h3>Täglicher check-in</h3><p>Bewerte Food Noise von 0 bis 10, dazu nach Wunsch Hunger, Sättigung, Stimmung, Energie, Schlaf und Stuhlgang. Erfasse 13 häufige Nebenwirkungen oder eigene, jeweils leicht, mittel oder stark. Bei starkem Erbrechen oder starken Bauchschmerzen zeigt die App einen deutlichen Hinweis, ärztliche Hilfe zu suchen.</p></article><article class="fcard"><span class="num">04</span><h3>Körper</h3><p>Gewicht mit 7-Tage-Durchschnitt, Körpermaße, BMI und ein Zielbereich.</p></article><article class="fcard"><span class="num">05</span><h3>Essen und wasser</h3><p>Trage Mahlzeiten mit optionalem Eiweiß, Ballaststoffen und Kalorien ein, wiederhole Lieblingsmahlzeiten mit einem Tipp und setze Tagesziele für Eiweiß, Ballaststoffe, Wasser und Schritte.</p></article><article class="fcard"><span class="num">06</span><h3>Vorrat</h3><p>Verwalte jeden Pen, jedes Vial und jede Packung. Eingetragene Dosen werden vom aktuellen Vorrat abgezogen, und du bekommst einen Hinweis, wenn der Vorrat knapp wird oder etwas bald abläuft.</p></article><article class="fcard"><span class="num">07</span><h3>Heute und auswertung</h3><p>Heute zeigt deine nächste Spritze, eine Tagesliste und was demnächst ansteht. Die Auswertung zeigt dein Gewicht der letzten bis zu 3 Monate mit Dosiswechseln. Jedes Diagramm gibt es auch als Tabelle. Abzeichen gibt es für regelmäßiges Eintragen, nie für verlorene Kilos.</p></article><article class="fcard"><span class="num">08</span><h3>Health connect</h3><p>Lies auf Wunsch Gewicht, Körperfett, Magermasse und Schritte aus Health Connect und speichere dort die Gewichte und das Wasser, die du in der App einträgst.</p></article><article class="fcard"><span class="num">09</span><h3>Für die arztpraxis</h3><p>Erstelle einen übersichtlichen PDF-Bericht für einen beliebigen Zeitraum und teile ihn, wie du willst, oder exportiere alle Einträge als CSV.</p></article><article class="fcard"><span class="num">10</span><h3>Datenschutz und backup</h3><p>Der Datenbankschlüssel ist durch den Android Keystore geschützt. Eine optionale App-Sperre nutzt Fingerabdruck, Gesicht oder Displaysperre. Erstelle eine verschlüsselte Sicherungsdatei mit deinem eigenen Passwort, sichere wöchentlich in einen Ordner deiner Wahl oder nachts in einen versteckten App-Ordner in deinem eigenen Google Drive, vorher auf dem Handy verschlüsselt. Keine Analyse, nichts geht an den Entwickler, und ein Knopf löscht alle Daten.</p></article><article class="fcard"><span class="num">11</span><h3>Premium (OPTIONAL, EINMALKAUF)</h3><p>Alles Eintragen, Erinnerungen, Backups und der Basis-Arztbericht sind kostenlos. Ein einmaliger In-App-Kauf ohne Abo schaltet frei: geschätzter Wirkstoffspiegel je Wirkstoff, Food Noise und Hunger nach Tagen seit der Spritze, eine Übersicht der Nebenwirkungen, Gewichtsdiagramme über 6 Monate und gesamt, verschlüsselte Fortschrittsfotos mit Vergleich nebeneinander und zusätzliche Berichtsseiten.</p><p>Auf Deutsch, Englisch und Spanisch, mit metrischen oder imperialen Einheiten.</p><p>GLP Mate ist ein persönliches Tagebuch und kein Medizinprodukt. Die App gibt keinen medizinischen Rat, stellt keine Diagnosen und empfiehlt keine Dosen. Schätzungen und Diagramme dienen nur zur Information. Halte dich immer an deine Ärztin oder deinen Arzt und an die Packungsbeilage.</p></article></div></div></section><section class="band"><div class="wrap"><div class="cta-band"><img class="icon" src="../icon.png" alt="" width="80" height="80" loading="lazy"><h2>GLP Mate: GLP-1-Tagebuch</h2><p class="lead">Privates GLP-1-Tagebuch: Spritzen, Nebenwirkungen, Gewicht, Essen, Vorrat.</p><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.glp1&amp;hl=de"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></div></section></main><footer class="foot"><div class="wrap"><nav aria-label="Footer"><a href="../privacy/">Datenschutz</a><a href="../../">Alle Apps</a><a href="mailto:apps@schimpf.es">Kontakt</a><a href="https://schimpf.github.io/foundry-policies/glp1/" hreflang="en">EN</a><a href="https://schimpf.github.io/foundry-policies/glp1/es/" hreflang="es">ES</a></nav><span>© 2026 Gerrit Schimpf</span></div></footer></body></html>
