@@ -95,7 +95,7 @@ table{border-collapse:collapse;width:100%;font-size:.96rem}th,td{padding:10px 14
 th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
 .calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:var(--shadow)}
 .calc input,.calc select,.calc button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
-.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
+.calc .ch{font-weight:700;font-size:1.1rem;margin:0 0 12px}.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
 .cta{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
 .cta .phone{width:170px;margin:0 auto 20px}.cta img.icon{border-radius:14px}.cta p{color:var(--muted);font-size:.95rem;margin:6px 0 16px}
 .cta .badge img{height:52px;width:auto;margin:12px auto 0;display:block}
@@ -106,7 +106,7 @@ th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 :root{--accent:#3a6a2a;--on:#ffffff}</style></head><body><a class="skip" href="#main">Ir al contenido</a><header class="nav"><div class="wrap"><a class="brand" href="../"><img src="../../icon.png" alt="" width="32" height="32"><span>Caja del Club de Huertos</span></a><a class="btn" href="https://play.google.com/store/apps/details?id=es.schimpf.germanallotmentclubledger&amp;hl=es">Obtener la app</a></div></header><main id="main"><section class="ghero"><div class="wrap"><ol class="crumbs"><li><a href="../../../">Todas las apps</a></li><li><a href="../">Caja del Club de Huertos</a></li><li>Renta de un huerto de ocio: cálculo por m² y por meses</li></ol><h1>Renta de un huerto de ocio: cálculo por m² y por meses</h1><p class="lead">Cómo calcular la renta (Pachtzins) de un huerto de ocio por m² y repartirla por meses si cambia el arrendatario. Con un ejemplo resuelto.</p></div></section><div class="wrap layout"><article class="guide"><p>Si eres el tesorero (Kassenwart) de un club de huertos de ocio alemán (Kleingartenverein), cada año cobras la renta (Pachtzins) de cada parcela. Esta página explica la fórmula, un ejemplo con números y cómo repartir la renta cuando una parcela cambia de arrendatario durante el año.</p>
 <div class="calc"><form id="rent-split">
-  <h2>Calculadora de reparto de la renta</h2>
+  <p class="ch">Calculadora de reparto de la renta</p>
   <p>
     <label>Superficie de la parcela en m² <input id="rs-area" type="text" inputmode="decimal" value="340"></label>
   </p>
@@ -177,7 +177,7 @@ th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
 <div class="table"><table><thead><tr><th>Arrendatario</th><th>Meses</th><th>Cálculo</th><th>Parte</th></tr></thead><tbody><tr><td>A</td><td>5</td><td>116,008 € × 5 ÷ 12 = 48,337 €</td><td>48,34 €</td></tr><tr><td>B</td><td>7</td><td>116,01 € − 48,34 €</td><td>67,67 €</td></tr><tr><td>Total</td><td>12</td><td></td><td>116,01 €</td></tr></tbody></table></div>
 <p>Si redondearas la parte de B por separado, 116,008 € × 7 ÷ 12 = 67,671 €, también saldrían 67,67 €. En otros casos los dos métodos difieren en un céntimo. Dar el resto al último arrendatario hace que el total de la parcela sea igual al importe anual, y tus cuentas cuadran.</p>
 <h2>Qué no se reparte por meses</h2>
-<ul><li><strong>Las cuotas de socio</strong> pertenecen al socio, no a la parcela. Se cobran por socio y año, completas.</li><li><strong>El agua y la electricidad</strong> dependen de las lecturas de los contadores. Cuenta el consumo entre dos lecturas. Mira la página sobre el <a href="allotment-water-meter-cost-calculation">coste del agua por contador</a>.</li></ul>
+<ul><li><strong>Las cuotas de socio</strong> pertenecen al socio, no a la parcela. Se cobran por socio y año, completas.</li><li><strong>El agua y la electricidad</strong> dependen de las lecturas de los contadores. Cuenta el consumo entre dos lecturas. Mira la página sobre el <a href="../allotment-water-meter-cost-calculation/">coste del agua por contador</a>.</li></ul>
 <h2>Errores frecuentes</h2>
 <ul><li>Redondear la tarifa a dos decimales antes de multiplicar. En un recinto grande se acumula hasta un error visible.</li><li>Repartir por días en vez de por meses. La mayoría de los clubes cobra por meses completos. Fija la regla en los estatutos para que ambos arrendatarios la conozcan.</li><li>Cobrar el mismo mes a los dos arrendatarios, o a ninguno. El mes de la entrega debe pertenecer a uno solo.</li></ul>
 <h2>En la app</h2>
