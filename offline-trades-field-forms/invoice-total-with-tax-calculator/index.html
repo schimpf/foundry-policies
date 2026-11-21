@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Invoice Total With Tax: Formula and Calculator</title><meta name="description" content="How to work out an invoice subtotal, tax and total from line items, with a worked example, rounding rules and a small calculator."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-trades-field-forms/invoice-total-with-tax-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Invoice Total With Tax: Formula and Calculator"><meta property="og:description" content="How to work out an invoice subtotal, tax and total from line items, with a worked example, rounding rules and a small calculator."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-trades-field-forms/invoice-total-with-tax-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-trades-field-forms/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Invoice Total With Tax: Formula and Calculator", "description": "How to work out an invoice subtotal, tax and total from line items, with a worked example, rounding rules and a small calculator.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-trades-field-forms/invoice-total-with-tax-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Field Forms: Job Sheets &amp; PDFs</a></p><h1>Invoice Total With Tax: Formula and Calculator</h1><article class="guide"><p>Most invoice mistakes are small arithmetic slips: tax added to the wrong figure, a discount applied twice, or a rounding penny that makes the total differ from the client's own sum. This page shows the exact steps, a worked example and a calculator you can use right here.</p>
+<h2>The formula</h2>
+<p>An invoice with one tax rate follows three steps:</p>
+<ol><li><strong>Line total</strong> = quantity × unit price, for each line.</li><li><strong>Subtotal</strong> = the sum of all line totals.</li><li><strong>Tax</strong> = subtotal × tax rate. <strong>Total</strong> = subtotal + tax.</li></ol>
+<p>Prices on the lines are entered <strong>without tax</strong>. Tax is added once, at the bottom, on the subtotal. That keeps the invoice easy to check: one rate, one tax figure.</p>
+<h2>Worked example</h2>
+<p>A heating engineer bills labor, a part and a goodwill discount. The tax rate is 20%.</p>
+<div class="table"><table><thead><tr><th>Description</th><th>Qty</th><th>Unit price</th><th>Line total</th></tr></thead><tbody><tr><td>Labor (hours)</td><td>2.5</td><td>48.00</td><td>120.00</td></tr><tr><td>Pump</td><td>1</td><td>86.40</td><td>86.40</td></tr><tr><td>Discount</td><td>1</td><td>-20.00</td><td>-20.00</td></tr></tbody></table></div>
+<ul><li>Subtotal: 120.00 + 86.40 − 20.00 = <strong>186.40</strong></li><li>Tax at 20%: 186.40 × 0.20 = <strong>37.28</strong></li><li>Total: 186.40 + 37.28 = <strong>223.68</strong></li></ul>
+<p>The discount is simply a line with a negative price. Because it sits inside the subtotal, tax is charged on the reduced amount. A deposit already paid works the same way: enter it as a negative line.</p>
+<h2>Calculator</h2>
+<div class="calc"><form id="invcalc" onsubmit="return false">
+  <table>
+    <thead><tr><th>Description</th><th>Qty</th><th>Unit price</th><th>Line total</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><input type="text" aria-label="Description line 1" value="Labor"></td>
+        <td><input type="text" inputmode="decimal" aria-label="Quantity line 1" value="2.5" data-q></td>
+        <td><input type="text" inputmode="decimal" aria-label="Unit price line 1" value="48.00" data-p></td>
+        <td data-l></td>
+      </tr>
+      <tr>
+        <td><input type="text" aria-label="Description line 2" value="Part"></td>
+        <td><input type="text" inputmode="decimal" aria-label="Quantity line 2" value="1" data-q></td>
+        <td><input type="text" inputmode="decimal" aria-label="Unit price line 2" value="86.40" data-p></td>
+        <td data-l></td>
+      </tr>
+      <tr>
+        <td><input type="text" aria-label="Description line 3" value="Discount"></td>
+        <td><input type="text" inputmode="decimal" aria-label="Quantity line 3" value="1" data-q></td>
+        <td><input type="text" inputmode="decimal" aria-label="Unit price line 3" value="-20.00" data-p></td>
+        <td data-l></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <label>Tax rate (%) <input type="text" inputmode="decimal" id="ic-rate" value="20"></label>
+    <button type="button" id="ic-go">Calculate</button>
+  </p>
+  <p>Subtotal: <strong id="ic-sub">0.00</strong></p>
+  <p>Tax: <strong id="ic-tax">0.00</strong></p>
+  <p>Total: <strong id="ic-tot">0.00</strong></p>
+  <p id="ic-msg" role="status"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("invcalc");
+  // Text to an integer scaled by 10^scale, rounded half up (away from zero). Null if invalid.
+  function parseScaled(text, scale) {
+    var raw = String(text).trim().replace(/ /g, "");
+    var comma = raw.indexOf(".") === -1 && (raw.match(/,/g) || []).length === 1 && raw.split(",")[1].length <= 2;
+    var s = comma ? raw.replace(",", ".") : raw.replace(/,/g, "");
+    if (!/^-?\d{0,15}(\.\d*)?$/.test(s) || !/\d/.test(s)) return null;
+    var neg = s.charAt(0) === "-";
+    if (neg) s = s.slice(1);
+    var parts = s.split(".");
+    var frac = (parts[1] || "");
+    var whole = parts[0] || "0";
+    var padded = (frac + "000000").slice(0, scale);
+    var rest = frac.slice(scale);
+    var n = parseInt(whole + padded, 10);
+    if (rest.length && rest.charAt(0) >= "5") n += 1;
+    return neg ? -n : n;
+  }
+  // n / d rounded half up, away from zero for negatives.
+  function divRound(n, d) {
+    var sign = n < 0 ? -1 : 1;
+    return sign * Math.floor((Math.abs(n) * 2 + d) / (2 * d));
+  }
+  function fmt(minor) {
+    var neg = minor < 0;
+    var a = Math.abs(minor);
+    var s = Math.floor(a / 100) + "." + ("0" + (a % 100)).slice(-2);
+    return (neg ? "-" : "") + s;
+  }
+  function run() {
+    var msg = document.getElementById("ic-msg");
+    msg.textContent = "";
+    var qs = form.querySelectorAll("[data-q]");
+    var ps = form.querySelectorAll("[data-p]");
+    var ls = form.querySelectorAll("[data-l]");
+    var subtotal = 0;
+    var ok = true;
+    for (var i = 0; i < qs.length; i++) {
+      var qMilli = parseScaled(qs[i].value, 3);
+      var pMinor = parseScaled(ps[i].value, 2);
+      if (qMilli === null || pMinor === null) {
+        ls[i].textContent = "-";
+        if (qs[i].value.trim() !== "" || ps[i].value.trim() !== "") ok = false;
+        continue;
+      }
+      var line = divRound(qMilli * pMinor, 1000);
+      ls[i].textContent = fmt(line);
+      subtotal += line;
+    }
+    var bp = parseScaled(document.getElementById("ic-rate").value, 2);
+    if (bp === null) { ok = false; bp = 0; }
+    var tax = divRound(subtotal * bp, 10000);
+    document.getElementById("ic-sub").textContent = fmt(subtotal);
+    document.getElementById("ic-tax").textContent = fmt(tax);
+    document.getElementById("ic-tot").textContent = fmt(subtotal + tax);
+    if (!ok) msg.textContent = "Check the numbers: use digits and one decimal point.";
+  }
+  document.getElementById("ic-go").addEventListener("click", run);
+  form.addEventListener("input", run);
+  run();
+})();
+</script>
+</div>
+<h2>Rounding rules</h2>
+<p>Money has no fractions of a cent or penny, so every step rounds to the smallest currency unit. The app rounds <strong>half up</strong>: a value ending in exactly half a unit goes away from zero.</p>
+<ul><li>Rounding happens on each line total, then once more on the tax.</li><li>Example: 1.5 × 3.33 = 4.995, which rounds to <strong>5.00</strong>.</li><li>Example: tax on a subtotal of 10.03 at 17.5% is 1.75525, which rounds to <strong>1.76</strong>.</li></ul>
+<p>The app keeps all amounts as whole minor units (cents or pence) and never uses floating point numbers, so the result is the same every time. Rounding the tax once on the subtotal, rather than per line, avoids a drift between the lines and the total.</p>
+<p>Some currencies, such as the Japanese yen, have no minor unit. The app reads the number of decimal places from the currency code, so those amounts round to whole units.</p>
+<h2>Common mistakes</h2>
+<ul><li><strong>Tax on tax.</strong> Do not add tax to prices that already include it. Enter prices without tax and let the total add it.</li><li><strong>Discount after tax.</strong> If you subtract a discount from the total instead of the subtotal, the client is charged tax on the discount.</li><li><strong>Mixed rates.</strong> If part of the job is taxed at a different rate, split it into two invoices, or check with your accountant how to show it. The app uses one rate per document.</li><li><strong>Quantity in minutes.</strong> Use hours as decimals: 90 minutes is 1.5, 20 minutes is 0.333.</li></ul>
+<h2>Which tax rate to use</h2>
+<p>The rate depends on where you work and what you sell. Look it up with your tax authority, for example HMRC in the UK or your state revenue department in the US. This page does not state a rate for any country. The 20% above is an example only.</p>
+<h2>Do it on site with Offline Trades Field Forms</h2>
+<p>In the Android app, <strong>Offline Trades Field Forms</strong>, you add line items with description, quantity and unit price. The app does the sums above, adds tax at the rate you set once in settings, and numbers the document automatically (INV-0001, INV-0002 and so on, with a prefix you can change).</p>
+<ul><li>Set a default tax rate once and change it per document if needed.</li><li>Enter discounts and deposits as negative lines.</li><li>Quotes convert to an invoice in one tap after the client signs on the screen.</li><li>Invoices get a due date, a paid toggle and an overdue marker.</li><li>Everything works offline and the invoice leaves your phone as a PDF through the share sheet.</li></ul>
+<p>Install the app from Google Play to build the invoice where the work happens, instead of at the kitchen table that evening.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Field Forms: Job Sheets &amp; PDFs</b><p>Job sheets, checklists, quotes and invoices with photos and signatures as PDFs</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.offlinetradesfieldforms&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Field Forms: Job Sheets &amp; PDFs</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
