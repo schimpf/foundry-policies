@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fórmula de Hazen-Williams para la pérdida de carga</title><meta name="description" content="Fórmula de Hazen-Williams para la pérdida de carga en tuberías de agua, con valores C del cobre y el PEX, conversión a kPa/m y un ejemplo."><meta name="theme-color" content="#0b5cad"><meta name="author" content="Gerrit Schimpf"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://apps.schimpf.es/offline-plumbing-pipe-sizing/es/hazen-williams-friction-loss-formula/"><link rel="alternate" hreflang="en" href="https://apps.schimpf.es/offline-plumbing-pipe-sizing/hazen-williams-friction-loss-formula/"><link rel="alternate" hreflang="de-DE" href="https://apps.schimpf.es/offline-plumbing-pipe-sizing/de/hazen-williams-friction-loss-formula/"><link rel="alternate" hreflang="es-ES" href="https://apps.schimpf.es/offline-plumbing-pipe-sizing/es/hazen-williams-friction-loss-formula/"><link rel="alternate" hreflang="x-default" href="https://apps.schimpf.es/offline-plumbing-pipe-sizing/hazen-williams-friction-loss-formula/"><meta property="og:type" content="website"><meta property="og:site_name" content="Apps by Gerrit Schimpf"><meta property="og:locale" content="es_ES"><meta property="og:title" content="Fórmula de Hazen-Williams para la pérdida de carga"><meta property="og:description" content="Fórmula de Hazen-Williams para la pérdida de carga en tuberías de agua, con valores C del cobre y el PEX, conversión a kPa/m y un ejemplo."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Fórmula de Hazen-Williams para la pérdida de carga"><meta name="twitter:description" content="Fórmula de Hazen-Williams para la pérdida de carga en tuberías de agua, con valores C del cobre y el PEX, conversión a kPa/m y un ejemplo."><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:url" content="https://apps.schimpf.es/offline-plumbing-pipe-sizing/es/hazen-williams-friction-loss-formula/"><meta property="og:image" content="https://apps.schimpf.es/offline-plumbing-pipe-sizing/feature.png"><meta name="twitter:image" content="https://apps.schimpf.es/offline-plumbing-pipe-sizing/feature.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="500"><meta property="og:image:alt" content="Dimensionar tuberías IPC y UPC"><link rel="icon" href="../../icon.png"><link rel="apple-touch-icon" href="../../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Fórmula de Hazen-Williams para la pérdida de carga", "description": "Fórmula de Hazen-Williams para la pérdida de carga en tuberías de agua, con valores C del cobre y el PEX, conversión a kPa/m y un ejemplo.", "datePublished": "2026-11-21", "dateModified": "2026-11-21", "inLanguage": "es", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "publisher": {"@type": "Person", "name": "Gerrit Schimpf"}, "about": {"@type": "MobileApplication", "name": "Dimensionar tuberías IPC y UPC", "operatingSystem": "Android", "url": "https://apps.schimpf.es/offline-plumbing-pipe-sizing/es/"}, "url": "https://apps.schimpf.es/offline-plumbing-pipe-sizing/es/hazen-williams-friction-loss-formula/", "mainEntityOfPage": "https://apps.schimpf.es/offline-plumbing-pipe-sizing/es/hazen-williams-friction-loss-formula/", "image": "https://apps.schimpf.es/offline-plumbing-pipe-sizing/feature.png"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Todas las apps", "item": "https://apps.schimpf.es/"}, {"@type": "ListItem", "position": 2, "name": "Dimensionar tuberías IPC y UPC", "item": "https://apps.schimpf.es/offline-plumbing-pipe-sizing/es/"}, {"@type": "ListItem", "position": 3, "name": "Fórmula de Hazen-Williams para la pérdida de carga", "item": "https://apps.schimpf.es/offline-plumbing-pipe-sizing/es/hazen-williams-friction-loss-formula/"}]}</script><style>
+:root{--bg:#0b0d0c;--bg2:#111413;--card:#161a19;--fg:#f2f4f3;--muted:#a1a8a4;--line:#252b29;--accent:#0f766e;--on:#fff;
+--hi:color-mix(in srgb,var(--accent) 55%,#fff);--soft:color-mix(in srgb,var(--accent) 18%,transparent);
+--frame:#050606;--edge:#2c3230;--shadow:0 40px 80px -30px rgba(0,0,0,.75)}
+@media (prefers-color-scheme:light){:root{--bg:#f7f7f5;--bg2:#eeefec;--card:#fff;--fg:#151816;--muted:#5a615d;--line:#e2e5e1;
+--hi:color-mix(in srgb,var(--accent) 80%,#000);--soft:color-mix(in srgb,var(--accent) 12%,transparent);
+--frame:#101312;--edge:#1f2422;--shadow:0 30px 60px -30px rgba(20,30,25,.45)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--hi)}img{max-width:100%;height:auto}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,5vw,3.6rem);overflow-wrap:break-word;font-weight:800}h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:750}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}@media (max-width:640px){.wrap{padding:0 16px}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--card);padding:8px 12px;z-index:9}.skip:focus{left:8px}
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 78%,transparent);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font-weight:700;min-width:0}
+.brand img{border-radius:9px;flex:none}.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.links{display:flex;gap:22px;margin-left:auto}.links a{color:var(--muted);text-decoration:none;font-size:.95rem}
+.links a:hover{color:var(--fg)}@media (max-width:760px){.links{display:none}.nav .btn{margin-left:auto}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on);padding:12px 22px;
+border-radius:999px;text-decoration:none;font-weight:650;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px var(--accent)}.nav .btn{padding:8px 16px;font-size:.9rem}
+.chip{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--soft);
+color:var(--hi);font-weight:600;font-size:.95rem}
+.band{padding:96px 0;position:relative}.band.alt{background:var(--bg2)}@media (max-width:640px){.band{padding:64px 0}}
+.eyebrow{display:block;color:var(--hi);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.lead{color:var(--muted);font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:640px}
+.hero{overflow:hidden;padding:72px 0 40px;background:
+radial-gradient(55% 60% at 78% 30%,color-mix(in srgb,var(--accent) 38%,transparent),transparent 70%),
+radial-gradient(40% 50% at 5% 100%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.hero .icon{border-radius:24px;box-shadow:0 20px 40px -18px var(--accent);margin-bottom:24px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.hero .actions .badge img{display:block;height:60px;width:auto}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr);text-align:center}.hero .lead{margin:0 auto}
+.hero .actions{justify-content:center}.hero .icon{margin:0 auto 20px}}
+.stack{display:flex;justify-content:center;align-items:flex-end;padding:20px 0 40px}
+.stack .phone{width:250px}.stack .phone:nth-child(2){width:280px;z-index:2}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(40px,30px)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-40px,30px)}
+@media (max-width:640px){.stack .phone{width:32vw;padding:6px;border-radius:26px}.stack .phone img{border-radius:21px}
+.stack .phone:nth-child(2){width:46vw}.stack .phone::before{top:12px;width:7px;height:7px;margin-left:-3.5px}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(9vw,4vw)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-9vw,4vw)}}
+.phone{position:relative;flex:none;margin:0;padding:9px;background:var(--frame);border-radius:42px;
+box-shadow:0 0 0 1.5px var(--edge),inset 0 0 0 1px #000,var(--shadow)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+background:#000;box-shadow:0 0 0 2px #111;z-index:1}
+.phone picture,.tablet picture{display:block}.phone img{display:block;width:100%;height:auto;border-radius:33px;background:#000}
+.tablet{max-width:860px;margin:0 auto;padding:14px;background:var(--frame);border-radius:30px;
+box-shadow:0 0 0 1.5px var(--edge),var(--shadow)}.tablet img{display:block;width:100%;border-radius:18px}
+.tablets{display:grid;gap:32px}
+.gallery{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px max(24px,calc(50vw - 576px)) 40px;
+scrollbar-width:thin}.gallery figure{margin:0;flex:none;width:240px;scroll-snap-align:center;text-align:center}
+.gallery figcaption{margin-top:18px;color:var(--muted);font-size:.95rem;font-weight:500}
+@media (max-width:640px){.gallery{gap:20px;padding:16px 16px 32px}.gallery figure{width:200px}}
+.head{max-width:720px;margin-bottom:48px}.center{text-align:center;margin-left:auto;margin-right:auto}
+.about p{max-width:720px;color:var(--muted);font-size:1.1rem}
+.features{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.fcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;transition:transform .25s,border-color .25s}
+.fcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.num{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--soft);color:var(--hi);
+font-weight:800;margin-bottom:18px}.fcard p{color:var(--muted);margin:0 0 12px}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:9px}.checks li{position:relative;padding-left:28px;color:var(--muted);font-size:.97rem}
+.checks li::before{content:"";position:absolute;left:0;top:.42em;width:16px;height:16px;border-radius:50%;background:var(--soft);
+box-shadow:inset 0 0 0 1.5px var(--hi)}
+.checks li::after{content:"";position:absolute;left:5.5px;top:calc(.42em + 4px);width:4px;height:7px;border:solid var(--hi);
+border-width:0 2px 2px 0;transform:rotate(45deg)}
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.cards li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:transform .2s,border-color .2s}
+.cards li:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.cards a{color:var(--fg);font-weight:700;text-decoration:none;font-size:1.08rem}.cards a::after{content:"";position:absolute;inset:0}
+.cards small{display:block;color:var(--muted);margin-top:6px;font-size:.93rem}
+.apps li{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--card)),var(--card) 60%)}
+.apps img{border-radius:14px;flex:none}.apps small{margin-top:2px}
+.cta-band{border-radius:32px;padding:64px 32px;text-align:center;border:1px solid var(--line);background:
+radial-gradient(70% 90% at 50% 0%,color-mix(in srgb,var(--accent) 35%,transparent),transparent 70%),var(--card)}
+.cta-band img.icon{border-radius:22px;margin-bottom:20px}.cta-band .lead{margin:0 auto 28px}.cta-band .badge img{height:60px;width:auto}
+.foot{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:.92rem}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}.foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+.foot a{color:var(--muted)}.foot a:hover{color:var(--fg)}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 20px;font-size:.92rem;color:var(--muted)}
+.crumbs li+li::before{content:"›";margin-right:6px}.crumbs a{color:var(--muted)}
+.ghero{padding:64px 0 32px;background:radial-gradient(60% 80% at 85% 0%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%)}
+.ghero h1{font-size:clamp(2rem,4.5vw,3.2rem);max-width:860px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start;padding-bottom:96px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+.guide{max-width:740px;font-size:1.06rem}.guide h2{font-size:1.7rem;margin-top:1.8em}.guide h3{margin-top:1.5em}
+.guide li{margin:.35em 0}.guide code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.9em}
+.table{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.96rem}th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:var(--shadow)}
+.calc input,.calc select,.calc button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
+.cta{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
+.cta .phone{width:170px;margin:0 auto 20px}.cta img.icon{border-radius:14px}.cta p{color:var(--muted);font-size:.95rem;margin:6px 0 16px}
+.cta .badge img{height:52px;width:auto;margin:12px auto 0;display:block}
+.faq{max-width:820px;display:grid;gap:12px}.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.faq summary{cursor:pointer;font-weight:650;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--hi);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}.faq details p{color:var(--muted);margin:12px 0 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:root{--accent:#0b5cad;--on:#ffffff}</style></head><body><a class="skip" href="#main">Ir al contenido</a><header class="nav"><div class="wrap"><a class="brand" href="../"><img src="../../icon.png" alt="" width="32" height="32"><span>Dimensionar tuberías IPC y UPC</span></a><a class="btn" href="https://play.google.com/store/apps/details?id=es.schimpf.offlineplumbingpipesizing&amp;hl=es">Obtener la app</a></div></header><main id="main"><section class="ghero"><div class="wrap"><ol class="crumbs"><li><a href="../../../">Todas las apps</a></li><li><a href="../">Dimensionar tuberías IPC y UPC</a></li><li>Fórmula de Hazen-Williams para la pérdida de carga</li></ol><h1>Fórmula de Hazen-Williams para la pérdida de carga</h1><p class="lead">Fórmula de Hazen-Williams para la pérdida de carga en tuberías de agua, con valores C del cobre y el PEX, conversión a kPa/m y un ejemplo.</p></div></section><div class="wrap layout"><article class="guide"><p>Hazen-Williams es la forma habitual de estimar la pérdida de carga en tuberías de suministro de agua. Es sencilla, trabaja en unidades de EE. UU. y es suficientemente precisa para dimensionar líneas de agua fría y caliente. Esta página da la fórmula, los valores C que se usan para el cobre y el plástico, y un ejemplo resuelto que puedes seguir con una calculadora.</p>
+<p>Equivalencias: 1 GPM = 3,785 l/min, 1 fps = 0,3048 m/s, 1 ft = 0,3048 m, 1 pulgada = 25,4 mm, 1 psi = 6,895 kPa, 1 psi por 100 ft = 0,2262 kPa/m.</p>
+<h2>La fórmula</h2>
+<p>Para agua en una tubería llena, la pérdida de carga en psi por cada 100 pies de tubería es:</p>
+<p><strong>psi por 100 ft = 100 × 4,52 × Q^1,852 / (C^1,852 × d^4,8704)</strong></p>
+<p>Donde:</p>
+<ul><li>Q es el caudal en galones por minuto (GPM).</li><li>C es el coeficiente de rugosidad de Hazen-Williams. Un C mayor indica una tubería más lisa.</li><li>d es el diámetro interior real de la tubería en pulgadas. El tamaño nominal no entra en la fórmula.</li></ul>
+<p>La fórmula procede del trabajo de Williams y Hazen (*Hydraulic Tables*, 1905). La forma de arriba es la versión habitual en unidades de EE. UU. que aparece en las referencias de fontanería y protección contra incendios.</p>
+<p>Para obtener la pérdida en un tramo, escala por la longitud:</p>
+<p><strong>pérdida en psi = psi por 100 ft × longitud en ft / 100</strong></p>
+<p>Esto vale solo para tubería recta. Los accesorios, las válvulas y los contadores añaden pérdidas que esta fórmula no incluye.</p>
+<h2>Velocidad</h2>
+<p>La velocidad importa tanto como la fricción. El agua rápida causa ruido y erosión, y por eso casi todo dimensionado parte de un límite de velocidad.</p>
+<p><strong>velocidad en fps = 0,4085 × Q / d²</strong></p>
+<p>Q va en GPM y d es el diámetro interior en pulgadas.</p>
+<h2>Valores C que se usan</h2>
+<p>Valores de diseño, inferiores a los mejores casos de tubería nueva:</p>
+<div class="table"><table><thead><tr><th>Material</th><th>C</th></tr></thead><tbody><tr><td>Cobre (tipos K, L, M)</td><td>130</td></tr><tr><td>PEX, PE-RT, CPVC, PEX-AL-PEX</td><td>150</td></tr></tbody></table></div>
+<h2>Usa el diámetro interior</h2>
+<p>El tamaño nominal es solo un nombre. El tubo de cobre se designa por su diámetro nominal, y el diámetro interior real cambia con el tipo de pared. Estos son los diámetros interiores que se usan en esta página, según ASTM B88 (cobre tipo L) y ASTM F876 (PEX, SDR 9). Corresponden a tubería estadounidense. El tubo de cobre europeo según UNE-EN 1057 tiene otros diámetros interiores.</p>
+<div class="table"><table><thead><tr><th>Tamaño nominal</th><th>Cobre L, diám. interior en pulgadas (mm)</th><th>PEX SDR 9, diám. interior en pulgadas (mm)</th></tr></thead><tbody><tr><td>1/2" (DN 15)</td><td>0,545 (13,8)</td><td>0,475 (12,1)</td></tr><tr><td>3/4" (DN 20)</td><td>0,785 (19,9)</td><td>0,671 (17,0)</td></tr><tr><td>1" (DN 25)</td><td>1,025 (26,0)</td><td>0,862 (21,9)</td></tr><tr><td>1-1/4" (DN 32)</td><td>1,265 (32,1)</td><td>1,054 (26,8)</td></tr><tr><td>1-1/2" (DN 40)</td><td>1,505 (38,2)</td><td>1,244 (31,6)</td></tr><tr><td>2" (DN 50)</td><td>1,985 (50,4)</td><td>1,629 (41,4)</td></tr></tbody></table></div>
+<p>Los DN son equivalencias aproximadas. Como la fricción depende de d elevado a 4,87, un pequeño cambio del diámetro interior tiene un gran efecto. Una línea de PEX suele ser un tamaño mayor que la de cobre para el mismo caudal.</p>
+<h2>Ejemplo resuelto</h2>
+<p>Un ramal atiende 10 unidades de aparato (WSFU, water supply fixture units) con cisternas. Según la curva de Hunter, 10 WSFU son 14,6 GPM (55,3 l/min). La tubería es de cobre tipo L (C = 130) y el límite de velocidad para agua fría es de 8 fps (2,44 m/s). El tramo mide 60 ft (18,3 m).</p>
+<p>Paso 1, comprobar cada tamaño. Calcula la velocidad con 0,4085 × 14,6 / d², que es 5,964 / d²:</p>
+<div class="table"><table><thead><tr><th>Tamaño</th><th>Diám. interior en pulgadas</th><th>Velocidad en fps (m/s)</th><th>Pérdida en psi/100 ft (kPa/m)</th><th>¿Dentro de 8 fps?</th></tr></thead><tbody><tr><td>1/2"</td><td>0,545</td><td>20,1 (6,1)</td><td>152 (34,4)</td><td>No</td></tr><tr><td>3/4"</td><td>0,785</td><td>9,68 (2,95)</td><td>25,6 (5,79)</td><td>No</td></tr><tr><td>1"</td><td>1,025</td><td>5,68 (1,73)</td><td>6,99 (1,58)</td><td>Sí</td></tr></tbody></table></div>
+<p>Paso 2, elegir el tamaño más pequeño dentro del límite. Es 1".</p>
+<p>Paso 3, calcular a mano la pérdida de 1".</p>
+<ol><li>14,6^1,852 = 143,3</li><li>130^1,852 = 8223</li><li>1,025^4,8704 = 1,128</li><li>psi por 100 ft = 100 × 4,52 × 143,3 / (8223 × 1,128) = 64 785 / 9274 = 6,99</li></ol>
+<p>Paso 4, escalar a 60 ft. 6,99 × 60 / 100 = 4,19 psi de pérdida en el tramo recto (28,9 kPa, casi 0,29 bar).</p>
+<p>El mismo caudal en cobre de 3/4" perdería 25,6 psi por 100 ft y circularía a casi 10 fps (cerca de 3 m/s). Por eso la comprobación de la velocidad va primero.</p>
+<h2>Pruébalo</h2>
+<div class="calc"><form id="hw-form">
+  <p><label>Caudal (GPM, 1 GPM = 3,785 l/min) <input id="hw-gpm" type="number" step="any" min="0" value="14.6"></label></p>
+  <p><label>Material
+    <select id="hw-mat">
+      <option value="copperL">Cobre tipo L (C = 130)</option>
+      <option value="pex">PEX, SDR 9 (C = 150)</option>
+    </select>
+  </label></p>
+  <p><label>Tamaño nominal
+    <select id="hw-size"></select>
+  </label></p>
+  <p><label>Longitud de la tubería en pies (opcional, 1 ft = 0,3048 m) <input id="hw-len" type="number" step="any" min="0" value=""></label></p>
+  <p><button type="submit">Calcular</button></p>
+  <p id="hw-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var sizes = ["1/2", "3/4", "1", "1-1/4", "1-1/2", "2", "2-1/2", "3", "4"];
+  var mats = {
+    copperL: { c: 130, id: [0.545, 0.785, 1.025, 1.265, 1.505, 1.985, 2.465, 2.945, 3.905] },
+    pex: { c: 150, id: [0.475, 0.671, 0.862, 1.054, 1.244, 1.629, 2.011, 2.4, 3.162] }
+  };
+  var sizeSel = document.getElementById("hw-size");
+  sizes.forEach(function (s, i) {
+    var o = document.createElement("option");
+    o.value = i;
+    o.textContent = s + " pulgadas";
+    if (i === 2) o.selected = true;
+    sizeSel.appendChild(o);
+  });
+  function fmt(x) {
+    var d = x >= 99.95 ? 0 : x >= 9.995 ? 1 : 2;
+    return x.toFixed(d).replace(".", ",");
+  }
+  document.getElementById("hw-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var out = document.getElementById("hw-out");
+    var gpm = parseFloat(document.getElementById("hw-gpm").value);
+    var m = mats[document.getElementById("hw-mat").value];
+    var id = m.id[parseInt(sizeSel.value, 10)];
+    if (!(gpm > 0) || gpm > 593) {
+      out.textContent = "Introduce un caudal mayor que 0 y de hasta 593 GPM.";
+      return;
+    }
+    var fps = 0.4085 * gpm / (id * id);
+    var psi = 100 * 4.52 * Math.pow(gpm, 1.852) / (Math.pow(m.c, 1.852) * Math.pow(id, 4.8704));
+    var text = "Velocidad: " + fmt(fps) + " fps. Pérdida de carga: " + fmt(psi) + " psi por 100 ft.";
+    var lenText = document.getElementById("hw-len").value;
+    if (lenText !== "") {
+      var len = parseFloat(lenText);
+      if (!(len >= 0) || len > 1000) {
+        out.textContent = "Introduce una longitud de 0 a 1000 ft.";
+        return;
+      }
+      text += " Pérdida en " + String(len).replace(".", ",") + " ft: " + fmt(psi * len / 100) + " psi.";
+    }
+    out.textContent = text;
+  });
+})();
+</script>
+</div>
+<p>La calculadora usa las fórmulas y los diámetros interiores de arriba y trabaja en GPM, pulgadas, pies y psi. Los resultados son valores calculados y pueden diferir ligeramente de las tablas impresas.</p>
+<h2>Qué no cubre esta página</h2>
+<ul><li>Accesorios y válvulas. Suma su pérdida aparte.</li><li>Desniveles y presión de red.</li><li>Agua que no sea agua potable normal a temperaturas habituales.</li></ul>
+<p>Consulta el código de fontanería vigente y a la autoridad local para las reglas de dimensionado y los tamaños mínimos. Por ejemplo, el IPC (edición 2024) trata el dimensionado de tuberías de agua en la sección 604.3 y el Apéndice E, y el UPC (edición 2024) en la sección 610.1 y el Apéndice A. En España el cálculo de la instalación se rige por el CTE DB HS 4. Hazen-Williams con tubería estadounidense no lo sustituye.</p>
+<h2>Calcula en obra</h2>
+<p>La app para Android Offline Plumbing Pipe Sizing hace este cálculo para todos los tamaños de 1/2" a 4" a la vez. Introduce WSFU o GPM, elige un material y muestra el tamaño recomendado, la velocidad y los psi por 100 ft en una tabla. Si indicas la longitud de un tramo, añade la pérdida total de la tubería recta. Funciona sin conexión y cita la sección del IPC o del UPC de la edición que elijas (2024 o 2021). El cobre L y el PEX están listos desde el primer arranque. La app está en inglés y calcula solo en unidades de EE. UU.</p>
+<h2>Fuentes</h2>
+<ul><li>Williams, G. S. and Hazen, A., *Hydraulic Tables*, 1905.</li><li>ASTM B88, Standard Specification for Seamless Copper Water Tube (inside diameters, Type L).</li><li>ASTM F876, Standard Specification for Crosslinked Polyethylene (PEX) Tubing (SDR 9 inside diameters).</li><li>International Plumbing Code (ICC), 2024 edition, section 604.3 and Appendix E.</li><li>Uniform Plumbing Code (IAPMO), 2024 edition, section 610.1 and Appendix A.</li></ul></article><aside class="cta"><div class="phone"><picture><source type="image/webp" srcset="../../screen-1.webp"><img src="../../screen-1.png" alt="Dimensionar tuberías IPC y UPC" width="1080" height="2160" loading="lazy" decoding="async"></picture></div><div><b>Dimensionar tuberías IPC y UPC</b><p>Dimensiona tuberías de agua con WSFU o GPM: velocidad y pérdida de carga</p><a href="../">Más sobre la app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.offlineplumbingpipesizing&amp;hl=es"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside></div><section class="band alt"><div class="wrap"><div class="head"><h2>Más guías</h2></div><ul class="cards"><li><a href="../copper-and-pex-pipe-size-chart-gpm/">Tabla de tuberías de cobre y PEX por caudal (GPM)</a><small>Caudal máximo en GPM y l/min de tuberías de cobre tipo L y PEX, de 1/2 a 4 pulgadas, a 5 y 8 fps, con diámetros interiores y un ejemplo resuelto.</small></li><li><a href="../wsfu-to-gpm-conversion-chart/">Conversión de WSFU a GPM con la curva de Hunter</a><small>Convierte unidades de aparato (WSFU) a GPM y l/min con la curva de Hunter. Valores para cisterna y fluxómetro, con un ejemplo resuelto.</small></li></ul></div></section><section class="band"><div class="wrap"><div class="head"><h2>Más apps</h2></div><ul class="cards apps"><li style="--accent:#4355b9"><img src="../../../alarm-clock/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../alarm-clock/">Alarm Clock: Wake-Up Missions</a><small>Reliable alarms for heavy sleepers. Solve a task to switch the alarm off.</small></span></li><li style="--accent:#3a6a2a"><img src="../../../german-allotment-club-ledger/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../german-allotment-club-ledger/">Allotment Club Ledger</a><small>Rent, dues, meters and receipts for allotment club treasurers</small></span></li><li style="--accent:#006a63"><img src="../../../anti-bucket-list/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../anti-bucket-list/">Anti-Bucket List: No Journal</a><small>Write down what you said no to and check later if you&#x27;re still glad.</small></span></li></ul></div></section></main><footer class="foot"><div class="wrap"><nav aria-label="Footer"><a href="../">Dimensionar tuberías IPC y UPC</a><a href="../../privacy/">Privacidad</a><a href="../../../">Todas las apps</a><a href="https://apps.schimpf.es/offline-plumbing-pipe-sizing/hazen-williams-friction-loss-formula/" hreflang="en">EN</a><a href="https://apps.schimpf.es/offline-plumbing-pipe-sizing/de/hazen-williams-friction-loss-formula/" hreflang="de-DE">DE</a></nav><span>© 2026 Gerrit Schimpf</span></div></footer></body></html>
