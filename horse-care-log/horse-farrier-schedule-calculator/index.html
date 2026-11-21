@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Horse Farrier Schedule Calculator: Next Due Date</title><meta name="description" content="Work out when your horse&#x27;s next farrier, worming or vaccine date falls from the last visit and the interval, with a worked example and a table."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/horse-care-log/horse-farrier-schedule-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Horse Farrier Schedule Calculator: Next Due Date"><meta property="og:description" content="Work out when your horse&#x27;s next farrier, worming or vaccine date falls from the last visit and the interval, with a worked example and a table."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/horse-care-log/horse-farrier-schedule-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/horse-care-log/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Horse Farrier Schedule Calculator: Next Due Date", "description": "Work out when your horse's next farrier, worming or vaccine date falls from the last visit and the interval, with a worked example and a table.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/horse-care-log/horse-farrier-schedule-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Horse Care Log: Farrier &amp; Vet</a></p><h1>Horse Farrier Schedule Calculator: Next Due Date</h1><article class="guide"><p>Booking the farrier is easy. Remembering when the next visit is due, for every horse and every kind of care, is the hard part. This page shows how to work out the next due date from the last visit, with a calculator, a worked example and a table of common intervals.</p>
+<p>The same method works for worming, vaccines, dentist visits or anything else that repeats.</p>
+<h2>Calculate the next due date</h2>
+<p>Enter the date of the last visit and how often it repeats.</p>
+<div class="calc"><form id="due-calc">
+  <p>
+    <label for="dc-last">Date of last visit</label><br>
+    <input id="dc-last" type="date" required>
+  </p>
+  <p>
+    <label for="dc-every">Repeat every</label><br>
+    <input id="dc-every" type="number" min="1" max="3650" value="6" required>
+    <select id="dc-unit" aria-label="Unit">
+      <option value="1">days</option>
+      <option value="7" selected>weeks</option>
+      <option value="30">months (30 days)</option>
+      <option value="365">years (365 days)</option>
+    </select>
+  </p>
+  <p><button type="submit">Work out next due date</button></p>
+  <p id="dc-result" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("due-calc");
+  var out = document.getElementById("dc-result");
+  var MS = 86400000;
+  function parse(s) {
+    var p = s.split("-");
+    return Date.UTC(+p[0], +p[1] - 1, +p[2]);
+  }
+  function iso(t) {
+    return new Date(t).toISOString().slice(0, 10);
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var last = document.getElementById("dc-last").value;
+    var every = parseInt(document.getElementById("dc-every").value, 10);
+    var unit = parseInt(document.getElementById("dc-unit").value, 10);
+    var days = every * unit;
+    if (!last || !(every > 0) || days > 3650) {
+      out.textContent = "Enter a date and an interval of 1 to 3650 days.";
+      return;
+    }
+    var due = parse(last) + days * MS;
+    var now = new Date();
+    var today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    var left = Math.round((due - today) / MS);
+    var status;
+    if (left < 0) status = "Overdue by " + (-left) + " day(s).";
+    else if (left <= 7) status = "Due this week (in " + left + " day(s)).";
+    else status = "Due in " + left + " days.";
+    out.textContent =
+      "Interval: " + days + " days. Next due: " + iso(due) +
+      ". First reminder: " + iso(due - 3 * MS) + ". " + status;
+  });
+})();
+</script>
+</div>
+<h2>The formula</h2>
+<p>The rule is simple:</p>
+<p><strong>next due date = date of last visit + interval in days</strong></p>
+<p>Intervals are counted in days, so they are easy to check by hand:</p>
+<ul><li>1 week = 7 days</li><li>1 month = 30 days</li><li>1 year = 365 days</li></ul>
+<p>A month counts as a flat 30 days, not a calendar month. "3 months" is 90 days. This keeps every interval the same length, so a schedule does not drift with short or long months. If your farrier works to calendar months, use weeks instead. Weeks are exact.</p>
+<h2>Worked example</h2>
+<p>Your horse had the farrier on <strong>3 November 2026</strong>, and your farrier works on a 6-week cycle.</p>
+<ol><li>Convert the interval to days: 6 weeks × 7 = <strong>42 days</strong>.</li><li>Add 42 days to 3 November. November has 30 days, so 27 days gets you to 30 November. The remaining 15 days land on <strong>15 December 2026</strong>.</li><li>If you want a heads-up three days earlier, subtract 3 days: <strong>12 December 2026</strong>.</li></ol>
+<p>The same last-visit date with other intervals:</p>
+<div class="table"><table><thead><tr><th>Care</th><th>Interval</th><th>Days</th><th>Next due</th></tr></thead><tbody><tr><td>Farrier</td><td>6 weeks</td><td>42</td><td>15 December 2026</td></tr><tr><td>Worming</td><td>12 weeks</td><td>84</td><td>26 January 2027</td></tr><tr><td>Quarterly check</td><td>3 months</td><td>90</td><td>1 February 2027</td></tr><tr><td>Yearly vaccine</td><td>1 year</td><td>365</td><td>3 November 2027</td></tr></tbody></table></div>
+<h2>Common farrier intervals in weeks</h2>
+<p>Your farrier decides the right interval for your horse. Horses differ, and the interval can change with the season, the workload and the state of the hoof. Use the table to convert a number of weeks into days:</p>
+<div class="table"><table><thead><tr><th>Weeks</th><th>Days</th></tr></thead><tbody><tr><td>4</td><td>28</td></tr><tr><td>5</td><td>35</td></tr><tr><td>6</td><td>42</td></tr><tr><td>7</td><td>49</td></tr><tr><td>8</td><td>56</td></tr></tbody></table></div>
+<h2>Which date should you count from?</h2>
+<p>Count from the day the work was done, not the day it was booked. If the visit slips a week, the whole cycle moves with it. That is what you want. The interval is the gap between visits, not a fixed day on the calendar.</p>
+<p>Two cases to watch:</p>
+<ul><li><strong>A late visit.</strong> The next date moves later too. If the farrier is a week late, the next visit is due a week later than a fixed calendar plan would say.</li><li><strong>An early visit.</strong> The next date is counted from the early visit. The gap between visits stays the same length.</li></ul>
+<h2>Overdue, this week and later</h2>
+<p>Once you have a due date, sort each item by how close it is:</p>
+<ul><li><strong>Overdue:</strong> the due date is before today.</li><li><strong>This week:</strong> the due date is today or within the next 7 days.</li><li><strong>Later:</strong> more than 7 days away.</li></ul>
+<p>With several horses this sorting matters most. A single list of overdue and this-week items tells you what to book first.</p>
+<h2>Do it on paper or in a spreadsheet</h2>
+<p>You can keep this by hand:</p>
+<ol><li>Write the last visit date for each horse and each type of care.</li><li>Write the interval in days next to it.</li><li>Add the two to get the next due date.</li><li>Re-do the sum every time you log a visit.</li></ol>
+<p>In a spreadsheet, put the last date in one cell and the days in another. Then the next due date is the sum of the two cells, formatted as a date.</p>
+<h2>Do it in the app</h2>
+<p>Horse Care Log does this sum for you. It is an Android app that works offline, with no account.</p>
+<ul><li>You set a schedule once: the type (farrier, worming, vaccine or custom), the interval and the next due date. New schedules start with typical intervals: 6 weeks for farrier, 12 weeks for worming and 1 year for vaccines. You can change them.</li><li>One tap on "Log done" records the visit for today and sets the next due date to today plus the interval. If you tapped by mistake, undo it.</li><li>A reminder arrives 3 days before the due date and another on the day. Lock screen reminders do not show horse names.</li><li>The Today screen lists what is overdue and due this week across all your horses. A home screen widget shows the same.</li></ul>
+<p>The app uses the same formula as the calculator above. Search for Horse Care Log on Google Play to try it.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Horse Care Log: Farrier &amp; Vet</b><p>Horse care log: farrier, vaccines, worming, vet notes, costs, reminders.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.horsecarelog&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Horse Care Log: Farrier &amp; Vet</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
