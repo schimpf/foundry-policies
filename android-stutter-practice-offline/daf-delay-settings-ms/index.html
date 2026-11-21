@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DAF Delay Settings in ms: What to Set and Why</title><meta name="description" content="How much delay to set for delayed auditory feedback, why your phone adds its own delay, and a worked example with a calculator."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/android-stutter-practice-offline/daf-delay-settings-ms/"><meta property="og:type" content="website"><meta property="og:title" content="DAF Delay Settings in ms: What to Set and Why"><meta property="og:description" content="How much delay to set for delayed auditory feedback, why your phone adds its own delay, and a worked example with a calculator."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/android-stutter-practice-offline/daf-delay-settings-ms/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/android-stutter-practice-offline/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "DAF Delay Settings in ms: What to Set and Why", "description": "How much delay to set for delayed auditory feedback, why your phone adds its own delay, and a worked example with a calculator.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/android-stutter-practice-offline/daf-delay-settings-ms/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Stutter Practice: DAF</a></p><h1>DAF Delay Settings in ms: What to Set and Why</h1><article class="guide"><p>Delayed auditory feedback (DAF) plays your own voice back to you a fraction of a second late. The setting you choose is a delay in milliseconds (ms). The catch on a phone is that the audio path adds delay of its own, so the number you set is not always the delay you hear. This page explains the numbers and how to account for them.</p>
+<h2>What DAF is</h2>
+<p>You speak into the microphone, and the app plays your voice into your headphones after a short delay. DAF is a technique used in speech therapy for stuttering. How much it helps differs from person to person, and the right setting is best found with a speech and language therapist. This page is general information and not medical advice.</p>
+<h2>Typical delay values</h2>
+<p>Stutter Practice lets you set the delay from 25 to 250 ms. It starts at 75 ms, and offers four quick presets:</p>
+<div class="table"><table><thead><tr><th>Preset</th><th>Delay</th></tr></thead><tbody><tr><td>1</td><td>50 ms</td></tr><tr><td>2</td><td>75 ms (also the starting value)</td></tr><tr><td>3</td><td>100 ms</td></tr><tr><td>4</td><td>150 ms</td></tr></tbody></table></div>
+<p>Some people use short delays; others try longer ones. Change the value in small steps and keep what feels comfortable.</p>
+<h2>Why the phone adds delay</h2>
+<p>Every Android phone has some delay between the microphone and the headphones. It comes from the input buffer, the processing and the output buffer. This is called device latency. If you set 100 ms in an app that ignores it, you may hear 100 ms plus the device latency.</p>
+<p>Stutter Practice reads the device latency during a short calibration and lets you fine-tune it by tapping along with clicks. The stored value is:</p>
+<ul><li><strong>Device latency = measured base latency + fine-tune</strong></li><li>The fine-tune is the median lateness of your last taps, between 0 and 60 ms.</li></ul>
+<h2>The formula</h2>
+<ul><li><strong>Delay the app adds = target delay − device latency</strong></li><li>It never goes below zero.</li><li>If the target is lower than the device latency, the delay you hear is the device latency alone, and the app shows a warning.</li></ul>
+<h2>Worked examples</h2>
+<p>Assume calibration found a device latency of 40 ms.</p>
+<ol><li>You want 100 ms. The app adds 100 − 40 = <strong>60 ms</strong>. You hear about 100 ms in total.</li><li>You want 75 ms. The app adds 75 − 40 = <strong>35 ms</strong>.</li><li>You want 25 ms. 25 − 40 is negative, so the app adds <strong>0 ms</strong>. You hear about 40 ms, which is higher than you asked for. The app warns you that your setting is below the device delay.</li></ol>
+<p>Now assume a device latency of 70 ms, which is common on some phones:</p>
+<div class="table"><table><thead><tr><th>Target</th><th>Added by app</th><th>Heard (about)</th></tr></thead><tbody><tr><td>50 ms</td><td>0 ms</td><td>70 ms</td></tr><tr><td>75 ms</td><td>5 ms</td><td>75 ms</td></tr><tr><td>100 ms</td><td>30 ms</td><td>100 ms</td></tr><tr><td>150 ms</td><td>80 ms</td><td>150 ms</td></tr></tbody></table></div>
+<h2>Try it</h2>
+<div class="calc"><form id="daf-form">
+  <p><label>Delay you want, in ms (25 to 250)
+    <input id="daf-target" type="number" min="25" max="250" value="100"></label></p>
+  <p><label>Device latency, in ms
+    <input id="daf-device" type="number" min="0" max="500" value="40"></label></p>
+  <p><button type="submit">Calculate</button></p>
+  <p id="daf-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("daf-form");
+  function run(e) {
+    if (e) e.preventDefault();
+    var t = Math.min(250, Math.max(25, parseInt(document.getElementById("daf-target").value, 10) || 75));
+    var d = Math.max(0, parseInt(document.getElementById("daf-device").value, 10) || 0);
+    var added = Math.max(0, t - d);
+    var msg = "The app adds " + added + " ms.";
+    if (t < d) msg += " Your target is below the device latency, so you will hear about " + d + " ms.";
+    else msg += " You hear about " + t + " ms in total.";
+    document.getElementById("daf-out").textContent = msg;
+  }
+  form.addEventListener("submit", run);
+  run();
+})();
+</script>
+</div>
+<h2>Headphones matter</h2>
+<ul><li>Use wired or USB headphones. They add the least delay and keep it steady.</li><li>Bluetooth adds extra delay that varies from one device to the next, so the app shows a warning when a Bluetooth output is active.</li><li>The phone speaker is also flagged, because it adds extra delay too.</li><li>Calibration is stored for the output you used. If you switch to different headphones, recalibrate.</li></ul>
+<h2>Practice with Stutter Practice</h2>
+<p>Stutter Practice is an Android app for DAF, paced speech and easy onset exercises. It works without an internet connection, has no network permission, and processes your voice live without recording it. The delay can be changed with a slider, plus and minus buttons or presets, while DAF is running. You can also combine DAF with read-aloud texts.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Stutter Practice: DAF</b><p>DAF, paced speech and easy onset practice for people who stutter.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.androidstutterpracticeoffline&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Stutter Practice: DAF</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

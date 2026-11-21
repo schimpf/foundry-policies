@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Syllables Per Minute Chart for Paced Speech</title><meta name="description" content="Convert syllables per minute to beat time and sentence time, with a worked example and a small calculator for paced speech practice."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/android-stutter-practice-offline/syllables-per-minute-chart/"><meta property="og:type" content="website"><meta property="og:title" content="Syllables Per Minute Chart for Paced Speech"><meta property="og:description" content="Convert syllables per minute to beat time and sentence time, with a worked example and a small calculator for paced speech practice."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/android-stutter-practice-offline/syllables-per-minute-chart/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/android-stutter-practice-offline/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Syllables Per Minute Chart for Paced Speech", "description": "Convert syllables per minute to beat time and sentence time, with a worked example and a small calculator for paced speech practice.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/android-stutter-practice-offline/syllables-per-minute-chart/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Stutter Practice: DAF</a></p><h1>Syllables Per Minute Chart for Paced Speech</h1><article class="guide"><p>Paced speech practice asks you to say one syllable on each beat of a steady pulse. The only number you need is the rate, in syllables per minute (SPM). This page turns that rate into milliseconds per beat, syllables per second and the time a sentence takes.</p>
+<h2>The formula</h2>
+<ul><li><strong>Beat length in ms = 60,000 ÷ SPM</strong></li><li><strong>Syllables per second = SPM ÷ 60</strong></li><li><strong>Time for a sentence = (syllables + 1) × beat length</strong>, where the extra beat is a short pause at the end of the sentence</li></ul>
+<p>The last line is how the read-aloud mode in Stutter Practice schedules text: every word gets as many beats as it has syllables, and a word that ends a sentence adds one more beat of pause.</p>
+<h2>SPM chart</h2>
+<p>The app accepts 40 to 200 SPM. This table covers the common steps. The last column is for an 11-syllable sentence (11 beats plus 1 pause beat).</p>
+<div class="table"><table><thead><tr><th>SPM</th><th>Beat length</th><th>Syllables per second</th><th>11-syllable sentence</th></tr></thead><tbody><tr><td>40</td><td>1,500 ms</td><td>0.67</td><td>18.0 s</td></tr><tr><td>60</td><td>1,000 ms</td><td>1.00</td><td>12.0 s</td></tr><tr><td>80</td><td>750 ms</td><td>1.33</td><td>9.0 s</td></tr><tr><td>100</td><td>600 ms</td><td>1.67</td><td>7.2 s</td></tr><tr><td>120</td><td>500 ms</td><td>2.00</td><td>6.0 s</td></tr><tr><td>150</td><td>400 ms</td><td>2.50</td><td>4.8 s</td></tr><tr><td>200</td><td>300 ms</td><td>3.33</td><td>3.6 s</td></tr></tbody></table></div>
+<h2>Worked example</h2>
+<p>Take the sentence "Good morning, I would like a cup of coffee."</p>
+<ol><li>Count syllables: Good (1), morn-ing (2), I (1), would (1), like (1), a (1), cup (1), of (1), cof-fee (2). Total: 11.</li><li>Pick a rate. The app starts the metronome at 120 SPM, and the reader at 110 SPM.</li><li>At 120 SPM the beat is 60,000 ÷ 120 = 500 ms.</li><li>The sentence needs 11 beats, plus 1 beat of pause: 12 × 500 ms = 6,000 ms, or 6 seconds.</li><li>At 110 SPM the beat is about 545 ms, so the same sentence takes about 6.5 seconds.</li></ol>
+<p>If a sentence feels rushed, lower the rate. Going from 120 to 80 SPM adds three seconds to this sentence.</p>
+<h2>Try it</h2>
+<div class="calc"><form id="spm-form">
+  <p><label>Syllables per minute (40 to 200)
+    <input id="spm-rate" type="number" min="40" max="200" value="120"></label></p>
+  <p><label>Syllables in your sentence
+    <input id="spm-count" type="number" min="1" max="200" value="11"></label></p>
+  <p><button type="submit">Calculate</button></p>
+  <p id="spm-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("spm-form");
+  function run(e) {
+    if (e) e.preventDefault();
+    var spm = Math.min(200, Math.max(40, parseInt(document.getElementById("spm-rate").value, 10) || 120));
+    var n = Math.max(1, parseInt(document.getElementById("spm-count").value, 10) || 1);
+    var beat = 60000 / spm;
+    document.getElementById("spm-out").textContent =
+      "Beat: " + Math.round(beat) + " ms. Syllables per second: " + (spm / 60).toFixed(2) +
+      ". Sentence time: " + ((n + 1) * beat / 1000).toFixed(1) + " s (" + n + " beats plus 1 pause beat).";
+  }
+  form.addEventListener("submit", run);
+  run();
+})();
+</script>
+</div>
+<h2>How to practice at a set rate</h2>
+<ol><li>Start slow. Many people begin well below conversational speed so each syllable can be said smoothly.</li><li>Say exactly one syllable on each beat. Count syllables, not words: "coffee" takes two beats.</li><li>Keep the voice relaxed and the first sound of each phrase gentle.</li><li>Raise the rate in small steps only when the current rate feels easy.</li><li>Short, regular sessions matter more than one long one.</li></ol>
+<p>A speech and language therapist can tell you which rate suits you. This page is general information and not medical advice.</p>
+<h2>Words per minute versus syllables per minute</h2>
+<p>Many charts use words per minute. Words differ in length, so the same WPM can mean different syllable counts. Metronome practice works on syllables because each beat lines up with one syllable. The app does not convert between the two; it counts the syllables in its practice sentences and texts itself.</p>
+<h2>Practice with Stutter Practice</h2>
+<p>Stutter Practice is an Android app that works without an internet connection. Its paced speech mode shows a visual metronome from 40 to 200 SPM and lights up one syllable of a practice sentence per beat, with the next sentence shown below. You can turn on vibration to feel each beat. Read-aloud mode highlights each word of 30 English texts at the pace you choose. Your voice is processed live and never recorded.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Stutter Practice: DAF</b><p>DAF, paced speech and easy onset practice for people who stutter.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.androidstutterpracticeoffline&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Stutter Practice: DAF</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
