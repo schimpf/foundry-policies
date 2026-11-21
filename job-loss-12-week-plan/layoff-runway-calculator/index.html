@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Layoff Runway Calculator: How Many Weeks Will Savings Last</title><meta name="description" content="Work out how many weeks your savings, severance and unemployment benefit last after a layoff. Formula, worked example and a small calculator."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/job-loss-12-week-plan/layoff-runway-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Layoff Runway Calculator: How Many Weeks Will Savings Last"><meta property="og:description" content="Work out how many weeks your savings, severance and unemployment benefit last after a layoff. Formula, worked example and a small calculator."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/job-loss-12-week-plan/layoff-runway-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/job-loss-12-week-plan/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Layoff Runway Calculator: How Many Weeks Will Savings Last", "description": "Work out how many weeks your savings, severance and unemployment benefit last after a layoff. Formula, worked example and a small calculator.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/job-loss-12-week-plan/layoff-runway-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Job Loss Plan: 12-Week Guide</a></p><h1>Layoff Runway Calculator: How Many Weeks Will Savings Last</h1><article class="guide"><p>After a layoff, one number matters more than most: how many weeks your money lasts. This page shows the formula, a worked example with real numbers, and a calculator you can use right here.</p>
+<h2>What "runway" means</h2>
+<p>Runway is the number of weeks you can cover your spending without a new paycheck. It uses three things:</p>
+<ul><li><strong>Money available:</strong> savings plus severance you have not received yet.</li><li><strong>Money coming in:</strong> weekly unemployment benefit, if you get one.</li><li><strong>Money going out:</strong> your monthly spending, turned into a weekly figure.</li></ul>
+<h2>The formula</h2>
+<p>The formula below is the one the Job Loss 12-Week Plan app uses.</p>
+<ol><li><strong>Available money</strong> = savings + severance still to come</li><li><strong>Spending per week</strong> = monthly spending × 12 ÷ 52</li><li><strong>Net cost per week</strong> = spending per week − weekly unemployment benefit</li><li><strong>Weeks left</strong> = available money ÷ net cost per week, rounded down to whole weeks</li></ol>
+<p>Two details matter:</p>
+<ul><li>Monthly to weekly uses × 12 ÷ 52, not ÷ 4. A year has about 4.33 weeks per month, so ÷ 4 makes your runway look shorter than it is.</li><li>If the benefit is equal to or higher than your weekly spending, the net cost is zero or less. Your money does not run down, so there is no end date. The app shows this as "Covered".</li></ul>
+<h3>How severance is counted</h3>
+<p>Severance only counts for the part you have not been paid yet. The app assumes it is paid evenly from your layoff date to the date it ends:</p>
+<ul><li>Still to come = total severance × days left ÷ total days</li><li>With no end date, the whole amount counts as still to come.</li><li>Once the end date has passed, nothing is left to count.</li></ul>
+<p>Example: $6,000 of severance paid over 60 days. With 30 days left, $3,000 is still to come.</p>
+<h2>Worked example</h2>
+<p>Say you were laid off and have these numbers:</p>
+<div class="table"><table><thead><tr><th>Item</th><th>Amount</th></tr></thead><tbody><tr><td>Savings</td><td>$12,000</td></tr><tr><td>Severance still to come</td><td>$4,000</td></tr><tr><td>Weekly unemployment benefit</td><td>$400</td></tr><tr><td>Monthly spending</td><td>$3,500</td></tr><tr><td>Of that, cuttable (streaming, dining out, subscriptions)</td><td>$600</td></tr></tbody></table></div>
+<p><strong>Step 1.</strong> Available money: $12,000 + $4,000 = <strong>$16,000</strong>.</p>
+<p><strong>Step 2.</strong> Spending per week: $3,500 × 12 ÷ 52 = <strong>$807.69</strong>.</p>
+<p><strong>Step 3.</strong> Net cost per week: $807.69 − $400 = <strong>$407.69</strong>.</p>
+<p><strong>Step 4.</strong> Weeks left: $16,000 ÷ $407.69 = 39.2, so <strong>39 weeks</strong>.</p>
+<p>Now cut the $600 of cuttable spending:</p>
+<ol><li>New monthly spending: $3,500 − $600 = $2,900</li><li>Spending per week: $2,900 × 12 ÷ 52 = $669.23</li><li>Net cost per week: $669.23 − $400 = $269.23</li><li>Weeks left: $16,000 ÷ $269.23 = 59.4, so <strong>59 weeks</strong></li></ol>
+<p>Cutting $600 a month adds 20 weeks:</p>
+<p>``<code> No cuts   |#######################################          39 weeks Cut $600  |###########################################################  59 weeks </code>``</p>
+<h2>Try it yourself</h2>
+<div class="calc"><form id="runway-form" style="display:grid;gap:8px;max-width:420px">
+  <label>Layoff date <input type="date" id="rw-layoff" required></label>
+  <label>Savings ($) <input type="number" id="rw-savings" min="0" step="0.01" value="12000"></label>
+  <label>Severance still to come ($, optional) <input type="number" id="rw-sev" min="0" step="0.01" value="4000"></label>
+  <label>Severance end date (optional, leave empty for a lump sum) <input type="date" id="rw-sevend"></label>
+  <label>Weekly unemployment benefit ($, optional) <input type="number" id="rw-ben" min="0" step="0.01" value="400"></label>
+  <label>Monthly spending ($) <input type="number" id="rw-spend" min="0" step="0.01" value="3500"></label>
+  <label>Of that, cuttable ($) <input type="number" id="rw-cut" min="0" step="0.01" value="600"></label>
+  <button type="submit">Calculate</button>
+  <p id="rw-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var f = document.getElementById("runway-form");
+  var out = document.getElementById("rw-out");
+  var l = document.getElementById("rw-layoff");
+  var t = new Date();
+  var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+  var todayStr = t.getFullYear() + "-" + pad(t.getMonth() + 1) + "-" + pad(t.getDate());
+  l.value = todayStr;
+  function cents(id) {
+    var v = parseFloat(document.getElementById(id).value);
+    return isNaN(v) || v < 0 ? 0 : Math.round(v * 100);
+  }
+  function day(s) { return Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)) / 86400000; }
+  function weekly(m) { return Math.round(m * 12 / 52); }
+  function money(c) { return "$" + (c / 100).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function remaining(total, layoff, end, today) {
+    if (total <= 0) return 0;
+    if (!end) return total;
+    var totalDays = day(end) - day(layoff);
+    if (totalDays <= 0) return day(today) > day(end) ? 0 : total;
+    var left = Math.min(Math.max(day(end) - day(today), 0), totalDays);
+    return Math.round(total * left / totalDays);
+  }
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var monthly = cents("rw-spend");
+    if (monthly <= 0) { out.textContent = "Enter your monthly spending."; return; }
+    if (!l.value) { out.textContent = "Enter your layoff date."; return; }
+    var cuttable = Math.min(cents("rw-cut"), monthly);
+    var benefit = cents("rw-ben");
+    var avail = cents("rw-savings") + remaining(cents("rw-sev"), l.value, document.getElementById("rw-sevend").value, todayStr);
+    var net = weekly(monthly) - benefit;
+    if (net <= 0) { out.textContent = "Covered: your benefit is at least your weekly spending, so your money does not run down."; return; }
+    var weeks = Math.floor(avail / net);
+    var cutNet = weekly(monthly - cuttable) - benefit;
+    var msg = "Available: " + money(avail) + ". Net cost per week: " + money(net) + ". Weeks left: " + weeks + ".";
+    msg += cutNet <= 0 ? " If you cut all cuttable spending: covered by your income." : " If you cut all cuttable spending: " + Math.floor(avail / cutNet) + " weeks.";
+    out.textContent = msg;
+  });
+})();
+</script>
+</div>
+<p>The calculator runs in your browser. Nothing you type is sent anywhere.</p>
+<h2>Why the benefit assumption matters</h2>
+<p>The formula assumes your unemployment benefit continues for the whole runway. It does not. The U.S. Department of Labor reports that most states pay benefits for up to 26 weeks, and a few pay fewer. Check your state's rules on the Department of Labor's unemployment insurance pages (dol.gov).</p>
+<p>To test the worst case, set the weekly benefit to $0. In the example above, that gives:</p>
+<ul><li>Net cost per week: $807.69</li><li>Weeks left: $16,000 ÷ $807.69 = 19.8, so <strong>19 weeks</strong></li></ul>
+<p>Run both versions. The truth is usually between them.</p>
+<h2>How to get your inputs right</h2>
+<ol><li><strong>Savings:</strong> count only money you can reach quickly. Leave out retirement accounts. Early withdrawals can trigger taxes and penalties.</li><li><strong>Severance:</strong> use the amount after tax if you can. If you only know the gross amount, your result will be a little high.</li><li><strong>Benefit:</strong> use the weekly amount your state tells you, not the maximum.</li><li><strong>Monthly spending:</strong> add up rent or mortgage, food, utilities, insurance, debt payments and everything else you pay each month. Health insurance may cost much more after your employer stops paying its share.</li><li><strong>Cuttable spending:</strong> only count costs you could stop within a month.</li></ol>
+<h2>Using the numbers</h2>
+<ul><li><strong>Under 12 weeks:</strong> cut spending first and file for unemployment now if you have not yet.</li><li><strong>12 to 26 weeks:</strong> you have time, but start applications early. Job searches often take months.</li><li><strong>Over 26 weeks:</strong> the benefit is not the main risk. Watch your spending and recheck monthly.</li></ul>
+<p>These ranges are rules of thumb, not advice. This page gives general information for the US. It is not legal or financial advice.</p>
+<h2>Keep the number up to date</h2>
+<p>A runway number goes stale fast. Spending changes, severance gets paid out and benefits start or stop.</p>
+<p>The Job Loss 12-Week Plan app for Android keeps this calculation live. It takes your monthly budget from a list of costs marked essential or cuttable, shows the breakdown line by line, and shows how many weeks you would gain by cutting. It also puts the runway on your home screen widget and gives you a weekly checklist, deadline reminders and a weekly check-in for the 12 weeks after a layoff. There is no account, and your data stays on your phone.</p>
+<p>Search for "Job Loss Plan: 12-Week Guide" on Google Play.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Job Loss Plan: 12-Week Guide</b><p>Laid off? A calm 12-week checklist with deadlines, budget and runway math.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.jobloss12weekplan&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Job Loss Plan: 12-Week Guide</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
