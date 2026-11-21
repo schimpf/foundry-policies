@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mortgage Monthly Payment Formula With Example</title><meta name="description" content="How a fixed-rate mortgage payment is calculated, with a worked example for 200,000 euros at 2.60 % over 30 years, and a calculator you can try."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/morgage-calc/mortgage-monthly-payment-formula/"><meta property="og:type" content="website"><meta property="og:title" content="Mortgage Monthly Payment Formula With Example"><meta property="og:description" content="How a fixed-rate mortgage payment is calculated, with a worked example for 200,000 euros at 2.60 % over 30 years, and a calculator you can try."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/morgage-calc/mortgage-monthly-payment-formula/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/morgage-calc/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Mortgage Monthly Payment Formula With Example", "description": "How a fixed-rate mortgage payment is calculated, with a worked example for 200,000 euros at 2.60 % over 30 years, and a calculator you can try.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/morgage-calc/mortgage-monthly-payment-formula/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Hipoteca: Mortgage Calculator</a></p><h1>Mortgage Monthly Payment Formula With Example</h1><article class="guide"><p>A fixed-rate mortgage has the same payment every month. It comes from one formula, called the annuity or French amortization formula. This page explains it, works one example by hand, and shows where the money goes.</p>
+<h2>The formula</h2>
+<p><strong>Payment = L × r / (1 − (1 + r)^−n)</strong></p>
+<ul><li><strong>L</strong> is the loan amount.</li><li><strong>r</strong> is the monthly rate: the annual rate (TIN) divided by 12.</li><li><strong>n</strong> is the number of monthly payments: years × 12.</li></ul>
+<p>If the rate is 0 %, the formula does not work (it divides by zero). The payment is then simply L / n.</p>
+<h2>Worked example</h2>
+<p>Loan of 200,000 euros, 2.60 % TIN, 30 years.</p>
+<ol><li>Monthly rate: r = 0.026 / 12 = 0.0021667</li><li>Number of payments: n = 30 × 12 = 360</li><li>(1 + r)^−360 = about 0.4588</li><li>1 − 0.4588 = 0.5412</li><li>Payment = 200,000 × 0.0021667 / 0.5412 = about <strong>800.68 euros</strong> per month</li></ol>
+<p>Over the whole loan:</p>
+<ul><li>Total paid: 360 × 800.68 = about 288,245 euros</li><li>Total interest: about 88,245 euros</li></ul>
+<h2>Where each payment goes</h2>
+<p>Each month the bank charges interest on what you still owe. The rest of the payment reduces the debt.</p>
+<ol><li>Interest = balance × r</li><li>Principal repaid = payment − interest</li><li>New balance = old balance − principal repaid</li></ol>
+<p>Month 1 of the example:</p>
+<ul><li>Interest: 200,000 × 0.0021667 = 433.33 euros</li><li>Principal: 800.68 − 433.33 = about 367.35 euros</li><li>New balance: about 199,632.65 euros</li></ul>
+<p>Because the balance falls, interest falls too, and more of every later payment goes to principal. The payment stays the same.</p>
+<div class="table"><table><thead><tr><th>Month</th><th>Interest share</th><th>Principal share</th></tr></thead><tbody><tr><td>1</td><td>about 54 %</td><td>about 46 %</td></tr><tr><td>Last</td><td>under 1 %</td><td>over 99 %</td></tr></tbody></table></div>
+<h2>What changes the payment most</h2>
+<ul><li><strong>Term.</strong> A longer term lowers the payment but raises total interest. At the same 2.60 %, 20 years instead of 30 raises the payment to about 1,070 euros but cuts total interest to roughly 56,700 euros.</li><li><strong>Rate.</strong> In the example, going from 2.60 % to 3.60 % lifts the payment from about 801 to about 909 euros, around 14 % more.</li><li><strong>Amount.</strong> The payment is proportional to the loan. Halve the loan and the payment halves.</li></ul>
+<h2>Variable and mixed rates</h2>
+<p>The formula assumes the rate does not change. With a variable mortgage the rate is Euríbor plus a spread, and it is reset at each revision (usually every 12 months). At each reset the bank recalculates the payment with the same formula, using:</p>
+<ul><li>L = the balance you still owe</li><li>r = the new rate divided by 12</li><li>n = the months left</li></ul>
+<p>So a variable payment is the same calculation repeated with new inputs. The payment you see today is only valid until the next revision.</p>
+<h2>What the formula leaves out</h2>
+<ul><li><strong>TIN is not TAE.</strong> The TIN is the nominal rate used above. The TAE (the Spanish APR) also counts fees and required products such as insurance, so it is usually higher.</li><li><strong>Purchase costs.</strong> Taxes, notary, registry and the down payment are paid on top of the loan and are not in the payment.</li><li><strong>Rounding.</strong> Banks round each payment to the cent. A schedule from your bank can differ from a hand calculation by a few cents.</li></ul>
+<h2>Try it</h2>
+<div class="calc"><form id="mc-form">
+  <p><label>Loan amount (EUR) <input id="mc-amount" type="number" min="1" step="any" value="200000"></label></p>
+  <p><label>Annual rate, TIN (%) <input id="mc-rate" type="number" min="0" step="any" value="2.6"></label></p>
+  <p><label>Term (years) <input id="mc-years" type="number" min="1" max="50" step="1" value="30"></label></p>
+  <p><button type="submit">Calculate</button></p>
+  <p id="mc-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("mc-form");
+  var out = document.getElementById("mc-out");
+  function eur(v) {
+    return v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " EUR";
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var balance = parseFloat(document.getElementById("mc-amount").value);
+    var annual = parseFloat(document.getElementById("mc-rate").value) / 100;
+    var months = Math.round(parseFloat(document.getElementById("mc-years").value) * 12);
+    if (!(balance > 0) || !(annual >= 0) || !(months > 0)) {
+      out.textContent = "Enter a positive amount, a rate of 0 or more, and a term.";
+      return;
+    }
+    var r = annual / 12;
+    var raw = r === 0 ? balance / months : (balance * r) / (1 - Math.pow(1 + r, -months));
+    var payment = Math.round(raw * 100) / 100;
+    var interest = payment * months - balance;
+    out.textContent = "Monthly payment: " + eur(payment) +
+      ". Total interest: about " + eur(Math.max(interest, 0)) + ".";
+  });
+})();
+</script>
+</div>
+<h2>Do it in the app</h2>
+<p>Hipoteca applies this formula to your own offer. Enter the price, savings, term and rate type to see the monthly payment, the TIN and TAE, the split between principal and interest, and the cash you need on day one. The yearly schedule and balance chart show how the debt falls, and you can export the schedule as PDF or CSV. For variable and mixed loans, the app can also test what happens to the payment if Euríbor rises.</p>
+<p>Results are estimates and do not replace an offer from your bank.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Hipoteca: Mortgage Calculator</b><p>Plan, compare and track a Spanish mortgage: costs, taxes and Euríbor risk.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.morgagecalc&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Hipoteca: Mortgage Calculator</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

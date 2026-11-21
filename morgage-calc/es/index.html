@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hipoteca: simulador y cálculo</title><meta name="description" content="Calcula, compara y sigue tu hipoteca en España: gastos, impuestos y Euríbor."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/morgage-calc/es/"><link rel="alternate" hreflang="en" href="https://schimpf.github.io/foundry-policies/morgage-calc/"><link rel="alternate" hreflang="de-DE" href="https://schimpf.github.io/foundry-policies/morgage-calc/de/"><link rel="alternate" hreflang="es-ES" href="https://schimpf.github.io/foundry-policies/morgage-calc/es/"><link rel="alternate" hreflang="x-default" href="https://schimpf.github.io/foundry-policies/morgage-calc/"><meta property="og:type" content="website"><meta property="og:title" content="Hipoteca: simulador y cálculo"><meta property="og:description" content="Calcula, compara y sigue tu hipoteca en España: gastos, impuestos y Euríbor."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/morgage-calc/es/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/morgage-calc/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Hipoteca: simulador y cálculo", "description": "Calcula, compara y sigue tu hipoteca en España: gastos, impuestos y Euríbor.", "operatingSystem": "Android", "applicationCategory": "Finance", "inLanguage": "es", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/morgage-calc/es/", "image": "https://schimpf.github.io/foundry-policies/morgage-calc/feature.png", "screenshot": ["https://schimpf.github.io/foundry-policies/morgage-calc/screen-1.png", "https://schimpf.github.io/foundry-policies/morgage-calc/screen-2.png", "https://schimpf.github.io/foundry-policies/morgage-calc/screen-3.png", "https://schimpf.github.io/foundry-policies/morgage-calc/screen-4.png", "https://schimpf.github.io/foundry-policies/morgage-calc/screen-5.png", "https://schimpf.github.io/foundry-policies/morgage-calc/screen-6.png", "https://schimpf.github.io/foundry-policies/morgage-calc/screen-7.png", "https://schimpf.github.io/foundry-policies/morgage-calc/screen-8.png"], "installUrl": "https://play.google.com/store/apps/details?id=es.schimpf.morgagecalc"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><header class="hero"><img src="../icon.png" alt="" width="96" height="96"><div><h1>Hipoteca: simulador y cálculo</h1><p class="tag">Calcula, compara y sigue tu hipoteca en España: gastos, impuestos y Euríbor.</p></div></header><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.morgagecalc&amp;hl=es"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a><img class="feature" src="../feature.png" alt="Hipoteca: simulador y cálculo" width="1024" height="500"><div class="shots"><img src="../screen-1.png" alt="Screenshot 1" width="1080" height="2160" loading="lazy"><img src="../screen-2.png" alt="Screenshot 2" width="1080" height="2160" loading="lazy"><img src="../screen-3.png" alt="Screenshot 3" width="1080" height="2160" loading="lazy"><img src="../screen-4.png" alt="Screenshot 4" width="1080" height="2160" loading="lazy"><img src="../screen-5.png" alt="Screenshot 5" width="1080" height="2160" loading="lazy"><img src="../screen-6.png" alt="Screenshot 6" width="1080" height="2160" loading="lazy"><img src="../screen-7.png" alt="Screenshot 7" width="1080" height="2160" loading="lazy"><img src="../screen-8.png" alt="Screenshot 8" width="1080" height="2160" loading="lazy"></div><h2>Acerca de la app</h2><p class="desc">Hipoteca te ayuda a decidir y seguir la hipoteca de tu vivienda en España. Empieza con una pregunta sencilla, mira los números reales y controla el préstamo que ya estás pagando.
+
+¿CUÁNTO PUEDO COMPRAR?
+Introduce tus ingresos netos al mes, otras deudas, ahorros, comunidad autónoma y residencia. La app te muestra el precio máximo, el préstamo y la cuota, y te dice si lo que te limita son los ahorros o los ingresos.
+
+¿FIJA, VARIABLE O MIXTA?
+Una oferta fija, una variable y una mixta, lado a lado: cuota hoy, cuota en el año 6, cuota en el peor caso, intereses totales medianos y el nivel de Euríbor a partir del cual la variable deja de salir mejor que la fija.
+
+LO QUE CUESTA DE VERDAD
+Guarda tus propias ofertas con precio, ahorros, comunidad, obra nueva o segunda mano, plazo, tipo de interés, edad y residencia. El resultado muestra la cuota, el TIN y la TAE, capital frente a intereses y el dinero que necesitas el primer día: entrada, ITP o IVA más AJD, notaría, registro, gestoría y tasación. También comprueba si los productos vinculados que pide el banco (nómina, seguro de hogar, seguro de vida) te compensan.
+
+IMPUESTOS POR COMUNIDAD
+Incluye las reglas fiscales de cada comunidad autónoma, también los tipos para jóvenes. Las comunidades cuyos datos aún no se han confirmado con dos fuentes aparecen marcadas.
+
+¿Y SI SUBE EL EURÍBOR?
+Prueba escenarios mejor, base y peor, o 1.000 futuros aleatorios con gráfico de abanico, rangos de cuota y el porcentaje de futuros en los que pagarías más que hoy.
+
+AMORTIZAR ANTES
+Prueba una amortización anticipada única o anual y compara reducir plazo con reducir cuota, descontando la comisión legal.
+
+SIGUE TU HIPOTECA
+Indica cuándo firmaste, el importe, el plazo y el tipo. Verás cuánto debes hoy, cuánto has pagado, cuándo terminas, lo que te queda por pagar y el salto de cuota cuando una mixta pasa a variable. Introduce el saldo de tu banco para que sea exacto. Un widget muestra en la pantalla de inicio lo que debes, la cuota y la fecha final.
+
+CUADRO DE AMORTIZACIÓN Y EXPORTACIÓN
+Tabla anual y gráfico del capital pendiente. Comparte el cuadro en PDF o en CSV que se abre bien en hojas de cálculo en español.
+
+PRIVADA
+Sin cuenta y sin registro. Tus datos de la hipoteca se quedan en tu móvil. En algunas pantallas aparece un pequeño banner de publicidad; un pago único lo quita.
+
+Conviene saber
+- Solo para España, en euros.
+- El Euríbor no se descarga. La app trae un valor reciente que puedes cambiar en Ajustes.
+- Disponible en español, inglés y alemán.
+- Los resultados son estimaciones y no sustituyen una oferta ni el asesoramiento de tu banco.</p><footer><a href="../privacy/">Privacy policy</a> · <a href="../../">All apps</a> · <a href="mailto:apps@schimpf.es">Contact</a> · <a href="https://schimpf.github.io/foundry-policies/morgage-calc/" hreflang="en">EN</a> · <a href="https://schimpf.github.io/foundry-policies/morgage-calc/de/" hreflang="de">DE</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
