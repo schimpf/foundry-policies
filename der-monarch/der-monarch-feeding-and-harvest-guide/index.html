@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Der Monarch feeding and harvest guide with formulas</title><meta name="description" content="How much grain your people need in Der Monarch, how crops and soil set the harvest, and how feeding changes population. With worked examples."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/der-monarch/der-monarch-feeding-and-harvest-guide/"><meta property="og:type" content="website"><meta property="og:title" content="Der Monarch feeding and harvest guide with formulas"><meta property="og:description" content="How much grain your people need in Der Monarch, how crops and soil set the harvest, and how feeding changes population. With worked examples."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/der-monarch/der-monarch-feeding-and-harvest-guide/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/der-monarch/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Der Monarch feeding and harvest guide with formulas", "description": "How much grain your people need in Der Monarch, how crops and soil set the harvest, and how feeding changes population. With worked examples.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/der-monarch/der-monarch-feeding-and-harvest-guide/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Der Monarch</a></p><h1>Der Monarch feeding and harvest guide with formulas</h1><article class="guide"><p>Two things decide most years in <strong>Der Monarch</strong>: how much grain you feed your people, and what you plant. This guide gives the formulas from the game and works through the starting position.</p>
+<h2>How much grain people need</h2>
+<p>The need is <strong>7 bushels per person</strong>, counting serfs, merchants, clergy and nobles.</p>
+<p><strong>need = people × 7</strong></p>
+<p>At the start you have 2,140 people, so the need is 2,140 × 7 = <strong>14,980 bushels</strong>. You hold 18,000.</p>
+<p>The feeding screen has a slider and quick buttons for 80 %, the need, and 125 %. Grain you set aside for feeding cannot be sold.</p>
+<h2>What feeding does to the population</h2>
+<p>Let <strong>ratio = grain fed / need</strong>. The game forecasts the yearly change like this:</p>
+<ul><li><strong>Births:</strong> serfs × 3 % × the ratio, with the ratio capped at 1.2</li><li><strong>Deaths:</strong> people × 1.5 %</li><li><strong>Starved:</strong> if the ratio is below 1, people × (1 − ratio) × 25 %</li><li><strong>Migration:</strong> (ratio capped at 1.5 − 1) × people × 8 %, plus (30 − tax pressure) × people × 0.15 %, plus the justice mood × people</li></ul>
+<p>Tax pressure is (customs + income tax) / 2. Justice mood is +0.01 for Milde, 0 for Gerecht, −0.01 for Streng and −0.03 for Grausam. A positive migration result is immigrants, a negative one is people leaving.</p>
+<h3>Worked example: three feeding levels</h3>
+<p>Start position: 1,820 serfs, 2,140 people, customs 20 %, income tax 25 %, justice Gerecht. Tax pressure is 22.5, so the tax part of migration is 7.5 × 2,140 × 0.0015 = 24.</p>
+<div class="table"><table><thead><tr><th>Fed</th><th>Ratio</th><th>Births</th><th>Deaths</th><th>Starved</th><th>Migration</th><th>Net change</th></tr></thead><tbody><tr><td>80 % (11,984)</td><td>0.8</td><td>44</td><td>32</td><td>107</td><td>−10</td><td><strong>−105</strong></td></tr><tr><td>100 % (14,980)</td><td>1.0</td><td>55</td><td>32</td><td>0</td><td>+24</td><td><strong>+47</strong></td></tr><tr><td>125 % (18,725)</td><td>1.25</td><td>66</td><td>32</td><td>0</td><td>+67</td><td><strong>+101</strong></td></tr></tbody></table></div>
+<p>Feeding 125 % needs 18,725 bushels, more than the 18,000 you hold, so at the start you cannot reach it without buying grain or counting the harvest. Feeding is capped by the grain you have after rats plus the harvest.</p>
+<p>Feeding above 120 % no longer adds births, but it keeps raising migration up to 150 %.</p>
+<h2>What you plant</h2>
+<p>You split your land between potatoes, grain and oats. The rest lies fallow. Each crop is rolled once a year between a low and a high yield per Morgen.</p>
+<div class="table"><table><thead><tr><th>Crop</th><th>Yield per Morgen</th><th>Risk</th><th>Soil drain</th></tr></thead><tbody><tr><td>Kartoffeln (potatoes)</td><td>2.6–3.5</td><td>low</td><td>8</td></tr><tr><td>Korn (grain)</td><td>1.8–5.2</td><td>high</td><td>6</td></tr><tr><td>Hafer (oats)</td><td>2.5–2.7</td><td>none</td><td>3</td></tr></tbody></table></div>
+<p>Soil strength runs from 40 to 100 %. Every yield is multiplied by soil / 100. Difficulty bends the roll: Milde gives better years, Hart gives worse ones and a higher rat loss.</p>
+<h3>Serfs limit your fields</h3>
+<p>Each serf can work at most <strong>6 Morgen</strong>. If you want more land sown than serfs × 6, every crop is scaled down. With 1,820 serfs you can work 10,920 Morgen.</p>
+<h3>Worked example: the default plan</h3>
+<p>Land 10,000 Morgen, plan 40 % potatoes, 35 % grain, 15 % oats, 10 % fallow, soil 100 %.</p>
+<ol><li>Sown: 4,000 potatoes, 3,500 grain, 1,500 oats. Total 9,000 Morgen, under the serf limit of 10,920.</li><li>Lowest harvest: 4,000 × 2.6 + 3,500 × 1.8 + 1,500 × 2.5 = 10,400 + 6,300 + 3,750 = <strong>20,450 bushels</strong></li><li>Highest harvest: 4,000 × 3.5 + 3,500 × 5.2 + 1,500 × 2.7 = 14,000 + 18,200 + 4,050 = <strong>36,250 bushels</strong></li><li>Your need is 14,980, so even the worst year feeds everyone, before rats.</li></ol>
+<p>Rats then eat a share of the grain you hold, up to 5 % on Milde, 10 % on Normal and 16 % on Hart.</p>
+<h2>Soil</h2>
+<p>Each year the soil changes by:</p>
+<p><strong>fallow % × 0.6 − Σ(crop % × drain / 100)</strong>, rounded</p>
+<p>For the default plan: drain = 0.40 × 8 + 0.35 × 6 + 0.15 × 3 = 5.75. Fallow gives 10 × 0.6 = 6. The change is +0.25, which rounds to 0, so the soil stays at 100.</p>
+<p>If you plant everything (0 % fallow) with potatoes at 100 %, the soil falls by 8 points a year. After a few years yields drop noticeably. Soil never goes below 40.</p>
+<h2>Tips</h2>
+<ul><li>Oats are the safe crop. Grain can double the harvest or halve it.</li><li>Keep some fallow land if you farm hard. Fallow gives back 0.6 soil points per percent.</li><li>Grain also sells. A good harvest turns into Taler for buildings. See the <a href="der-monarch-rank-requirements">rank requirements</a>.</li><li>War costs harvest. Each company you send cuts your harvest by 2 %.</li></ul>
+<h2>Play it</h2>
+<p>Der Monarch is an Android game for one to four players on one device. All in-game text is in German. Open the Volk ernähren and Felder bestellen screens to try these numbers.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Der Monarch</b><p>Turn-based economic strategy in 1720s Germany: rise from reeve to emperor.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.dermonarch&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Der Monarch</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
