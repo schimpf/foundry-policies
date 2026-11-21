@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to Find Old Unused Files on Android</title><meta name="description" content="Find files you have not touched in 90 days: old downloads, screenshots, WhatsApp media and APK installers. See the rules and a worked example."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/ad-free-storage-analyzer/find-old-files-on-android/"><meta property="og:type" content="website"><meta property="og:title" content="How to Find Old Unused Files on Android"><meta property="og:description" content="Find files you have not touched in 90 days: old downloads, screenshots, WhatsApp media and APK installers. See the rules and a worked example."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/ad-free-storage-analyzer/find-old-files-on-android/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/ad-free-storage-analyzer/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Find Old Unused Files on Android", "description": "Find files you have not touched in 90 days: old downloads, screenshots, WhatsApp media and APK installers. See the rules and a worked example.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/ad-free-storage-analyzer/find-old-files-on-android/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Storage Analyzer: Big Files</a></p><h1>How to Find Old Unused Files on Android</h1><article class="guide"><p>Old files pile up in a few predictable places. Downloads you opened once, screenshots you no longer need, chat media, and installer files for apps that are already installed. This page explains where to look, what "old" can mean, and how to clear them safely.</p>
+<h2>What "old" means</h2>
+<p>A file is old when it has not changed for a set time. Android keeps a "last modified" date for every file. Storage Analyzer calls a file old when that date is <strong>more than 90 days</strong> in the past.</p>
+<p>The rule in numbers: 90 days × 24 hours × 60 minutes × 60 seconds × 1,000 milliseconds = 7,776,000,000 ms. A file is old if now minus last modified is larger than that.</p>
+<h3>Worked example</h3>
+<p>Today is 1 November. Check three files:</p>
+<div class="table"><table><thead><tr><th>File</th><th>Last modified</th><th>Days ago</th><th>Old?</th></tr></thead><tbody><tr><td><code>invoice.pdf</code></td><td>15 July</td><td>109</td><td>Yes</td></tr><tr><td><code>setup.apk</code></td><td>10 September</td><td>52</td><td>No</td></tr><tr><td><code>meme.jpg</code></td><td>3 August</td><td>90</td><td>No, exactly 90 is not more than 90</td></tr></tbody></table></div>
+<p>Note that "last modified" is not "last opened". A file you open often can still be old if you never change it.</p>
+<h2>Where old files hide</h2>
+<h3>Downloads</h3>
+<p>Browsers and apps save here by default. It is the first folder to check.</p>
+<h3>Screenshots</h3>
+<p>Screenshots are made for one moment and rarely used again. They are often stored in a folder named Screenshots.</p>
+<h3>WhatsApp media</h3>
+<p>Chat photos, videos and voice notes are saved in WhatsApp folders. They can grow large over a year.</p>
+<h3>APK installers</h3>
+<p>An APK is an app installer file. After the app is installed, the file is usually not needed any more.</p>
+<h2>Step by step: clean up by hand</h2>
+<ol><li>Open a file manager and go to Downloads.</li><li>Sort by date, oldest first.</li><li>Check files older than 90 days. Delete what you do not need.</li><li>Repeat for the Screenshots folder, the WhatsApp folders and any folder with APK files.</li><li>Before you delete a document you may need again, copy it somewhere safe.</li></ol>
+<h2>Find old files with Storage Analyzer</h2>
+<p>After you tap Scan, the app groups old files for you:</p>
+<ul><li><strong>Downloads:</strong> old files in the top-level Download or Downloads folder.</li><li><strong>Screenshots:</strong> old files in any folder named Screenshots.</li><li><strong>WhatsApp media:</strong> old files in WhatsApp folders, including WhatsApp Business.</li><li><strong>APK installers:</strong> old installer files (APK, APKS, XAPK and APKM), unless they sit in Downloads, Screenshots or WhatsApp folders, where they go to that group.</li><li><strong>Other old files:</strong> everything else that is old.</li></ul>
+<p>"Other old files" leaves out your own photos, videos and music folders: DCIM, Pictures, Movies, Music, Recordings, Podcasts and Audiobooks. An old holiday photo is not junk. If you want to review those, use the large files list instead.</p>
+<p>The home screen shows a reclaimable size. It adds old files, APK installers and every duplicate copy except the newest. Large files do not count, because a large file is not junk by itself.</p>
+<h2>Delete without risk</h2>
+<ul><li>Deleted files go to the app's Trash. Use the undo option right away, or restore from Trash within 7 days.</li><li>After 7 days the files are deleted for good. The check runs when the app starts and once a day.</li><li>Files are moved, not copied, so deleting is fast.</li><li>Folders are never deleted. Only files are.</li><li>Uninstalling the app also empties its Trash, so restore what you want to keep first.</li></ul>
+<h2>Scans are manual</h2>
+<p>The app scans only when you tap Scan. It never scans in the background. In full mode it uses All files access to check every folder on internal storage and the SD card. In limited mode it looks only at the photos, videos and music that Android shares with apps, so the old files list is smaller.</p>
+<h2>Quick checklist</h2>
+<ul><li>Old means more than 90 days since last modified.</li><li>Check Downloads, Screenshots, WhatsApp media and APK files first.</li><li>Keep personal photos and music out of the junk pile.</li><li>Delete to Trash first, and empty it later.</li></ul></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Storage Analyzer: Big Files</b><p>Find large files, duplicates and old junk, then clear space safely.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.adfreestorageanalyzer&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Storage Analyzer: Big Files</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

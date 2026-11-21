@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to Find Duplicate Files on Android</title><meta name="description" content="How to find exact duplicate files on an Android phone, how checksums prove two files are the same, and which copy to keep when you delete."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/ad-free-storage-analyzer/find-duplicate-files-on-android/"><meta property="og:type" content="website"><meta property="og:title" content="How to Find Duplicate Files on Android"><meta property="og:description" content="How to find exact duplicate files on an Android phone, how checksums prove two files are the same, and which copy to keep when you delete."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/ad-free-storage-analyzer/find-duplicate-files-on-android/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/ad-free-storage-analyzer/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Find Duplicate Files on Android", "description": "How to find exact duplicate files on an Android phone, how checksums prove two files are the same, and which copy to keep when you delete.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/ad-free-storage-analyzer/find-duplicate-files-on-android/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Storage Analyzer: Big Files</a></p><h1>How to Find Duplicate Files on Android</h1><article class="guide"><p>Duplicate files quietly fill a phone. The same video is saved twice, a download is repeated, or a photo is copied into two folders. This page shows how to find exact duplicates, how to be sure they are real copies, and how to delete them without losing anything.</p>
+<h2>What counts as a duplicate</h2>
+<p>An exact duplicate has the same content, byte for byte. It can have a different name, a different folder, or a different date. Two photos that only look alike are not exact duplicates, because their bytes differ.</p>
+<p>Matching by name is unreliable. Two files named <code>IMG_0042.jpg</code> can be different photos, and one video saved as <code>clip.mp4</code> and <code>clip (1).mp4</code> is the same file under two names. Content is what counts.</p>
+<h2>Step by step: find duplicates by hand</h2>
+<ol><li>Open a file manager and go to the folder you suspect, such as Downloads.</li><li>Sort by size, largest first.</li><li>Look for files with exactly the same size in bytes. Open the file details to see the exact number.</li><li>Open both files and compare them.</li><li>Delete the copy you do not need.</li></ol>
+<p>This works for a few files. It gets slow with hundreds. It also cannot prove that two files with the same size are identical, because different files can share a size.</p>
+<h2>How a checksum proves two files match</h2>
+<p>A checksum is a short fingerprint calculated from every byte of a file. SHA-256 is a standard hash function (NIST, *FIPS PUB 180-4: Secure Hash Standard*, 2015). It gives a 64-character result, such as <code>9f86d081…</code>.</p>
+<ul><li>Identical files always give the same SHA-256.</li><li>If one byte differs, the result is completely different.</li><li>Two different files giving the same result is not a practical concern.</li></ul>
+<p>Reading every byte of a large file takes time, so a good scanner does it in two steps:</p>
+<ol><li><strong>Group by size.</strong> A file with a size no other file has cannot be a duplicate. Those are skipped.</li><li><strong>Hash only the groups.</strong> Files with the same size get a SHA-256 over the full file. Same result means exact copy.</li></ol>
+<h3>Worked example</h3>
+<p>Your phone has these files:</p>
+<div class="table"><table><thead><tr><th>File</th><th>Size</th></tr></thead><tbody><tr><td><code>trip.mp4</code></td><td>48,201,330 bytes</td></tr><tr><td><code>trip (1).mp4</code></td><td>48,201,330 bytes</td></tr><tr><td><code>lecture.mp4</code></td><td>48,201,330 bytes</td></tr><tr><td><code>notes.pdf</code></td><td>2,310,004 bytes</td></tr></tbody></table></div>
+<ol><li><code>notes.pdf</code> has a unique size, so it is skipped.</li><li>The three videos share a size, so each gets a SHA-256.</li><li><code>trip.mp4</code> and <code>trip (1).mp4</code> give the same result. <code>lecture.mp4</code> gives a different one.</li><li>Result: one duplicate group of two files. Deleting one copy gives back 48,201,330 bytes, about 48.2 MB.</li></ol>
+<h2>Which copy to keep</h2>
+<p>Keep the newest copy. It is the one you most likely edited or moved on purpose, and old copies are usually leftovers. If two copies share a date, either one is fine, since the content is the same.</p>
+<p>Always keep at least one copy of each group. If you delete all of them, the file is gone.</p>
+<h2>Find duplicates with Storage Analyzer</h2>
+<p>Storage Analyzer finds exact duplicates after you tap Scan. It follows the two steps above:</p>
+<ul><li>Only files over 1 MB are checked. Small files add little space.</li><li>Files with the same size are compared with SHA-256 over the full file. Only true copies are shown.</li><li>Groups are sorted by the space you would gain, with the biggest first.</li><li>The newest copy is preselected as the one to keep. You can change the choice for each file.</li><li>At least one copy is always kept.</li><li>A file the app cannot read is left out of the results. It is not counted as a copy.</li></ul>
+<p>Deleted files move to the app's Trash. You can undo right after deleting, or restore them from Trash for 7 days. After that they are deleted for good. Files are moved on the same storage volume, not copied, so it is fast even for large videos. Uninstalling the app empties its Trash, so restore anything you want first.</p>
+<p>The app does not match similar photos. It only finds exact duplicates.</p>
+<h2>Quick checklist</h2>
+<ul><li>Same size, then same checksum, means same file.</li><li>Keep the newest copy.</li><li>Check the group before you delete.</li><li>Use Trash first, and empty it later.</li></ul></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Storage Analyzer: Big Files</b><p>Find large files, duplicates and old junk, then clear space safely.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.adfreestorageanalyzer&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Storage Analyzer: Big Files</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

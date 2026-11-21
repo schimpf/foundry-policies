@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://schimpf.github.io/foundry-policies/sitemap.xml
