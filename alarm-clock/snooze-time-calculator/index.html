@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Snooze Time Calculator: How Late Will You Wake Up?</title><meta name="description" content="Work out how many minutes snoozing costs you and when the last alarm rings. Includes a calculator and a worked example."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/alarm-clock/snooze-time-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Snooze Time Calculator: How Late Will You Wake Up?"><meta property="og:description" content="Work out how many minutes snoozing costs you and when the last alarm rings. Includes a calculator and a worked example."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/alarm-clock/snooze-time-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/alarm-clock/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Snooze Time Calculator: How Late Will You Wake Up?", "description": "Work out how many minutes snoozing costs you and when the last alarm rings. Includes a calculator and a worked example.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/alarm-clock/snooze-time-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Alarm Clock: Wake-Up Missions</a></p><h1>Snooze Time Calculator: How Late Will You Wake Up?</h1><article class="guide"><p>Every snooze tap pushes your wake-up later. This page shows the formula, a worked example and a small calculator, so you can see what your snooze habit really costs.</p>
+<h2>The formula</h2>
+<p>The extra time you lose is simple:</p>
+<p><strong>Total delay = snooze interval × number of snoozes</strong></p>
+<p>The last alarm rings at:</p>
+<p><strong>Last ring = alarm time + total delay</strong></p>
+<p>A few points about how this works in practice:</p>
+<ul><li>The interval is counted from the moment you tap Snooze, not from the moment the alarm first rang.</li><li>If you let the alarm ring for a while before you tap, the real delay is a little longer than the formula says.</li><li>The formula gives the minimum delay. It is exact when you tap Snooze right away.</li></ul>
+<h2>Calculator</h2>
+<div class="calc"><form id="snz" onsubmit="return false">
+  <p><label>Alarm time <input type="time" id="snz-t" value="06:30" required></label></p>
+  <p><label>Snooze interval (1 to 30 min) <input type="number" id="snz-i" min="1" max="30" value="5" required></label></p>
+  <p><label>Number of snoozes (0 to 10) <input type="number" id="snz-n" min="0" max="10" value="3" required></label></p>
+  <p><button type="submit" id="snz-b">Calculate</button></p>
+  <p id="snz-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var f = document.getElementById("snz");
+  function run() {
+    var t = document.getElementById("snz-t").value.split(":");
+    var i = Math.min(30, Math.max(1, parseInt(document.getElementById("snz-i").value, 10) || 1));
+    var n = Math.min(10, Math.max(0, parseInt(document.getElementById("snz-n").value, 10) || 0));
+    var out = document.getElementById("snz-out");
+    if (t.length < 2 || t[0] === "") { out.textContent = "Enter an alarm time."; return; }
+    var delay = i * n;
+    var total = (parseInt(t[0], 10) * 60 + parseInt(t[1], 10) + delay) % 1440;
+    var h = Math.floor(total / 60), m = total % 60;
+    var clock = (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m;
+    out.textContent = "Total delay: " + delay + " min. Last ring: " + clock + ".";
+  }
+  f.addEventListener("submit", run);
+  run();
+})();
+</script>
+</div>
+<h2>Worked example</h2>
+<p>You set an alarm for 6:30 with a 5-minute snooze interval and tap Snooze 3 times.</p>
+<ol><li>Total delay = 5 min × 3 = 15 min.</li><li>Last ring = 6:30 + 15 min = 6:45.</li><li>You get up at 6:45 at the earliest, not 6:30.</li></ol>
+<p>The same alarm with a 10-minute interval and 4 snoozes:</p>
+<ol><li>Total delay = 10 min × 4 = 40 min.</li><li>Last ring = 6:30 + 40 min = 7:10.</li></ol>
+<p>Here is the delay for a few common settings:</p>
+<div class="table"><table><thead><tr><th>Interval</th><th>Snoozes</th><th>Total delay</th></tr></thead><tbody><tr><td>5 min</td><td>1</td><td>5 min</td></tr><tr><td>5 min</td><td>3</td><td>15 min</td></tr><tr><td>9 min</td><td>3</td><td>27 min</td></tr><tr><td>10 min</td><td>4</td><td>40 min</td></tr><tr><td>15 min</td><td>5</td><td>75 min</td></tr><tr><td>30 min</td><td>10</td><td>300 min (5 h)</td></tr></tbody></table></div>
+<h2>Read the result as a budget</h2>
+<p>If you must be out of bed at 7:00 and you plan to snooze, work backward:</p>
+<ol><li>Pick your interval and the number of snoozes you expect.</li><li>Multiply them to get the total delay.</li><li>Subtract that delay from 7:00 to get the alarm time.</li></ol>
+<p>For a 5-minute interval and 3 snoozes, the delay is 15 minutes, so the alarm goes at 6:45. The last ring lands at 7:00. Add a small buffer for the time between rings, because you will not tap Snooze at the exact second the alarm starts.</p>
+<h2>Set a limit that you can live with</h2>
+<p>Unlimited snoozing has no upper bound, so the total delay has none either. A cap makes the cost known in advance. When the cap is reached, the alarm stops offering Snooze and you have to get up.</p>
+<h2>Snooze settings in Alarm Clock</h2>
+<p>Alarm Clock lets you set both numbers for each alarm:</p>
+<ul><li><strong>Interval:</strong> 1 to 30 minutes. The default is 5 minutes.</li><li><strong>Maximum snoozes:</strong> 0 to 10, or unlimited. The default is 3.</li><li><strong>0 snoozes</strong> turns snooze off for that alarm.</li><li>A chip on the ringing screen shows your snooze count.</li><li>Snooze is always available on the ringing screen until you reach your limit.</li><li>Once a wake-up mission has started, snoozing is no longer possible. You finish the mission first.</li></ul>
+<p>With the defaults, the worst case is 5 × 3 = 15 minutes of extra sleep, which matches the first worked example above.</p>
+<h2>Combine snooze with a mission</h2>
+<p>If snooze is the habit you want to break, set the maximum to a small number and add a mission. Alarm Clock offers four: math problems, shaking the phone, scanning a QR code or barcode, and walking a number of steps. The mission cannot be skipped. If you fail it three times, the app offers an easier math problem so you are never stuck.</p>
+<p>Alarm Clock rings on the exact minute through the system alarm clock API, uses the alarm volume so it also rings on silent, and has no internet permission. It is open source under the GNU GPL v3 or later. Set your interval and snooze limit in the alarm editor, and the numbers you tried on this page will apply to every ring.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Alarm Clock: Wake-Up Missions</b><p>Reliable alarms for heavy sleepers. Solve a task to switch the alarm off.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.alarmclock&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Alarm Clock: Wake-Up Missions</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
