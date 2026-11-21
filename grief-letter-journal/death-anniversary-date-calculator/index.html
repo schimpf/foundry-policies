@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Death Anniversary Date Calculator and Leap Day Rule</title><meta name="description" content="Find the next death anniversary or birthday of someone you lost, count the days left, and see how a 29 February date is handled."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/grief-letter-journal/death-anniversary-date-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Death Anniversary Date Calculator and Leap Day Rule"><meta property="og:description" content="Find the next death anniversary or birthday of someone you lost, count the days left, and see how a 29 February date is handled."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/grief-letter-journal/death-anniversary-date-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/grief-letter-journal/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Death Anniversary Date Calculator and Leap Day Rule", "description": "Find the next death anniversary or birthday of someone you lost, count the days left, and see how a 29 February date is handled.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/grief-letter-journal/death-anniversary-date-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Grief Letter Journal</a></p><h1>Death Anniversary Date Calculator and Leap Day Rule</h1><article class="guide"><p>Anniversaries of a loss often arrive sooner than you expect. This page helps you find the next one, count the days until it, and plan something gentle for that day.</p>
+<h2>Calculate the next anniversary</h2>
+<p>Enter the date of death, or a birthday, and today's date. The calculator shows the next date it falls on and how many days away it is.</p>
+<div class="calc"><form id="anniv-form">
+  <p>
+    <label for="anniv-date">Date of death or birthday</label><br>
+    <input type="date" id="anniv-date" required>
+  </p>
+  <p>
+    <label for="anniv-today">Today</label><br>
+    <input type="date" id="anniv-today" required>
+  </p>
+  <p><button type="submit">Calculate</button></p>
+  <p id="anniv-result" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("anniv-form");
+  var today = document.getElementById("anniv-today");
+  var out = document.getElementById("anniv-result");
+  var t = new Date();
+  today.value = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
+
+  function parse(s) {
+    var p = s.split("-");
+    return { y: +p[0], m: +p[1], d: +p[2] };
+  }
+  function isLeap(y) {
+    return (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
+  }
+  function inYear(m, d, y) {
+    if (m === 2 && d === 29 && !isLeap(y)) { d = 28; }
+    return { y: y, m: m, d: d };
+  }
+  function utc(o) {
+    return Date.UTC(o.y, o.m - 1, o.d);
+  }
+  function before(a, b) {
+    return utc(a) < utc(b);
+  }
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.elements["anniv-date"].value || !today.value) { return; }
+    var src = parse(form.elements["anniv-date"].value);
+    var now = parse(today.value);
+    var next = inYear(src.m, src.d, now.y);
+    if (before(next, now)) { next = inYear(src.m, src.d, now.y + 1); }
+    var days = Math.round((utc(next) - utc(now)) / 86400000);
+    var years = next.y - src.y;
+    var text = "Next date: " + next.d + " " + months[next.m - 1] + " " + next.y + ". ";
+    text += days === 0 ? "That is today. " : days + (days === 1 ? " day away. " : " days away. ");
+    if (years > 0) { text += "Years since the original date: " + years + "."; }
+    out.textContent = text;
+  });
+})();
+</script>
+</div>
+<h2>How the calculation works</h2>
+<p>The rule is short. It uses only the month and the day. The year of the loss does not change when the date comes round.</p>
+<ol><li>Take the month and day of the original date.</li><li>Put them into the current year.</li><li>If that date is today or later, that is the next date.</li><li>If it has already passed, use the same month and day in the next year.</li><li>Count the whole days from today to that date.</li></ol>
+<p>A date that falls on today counts as 0 days away. It is the next date, not one that has passed.</p>
+<h3>Worked example</h3>
+<p>Say the date of death was 14 March 2021, and today is 20 November 2026.</p>
+<ul><li>Month and day: 14 March.</li><li>In the current year: 14 March 2026. That is before today, so it has passed.</li><li>Next year: 14 March 2027. That is the next date.</li><li>Days from 20 November 2026 to 14 March 2027: 10 days left in November, 31 in December, 31 in January, 28 in February, and 14 in March. That is 114 days.</li></ul>
+<p>A second example, with the date still ahead. The date is 2 December and today is 20 November 2026. The year 2026 version, 2 December 2026, is after today. The answer is 12 days.</p>
+<h2>What about 29 February?</h2>
+<p>Some dates exist only in leap years. If the original date is 29 February, the year you land on may have no such day.</p>
+<ul><li>In a leap year, the date stays 29 February.</li><li>In any other year, this calculator uses 28 February.</li></ul>
+<p>This is one reasonable choice. Some families mark 1 March instead. If that feels more right to you, simply treat the result as one day later. Neither is wrong.</p>
+<p>A year is a leap year when it divides by 4, except years that divide by 100 but not by 400. So 2028 and 2032 are leap years, 2100 is not, and 2000 was.</p>
+<h2>Counting years since the loss</h2>
+<p>The first anniversary is one year after the date. To count the years that will have passed on the next date, take the year of that next date and subtract the year of the loss.</p>
+<p>For the example above: 2027 minus 2021 is 6. The date of 14 March 2027 is the sixth anniversary.</p>
+<h2>Birthdays work the same way</h2>
+<p>A birthday of someone you lost follows the same rule. The next date is the next time that month and day comes round. Many people find the birthday as heavy as the anniversary, sometimes heavier. Treat the two dates as equals when you plan.</p>
+<h2>Ways to spend the day</h2>
+<p>There is no correct way to mark an anniversary. Some options people choose:</p>
+<ul><li>Write a letter to the person and keep it or let it go.</li><li>Visit a place that mattered to you both.</li><li>Cook a meal they loved.</li><li>Spend the day quietly, with no plan at all.</li><li>Ask someone you trust to be near you.</li></ul>
+<p>If the days around a date feel very hard, reaching out to someone you trust or to a local support service is a good step.</p>
+<h2>How Grief Letter Journal uses these dates</h2>
+<p>Grief Letter Journal is an Android app for writing unsent letters to someone you lost. You can add a birthday and a date of death for each person. The app uses the same rule as this page.</p>
+<ul><li>It finds the next birthday or anniversary from the month and day.</li><li>A 29 February date moves to 28 February in non-leap years.</li><li>On the person list, it shows a gentle hint when a date is within 30 days.</li><li>Reminders are off by default. You turn them on per person, and pick the hour.</li><li>The notification says only "A moment for you". It shows no name and no date, and it is hidden on the lock screen.</li><li>Each reminder has a "Snooze 1 day" button.</li></ul>
+<p>The dates stay on your phone. The app has no internet permission, no account and no tracking.</p>
+<p>Writing a letter on the day is optional. Some people write ahead of it, some after. The journal is there when you want it.</p>
+<h2>Questions</h2>
+<h3>Does the year of death matter for the date?</h3>
+<p>No. Only the month and day matter for the next date. The year matters only when you count how many years have passed.</p>
+<h3>What if I do not know the exact date?</h3>
+<p>Use the closest date you are sure of, or the date of the funeral or memorial. You can change it later.</p>
+<h3>Is the date counted from midnight?</h3>
+<p>The calculator works on calendar days, not hours. Today is day 0.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Grief Letter Journal</b><p>Write unsent letters to someone you lost. Private and encrypted on your phone.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.griefletterjournal&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Grief Letter Journal</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
