@@ -1,1 +1,1 @@
-{"title": "Wire Gauge Calculator: NEC", "short_description": "Size wire by NEC ampacity, voltage drop and breaker rules"}
+{"title": "Wire Gauge Calculator: NEC", "short_description": "Size wire by NEC ampacity, voltage drop and breaker rules", "updated": "2026-11-21", "languages": ["de", "es"], "guides": [{"topic": "12v-wire-size-voltage-drop", "title": "12V Wire Size and Voltage Drop Formula, With Example"}, {"topic": "awg-to-mm2-chart", "title": "AWG to mm² Chart: Wire Size, Area and Resistance"}]}

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AWG to mm² Chart: Wire Size, Area and Resistance</title><meta name="description" content="Convert AWG to mm² with a chart of area, nearest metric size and copper resistance, plus the formula and a worked example."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/awg-to-mm2-chart/"><meta property="og:type" content="website"><meta property="og:title" content="AWG to mm² Chart: Wire Size, Area and Resistance"><meta property="og:description" content="Convert AWG to mm² with a chart of area, nearest metric size and copper resistance, plus the formula and a worked example."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/awg-to-mm2-chart/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AWG to mm² Chart: Wire Size, Area and Resistance", "description": "Convert AWG to mm² with a chart of area, nearest metric size and copper resistance, plus the formula and a worked example.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/awg-to-mm2-chart/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Wire Gauge Calculator: NEC</a></p><h1>AWG to mm² Chart: Wire Size, Area and Resistance</h1><article class="guide"><p>AWG sizes are not a direct unit. They are numbers on a scale: the larger the number, the thinner the wire. This page gives a conversion chart from 18 AWG to 250 kcmil, the formula behind it, and a small calculator for any size.</p>
+<h2>AWG to mm² chart (copper)</h2>
+<p>The "next metric size" column is the smallest standard metric cross-section that is at least as large as the AWG wire. It is a size match, not a sizing result for a circuit.</p>
+<div class="table"><table><thead><tr><th>AWG</th><th>Area (mm²)</th><th>Next metric size (mm²)</th><th>Ω/km</th><th>Ω/1000 ft</th></tr></thead><tbody><tr><td>18</td><td>0.823</td><td>1</td><td>20.9</td><td>6.39</td></tr><tr><td>16</td><td>1.31</td><td>1.5</td><td>13.2</td><td>4.01</td></tr><tr><td>14</td><td>2.08</td><td>2.5</td><td>8.29</td><td>2.53</td></tr><tr><td>12</td><td>3.31</td><td>4</td><td>5.21</td><td>1.59</td></tr><tr><td>10</td><td>5.26</td><td>6</td><td>3.28</td><td>0.999</td></tr><tr><td>8</td><td>8.37</td><td>10</td><td>2.06</td><td>0.628</td></tr><tr><td>6</td><td>13.3</td><td>16</td><td>1.30</td><td>0.395</td></tr><tr><td>4</td><td>21.2</td><td>25</td><td>0.815</td><td>0.248</td></tr><tr><td>2</td><td>33.6</td><td>35</td><td>0.513</td><td>0.156</td></tr><tr><td>1/0</td><td>53.5</td><td>70</td><td>0.322</td><td>0.0983</td></tr><tr><td>2/0</td><td>67.4</td><td>70</td><td>0.256</td><td>0.0779</td></tr><tr><td>3/0</td><td>85.0</td><td>95</td><td>0.203</td><td>0.0618</td></tr><tr><td>4/0</td><td>107</td><td>120</td><td>0.161</td><td>0.0490</td></tr><tr><td>250 kcmil</td><td>127</td><td>150</td><td>0.136</td><td>0.0415</td></tr></tbody></table></div>
+<p>Resistance is for a solid copper conductor at 20 °C. Aluminum has about 1.64 times the resistance of copper at the same size, because its conductivity is 61 % of copper's.</p>
+<h2>How AWG works</h2>
+<p>Each step down in AWG number makes the wire thicker. Every 6 steps roughly halves the diameter, and every 3 steps roughly doubles the area. That gives some quick mental checks:</p>
+<ul><li>10 AWG is about 5.3 mm². Three steps up (7 AWG) would be about 10.6 mm², twice the area.</li><li>Going from 12 AWG to 6 AWG roughly quadruples the area (3.31 to 13.3 mm²).</li><li>Sizes above 4/0 are given in kcmil. One kcmil is 0.5067 mm².</li></ul>
+<h2>The formula</h2>
+<p>The AWG diameter is defined by a geometric progression between 36 AWG and 0000 (4/0) AWG. Standard ASTM B258, *Standard Specification for Standard Nominal Diameters and Cross-Sectional Areas of AWG Sizes of Solid Round Wires Used as Electrical Conductors*, uses it.</p>
+<ol><li>Diameter in mm: d = 0.127 × 92^((36 − n) / 39), where n is the gauge number. Use n = 0 for 1/0, −1 for 2/0, −2 for 3/0 and −3 for 4/0.</li><li>Area in mm²: A = π / 4 × d².</li><li>For kcmil sizes: A = kcmil × 0.5067.</li><li>Resistance in Ω/km: ρ / A × 1000, with ρ = 1/58 Ω·mm²/m for annealed copper (100 % IACS, the International Annealed Copper Standard) and ρ = (1/58) / 0.61 for aluminum (61 % IACS).</li><li>Ω per 1000 ft = Ω/km × 0.3048.</li></ol>
+<h3>Worked example: 10 AWG copper</h3>
+<ol><li>n = 10, so d = 0.127 × 92^(26 / 39) = 0.127 × 92^0.6667 = 0.127 × 20.38 = 2.588 mm.</li><li>A = π / 4 × 2.588² = 5.26 mm².</li><li>Resistance = (1 / 58) / 5.26 × 1000 = 3.28 Ω/km.</li><li>In feet: 3.28 × 0.3048 = 0.999 Ω per 1000 ft.</li><li>The smallest metric size at or above 5.26 mm² is 6 mm².</li></ol>
+<h2>Metric sizes</h2>
+<p>The "next metric size" column uses the nominal cross-sections of IEC 60228, *Conductors of insulated cables*. They run 0.5, 0.75, 1, 1.5, 2.5, 4, 6, 10, 16, 25, 35, 50, 70, 95, 120, 150, 185, 240, 300, 400, 500, 630, 800 and 1000 mm². AWG and metric sizes rarely match exactly, so a wire swap usually means rounding up to the next metric size. Check the current rating of the metric cable separately. Area alone does not give the ampacity, because insulation, installation method and ambient temperature all change it.</p>
+<h2>Convert any size</h2>
+<div class="calc"><form id="awg-form">
+  <p>
+    <label for="awg-size">Wire size</label>
+    <select id="awg-size">
+      <option value="18">18 AWG</option>
+      <option value="16">16 AWG</option>
+      <option value="14">14 AWG</option>
+      <option value="12">12 AWG</option>
+      <option value="10" selected>10 AWG</option>
+      <option value="8">8 AWG</option>
+      <option value="6">6 AWG</option>
+      <option value="4">4 AWG</option>
+      <option value="3">3 AWG</option>
+      <option value="2">2 AWG</option>
+      <option value="1">1 AWG</option>
+      <option value="0">1/0 AWG</option>
+      <option value="-1">2/0 AWG</option>
+      <option value="-2">3/0 AWG</option>
+      <option value="-3">4/0 AWG</option>
+      <option value="k250">250 kcmil</option>
+      <option value="k300">300 kcmil</option>
+      <option value="k350">350 kcmil</option>
+      <option value="k400">400 kcmil</option>
+      <option value="k500">500 kcmil</option>
+      <option value="k600">600 kcmil</option>
+      <option value="k750">750 kcmil</option>
+      <option value="k1000">1000 kcmil</option>
+    </select>
+  </p>
+  <p>
+    <label for="awg-material">Material</label>
+    <select id="awg-material">
+      <option value="cu" selected>Copper</option>
+      <option value="al">Aluminum</option>
+    </select>
+  </p>
+  <p><button type="button" id="awg-go">Convert</button></p>
+  <ul id="awg-out" aria-live="polite"></ul>
+</form>
+<script>
+(function () {
+  var IEC = [0.5, 0.75, 1, 1.5, 2.5, 4, 6, 10, 16, 25, 35, 50, 70, 95, 120, 150, 185, 240, 300, 400, 500, 630, 800, 1000];
+  var RHO_CU = 1 / 58;
+  var RHO_AL = RHO_CU / 0.61;
+  var MM2_PER_KCMIL = 0.506707479;
+  function sig3(v) {
+    if (v === 0) return "0";
+    var digits = Math.max(0, 2 - Math.floor(Math.log(Math.abs(v)) / Math.LN10));
+    return v.toFixed(digits);
+  }
+  function calc() {
+    var raw = document.getElementById("awg-size").value;
+    var rho = document.getElementById("awg-material").value === "al" ? RHO_AL : RHO_CU;
+    var d, a;
+    if (raw.charAt(0) === "k") {
+      a = parseInt(raw.slice(1), 10) * MM2_PER_KCMIL;
+      d = Math.sqrt(a * 4 / Math.PI);
+    } else {
+      d = 0.127 * Math.pow(92, (36 - parseInt(raw, 10)) / 39);
+      a = Math.PI / 4 * d * d;
+    }
+    var perKm = rho / a * 1000;
+    var next = IEC.filter(function (s) { return s >= a; })[0];
+    var out = document.getElementById("awg-out");
+    out.innerHTML = "";
+    [
+      "Area: " + sig3(a) + " mm²",
+      "Diameter: " + sig3(d) + " mm (" + sig3(d / 25.4) + " in)",
+      "Next metric size: " + next + " mm²",
+      "Resistance: " + sig3(perKm) + " Ω/km, " + sig3(perKm * 0.3048) + " Ω per 1000 ft (20 °C)"
+    ].forEach(function (t) {
+      var li = document.createElement("li");
+      li.textContent = t;
+      out.appendChild(li);
+    });
+  }
+  document.getElementById("awg-go").addEventListener("click", calc);
+  calc();
+})();
+</script>
+</div>
+<h2>Limits of this chart</h2>
+<ul><li>The chart shows a solid conductor. Stranded conductors have the same nominal area but a slightly larger overall diameter and slightly higher resistance.</li><li>Resistance is at 20 °C. Copper resistance rises about 0.39 % per °C, so a wire at 75 °C has about 22 % more resistance.</li><li>NEC voltage-drop calculations use the resistance values in NFPA 70, Chapter 9, Table 8 (2023 edition), which are for a different temperature and for uncoated conductors. They differ slightly from the figures above. This page does not reproduce NEC tables.</li></ul>
+<h2>Use it in the app</h2>
+<p>Offline Wire Gauge Calculator has this table built in under Reference, for copper and aluminum, in mm² and Ω per km and per 1000 ft. It works without a signal. The same app also sizes wire by NEC ampacity, voltage drop and breaker rules. Each result shows which limit set the size and which NEC table and edition it comes from. Results are estimates; verify with local code and the authority having jurisdiction.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Wire Gauge Calculator: NEC</b><p>Size wire by NEC ampacity, voltage drop and breaker rules</p><a href="../">More about the app</a></div></aside><footer><a href="../">Wire Gauge Calculator: NEC</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

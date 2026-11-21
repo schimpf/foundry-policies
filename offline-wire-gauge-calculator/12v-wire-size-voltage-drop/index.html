@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>12V Wire Size and Voltage Drop Formula, With Example</title><meta name="description" content="How to pick wire gauge for a 12V or 24V run: the voltage drop formula, a worked example, and the maximum length for each wire size."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/12v-wire-size-voltage-drop/"><meta property="og:type" content="website"><meta property="og:title" content="12V Wire Size and Voltage Drop Formula, With Example"><meta property="og:description" content="How to pick wire gauge for a 12V or 24V run: the voltage drop formula, a worked example, and the maximum length for each wire size."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/12v-wire-size-voltage-drop/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "12V Wire Size and Voltage Drop Formula, With Example", "description": "How to pick wire gauge for a 12V or 24V run: the voltage drop formula, a worked example, and the maximum length for each wire size.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/12v-wire-size-voltage-drop/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Wire Gauge Calculator: NEC</a></p><h1>12V Wire Size and Voltage Drop Formula, With Example</h1><article class="guide"><p>On a 12 V circuit, a small voltage loss is a big share of the supply. A 0.6 V drop is 5 % at 12 V but only 0.25 % at 240 V. That is why 12 V and 24 V runs are usually sized by voltage drop, not by what the wire can carry without overheating. This page shows the formula, a worked example and a table of maximum lengths.</p>
+<h2>The DC voltage drop formula</h2>
+<p>Current flows out on one conductor and back on the other, so the resistance that counts is that of twice the one-way length.</p>
+<ol><li>Drop in volts: drop = 2 × L × I × R</li><li>Drop in percent: drop / supply volts × 100</li><li>Allowed drop in volts: target % / 100 × supply volts</li><li>Maximum one-way length: L max = allowed drop / (2 × I × R)</li></ol>
+<p>Here L is the one-way length in feet, I is the current in amps and R is the wire resistance in ohms per foot (the chart value per 1000 ft divided by 1000). For DC, watts divided by volts gives amps.</p>
+<p>A common target is 3 % for a branch circuit. NFPA 70 (the NEC), 2023 edition, suggests 3 % for a branch circuit and 5 % for feeder plus branch combined, in informational notes in Articles 210 and 215. These are recommendations, not requirements. Your own target can be stricter, for example for sensitive electronics or LED lighting.</p>
+<h2>Copper resistance used in the examples</h2>
+<p>These values are for solid copper at 20 °C, computed from the public AWG diameter formula and annealed copper resistivity. See the <a href="awg-to-mm2-chart">AWG to mm² chart</a> for how they are derived.</p>
+<div class="table"><table><thead><tr><th>AWG</th><th>Ω per 1000 ft</th></tr></thead><tbody><tr><td>12</td><td>1.59</td></tr><tr><td>10</td><td>0.999</td></tr><tr><td>8</td><td>0.628</td></tr><tr><td>6</td><td>0.395</td></tr><tr><td>4</td><td>0.248</td></tr></tbody></table></div>
+<h2>Worked example: a 240 W load, 15 ft from the battery</h2>
+<p>A 12 V load draws 240 W. The run is 15 ft one way. Copper wire, 3 % target.</p>
+<ol><li>Current: 240 W / 12 V = 20 A.</li><li>Allowed drop: 3 % × 12 V = 0.36 V.</li><li>Round-trip length: 2 × 15 ft = 30 ft. Multiply by the current: 30 × 20 = 600 ft·A.</li><li>Try each size:</li></ol>
+<div class="table"><table><thead><tr><th>AWG</th><th>Drop (V)</th><th>Drop (%)</th><th>Within 3 %?</th></tr></thead><tbody><tr><td>12</td><td>0.953</td><td>7.9</td><td>No</td></tr><tr><td>10</td><td>0.599</td><td>5.0</td><td>No</td></tr><tr><td>8</td><td>0.377</td><td>3.1</td><td>No, just over</td></tr><tr><td>6</td><td>0.237</td><td>2.0</td><td>Yes</td></tr><tr><td>4</td><td>0.149</td><td>1.2</td><td>Yes</td></tr></tbody></table></div>
+<ol><li>The smallest size that passes is 6 AWG. Drop for 6 AWG: 600 × 0.000395 = 0.237 V, or 1.98 %.</li></ol>
+<p>The result 8 AWG at 3.14 % shows why you check each size instead of rounding. A tiny miss still fails the target.</p>
+<h2>Maximum one-way length at 20 A, 12 V, 3 %</h2>
+<p>This uses L max = 0.36 / (2 × 20 × R).</p>
+<div class="table"><table><thead><tr><th>AWG</th><th>Max length (ft)</th></tr></thead><tbody><tr><td>10</td><td>9.0</td></tr><tr><td>8</td><td>14.3</td></tr><tr><td>6</td><td>22.8</td></tr><tr><td>4</td><td>36.3</td></tr></tbody></table></div>
+<p>Doubling the voltage to 24 V doubles the allowed drop in volts. The same load takes half the current, so the maximum length is four times as long for the same wire.</p>
+<h2>Ampacity still applies</h2>
+<p>Voltage drop is only one limit. The wire also has to carry the current, and the breaker has to protect the wire. For continuous loads the NEC requires the circuit to be sized for 125 % of the load (NFPA 70, 2023 edition, 210.19(A)(1) and 215.2(A)(1)). A voltage-drop pass does not replace the ampacity check. The larger of the two sizes wins.</p>
+<h2>AC circuits</h2>
+<p>On AC, the formula uses impedance instead of plain resistance:</p>
+<ul><li>Effective ohms per foot: R × cos θ + X × sin θ, where cos θ is the power factor, R is resistance and X is reactance.</li><li>Single-phase: the factor 2 stays.</li><li>Three-phase: the factor 2 becomes √3 (1.732).</li></ul>
+<p>The NEC lists R and X in Chapter 9, Table 9. Table 8 holds the DC resistance values. The values in the tables above are the public-formula figures at 20 °C, so they differ slightly from the NEC tables, and results can differ by a size at the edge.</p>
+<h2>Use it in the app</h2>
+<p>Offline Wire Gauge Calculator does this sum for you without a signal. Enter amps, or watts and volts, the length and your target. It checks voltage drop, ampacity, the breaker rules and the terminal rating, then shows which of them set the size. It uses NEC Chapter 9 Table 8 for DC and Table 9 for AC, and it cites the table and edition in each result. The app also has two reverse modes: maximum length for a chosen wire, and maximum load for a chosen wire and length. DC presets cover 12 V and 24 V, and 18 AWG and 16 AWG are offered for DC.</p>
+<p>Results are estimates. Verify with local code and the authority having jurisdiction.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Wire Gauge Calculator: NEC</b><p>Size wire by NEC ampacity, voltage drop and breaker rules</p><a href="../">More about the app</a></div></aside><footer><a href="../">Wire Gauge Calculator: NEC</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

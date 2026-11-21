@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculadora de cable: NEC</title><meta name="description" content="Calcula la sección del cable por ampacidad, caída de tensión y protección"><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/es/"><link rel="alternate" hreflang="en" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/"><link rel="alternate" hreflang="de-DE" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/de/"><link rel="alternate" hreflang="es-ES" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/es/"><link rel="alternate" hreflang="x-default" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Calculadora de cable: NEC"><meta property="og:description" content="Calcula la sección del cable por ampacidad, caída de tensión y protección"><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/es/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Calculadora de cable: NEC", "description": "Calcula la sección del cable por ampacidad, caída de tensión y protección", "operatingSystem": "Android", "applicationCategory": "Tools", "inLanguage": "es", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/es/", "image": "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/feature.png", "screenshot": ["https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-1.png", "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-2.png", "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-3.png", "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-4.png", "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-5.png", "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-6.png"]}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><header class="hero"><img src="../icon.png" alt="" width="96" height="96"><div><h1>Calculadora de cable: NEC</h1><p class="tag">Calcula la sección del cable por ampacidad, caída de tensión y protección</p></div></header><img class="feature" src="../feature.png" alt="Calculadora de cable: NEC" width="1024" height="500"><div class="shots"><img src="../screen-1.png" alt="Screenshot 1" width="1080" height="2160" loading="lazy"><img src="../screen-2.png" alt="Screenshot 2" width="1080" height="2160" loading="lazy"><img src="../screen-3.png" alt="Screenshot 3" width="1080" height="2160" loading="lazy"><img src="../screen-4.png" alt="Screenshot 4" width="1080" height="2160" loading="lazy"><img src="../screen-5.png" alt="Screenshot 5" width="1080" height="2160" loading="lazy"><img src="../screen-6.png" alt="Screenshot 6" width="1080" height="2160" loading="lazy"></div><h2>Acerca de la app</h2><p class="desc">Calculadora de cable elige la sección del conductor de un circuito según las reglas de la NEC: ampacidad, caída de tensión y protección. Cada resultado indica qué regla fija la sección y de qué tabla y edición de la NEC procede.
+
+CALCULA LA SECCIÓN O TRABAJA AL REVÉS
+- Sección: introduce la carga, la longitud del tendido y las condiciones. Obtienes la sección del cable y el interruptor automático.
+- Longitud máxima: elige un cable y mira hasta dónde puedes llegar dentro de tu objetivo de caída de tensión.
+- Carga máxima: elige un cable y una longitud y mira la mayor carga que admite.
+
+BASADA EN LA NEC
+- NEC 2020 y NEC 2023. La 2023 es la predeterminada y la app recuerda tu elección.
+- Ampacidad según la Tabla 310.16 (tubo o cable) y la Tabla 310.17 (aire libre).
+- Reducción por temperatura ambiente y número de conductores con corriente.
+- Carga continua al 125 por ciento, límites de conductores pequeños según 240.4(D) y temperatura de terminales según 110.14(C).
+- Siguiente tamaño estándar de interruptor según 240.6(A). Puedes escribir tu propio tamaño o comprobar un interruptor existente con el cable.
+- Caída de tensión según el Capítulo 9, Tabla 9 en CA, con factor de potencia y tubo de PVC, aluminio o acero, y según la Tabla 8 en CC.
+
+PARA ELECTRICISTAS, AFICIONADOS Y PROYECTOS DE 12 V / 24 V
+- CA monofásica o trifásica, o CC con valores de 12 V y 24 V.
+- Carga en amperios, o en vatios y voltios.
+- Cobre o aluminio, de 14 AWG a 1000 kcmil. 18 y 16 AWG se ofrecen para CC.
+- THHN, XHHW-2, NM-B y otros aislamientos habituales, con selección manual de la columna de temperatura.
+- Pies o metros, Fahrenheit o Celsius.
+
+RESPUESTAS CLARAS
+- Cada resultado indica qué fijó la sección: ampacidad, caída de tensión, interruptor o terminales.
+- Cada resultado cita la tabla y la edición de la NEC usadas.
+- Comparte un resultado como texto.
+- El historial guarda tus últimos 10 cálculos. Toca uno para abrirlo de nuevo.
+- Un widget de la pantalla de inicio muestra tus últimos 3 resultados.
+- Tabla de referencia AWG a mm2 con resistencia, calculada con fórmulas públicas.
+
+PRIVADA POR DISEÑO
+- Funciona sin cobertura. La app no tiene permiso de internet y no pide ningún permiso.
+- Sin cuenta, sin analíticas, sin seguimiento.
+- Tus ajustes y los últimos 10 resultados se quedan en tu dispositivo.
+
+ACCESIBLE
+- El tema claro u oscuro sigue el ajuste del sistema.
+- Etiquetas para lectores de pantalla en controles y resultados.
+- Zonas táctiles grandes y diseños para móvil y tableta.
+
+NO INCLUYE
+Tendidos en paralelo, la regla del 83 por ciento para viviendas de 310.12, ocupación de tubos y cajas, cargas de motor (CV) y tablas ABYC o marinas.
+
+Los resultados son estimaciones. Verifícalos siempre con la normativa local y la autoridad competente (AHJ).
+
+NEC y NFPA 70 son marcas de NFPA. Esta app no está afiliada a NFPA.</p><footer><a href="../privacy/">Privacy policy</a> · <a href="../../">All apps</a> · <a href="mailto:apps@schimpf.es">Contact</a> · <a href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/" hreflang="en">EN</a> · <a href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/de/" hreflang="de">DE</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

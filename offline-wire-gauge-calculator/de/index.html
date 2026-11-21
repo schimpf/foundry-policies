@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kabelquerschnitt-Rechner: NEC</title><meta name="description" content="Leiterquerschnitt nach NEC: Strombelastbarkeit, Spannungsfall, Schutz"><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/de/"><link rel="alternate" hreflang="en" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/"><link rel="alternate" hreflang="de-DE" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/de/"><link rel="alternate" hreflang="es-ES" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/es/"><link rel="alternate" hreflang="x-default" href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Kabelquerschnitt-Rechner: NEC"><meta property="og:description" content="Leiterquerschnitt nach NEC: Strombelastbarkeit, Spannungsfall, Schutz"><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/de/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Kabelquerschnitt-Rechner: NEC", "description": "Leiterquerschnitt nach NEC: Strombelastbarkeit, Spannungsfall, Schutz", "operatingSystem": "Android", "applicationCategory": "Tools", "inLanguage": "de", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/de/", "image": "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/feature.png", "screenshot": ["https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-1.png", "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-2.png", "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-3.png", "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-4.png", "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-5.png", "https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/screen-6.png"]}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><header class="hero"><img src="../icon.png" alt="" width="96" height="96"><div><h1>Kabelquerschnitt-Rechner: NEC</h1><p class="tag">Leiterquerschnitt nach NEC: Strombelastbarkeit, Spannungsfall, Schutz</p></div></header><img class="feature" src="../feature.png" alt="Kabelquerschnitt-Rechner: NEC" width="1024" height="500"><div class="shots"><img src="../screen-1.png" alt="Screenshot 1" width="1080" height="2160" loading="lazy"><img src="../screen-2.png" alt="Screenshot 2" width="1080" height="2160" loading="lazy"><img src="../screen-3.png" alt="Screenshot 3" width="1080" height="2160" loading="lazy"><img src="../screen-4.png" alt="Screenshot 4" width="1080" height="2160" loading="lazy"><img src="../screen-5.png" alt="Screenshot 5" width="1080" height="2160" loading="lazy"><img src="../screen-6.png" alt="Screenshot 6" width="1080" height="2160" loading="lazy"></div><h2>Über die App</h2><p class="desc">Der Kabelquerschnitt-Rechner ermittelt den Leiterquerschnitt für einen Stromkreis nach NEC-Regeln für Strombelastbarkeit, Spannungsfall und Leitungsschutz. Jedes Ergebnis zeigt, welche Regel den Querschnitt bestimmt hat und aus welcher NEC-Tabelle und Ausgabe es stammt.
+
+QUERSCHNITT BERECHNEN ODER RÜCKWÄRTS RECHNEN
+- Querschnitt: Last, Leitungslänge und Bedingungen eingeben. Sie erhalten Leiterquerschnitt und Leitungsschutzschalter.
+- Max. Länge: Leiter wählen und sehen, wie lang die Leitung bei Ihrem Spannungsfall-Ziel sein darf.
+- Max. Last: Leiter und Länge wählen und sehen, welche Last höchstens möglich ist.
+
+AUF DER NEC AUFGEBAUT
+- NEC 2020 und NEC 2023. 2023 ist voreingestellt, die App merkt sich Ihre Wahl.
+- Strombelastbarkeit nach Tabelle 310.16 (Rohr oder Kabel) und Tabelle 310.17 (freie Luft).
+- Abminderung für Umgebungstemperatur und Anzahl stromführender Leiter.
+- 125 Prozent bei Dauerlast, Grenzwerte für kleine Leiter nach 240.4(D) und Anschlusstemperatur nach 110.14(C).
+- Nächste Standardgröße des Schutzschalters nach 240.6(A). Eigene Größe eingeben oder einen vorhandenen Schalter gegen den Leiter prüfen.
+- Spannungsfall nach Kapitel 9 Tabelle 9 für AC, mit Leistungsfaktor und Rohr aus PVC, Aluminium oder Stahl, sowie nach Tabelle 8 für DC.
+
+FÜR ELEKTRIKER, HEIMWERKER UND 12-V-/24-V-PROJEKTE
+- AC einphasig oder dreiphasig, oder DC mit Voreinstellungen für 12 V und 24 V.
+- Last in Ampere oder in Watt und Volt.
+- Kupfer oder Aluminium, 14 AWG bis 1000 kcmil. 18 und 16 AWG gibt es für DC.
+- THHN, XHHW-2, NM-B und weitere gängige Isolierungen, mit manueller Wahl der Temperaturspalte.
+- Fuß oder Meter, Fahrenheit oder Celsius.
+
+KLARE ANTWORTEN
+- Jedes Ergebnis nennt, was den Querschnitt bestimmt: Strombelastbarkeit, Spannungsfall, Schutzschalter oder Anschlüsse.
+- Jedes Ergebnis nennt Tabelle und Ausgabe der NEC.
+- Ergebnisse als Text teilen.
+- Der Verlauf speichert Ihre letzten 10 Berechnungen. Antippen öffnet sie erneut.
+- Ein Widget für den Startbildschirm zeigt die letzten 3 Ergebnisse.
+- Referenztabelle AWG zu mm2 mit Widerstand, berechnet aus öffentlichen Formeln.
+
+PRIVAT ENTWORFEN
+- Die App funktioniert ohne Empfang. Sie hat keine Internetberechtigung und fordert überhaupt keine Berechtigungen an.
+- Kein Konto, keine Analyse, kein Tracking.
+- Einstellungen und die letzten 10 Ergebnisse bleiben auf Ihrem Gerät.
+
+BARRIEREARM
+- Helles und dunkles Design folgen der Systemeinstellung.
+- Beschriftungen für Screenreader bei Bedienelementen und Ergebnissen.
+- Große Bedienflächen, Layouts für Smartphone und Tablet.
+
+NICHT ENTHALTEN
+Parallele Leitungen, die 83-Prozent-Regel für Wohnräume nach 310.12, Rohr- und Dosenfüllung, Motorlasten (PS) sowie ABYC- und Schiffstabellen.
+
+Die Ergebnisse sind Schätzwerte. Prüfen Sie sie immer anhand der örtlichen Vorschriften und der zuständigen Behörde (AHJ).
+
+NEC und NFPA 70 sind Marken der NFPA. Diese App steht in keiner Verbindung zur NFPA.</p><footer><a href="../privacy/">Privacy policy</a> · <a href="../../">All apps</a> · <a href="mailto:apps@schimpf.es">Contact</a> · <a href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/" hreflang="en">EN</a> · <a href="https://schimpf.github.io/foundry-policies/offline-wire-gauge-calculator/es/" hreflang="es">ES</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
