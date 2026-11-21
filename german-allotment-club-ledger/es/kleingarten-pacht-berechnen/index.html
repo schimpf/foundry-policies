@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Renta de un huerto de ocio: cálculo por m² y por meses</title><meta name="description" content="Cómo calcular la renta (Pachtzins) de un huerto de ocio por m² y repartirla por meses si cambia el arrendatario. Con un ejemplo resuelto."><meta name="theme-color" content="#3a6a2a"><meta name="author" content="Gerrit Schimpf"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://apps.schimpf.es/german-allotment-club-ledger/es/kleingarten-pacht-berechnen/"><link rel="alternate" hreflang="en" href="https://apps.schimpf.es/german-allotment-club-ledger/kleingarten-pacht-berechnen/"><link rel="alternate" hreflang="de-DE" href="https://apps.schimpf.es/german-allotment-club-ledger/de/kleingarten-pacht-berechnen/"><link rel="alternate" hreflang="es-ES" href="https://apps.schimpf.es/german-allotment-club-ledger/es/kleingarten-pacht-berechnen/"><link rel="alternate" hreflang="x-default" href="https://apps.schimpf.es/german-allotment-club-ledger/kleingarten-pacht-berechnen/"><meta property="og:type" content="website"><meta property="og:site_name" content="Apps by Gerrit Schimpf"><meta property="og:locale" content="es_ES"><meta property="og:title" content="Renta de un huerto de ocio: cálculo por m² y por meses"><meta property="og:description" content="Cómo calcular la renta (Pachtzins) de un huerto de ocio por m² y repartirla por meses si cambia el arrendatario. Con un ejemplo resuelto."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Renta de un huerto de ocio: cálculo por m² y por meses"><meta name="twitter:description" content="Cómo calcular la renta (Pachtzins) de un huerto de ocio por m² y repartirla por meses si cambia el arrendatario. Con un ejemplo resuelto."><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:url" content="https://apps.schimpf.es/german-allotment-club-ledger/es/kleingarten-pacht-berechnen/"><meta property="og:image" content="https://apps.schimpf.es/german-allotment-club-ledger/feature.png"><meta name="twitter:image" content="https://apps.schimpf.es/german-allotment-club-ledger/feature.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="500"><meta property="og:image:alt" content="Caja del Club de Huertos"><link rel="icon" href="../../icon.png"><link rel="apple-touch-icon" href="../../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Renta de un huerto de ocio: cálculo por m² y por meses", "description": "Cómo calcular la renta (Pachtzins) de un huerto de ocio por m² y repartirla por meses si cambia el arrendatario. Con un ejemplo resuelto.", "datePublished": "2026-11-21", "dateModified": "2026-11-21", "inLanguage": "es", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "publisher": {"@type": "Person", "name": "Gerrit Schimpf"}, "about": {"@type": "MobileApplication", "name": "Caja del Club de Huertos", "operatingSystem": "Android", "url": "https://apps.schimpf.es/german-allotment-club-ledger/es/"}, "url": "https://apps.schimpf.es/german-allotment-club-ledger/es/kleingarten-pacht-berechnen/", "mainEntityOfPage": "https://apps.schimpf.es/german-allotment-club-ledger/es/kleingarten-pacht-berechnen/", "image": "https://apps.schimpf.es/german-allotment-club-ledger/feature.png"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Todas las apps", "item": "https://apps.schimpf.es/"}, {"@type": "ListItem", "position": 2, "name": "Caja del Club de Huertos", "item": "https://apps.schimpf.es/german-allotment-club-ledger/es/"}, {"@type": "ListItem", "position": 3, "name": "Renta de un huerto de ocio: cálculo por m² y por meses", "item": "https://apps.schimpf.es/german-allotment-club-ledger/es/kleingarten-pacht-berechnen/"}]}</script><style>
+:root{--bg:#0b0d0c;--bg2:#111413;--card:#161a19;--fg:#f2f4f3;--muted:#a1a8a4;--line:#252b29;--accent:#0f766e;--on:#fff;
+--hi:color-mix(in srgb,var(--accent) 55%,#fff);--soft:color-mix(in srgb,var(--accent) 18%,transparent);
+--frame:#050606;--edge:#2c3230;--shadow:0 40px 80px -30px rgba(0,0,0,.75)}
+@media (prefers-color-scheme:light){:root{--bg:#f7f7f5;--bg2:#eeefec;--card:#fff;--fg:#151816;--muted:#5a615d;--line:#e2e5e1;
+--hi:color-mix(in srgb,var(--accent) 80%,#000);--soft:color-mix(in srgb,var(--accent) 12%,transparent);
+--frame:#101312;--edge:#1f2422;--shadow:0 30px 60px -30px rgba(20,30,25,.45)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--hi)}img{max-width:100%;height:auto}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,5vw,3.6rem);overflow-wrap:break-word;font-weight:800}h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:750}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}@media (max-width:640px){.wrap{padding:0 16px}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--card);padding:8px 12px;z-index:9}.skip:focus{left:8px}
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 78%,transparent);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font-weight:700;min-width:0}
+.brand img{border-radius:9px;flex:none}.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.links{display:flex;gap:22px;margin-left:auto}.links a{color:var(--muted);text-decoration:none;font-size:.95rem}
+.links a:hover{color:var(--fg)}@media (max-width:760px){.links{display:none}.nav .btn{margin-left:auto}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on);padding:12px 22px;
+border-radius:999px;text-decoration:none;font-weight:650;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px var(--accent)}.nav .btn{padding:8px 16px;font-size:.9rem}
+.chip{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--soft);
+color:var(--hi);font-weight:600;font-size:.95rem}
+.band{padding:96px 0;position:relative}.band.alt{background:var(--bg2)}@media (max-width:640px){.band{padding:64px 0}}
+.eyebrow{display:block;color:var(--hi);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.lead{color:var(--muted);font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:640px}
+.hero{overflow:hidden;padding:72px 0 40px;background:
+radial-gradient(55% 60% at 78% 30%,color-mix(in srgb,var(--accent) 38%,transparent),transparent 70%),
+radial-gradient(40% 50% at 5% 100%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.hero .icon{border-radius:24px;box-shadow:0 20px 40px -18px var(--accent);margin-bottom:24px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.hero .actions .badge img{display:block;height:60px;width:auto}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr);text-align:center}.hero .lead{margin:0 auto}
+.hero .actions{justify-content:center}.hero .icon{margin:0 auto 20px}}
+.stack{display:flex;justify-content:center;align-items:flex-end;padding:20px 0 40px}
+.stack .phone{width:250px}.stack .phone:nth-child(2){width:280px;z-index:2}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(40px,30px)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-40px,30px)}
+@media (max-width:640px){.stack .phone{width:32vw;padding:6px;border-radius:26px}.stack .phone img{border-radius:21px}
+.stack .phone:nth-child(2){width:46vw}.stack .phone::before{top:12px;width:7px;height:7px;margin-left:-3.5px}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(9vw,4vw)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-9vw,4vw)}}
+.phone{position:relative;flex:none;margin:0;padding:9px;background:var(--frame);border-radius:42px;
+box-shadow:0 0 0 1.5px var(--edge),inset 0 0 0 1px #000,var(--shadow)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+background:#000;box-shadow:0 0 0 2px #111;z-index:1}
+.phone picture,.tablet picture{display:block}.phone img{display:block;width:100%;height:auto;border-radius:33px;background:#000}
+.tablet{max-width:860px;margin:0 auto;padding:14px;background:var(--frame);border-radius:30px;
+box-shadow:0 0 0 1.5px var(--edge),var(--shadow)}.tablet img{display:block;width:100%;border-radius:18px}
+.tablets{display:grid;gap:32px}
+.gallery{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px max(24px,calc(50vw - 576px)) 40px;
+scrollbar-width:thin}.gallery figure{margin:0;flex:none;width:240px;scroll-snap-align:center;text-align:center}
+.gallery figcaption{margin-top:18px;color:var(--muted);font-size:.95rem;font-weight:500}
+@media (max-width:640px){.gallery{gap:20px;padding:16px 16px 32px}.gallery figure{width:200px}}
+.head{max-width:720px;margin-bottom:48px}.center{text-align:center;margin-left:auto;margin-right:auto}
+.about p{max-width:720px;color:var(--muted);font-size:1.1rem}
+.features{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.fcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;transition:transform .25s,border-color .25s}
+.fcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.num{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--soft);color:var(--hi);
+font-weight:800;margin-bottom:18px}.fcard p{color:var(--muted);margin:0 0 12px}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:9px}.checks li{position:relative;padding-left:28px;color:var(--muted);font-size:.97rem}
+.checks li::before{content:"";position:absolute;left:0;top:.42em;width:16px;height:16px;border-radius:50%;background:var(--soft);
+box-shadow:inset 0 0 0 1.5px var(--hi)}
+.checks li::after{content:"";position:absolute;left:5.5px;top:calc(.42em + 4px);width:4px;height:7px;border:solid var(--hi);
+border-width:0 2px 2px 0;transform:rotate(45deg)}
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.cards li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:transform .2s,border-color .2s}
+.cards li:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.cards a{color:var(--fg);font-weight:700;text-decoration:none;font-size:1.08rem}.cards a::after{content:"";position:absolute;inset:0}
+.cards small{display:block;color:var(--muted);margin-top:6px;font-size:.93rem}
+.apps li{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--card)),var(--card) 60%)}
+.apps img{border-radius:14px;flex:none}.apps small{margin-top:2px}
+.cta-band{border-radius:32px;padding:64px 32px;text-align:center;border:1px solid var(--line);background:
+radial-gradient(70% 90% at 50% 0%,color-mix(in srgb,var(--accent) 35%,transparent),transparent 70%),var(--card)}
+.cta-band img.icon{border-radius:22px;margin-bottom:20px}.cta-band .lead{margin:0 auto 28px}.cta-band .badge img{height:60px;width:auto}
+.foot{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:.92rem}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}.foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+.foot a{color:var(--muted)}.foot a:hover{color:var(--fg)}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 20px;font-size:.92rem;color:var(--muted)}
+.crumbs li+li::before{content:"›";margin-right:6px}.crumbs a{color:var(--muted)}
+.ghero{padding:64px 0 32px;background:radial-gradient(60% 80% at 85% 0%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%)}
+.ghero h1{font-size:clamp(2rem,4.5vw,3.2rem);max-width:860px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start;padding-bottom:96px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+.guide{max-width:740px;font-size:1.06rem}.guide h2{font-size:1.7rem;margin-top:1.8em}.guide h3{margin-top:1.5em}
+.guide li{margin:.35em 0}.guide code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.9em}
+.table{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.96rem}th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:var(--shadow)}
+.calc input,.calc select,.calc button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
+.cta{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
+.cta .phone{width:170px;margin:0 auto 20px}.cta img.icon{border-radius:14px}.cta p{color:var(--muted);font-size:.95rem;margin:6px 0 16px}
+.cta .badge img{height:52px;width:auto;margin:12px auto 0;display:block}
+.faq{max-width:820px;display:grid;gap:12px}.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.faq summary{cursor:pointer;font-weight:650;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--hi);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}.faq details p{color:var(--muted);margin:12px 0 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:root{--accent:#3a6a2a;--on:#ffffff}</style></head><body><a class="skip" href="#main">Ir al contenido</a><header class="nav"><div class="wrap"><a class="brand" href="../"><img src="../../icon.png" alt="" width="32" height="32"><span>Caja del Club de Huertos</span></a><a class="btn" href="https://play.google.com/store/apps/details?id=es.schimpf.germanallotmentclubledger&amp;hl=es">Obtener la app</a></div></header><main id="main"><section class="ghero"><div class="wrap"><ol class="crumbs"><li><a href="../../../">Todas las apps</a></li><li><a href="../">Caja del Club de Huertos</a></li><li>Renta de un huerto de ocio: cálculo por m² y por meses</li></ol><h1>Renta de un huerto de ocio: cálculo por m² y por meses</h1><p class="lead">Cómo calcular la renta (Pachtzins) de un huerto de ocio por m² y repartirla por meses si cambia el arrendatario. Con un ejemplo resuelto.</p></div></section><div class="wrap layout"><article class="guide"><p>Si eres el tesorero (Kassenwart) de un club de huertos de ocio alemán (Kleingartenverein), cada año cobras la renta (Pachtzins) de cada parcela. Esta página explica la fórmula, un ejemplo con números y cómo repartir la renta cuando una parcela cambia de arrendatario durante el año.</p>
+<div class="calc"><form id="rent-split">
+  <h2>Calculadora de reparto de la renta</h2>
+  <p>
+    <label>Superficie de la parcela en m² <input id="rs-area" type="text" inputmode="decimal" value="340"></label>
+  </p>
+  <p>
+    <label>Tarifa por m² en € <input id="rs-rate" type="text" inputmode="decimal" value="0,3412"></label>
+  </p>
+  <p>
+    <label>Meses del primer arrendatario (1 a 11) <input id="rs-months" type="text" inputmode="numeric" value="5"></label>
+  </p>
+  <p><button type="submit">Calcular</button></p>
+  <p id="rs-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("rent-split");
+  var out = document.getElementById("rs-out");
+  function fmt(cents) {
+    var whole = Math.floor(cents / 100);
+    var rest = String(cents % 100);
+    if (rest.length < 2) rest = "0" + rest;
+    return String(whole).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "," + rest + " €";
+  }
+  function roundHalfUp(n, d) { return Math.floor((n + Math.floor(d / 2)) / d); }
+  function parseRate(text) {
+    var s = text.trim().replace(/\s/g, "");
+    if (s.indexOf(",") >= 0) s = s.replace(/\./g, "").replace(",", ".");
+    if (!/^\d+(\.\d{0,4})?$/.test(s)) return null;
+    return Math.round(parseFloat(s) * 10000);
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var area = parseInt(document.getElementById("rs-area").value, 10);
+    var rate = parseRate(document.getElementById("rs-rate").value);
+    var n = parseInt(document.getElementById("rs-months").value, 10);
+    if (!(area > 0) || rate === null || !(n >= 1 && n <= 11)) {
+      out.textContent = "Introduce una superficie, una tarifa con hasta cuatro decimales y de 1 a 11 meses.";
+      return;
+    }
+    var fine = area * rate * 1000;
+    var perCent = 100000;
+    var yearly = roundHalfUp(fine, perCent);
+    var a = roundHalfUp(fine * n, 12 * perCent);
+    var b = yearly - a;
+    out.textContent = "Renta anual: " + fmt(yearly) + ". Primer arrendatario (" + n + " meses): " + fmt(a) +
+      ". Segundo arrendatario (" + (12 - n) + " meses): " + fmt(b) + ".";
+  });
+})();
+</script>
+</div>
+<h2>La fórmula básica</h2>
+<p>La mayoría de los clubes cobra la renta por metro cuadrado:</p>
+<p><strong>Renta anual = superficie de la parcela en m² × tarifa por m²</strong></p>
+<p>Algunos clubes usan en su lugar un importe fijo por parcela:</p>
+<p><strong>Renta anual = importe fijo por parcela</strong></p>
+<p>Ambas son habituales. Tu contrato de arrendamiento y los estatutos del club (Satzung) indican cuál se aplica en tu caso.</p>
+<h3>Ejemplo: año completo, un arrendatario</h3>
+<ul><li>Superficie de la parcela: 350 m²</li><li>Tarifa: 0,32 € por m²</li><li>Renta: 350 × 0,32 € = <strong>112,00 €</strong></li></ul>
+<p>Las tarifas pueden tener más de dos decimales. Una tarifa de 0,3412 € por m² es normal, porque el club la calcula a partir de sus propios costes. Mantén los cuatro decimales en el cálculo y redondea solo al final, a céntimos enteros.</p>
+<h2>Qué dice la ley sobre el nivel de la renta</h2>
+<p>La Bundeskleingartengesetz (BKleingG, del 28 de febrero de 1983) es la ley federal de huertos de ocio. El artículo 5 limita la renta. El máximo es el cuádruple de la renta habitual en la zona para el cultivo comercial de frutas y hortalizas, calculada sobre toda la superficie del recinto. El texto exacto y los cambios posteriores están en gesetze-im-internet.de, bajo "BKleingG". El artículo 3 fija además el tamaño máximo habitual de una parcela, 400 m². Lee el texto vigente antes de fijar una tarifa nueva. Tu asociación regional (Landesverband) puede darte la cifra local.</p>
+<p>La ley solo marca el límite superior. La tarifa real por m² la decide tu club, normalmente en la asamblea general.</p>
+<h2>Repartir la renta cuando cambia el arrendatario</h2>
+<p>Cuando una parcela cambia de manos a mitad de año, el arrendatario anterior y el nuevo pagan cada uno los meses en que tuvieron la parcela. Usa meses completos:</p>
+<ol><li>Cuenta los meses que cada arrendatario tuvo la parcela ese año.</li><li>Divide la renta anual entre 12 y multiplica por los meses.</li><li>Redondea cada parte a céntimos.</li><li>Comprueba que las partes suman la renta anual. Si difieren en un céntimo, la diferencia se da al último arrendatario.</li></ol>
+<p>El mismo reparto sirve para el resto de los cargos de la parcela: derramas (Umlagen), cuotas fijas de suministros y similares.</p>
+<h3>Ejemplo: cambio de arrendatario tras mayo</h3>
+<ul><li>Superficie de la parcela: 340 m²</li><li>Tarifa: 0,3412 € por m²</li><li>Renta anual: 340 × 0,3412 € = 116,008 €, que se redondea a <strong>116,01 €</strong></li><li>El arrendatario A tuvo la parcela de enero a mayo: 5 meses</li><li>El arrendatario B la tiene de junio a diciembre: 7 meses</li></ul>
+<div class="table"><table><thead><tr><th>Arrendatario</th><th>Meses</th><th>Cálculo</th><th>Parte</th></tr></thead><tbody><tr><td>A</td><td>5</td><td>116,008 € × 5 ÷ 12 = 48,337 €</td><td>48,34 €</td></tr><tr><td>B</td><td>7</td><td>116,01 € − 48,34 €</td><td>67,67 €</td></tr><tr><td>Total</td><td>12</td><td></td><td>116,01 €</td></tr></tbody></table></div>
+<p>Si redondearas la parte de B por separado, 116,008 € × 7 ÷ 12 = 67,671 €, también saldrían 67,67 €. En otros casos los dos métodos difieren en un céntimo. Dar el resto al último arrendatario hace que el total de la parcela sea igual al importe anual, y tus cuentas cuadran.</p>
+<h2>Qué no se reparte por meses</h2>
+<ul><li><strong>Las cuotas de socio</strong> pertenecen al socio, no a la parcela. Se cobran por socio y año, completas.</li><li><strong>El agua y la electricidad</strong> dependen de las lecturas de los contadores. Cuenta el consumo entre dos lecturas. Mira la página sobre el <a href="allotment-water-meter-cost-calculation">coste del agua por contador</a>.</li></ul>
+<h2>Errores frecuentes</h2>
+<ul><li>Redondear la tarifa a dos decimales antes de multiplicar. En un recinto grande se acumula hasta un error visible.</li><li>Repartir por días en vez de por meses. La mayoría de los clubes cobra por meses completos. Fija la regla en los estatutos para que ambos arrendatarios la conozcan.</li><li>Cobrar el mismo mes a los dos arrendatarios, o a ninguno. El mes de la entrega debe pertenecer a uno solo.</li></ul>
+<h2>En la app</h2>
+<p>Caja del Club de Huertos lo hace por ti. Introduces las superficies de las parcelas, el historial de arrendatarios con mes de inicio y de fin, y la tarifa por m² o el importe fijo del año. La app reparte cada cargo de parcela por meses, redondea una sola vez y da la diferencia de céntimos al último arrendatario. Después crea una factura en PDF por arrendatario, con tu IBAN, que compartes por correo o mensajería.</p>
+<p>La app funciona sin conexión y no tiene permiso de internet. Todas las funciones están disponibles para clubes con hasta 15 parcelas. Una compra única de Pro quita ese límite para clubes más grandes.</p></article><aside class="cta"><div class="phone"><picture><source type="image/webp" srcset="../../screen-1.webp"><img src="../../screen-1.png" alt="Caja del Club de Huertos" width="1080" height="2160" loading="lazy" decoding="async"></picture></div><div><b>Caja del Club de Huertos</b><p>Rentas, cuotas, contadores y recibos para tesoreros de clubes de huertos</p><a href="../">Más sobre la app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.germanallotmentclubledger&amp;hl=es"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside></div><section class="band alt"><div class="wrap"><div class="head"><h2>Más guías</h2></div><ul class="cards"><li><a href="../allotment-water-meter-cost-calculation/">Coste del agua en huertos de ocio: contador y ejemplo</a><small>Cómo calcular el coste del agua o la luz de cada parcela con la lectura del contador: fórmula, tarifa base, ejemplo y lecturas dudosas.</small></li><li><a href="../gemeinschaftsstunden-ersatzgeld-berechnen/">Horas de trabajo comunitario: calcular el importe a pagar</a><small>Cómo calcular el importe por horas de trabajo comunitario no realizadas en un club de huertos alemán, con reparto por meses y un ejemplo.</small></li></ul></div></section><section class="band"><div class="wrap"><div class="head"><h2>Más apps</h2></div><ul class="cards apps"><li style="--accent:#4355b9"><img src="../../../alarm-clock/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../alarm-clock/">Alarm Clock: Wake-Up Missions</a><small>Reliable alarms for heavy sleepers. Solve a task to switch the alarm off.</small></span></li><li style="--accent:#006a63"><img src="../../../anti-bucket-list/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../anti-bucket-list/">Anti-Bucket List: No Journal</a><small>Write down what you said no to and check later if you&#x27;re still glad.</small></span></li><li style="--accent:#0f766e"><img src="../../../binaural-beats/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../binaural-beats/">Binaural Beats</a><small>Binaural and isochronic beats to relax, focus or sleep.</small></span></li></ul></div></section></main><footer class="foot"><div class="wrap"><nav aria-label="Footer"><a href="../">Caja del Club de Huertos</a><a href="../../privacy/">Privacidad</a><a href="../../../">Todas las apps</a><a href="https://apps.schimpf.es/german-allotment-club-ledger/kleingarten-pacht-berechnen/" hreflang="en">EN</a><a href="https://apps.schimpf.es/german-allotment-club-ledger/de/kleingarten-pacht-berechnen/" hreflang="de-DE">DE</a></nav><span>© 2026 Gerrit Schimpf</span></div></footer></body></html>
