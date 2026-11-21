@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reading Time Calculator: How Long to Read a Book</title><meta name="description" content="Work out how long a book takes to read from its word or character count. Formula, worked examples and a small calculator."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/dyslexia-reader-android/reading-time-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Reading Time Calculator: How Long to Read a Book"><meta property="og:description" content="Work out how long a book takes to read from its word or character count. Formula, worked examples and a small calculator."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/dyslexia-reader-android/reading-time-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/dyslexia-reader-android/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Reading Time Calculator: How Long to Read a Book", "description": "Work out how long a book takes to read from its word or character count. Formula, worked examples and a small calculator.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/dyslexia-reader-android/reading-time-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Dyslexia Reader: Book Reader</a></p><h1>Reading Time Calculator: How Long to Read a Book</h1><article class="guide"><p>How long will a book take you? You can get a good estimate with one division. This page shows the formula, three worked examples and a calculator you can use right here.</p>
+<h2>The quick answer</h2>
+<ul><li>Assume about <strong>200 words a minute</strong>.</li><li>A word counts as <strong>six characters</strong>: five letters and one space.</li><li>That makes <strong>1,200 characters a minute</strong>.</li><li>Divide the characters left by 1,200, then round <strong>up</strong> to whole minutes.</li></ul>
+<p>Dyslexic readers often read slower than 200 words a minute, and speed changes with the text. Treat the result as a planning number, not a promise. If you read at 100 words a minute, double it.</p>
+<div class="calc"><form id="rt-form" onsubmit="return false">
+  <p>
+    <label for="rt-unit">I know the</label>
+    <select id="rt-unit">
+      <option value="words">word count</option>
+      <option value="chars">character count</option>
+    </select>
+  </p>
+  <p>
+    <label for="rt-total">Total</label>
+    <input id="rt-total" type="number" min="0" step="1" value="90000">
+  </p>
+  <p>
+    <label for="rt-read">Already read (same unit)</label>
+    <input id="rt-read" type="number" min="0" step="1" value="0">
+  </p>
+  <button type="submit" id="rt-go">Calculate</button>
+  <p id="rt-out" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var CHARS_PER_MINUTE = 1200;
+  var CHARS_PER_WORD = 6;
+  function calc() {
+    var unit = document.getElementById("rt-unit").value;
+    var k = unit === "words" ? CHARS_PER_WORD : 1;
+    var total = Math.max(0, Math.floor(Number(document.getElementById("rt-total").value) || 0)) * k;
+    var read = Math.max(0, Math.floor(Number(document.getElementById("rt-read").value) || 0)) * k;
+    var out = document.getElementById("rt-out");
+    if (total <= 0) { out.textContent = "Enter a total above 0."; return; }
+    read = Math.min(read, total);
+    var minutes = Math.ceil((total - read) / CHARS_PER_MINUTE);
+    var percent = Math.floor(read * 100 / total);
+    var text;
+    if (minutes <= 0) text = "Done";
+    else if (minutes < 60) text = minutes + " min left";
+    else text = Math.floor(minutes / 60) + " h " + (minutes % 60) + " min left";
+    out.textContent = text + " (" + percent + "% read, at 200 words a minute)";
+  }
+  document.getElementById("rt-go").addEventListener("click", calc);
+  document.getElementById("rt-form").addEventListener("submit", calc);
+})();
+</script>
+</div>
+<h2>The formula</h2>
+<p><strong>minutes left = ceil( (total characters - characters already read) / 1,200 )</strong></p>
+<ul><li><strong>Total characters</strong> counts letters, digits, punctuation and spaces.</li><li><strong>Characters already read</strong> is where you stopped.</li><li><strong>ceil</strong> rounds up. Even 1 character left shows as 1 minute.</li><li>If you have finished the book, the result is 0.</li></ul>
+<p>If you only know the word count, multiply it by 6 to get characters.</p>
+<p><strong>characters = words x 6</strong></p>
+<p>This is an average for English text. Books with many short words come out a little high, and books with long words a little low. Over a whole book the error is usually small.</p>
+<h2>How to find the word count</h2>
+<ul><li>A TXT file: open it in a word processor and read the count in its status bar.</li><li>A word processor document: use its word count tool.</li><li>A published book: the publisher page often lists it. Otherwise, estimate from pages. A paperback page holds about 250 to 300 words.</li><li>In Dyslexia Reader Android, you do not need the count. The import screen shows the size of the text and the time to read it before you add the book.</li></ul>
+<h2>Percent read</h2>
+<p>Progress is the characters read divided by the total, times 100, rounded down.</p>
+<p><strong>percent = floor( characters read x 100 / total characters )</strong></p>
+<p>Rounding down means you only see 100% when you have really reached the end.</p>
+<h2>Worked examples</h2>
+<h3>A 90,000-word novel</h3>
+<ol><li>Characters: 90,000 x 6 = 540,000.</li><li>Minutes: 540,000 / 1,200 = 450.</li><li>450 minutes is <strong>7 hours 30 minutes</strong>.</li></ol>
+<h3>A short story, partly read</h3>
+<p>You have a text with 54,000 characters and you stopped at character 20,000.</p>
+<ol><li>Characters left: 54,000 - 20,000 = 34,000.</li><li>Minutes: 34,000 / 1,200 = 28.33. Round up to <strong>29 minutes</strong>.</li><li>Progress: 20,000 x 100 / 54,000 = 37.03. Round down to <strong>37%</strong>.</li></ol>
+<h3>Almost done</h3>
+<p>You have 1,000 characters left.</p>
+<ol><li>1,000 / 1,200 = 0.83.</li><li>Round up: <strong>1 minute</strong>.</li></ol>
+<h2>Quick table</h2>
+<p>Each row uses the 200 words a minute rule.</p>
+<div class="table"><table><thead><tr><th>Words</th><th>Characters</th><th>Reading time</th></tr></thead><tbody><tr><td>5,000</td><td>30,000</td><td>25 min</td></tr><tr><td>20,000</td><td>120,000</td><td>1 h 40 min</td></tr><tr><td>50,000</td><td>300,000</td><td>4 h 10 min</td></tr><tr><td>90,000</td><td>540,000</td><td>7 h 30 min</td></tr><tr><td>120,000</td><td>720,000</td><td>10 h</td></tr></tbody></table></div>
+<h2>Fit it to your own speed</h2>
+<p>To use your own pace, divide the words by your words per minute instead of 200.</p>
+<ol><li>Read a page you know the word count of for one minute.</li><li>Count the words you read. That is your pace.</li><li>Divide the book's words by that number.</li></ol>
+<p>Example: a 60,000-word book at 120 words a minute is 60,000 / 120 = 500 minutes, or 8 hours 20 minutes.</p>
+<h2>Where the app does this for you</h2>
+<p>Dyslexia Reader Android works out this number for every book in your library. It uses the same 1,200 characters a minute rule and the same rounding. You see the progress and the time left on each book and in the reader. A home-screen widget shows the same for the book you are reading and takes you back to your place.</p>
+<ul><li>Import TXT, EPUB or PDF files from your device.</li><li>Everything stays on your device. The app has no internet permission.</li><li>A short sample book is included so you can see the numbers before you add your own.</li></ul>
+<p>Search for Dyslexia Reader: Book Reader on Google Play.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Dyslexia Reader: Book Reader</b><p>Read books with dyslexia-friendly fonts, a line ruler and read aloud.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.dyslexiareaderandroid&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Dyslexia Reader: Book Reader</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
