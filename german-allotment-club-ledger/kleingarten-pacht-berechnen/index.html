@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kleingarten Pacht berechnen: per m² and by month</title><meta name="description" content="How to calculate allotment garden rent (Pachtzins) per m², and how to split it by month when a tenant changes mid-year. With a worked example."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/german-allotment-club-ledger/kleingarten-pacht-berechnen/"><meta property="og:type" content="website"><meta property="og:title" content="Kleingarten Pacht berechnen: per m² and by month"><meta property="og:description" content="How to calculate allotment garden rent (Pachtzins) per m², and how to split it by month when a tenant changes mid-year. With a worked example."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/german-allotment-club-ledger/kleingarten-pacht-berechnen/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/german-allotment-club-ledger/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Kleingarten Pacht berechnen: per m² and by month", "description": "How to calculate allotment garden rent (Pachtzins) per m², and how to split it by month when a tenant changes mid-year. With a worked example.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/german-allotment-club-ledger/kleingarten-pacht-berechnen/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Allotment Club Ledger</a></p><h1>Kleingarten Pacht berechnen: per m² and by month</h1><article class="guide"><p>If you are the treasurer (Kassenwart) of a German allotment club (Kleingartenverein), you bill rent (Pachtzins) for every plot each year. This page shows the formula, a worked example, and how to split the rent when a plot changes tenant during the year.</p>
+<div class="calc"><form id="rent-split">
+  <h2>Rent split calculator</h2>
+  <p>
+    <label>Plot size in m² <input id="rs-area" type="text" inputmode="decimal" value="340"></label>
+  </p>
+  <p>
+    <label>Rate per m² in € <input id="rs-rate" type="text" inputmode="decimal" value="0,3412"></label>
+  </p>
+  <p>
+    <label>Months held by the first tenant (1 to 11) <input id="rs-months" type="text" inputmode="numeric" value="5"></label>
+  </p>
+  <p><button type="submit">Calculate</button></p>
+  <p id="rs-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("rent-split");
+  var out = document.getElementById("rs-out");
+  function fmt(cents) {
+    var whole = Math.floor(cents / 100);
+    var rest = String(cents % 100);
+    if (rest.length < 2) rest = "0" + rest;
+    return String(whole).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "," + rest + " €";
+  }
+  function roundHalfUp(n, d) { return Math.floor((n + Math.floor(d / 2)) / d); }
+  function parseRate(text) {
+    var s = text.trim().replace(/\s/g, "");
+    if (s.indexOf(",") >= 0) s = s.replace(/\./g, "").replace(",", ".");
+    if (!/^\d+(\.\d{0,4})?$/.test(s)) return null;
+    return Math.round(parseFloat(s) * 10000);
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var area = parseInt(document.getElementById("rs-area").value, 10);
+    var rate = parseRate(document.getElementById("rs-rate").value);
+    var n = parseInt(document.getElementById("rs-months").value, 10);
+    if (!(area > 0) || rate === null || !(n >= 1 && n <= 11)) {
+      out.textContent = "Please enter a plot size, a rate with up to four decimals, and 1 to 11 months.";
+      return;
+    }
+    var fine = area * rate * 1000;
+    var perCent = 100000;
+    var yearly = roundHalfUp(fine, perCent);
+    var a = roundHalfUp(fine * n, 12 * perCent);
+    var b = yearly - a;
+    out.textContent = "Yearly rent: " + fmt(yearly) + ". First tenant (" + n + " months): " + fmt(a) +
+      ". Second tenant (" + (12 - n) + " months): " + fmt(b) + ".";
+  });
+})();
+</script>
+</div>
+<h2>The basic formula</h2>
+<p>Most clubs bill rent per square metre:</p>
+<p><strong>Yearly rent = plot size in m² × rate per m²</strong></p>
+<p>Some clubs use a flat amount per plot instead:</p>
+<p><strong>Yearly rent = flat amount per plot</strong></p>
+<p>Both are common. Check your lease and your club bylaws (Satzung) to see which one applies to you.</p>
+<h3>Example: whole year, one tenant</h3>
+<ul><li>Plot size: 350 m²</li><li>Rate: 0,32 € per m²</li><li>Rent: 350 × 0,32 € = <strong>112,00 €</strong></li></ul>
+<p>Rates can have more than two decimals. A rate of 0,3412 € per m² is normal, because the club works it out from its own costs. Keep all four decimals in the calculation and round only at the end, to whole cents.</p>
+<h2>What the law says about the rent level</h2>
+<p>The Bundeskleingartengesetz (BKleingG, of 28 February 1983) is the federal law for allotment gardens. Section 5 limits the rent. The maximum is four times the local customary rent for commercial fruit and vegetable growing, calculated on the whole area of the allotment site. The exact wording and later changes are on gesetze-im-internet.de, under "BKleingG". Section 3 also sets the usual maximum plot size of 400 m². Read the current text before you set a new rate. Your regional association (Landesverband) can tell you the local figure.</p>
+<p>The law gives the upper limit only. The actual rate per m² is your club's decision, normally taken by the general meeting.</p>
+<h2>Splitting rent when the tenant changes</h2>
+<p>When a plot changes hands in the middle of the year, the old and the new tenant each pay for the months they held the plot. Use whole months:</p>
+<ol><li>Count the months each tenant held the plot in that year.</li><li>Divide the yearly rent by 12 and multiply by the months held.</li><li>Round each share to cents.</li><li>Check that the shares add up to the yearly rent. If they differ by a cent, give the difference to the last tenant.</li></ol>
+<p>The same split works for every other plot-based charge: levies (Umlagen), flat utility fees and the like.</p>
+<h3>Example: tenant change after May</h3>
+<ul><li>Plot size: 340 m²</li><li>Rate: 0,3412 € per m²</li><li>Yearly rent: 340 × 0,3412 € = 116,008 €, which rounds to <strong>116,01 €</strong></li><li>Tenant A held the plot from January to May: 5 months</li><li>Tenant B holds it from June to December: 7 months</li></ul>
+<div class="table"><table><thead><tr><th>Tenant</th><th>Months</th><th>Calculation</th><th>Share</th></tr></thead><tbody><tr><td>A</td><td>5</td><td>116,008 € × 5 ÷ 12 = 48,337 €</td><td>48,34 €</td></tr><tr><td>B</td><td>7</td><td>116,01 € − 48,34 €</td><td>67,67 €</td></tr><tr><td>Total</td><td>12</td><td></td><td>116,01 €</td></tr></tbody></table></div>
+<p>If you rounded B's share on its own, 116,008 € × 7 ÷ 12 = 67,671 €, you would get 67,67 € as well. In other cases the two methods differ by one cent. Giving the remainder to the last tenant keeps the plot total equal to the yearly amount, so your books balance.</p>
+<h2>What is not split by month</h2>
+<ul><li><strong>Membership dues</strong> belong to a member, not to a plot. They are charged per member and year in full.</li><li><strong>Water and electricity</strong> are based on meter readings. The consumption between two readings is what counts. See the page on <a href="allotment-water-meter-cost-calculation">allotment water meter cost</a>.</li></ul>
+<h2>Common mistakes</h2>
+<ul><li>Rounding the rate to two decimals before multiplying. On a large site this adds up to a visible error.</li><li>Splitting by days instead of months. Most clubs bill by whole months. Fix the rule in your bylaws so that both tenants know it.</li><li>Charging the same month to both tenants, or to neither. The month of the handover must belong to exactly one of them.</li></ul>
+<h2>Do it in the app</h2>
+<p>Allotment Club Ledger does this for you. You enter plot sizes, the tenant history with start and end month, and the rate per m² or the flat amount for the year. The app splits every plot charge by month, rounds once, and gives the cent difference to the last tenant. Then it creates one invoice PDF per tenant, with your IBAN, which you share by mail or messenger.</p>
+<p>The app works offline and has no internet permission. All features work for clubs with up to 15 plots. A one-time Pro purchase lifts that limit for bigger clubs.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Allotment Club Ledger</b><p>Rent, dues, meters and receipts for allotment club treasurers</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.germanallotmentclubledger&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Allotment Club Ledger</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
