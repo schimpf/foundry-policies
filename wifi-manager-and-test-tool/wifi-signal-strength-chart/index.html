@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WiFi Signal Strength Chart (dBm to Signal Quality)</title><meta name="description" content="What WiFi dBm values mean, from -30 to -100 dBm. A chart, a quick lookup tool and what to do when your signal is weak."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/wifi-manager-and-test-tool/wifi-signal-strength-chart/"><meta property="og:type" content="website"><meta property="og:title" content="WiFi Signal Strength Chart (dBm to Signal Quality)"><meta property="og:description" content="What WiFi dBm values mean, from -30 to -100 dBm. A chart, a quick lookup tool and what to do when your signal is weak."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/wifi-manager-and-test-tool/wifi-signal-strength-chart/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/wifi-manager-and-test-tool/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "WiFi Signal Strength Chart (dBm to Signal Quality)", "description": "What WiFi dBm values mean, from -30 to -100 dBm. A chart, a quick lookup tool and what to do when your signal is weak.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/wifi-manager-and-test-tool/wifi-signal-strength-chart/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">WiFi Scanner &amp; Network Tools</a></p><h1>WiFi Signal Strength Chart (dBm to Signal Quality)</h1><article class="guide"><p>WiFi signal strength is shown as RSSI in <strong>dBm</strong>. The number is always negative. The closer to zero, the stronger the signal. This page gives a chart, a small lookup tool and a few fixes.</p>
+<h2>WiFi signal strength chart</h2>
+<div class="table"><table><thead><tr><th>Signal (dBm)</th><th>Quality</th><th>Bars (of 4)</th><th>What to expect</th></tr></thead><tbody><tr><td>-55 or higher</td><td>Excellent</td><td>4</td><td>Full speed. Video calls and streaming are stable.</td></tr><tr><td>-56 to -67</td><td>Good</td><td>3</td><td>Reliable for streaming, calls and browsing.</td></tr><tr><td>-68 to -75</td><td>Fair</td><td>2</td><td>Works, but speed drops and calls may stutter.</td></tr><tr><td>-76 to -99</td><td>Weak</td><td>1</td><td>Slow pages, drops and long delays.</td></tr><tr><td>-100 or lower</td><td>No signal</td><td>0</td><td>Not usable.</td></tr></tbody></table></div>
+<p>These bands are the ones used by the app WiFi Scanner &amp; Network Tools. Other tools draw the lines a few dBm apart, so treat them as a guide and not a standard.</p>
+<h2>How to read dBm</h2>
+<ul><li>dBm is a logarithmic scale. Every 3 dBm change roughly doubles or halves the power.</li><li>-50 dBm is not "50% strong". It is about 1,000 times more power than -80 dBm. A drop from -55 to -75 is a 100-fold loss.</li><li>A change of 1 or 2 dBm is noise. Signal moves by that much when you turn your body or move the phone.</li><li>The value is what your phone receives from the router. It says nothing about how far your router can hear your phone.</li></ul>
+<h3>Worked example</h3>
+<p>You measure -62 dBm in the living room and -79 dBm in the bedroom.</p>
+<ol><li>Living room: -62 is between -56 and -67, so <strong>Good</strong>.</li><li>Bedroom: -79 is between -76 and -99, so <strong>Weak</strong>.</li><li>The difference is 17 dBm, which is about 50 times less power in the bedroom (17 / 10 = 1.7, and 10^1.7 is about 50).</li></ol>
+<p>The bedroom is the place to fix, not the living room.</p>
+<h2>Check a value</h2>
+<div class="calc"><form id="sig-form" onsubmit="return false">
+  <label for="sig-dbm">Signal in dBm (for example -62)</label>
+  <input id="sig-dbm" type="number" step="1" min="-120" max="0" value="-62">
+  <button type="submit" id="sig-go">Check</button>
+  <p id="sig-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("sig-form");
+  var input = document.getElementById("sig-dbm");
+  var out = document.getElementById("sig-out");
+  function quality(rssi) {
+    if (rssi === null || rssi <= -100) return ["No signal", 0];
+    if (rssi >= -55) return ["Excellent", 4];
+    if (rssi >= -67) return ["Good", 3];
+    if (rssi >= -75) return ["Fair", 2];
+    return ["Weak", 1];
+  }
+  function run() {
+    var v = parseInt(input.value, 10);
+    if (isNaN(v) || v > 0) { out.textContent = "Enter a negative whole number, like -62."; return; }
+    var q = quality(v);
+    out.textContent = v + " dBm: " + q[0] + " (" + q[1] + " of 4 bars)";
+  }
+  form.addEventListener("submit", run);
+  run();
+})();
+</script>
+</div>
+<h2>What lowers your signal</h2>
+<ul><li><strong>Distance.</strong> Signal falls quickly in the first few meters, then more slowly.</li><li><strong>Walls.</strong> Brick, concrete and stone cost more than drywall. Metal and mirrors cost the most.</li><li><strong>Band.</strong> 5 GHz and 6 GHz carry less far than 2.4 GHz and are blocked more by walls.</li><li><strong>Interference.</strong> Neighbor networks on the same channel, microwave ovens and cordless phones add noise. See the <a href="wifi-channel-and-frequency-chart">WiFi channel chart</a> to find a quieter channel.</li><li><strong>Router position.</strong> A router on the floor, in a cabinet or in a corner covers less of the home.</li></ul>
+<h2>How to improve a weak signal</h2>
+<ol><li>Move the router to a central, higher spot in the open.</li><li>Walk to the weak room and watch the number live while you move the router or the phone.</li><li>Change to a less crowded channel.</li><li>For 2.4 GHz, use channel 1, 6 or 11 so you do not overlap neighbors more than needed.</li><li>If one room stays weak, add an access point or a mesh node placed halfway to it, wired if possible.</li></ol>
+<h2>Measure it on your phone</h2>
+<p>The <strong>WiFi info</strong> screen in WiFi Scanner &amp; Network Tools shows your current signal in dBm with the quality name and four-bar meter from the chart above. It also shows band, channel, link speed and WiFi standard. Android requires the Location permission before an app can read the network name. The app does not use or store your location.</p>
+<p>Walk through the home with the screen open and note the value in each room. Everything stays on your phone.</p>
+<h2>Signal is not speed</h2>
+<p>Strong signal is needed for speed, but is not the same thing. Link speed depends on the WiFi standard, channel width and how many devices share the channel. A -50 dBm signal on a busy channel can still be slow. If the signal is good and the connection is still slow, check the channel and run a ping to see latency.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>WiFi Scanner &amp; Network Tools</b><p>See who is on your WiFi. Ping, traceroute, DNS lookup and port checks.</p><a href="../">More about the app</a></div></aside><footer><a href="../">WiFi Scanner &amp; Network Tools</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
