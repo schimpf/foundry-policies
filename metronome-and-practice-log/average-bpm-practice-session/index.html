@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to Calculate Average BPM of a Practice Session</title><meta name="description" content="Work out the time-weighted average tempo of a practice session when you change BPM along the way, with a worked example and common mistakes."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/metronome-and-practice-log/average-bpm-practice-session/"><meta property="og:type" content="website"><meta property="og:title" content="How to Calculate Average BPM of a Practice Session"><meta property="og:description" content="Work out the time-weighted average tempo of a practice session when you change BPM along the way, with a worked example and common mistakes."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/metronome-and-practice-log/average-bpm-practice-session/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/metronome-and-practice-log/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Calculate Average BPM of a Practice Session", "description": "Work out the time-weighted average tempo of a practice session when you change BPM along the way, with a worked example and common mistakes.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/metronome-and-practice-log/average-bpm-practice-session/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Metronome &amp; Practice Log</a></p><h1>How to Calculate Average BPM of a Practice Session</h1><article class="guide"><p>If you change the metronome tempo during practice, one number for the whole session is useful: the average BPM. A plain average of the tempos you used gives the wrong answer. You need a time-weighted average.</p>
+<h2>The formula</h2>
+<p><strong>average BPM = (BPM1 x time1 + BPM2 x time2 + ...) / (time1 + time2 + ...)</strong></p>
+<p>Each tempo counts in proportion to how long you stayed on it. Use the same unit of time for every part. Minutes or seconds both work.</p>
+<p>This is the formula Metronome &amp; Practice Log uses. While you play, it adds up tempo multiplied by elapsed time, then divides by total elapsed time when you pause.</p>
+<h2>Worked example</h2>
+<p>You practice a piece for 20 minutes:</p>
+<ol><li>10 minutes at 80 BPM.</li><li>5 minutes at 100 BPM.</li><li>5 minutes at 120 BPM.</li></ol>
+<p>Step by step:</p>
+<ol><li>Multiply each tempo by its time: 80 x 10 = 800, 100 x 5 = 500, 120 x 5 = 600.</li><li>Add them: 800 + 500 + 600 = 1,900.</li><li>Add the times: 10 + 5 + 5 = 20 minutes.</li><li>Divide: 1,900 / 20 = <strong>95 BPM</strong>.</li></ol>
+<p>``<code> 80 BPM  |##########  10 min 100 BPM |#####        5 min 120 BPM |#####        5 min Average: 95 BPM </code>``</p>
+<p>The plain average of 80, 100 and 120 is 100. That is too high, because you spent half the session at the slowest tempo.</p>
+<h2>Average BPM and last BPM are different</h2>
+<p>A session has two tempo numbers worth keeping:</p>
+<ul><li><strong>Last BPM</strong> is the tempo when you stopped. In the example it is 120.</li><li><strong>Average BPM</strong> is the time-weighted figure. In the example it is 95.</li></ul>
+<p>Last BPM shows where you ended. Average BPM shows how you actually worked. If you warm up slowly and finish fast, the last BPM looks high while the average tells the truth about the whole session. Metronome &amp; Practice Log stores both for every session.</p>
+<h2>A second example with seconds</h2>
+<p>You play for 45 seconds at 60 BPM, then 15 seconds at 90 BPM.</p>
+<ol><li>60 x 45 = 2,700.</li><li>90 x 15 = 1,350.</li><li>Total: 4,050, divided by 60 seconds = 67.5 BPM.</li></ol>
+<h2>Common mistakes</h2>
+<ul><li><strong>Averaging the tempos without weights.</strong> Always weigh by time.</li><li><strong>Counting pauses.</strong> Time with the metronome stopped does not belong in the calculation. The app starts a session when you press play and stops when you pause, so only playing time counts.</li><li><strong>Mixing units.</strong> Do not use minutes for one part and seconds for another.</li><li><strong>Ignoring tempo changes late in the session.</strong> A change near the end barely moves the average, which is correct.</li></ul>
+<h2>Using average BPM to track progress</h2>
+<p>One session says little. A series says more. Log the same piece over several weeks and watch the average climb:</p>
+<div class="table"><table><thead><tr><th>Week</th><th>Average BPM</th></tr></thead><tbody><tr><td>1</td><td>72</td></tr><tr><td>2</td><td>80</td></tr><tr><td>3</td><td>88</td></tr><tr><td>4</td><td>96</td></tr></tbody></table></div>
+<p>An increase of about 8 BPM per week is a clear trend. If the number stalls, hold the tempo for a few more days before you push on.</p>
+<h2>What the app records</h2>
+<ul><li>A session starts when you press play and ends when you pause.</li><li>Sessions shorter than 30 seconds are ignored, so a quick tempo test does not clutter the log.</li><li>Each session saves its piece (or "General"), the time signature, the last tempo and the time-weighted average tempo.</li><li>You can edit or delete any session, with undo.</li><li>Every day with at least one minute of practice counts toward your daily streak.</li><li>Per-piece tempo progress graphs and a 12-week view are part of the Pro purchase. The 7-day chart works without it.</li></ul>
+<p>All data stays on your device. The app has no internet permission and no account.</p>
+<h2>Try it in the app</h2>
+<p>Metronome &amp; Practice Log is an Android metronome that logs practice automatically, so you do not need to do this arithmetic by hand. Search for it on Google Play.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Metronome &amp; Practice Log</b><p>Metronome that logs your practice time automatically and tracks your streak</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.metronomeandpracticelog&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Metronome &amp; Practice Log</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

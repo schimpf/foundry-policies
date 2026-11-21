@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BPM to Milliseconds Calculator and Formula</title><meta name="description" content="Convert BPM to milliseconds per beat with one formula, worked examples, and a table of note lengths from whole notes to sixteenths."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/metronome-and-practice-log/bpm-to-milliseconds-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="BPM to Milliseconds Calculator and Formula"><meta property="og:description" content="Convert BPM to milliseconds per beat with one formula, worked examples, and a table of note lengths from whole notes to sixteenths."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/metronome-and-practice-log/bpm-to-milliseconds-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/metronome-and-practice-log/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "BPM to Milliseconds Calculator and Formula", "description": "Convert BPM to milliseconds per beat with one formula, worked examples, and a table of note lengths from whole notes to sixteenths.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/metronome-and-practice-log/bpm-to-milliseconds-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Metronome &amp; Practice Log</a></p><h1>BPM to Milliseconds Calculator and Formula</h1><article class="guide"><p>Delay times, click tracks and tempo-synced effects often ask for milliseconds, while music is written in beats per minute (BPM). The conversion is one division.</p>
+<h2>The formula</h2>
+<p>One minute has 60,000 milliseconds. If a tempo has a certain number of beats in that minute, divide:</p>
+<p><strong>milliseconds per beat = 60,000 / BPM</strong></p>
+<p>To go the other way:</p>
+<p><strong>BPM = 60,000 / milliseconds per beat</strong></p>
+<h2>Calculator</h2>
+<div class="calc"><form id="bpm-ms-form" onsubmit="return false">
+  <p>
+    <label for="bpm-in">Tempo (BPM, 30 to 300)</label><br>
+    <input id="bpm-in" type="number" min="30" max="300" step="any" value="120" inputmode="decimal">
+  </p>
+  <p>
+    <label for="ms-in">Or milliseconds per beat (200 to 2000)</label><br>
+    <input id="ms-in" type="number" min="200" max="2000" step="any" inputmode="decimal">
+  </p>
+  <p><button type="button" id="bpm-ms-go">Calculate</button></p>
+  <p id="bpm-ms-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var bpmIn = document.getElementById("bpm-in");
+  var msIn = document.getElementById("ms-in");
+  var out = document.getElementById("bpm-ms-out");
+  function fmt(x) { return (Math.round(x * 100) / 100).toString(); }
+  document.getElementById("bpm-ms-go").addEventListener("click", function () {
+    var bpm = parseFloat(bpmIn.value);
+    var ms = parseFloat(msIn.value);
+    if (!(bpm > 0) && ms > 0) { bpm = 60000 / ms; }
+    if (!(bpm > 0)) { out.textContent = "Enter a tempo or a time in milliseconds."; return; }
+    var q = 60000 / bpm;
+    bpmIn.value = fmt(bpm);
+    msIn.value = fmt(q);
+    out.textContent = "At " + fmt(bpm) + " BPM: quarter " + fmt(q) + " ms, eighth " + fmt(q / 2) +
+      " ms, sixteenth " + fmt(q / 4) + " ms, eighth triplet " + fmt(q / 3) + " ms, dotted quarter " + fmt(q * 1.5) + " ms.";
+  });
+  msIn.addEventListener("input", function () { bpmIn.value = ""; });
+  bpmIn.addEventListener("input", function () { msIn.value = ""; });
+})();
+</script>
+</div>
+<h2>Worked example</h2>
+<p>You practice at 90 BPM and want the time between clicks.</p>
+<ol><li>Write the formula: 60,000 / 90.</li><li>Divide: 666.67.</li><li>The gap between beats is about 667 ms.</li></ol>
+<p>Check it: 90 beats of 666.67 ms each is 60,000 ms, which is one minute.</p>
+<h2>Common tempos</h2>
+<div class="table"><table><thead><tr><th>BPM</th><th>ms per beat</th></tr></thead><tbody><tr><td>40</td><td>1500</td></tr><tr><td>60</td><td>1000</td></tr><tr><td>72</td><td>833.3</td></tr><tr><td>80</td><td>750</td></tr><tr><td>100</td><td>600</td></tr><tr><td>120</td><td>500</td></tr><tr><td>144</td><td>416.7</td></tr><tr><td>180</td><td>333.3</td></tr><tr><td>240</td><td>250</td></tr><tr><td>300</td><td>200</td></tr></tbody></table></div>
+<p>``<code> 60 BPM |##########  1000 ms 120 BPM |#####       500 ms 240 BPM |###         250 ms </code>``</p>
+<p>Doubling the BPM halves the gap.</p>
+<h2>Note lengths at a given tempo</h2>
+<p>The BPM number counts one kind of beat, usually the quarter note. Other note values are fractions of it. At 100 BPM, with the quarter note as the beat (600 ms):</p>
+<div class="table"><table><thead><tr><th>Note</th><th>Share of a quarter note</th><th>Length at 100 BPM</th></tr></thead><tbody><tr><td>Whole</td><td>4</td><td>2400 ms</td></tr><tr><td>Half</td><td>2</td><td>1200 ms</td></tr><tr><td>Quarter</td><td>1</td><td>600 ms</td></tr><tr><td>Eighth</td><td>1/2</td><td>300 ms</td></tr><tr><td>Eighth triplet</td><td>1/3</td><td>200 ms</td></tr><tr><td>Sixteenth</td><td>1/4</td><td>150 ms</td></tr></tbody></table></div>
+<p>To get any of these, calculate the quarter note with the formula and multiply by the share. A dotted note is 1.5 times its plain length. A dotted quarter at 100 BPM is 600 x 1.5 = 900 ms.</p>
+<h2>What counts as a beat</h2>
+<p>Be careful when the beat is not a quarter note. In 6/8, a score may mark a dotted quarter as the beat, which gives two beats per bar. If a metronome clicks every eighth note instead, the BPM you set is the number of eighth notes per minute, so it is three times the dotted-quarter tempo. A dotted quarter at 60 BPM equals eighth notes at 180 BPM.</p>
+<p>Metronome &amp; Practice Log uses the same rule: the BPM you set is the number of clicks per minute, and each beat of the bar gets one click. In 6/8 that means six clicks per bar. By default the app accents the first and fourth click, so you hear two dotted-quarter pulses. You can change the accent on every beat.</p>
+<h2>Why timing precision matters</h2>
+<p>At 120 BPM a beat is 500 ms. An error of 10 ms is 2 percent of the beat, and trained ears can hear drift of that size over a bar or two. Phone metronomes that use ordinary timers can wander, especially with the screen off.</p>
+<p>The app counts audio samples instead of timers. Each beat is written to the audio output with its exact length, and the fractional part of the length is carried to the next beat, so the tempo does not drift. For example, at 48,000 samples per second and 100 BPM, a beat is 28,800 samples, an exact number. At 70 BPM it is 41,142.857 samples, and the extra fraction is carried forward so the average stays exactly at 70 BPM. Tempo changes apply from the next beat.</p>
+<h2>Rounding</h2>
+<ul><li>For delay plugins, round to the nearest whole millisecond. The error is under half a millisecond.</li><li>For click tracks, keep two decimals if the tool allows it.</li><li>Do not round the BPM. 666.67 ms corresponds to 90 BPM, while 667 ms gives 89.96 BPM.</li></ul>
+<h2>Try it in the app</h2>
+<p>Metronome &amp; Practice Log is an Android metronome that works offline and logs each practice session automatically. It runs from 30 to 300 BPM, which is 2000 ms down to 200 ms per beat. It keeps steady time in the background and with the screen off, and offers screen flash and vibration on the beat. Search for it on Google Play.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Metronome &amp; Practice Log</b><p>Metronome that logs your practice time automatically and tracks your streak</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.metronomeandpracticelog&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Metronome &amp; Practice Log</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
