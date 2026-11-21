@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Binaurale Beats berechnen: Frequenz-Rechner und Formel</title><meta name="description" content="Berechne den linken und rechten Ton für jeden binauralen Beat mit Formel, Rechenbeispiel und Rechner. Mit Verlauf des Beats über die Zeit."><meta name="theme-color" content="#0f766e"><meta name="author" content="Gerrit Schimpf"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://apps.schimpf.es/binaural-beats/de/binaural-beat-frequency-calculator/"><link rel="alternate" hreflang="en" href="https://apps.schimpf.es/binaural-beats/binaural-beat-frequency-calculator/"><link rel="alternate" hreflang="de-DE" href="https://apps.schimpf.es/binaural-beats/de/binaural-beat-frequency-calculator/"><link rel="alternate" hreflang="es-ES" href="https://apps.schimpf.es/binaural-beats/es/binaural-beat-frequency-calculator/"><link rel="alternate" hreflang="x-default" href="https://apps.schimpf.es/binaural-beats/binaural-beat-frequency-calculator/"><meta property="og:type" content="website"><meta property="og:site_name" content="Apps by Gerrit Schimpf"><meta property="og:locale" content="de_DE"><meta property="og:title" content="Binaurale Beats berechnen: Frequenz-Rechner und Formel"><meta property="og:description" content="Berechne den linken und rechten Ton für jeden binauralen Beat mit Formel, Rechenbeispiel und Rechner. Mit Verlauf des Beats über die Zeit."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Binaurale Beats berechnen: Frequenz-Rechner und Formel"><meta name="twitter:description" content="Berechne den linken und rechten Ton für jeden binauralen Beat mit Formel, Rechenbeispiel und Rechner. Mit Verlauf des Beats über die Zeit."><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="es_ES"><meta property="og:url" content="https://apps.schimpf.es/binaural-beats/de/binaural-beat-frequency-calculator/"><meta property="og:image" content="https://apps.schimpf.es/binaural-beats/feature.png"><meta name="twitter:image" content="https://apps.schimpf.es/binaural-beats/feature.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="500"><meta property="og:image:alt" content="Binaural Beats"><link rel="icon" href="../../icon.png"><link rel="apple-touch-icon" href="../../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Binaurale Beats berechnen: Frequenz-Rechner und Formel", "description": "Berechne den linken und rechten Ton für jeden binauralen Beat mit Formel, Rechenbeispiel und Rechner. Mit Verlauf des Beats über die Zeit.", "datePublished": "2026-11-21", "dateModified": "2026-11-21", "inLanguage": "de", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "publisher": {"@type": "Person", "name": "Gerrit Schimpf"}, "about": {"@type": "MobileApplication", "name": "Binaural Beats", "operatingSystem": "Android", "url": "https://apps.schimpf.es/binaural-beats/de/"}, "url": "https://apps.schimpf.es/binaural-beats/de/binaural-beat-frequency-calculator/", "mainEntityOfPage": "https://apps.schimpf.es/binaural-beats/de/binaural-beat-frequency-calculator/", "image": "https://apps.schimpf.es/binaural-beats/feature.png"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Alle Apps", "item": "https://apps.schimpf.es/"}, {"@type": "ListItem", "position": 2, "name": "Binaural Beats", "item": "https://apps.schimpf.es/binaural-beats/de/"}, {"@type": "ListItem", "position": 3, "name": "Binaurale Beats berechnen: Frequenz-Rechner und Formel", "item": "https://apps.schimpf.es/binaural-beats/de/binaural-beat-frequency-calculator/"}]}</script><style>
+:root{--bg:#0b0d0c;--bg2:#111413;--card:#161a19;--fg:#f2f4f3;--muted:#a1a8a4;--line:#252b29;--accent:#0f766e;--on:#fff;
+--hi:color-mix(in srgb,var(--accent) 55%,#fff);--soft:color-mix(in srgb,var(--accent) 18%,transparent);
+--frame:#050606;--edge:#2c3230;--shadow:0 40px 80px -30px rgba(0,0,0,.75)}
+@media (prefers-color-scheme:light){:root{--bg:#f7f7f5;--bg2:#eeefec;--card:#fff;--fg:#151816;--muted:#5a615d;--line:#e2e5e1;
+--hi:color-mix(in srgb,var(--accent) 80%,#000);--soft:color-mix(in srgb,var(--accent) 12%,transparent);
+--frame:#101312;--edge:#1f2422;--shadow:0 30px 60px -30px rgba(20,30,25,.45)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--hi)}img{max-width:100%;height:auto}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,5vw,3.6rem);overflow-wrap:break-word;font-weight:800}h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:750}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}@media (max-width:640px){.wrap{padding:0 16px}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--card);padding:8px 12px;z-index:9}.skip:focus{left:8px}
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 78%,transparent);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font-weight:700;min-width:0}
+.brand img{border-radius:9px;flex:none}.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.links{display:flex;gap:22px;margin-left:auto}.links a{color:var(--muted);text-decoration:none;font-size:.95rem}
+.links a:hover{color:var(--fg)}@media (max-width:760px){.links{display:none}.nav .btn{margin-left:auto}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on);padding:12px 22px;
+border-radius:999px;text-decoration:none;font-weight:650;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px var(--accent)}.nav .btn{padding:8px 16px;font-size:.9rem}
+.chip{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--soft);
+color:var(--hi);font-weight:600;font-size:.95rem}
+.band{padding:96px 0;position:relative}.band.alt{background:var(--bg2)}@media (max-width:640px){.band{padding:64px 0}}
+.eyebrow{display:block;color:var(--hi);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.lead{color:var(--muted);font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:640px}
+.hero{overflow:hidden;padding:72px 0 40px;background:
+radial-gradient(55% 60% at 78% 30%,color-mix(in srgb,var(--accent) 38%,transparent),transparent 70%),
+radial-gradient(40% 50% at 5% 100%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.hero .icon{border-radius:24px;box-shadow:0 20px 40px -18px var(--accent);margin-bottom:24px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.hero .actions .badge img{display:block;height:60px;width:auto}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr);text-align:center}.hero .lead{margin:0 auto}
+.hero .actions{justify-content:center}.hero .icon{margin:0 auto 20px}}
+.stack{display:flex;justify-content:center;align-items:flex-end;padding:20px 0 40px}
+.stack .phone{width:250px}.stack .phone:nth-child(2){width:280px;z-index:2}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(40px,30px)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-40px,30px)}
+@media (max-width:640px){.stack .phone{width:32vw;padding:6px;border-radius:26px}.stack .phone img{border-radius:21px}
+.stack .phone:nth-child(2){width:46vw}.stack .phone::before{top:12px;width:7px;height:7px;margin-left:-3.5px}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(9vw,4vw)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-9vw,4vw)}}
+.phone{position:relative;flex:none;margin:0;padding:9px;background:var(--frame);border-radius:42px;
+box-shadow:0 0 0 1.5px var(--edge),inset 0 0 0 1px #000,var(--shadow)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+background:#000;box-shadow:0 0 0 2px #111;z-index:1}
+.phone picture,.tablet picture{display:block}.phone img{display:block;width:100%;height:auto;border-radius:33px;background:#000}
+.tablet{max-width:860px;margin:0 auto;padding:14px;background:var(--frame);border-radius:30px;
+box-shadow:0 0 0 1.5px var(--edge),var(--shadow)}.tablet img{display:block;width:100%;border-radius:18px}
+.tablets{display:grid;gap:32px}
+.gallery{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px max(24px,calc(50vw - 576px)) 40px;
+scrollbar-width:thin}.gallery figure{margin:0;flex:none;width:240px;scroll-snap-align:center;text-align:center}
+.gallery figcaption{margin-top:18px;color:var(--muted);font-size:.95rem;font-weight:500}
+@media (max-width:640px){.gallery{gap:20px;padding:16px 16px 32px}.gallery figure{width:200px}}
+.head{max-width:720px;margin-bottom:48px}.center{text-align:center;margin-left:auto;margin-right:auto}
+.about p{max-width:720px;color:var(--muted);font-size:1.1rem}
+.features{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.fcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;transition:transform .25s,border-color .25s}
+.fcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.num{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--soft);color:var(--hi);
+font-weight:800;margin-bottom:18px}.fcard p{color:var(--muted);margin:0 0 12px}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:9px}.checks li{position:relative;padding-left:28px;color:var(--muted);font-size:.97rem}
+.checks li::before{content:"";position:absolute;left:0;top:.42em;width:16px;height:16px;border-radius:50%;background:var(--soft);
+box-shadow:inset 0 0 0 1.5px var(--hi)}
+.checks li::after{content:"";position:absolute;left:5.5px;top:calc(.42em + 4px);width:4px;height:7px;border:solid var(--hi);
+border-width:0 2px 2px 0;transform:rotate(45deg)}
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.cards li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:transform .2s,border-color .2s}
+.cards li:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.cards a{color:var(--fg);font-weight:700;text-decoration:none;font-size:1.08rem}.cards a::after{content:"";position:absolute;inset:0}
+.cards small{display:block;color:var(--muted);margin-top:6px;font-size:.93rem}
+.apps li{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--card)),var(--card) 60%)}
+.apps img{border-radius:14px;flex:none}.apps small{margin-top:2px}
+.cta-band{border-radius:32px;padding:64px 32px;text-align:center;border:1px solid var(--line);background:
+radial-gradient(70% 90% at 50% 0%,color-mix(in srgb,var(--accent) 35%,transparent),transparent 70%),var(--card)}
+.cta-band img.icon{border-radius:22px;margin-bottom:20px}.cta-band .lead{margin:0 auto 28px}.cta-band .badge img{height:60px;width:auto}
+.foot{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:.92rem}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}.foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+.foot a{color:var(--muted)}.foot a:hover{color:var(--fg)}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 20px;font-size:.92rem;color:var(--muted)}
+.crumbs li+li::before{content:"›";margin-right:6px}.crumbs a{color:var(--muted)}
+.ghero{padding:64px 0 32px;background:radial-gradient(60% 80% at 85% 0%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%)}
+.ghero h1{font-size:clamp(2rem,4.5vw,3.2rem);max-width:860px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start;padding-bottom:96px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+.guide{max-width:740px;font-size:1.06rem}.guide h2{font-size:1.7rem;margin-top:1.8em}.guide h3{margin-top:1.5em}
+.guide li{margin:.35em 0}.guide code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.9em}
+.table{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.96rem}th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:var(--shadow)}
+.calc input,.calc select,.calc button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
+.cta{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
+.cta .phone{width:170px;margin:0 auto 20px}.cta img.icon{border-radius:14px}.cta p{color:var(--muted);font-size:.95rem;margin:6px 0 16px}
+.cta .badge img{height:52px;width:auto;margin:12px auto 0;display:block}
+.faq{max-width:820px;display:grid;gap:12px}.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.faq summary{cursor:pointer;font-weight:650;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--hi);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}.faq details p{color:var(--muted);margin:12px 0 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:root{--accent:#0f766e;--on:#ffffff}</style></head><body><a class="skip" href="#main">Zum Inhalt</a><header class="nav"><div class="wrap"><a class="brand" href="../"><img src="../../icon.png" alt="" width="32" height="32"><span>Binaural Beats</span></a><a class="btn" href="https://play.google.com/store/apps/details?id=es.schimpf.binauralbeats&amp;hl=de">App holen</a></div></header><main id="main"><section class="ghero"><div class="wrap"><ol class="crumbs"><li><a href="../../../">Alle Apps</a></li><li><a href="../">Binaural Beats</a></li><li>Binaurale Beats berechnen: Frequenz-Rechner und Formel</li></ol><h1>Binaurale Beats berechnen: Frequenz-Rechner und Formel</h1><p class="lead">Berechne den linken und rechten Ton für jeden binauralen Beat mit Formel, Rechenbeispiel und Rechner. Mit Verlauf des Beats über die Zeit.</p></div></section><div class="wrap layout"><article class="guide"><p>Ein binauraler Beat entsteht aus zwei reinen Tönen, einem pro Ohr. Der Beat, den du wahrnimmst, ist der Unterschied zwischen beiden. Diese Seite zeigt die Formel, ein Rechenbeispiel und einen Rechner. Danach geht es darum, einen Beat von einer Frequenz zur nächsten gleiten zu lassen.</p>
+<h2>Die Formel für binaurale Beats</h2>
+<ul><li>Ton links = Trägerfrequenz</li><li>Ton rechts = Trägerfrequenz + Beat-Frequenz</li><li>Beat-Frequenz = Ton rechts − Ton links</li></ul>
+<p>Alle Werte sind in Hertz (Hz). Der Träger ist der Grundton, den du tatsächlich hörst. Der Beat ist der langsame Puls, den du aus dem Unterschied wahrnimmst.</p>
+<p>So arbeitet auch die App Binaural Beats: Links liegt der Träger, rechts der Träger plus Beat.</p>
+<h2>Rechenbeispiel</h2>
+<p>Du willst einen 10-Hz-Beat auf einem 400-Hz-Träger.</p>
+<ol><li>Linkes Ohr: 400 Hz.</li><li>Rechtes Ohr: 400 + 10 = 410 Hz.</li><li>Probe: 410 − 400 = 10 Hz, du nimmst also 10 Schläge pro Sekunde wahr.</li></ol>
+<p>Bei 10 Hz liegt der Beat im Alpha-Bereich (8 bis unter 12 Hz). Die Standard-Vorlage der App, Ruhiger Fokus, nutzt genau diese Zahlen.</p>
+<p>Noch ein Beispiel: Ein 4-Hz-Beat auf einem 250-Hz-Träger ergibt 250 Hz links und 254 Hz rechts. 4 Hz gehören zu Theta (4 bis unter 8 Hz).</p>
+<h2>Rechner</h2>
+<div class="calc"><form id="bb-calc" onsubmit="return false">
+  <p><label>Träger (100 bis 1000 Hz) <input id="bb-carrier" type="number" min="100" max="1000" step="any" value="400"></label></p>
+  <p><label>Beat (0,25 bis 45 Hz) <input id="bb-beat" type="number" min="0.25" max="45" step="any" value="10"></label></p>
+  <p><button type="submit" id="bb-go">Berechnen</button></p>
+  <p id="bb-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var c = document.getElementById("bb-carrier");
+  var b = document.getElementById("bb-beat");
+  var out = document.getElementById("bb-out");
+  function band(hz) {
+    if (hz < 4) return "Delta";
+    if (hz < 8) return "Theta";
+    if (hz < 12) return "Alpha";
+    if (hz < 30) return "Beta";
+    return "Gamma";
+  }
+  function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+  function fmt(n) { return String(Math.round(n * 100) / 100).replace(".", ","); }
+  function run() {
+    var cv = parseFloat(c.value);
+    var bv = parseFloat(b.value);
+    if (!isFinite(cv) || !isFinite(bv)) { out.textContent = "Gib beide Zahlen ein."; return; }
+    cv = clamp(cv, 100, 1000);
+    bv = clamp(bv, 0.25, 45);
+    var text = "Linkes Ohr: " + fmt(cv) + " Hz. Rechtes Ohr: " + fmt(cv + bv) + " Hz. Beat: " + fmt(bv) + " Hz (" + band(bv) + ").";
+    if (bv > 30) text += " Über 30 Hz sind binaurale Beats schwer hörbar, probiere isochron oder monaural.";
+    out.textContent = text;
+  }
+  document.getElementById("bb-go").addEventListener("click", run);
+  c.addEventListener("input", run);
+  b.addEventListener("input", run);
+  run();
+})();
+</script>
+</div>
+<h2>Die Zahlen wählen</h2>
+<h3>Trägerfrequenz</h3>
+<p>Binaurale Beats nutzen meist Träger unter etwa 1000 Hz. Die App akzeptiert 100 bis 1000 Hz und empfiehlt 200 bis 500 Hz als angenehmen Bereich. Tiefe Träger klingen dunkler, hohe heller. Der Träger bestimmt den Ton, den du hörst, und lässt die Beat-Frequenz unverändert.</p>
+<h3>Beat-Frequenz</h3>
+<p>Die App akzeptiert 0,25 bis 45 Hz. Über etwa 30 Hz sind binaurale Beats schwer wahrzunehmen. Bei höheren Werten schlägt die App deshalb einen monauralen oder isochronen Beat vor.</p>
+<div class="table"><table><thead><tr><th>Beat (Hz)</th><th>Bereich</th></tr></thead><tbody><tr><td>unter 4</td><td>Delta</td></tr><tr><td>4 bis unter 8</td><td>Theta</td></tr><tr><td>8 bis unter 12</td><td>Alpha</td></tr><tr><td>12 bis unter 30</td><td>Beta</td></tr><tr><td>30 und mehr</td><td>Gamma</td></tr></tbody></table></div>
+<h3>Kopfhörer</h3>
+<p>Ein binauraler Beat entsteht nur, wenn jedes Ohr seinen eigenen Ton hört. Nimm Stereo-Kopfhörer oder In-Ear-Kopfhörer. Über Lautsprecher mischen sich die beiden Töne in der Luft, und du hörst stattdessen einen monauralen Beat. Das ist ein anderer Effekt, aber ebenfalls ein echter Puls.</p>
+<h2>Andere Beat-Arten, gleiche Beat-Frequenz</h2>
+<p>Die Beat-Frequenz bedeutet in allen vier Modi dasselbe:</p>
+<ul><li><strong>Monaural:</strong> Beide Töne, Träger und Träger plus Beat, werden addiert und auf beide Ohren gespielt. Der Puls steckt im Klang.</li><li><strong>Isochron:</strong> Ein Ton auf der Trägerfrequenz, der im Takt des Beats ein- und ausgeschaltet wird.</li><li><strong>Bilateral:</strong> Ein Ton auf der Trägerfrequenz, der pro Beat-Zyklus einmal zwischen den Ohren wechselt.</li></ul>
+<p>Bei isochronen und bilateralen Beats kann der Puls eine weiche Sinusform oder ein weiches Rechteck mit schärferen Kanten haben.</p>
+<h2>Einen Beat über die Zeit gleiten lassen</h2>
+<p>Eine Sitzung aus mehreren Schritten kann den Beat nach und nach ändern. Die App lässt die Frequenz auf einer geometrischen Skala gleiten: Jeder gleich lange Zeitabschnitt multipliziert die Frequenz mit demselben Faktor.</p>
+<p>Formel: Beat zum Zeitpunkt t = Start × (Ende ÷ Start)^t, wobei t im Schritt von 0 bis 1 läuft.</p>
+<p>Rechenbeispiel: Ein Schritt gleitet von 12 Hz auf 6 Hz.</p>
+<ol><li>In der Mitte ist t = 0,5.</li><li>Das Verhältnis Ende ÷ Start = 6 ÷ 12 = 0,5.</li><li>0,5 hoch 0,5 ergibt etwa 0,707.</li><li>Beat = 12 × 0,707 ≈ 8,49 Hz.</li></ol>
+<p>Ein gerader, linearer Verlauf läge in der Mitte bei 9 Hz. Die geometrische Variante verbringt gleich viel Zeit mit jeder Verdopplung oder Halbierung, also dauert 12 auf 6 Hz genauso lange wie 6 auf 3 Hz. Aus diesem Grund ist auch der Beat-Regler in der App logarithmisch.</p>
+<p>Sind beide Enden eines Schritts gleich, bleibt der Beat konstant. Nach dem letzten Schritt bleiben die Endwerte bis zum Ende der Sitzung bestehen.</p>
+<h2>Was die Forschung sagt</h2>
+<p>Die Belege dafür, dass binaurale Beats Stimmung, Fokus oder Schlaf verändern, sind uneinheitlich. Die Metaanalyse von Garcia-Argibay, Santed und Reales aus dem Jahr 2019 („Efficacy of binaural auditory beats in cognition, anxiety, and pain perception: a meta-analysis“, Psychological Research) fand kleine bis moderate Effekte, mit großen Unterschieden zwischen den Studien. Sieh Beats als Entspannungshilfe. Halte die Lautstärke niedrig und hör nicht beim Autofahren. Frag vorher deine Ärztin oder deinen Arzt, wenn du Epilepsie, einen Herzschrittmacher oder eine andere Erkrankung hast.</p>
+<h2>In der App ausprobieren</h2>
+<p>Binaural Beats für Android erzeugt diese Töne live, du kannst also jeden Träger und Beat aus den Beispielen oben testen.</p>
+<ol><li>Wähle den Modus Binaural, stelle Träger und Beat ein und lies die Anzeige des Frequenzbereichs ab.</li><li>Füge auf Wunsch weißes, rosa oder braunes Rauschen mit eigener Lautstärke hinzu.</li><li>Starte eine Sitzung von 5 bis 90 Minuten oder baue eine Sitzung aus Schritten und sieh den Beat in einem Diagramm.</li></ol>
+<p>Die App spielt im Hintergrund, mit Steuerung auf dem Sperrbildschirm, und funktioniert offline. Du kannst eine Sitzung auch als WAV-Datei speichern.</p></article><aside class="cta"><div class="phone"><picture><source type="image/webp" srcset="../../screen-1.webp"><img src="../../screen-1.png" alt="Binaural Beats" width="1080" height="2160" loading="lazy" decoding="async"></picture></div><div><b>Binaural Beats</b><p>Binaurale und isochrone Beats für Ruhe, Fokus und Schlaf.</p><a href="../">Mehr zur App</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.binauralbeats&amp;hl=de"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside></div><section class="band alt"><div class="wrap"><div class="head"><h2>Weitere Ratgeber</h2></div><ul class="cards"><li><a href="../brainwave-frequency-chart/">Gehirnwellen-Tabelle: Delta, Theta, Alpha, Beta, Gamma</a><small>Tabelle der fünf Gehirnwellen-Bänder in Hz, wofür jedes meist steht und welche Beat-Frequenzen du bei binauralen Beats nutzen kannst.</small></li></ul></div></section><section class="band"><div class="wrap"><div class="head"><h2>Weitere Apps</h2></div><ul class="cards apps"><li style="--accent:#4355b9"><img src="../../../alarm-clock/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../alarm-clock/">Alarm Clock: Wake-Up Missions</a><small>Reliable alarms for heavy sleepers. Solve a task to switch the alarm off.</small></span></li><li style="--accent:#3a6a2a"><img src="../../../german-allotment-club-ledger/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../german-allotment-club-ledger/">Allotment Club Ledger</a><small>Rent, dues, meters and receipts for allotment club treasurers</small></span></li><li style="--accent:#006a63"><img src="../../../anti-bucket-list/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../anti-bucket-list/">Anti-Bucket List: No Journal</a><small>Write down what you said no to and check later if you&#x27;re still glad.</small></span></li></ul></div></section></main><footer class="foot"><div class="wrap"><nav aria-label="Footer"><a href="../">Binaural Beats</a><a href="../../privacy/">Datenschutz</a><a href="../../../">Alle Apps</a><a href="https://apps.schimpf.es/binaural-beats/binaural-beat-frequency-calculator/" hreflang="en">EN</a><a href="https://apps.schimpf.es/binaural-beats/es/binaural-beat-frequency-calculator/" hreflang="es-ES">ES</a></nav><span>© 2026 Gerrit Schimpf</span></div></footer></body></html>
