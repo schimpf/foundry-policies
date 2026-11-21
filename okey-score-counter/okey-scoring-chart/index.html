@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Okey Scoring Chart: Points for Standard Okey</title><meta name="description" content="A scoring chart for standard Okey with finish bonuses, loser penalties, wrong okey discards, a worked four-player example and pair scoring."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/okey-score-counter/okey-scoring-chart/"><meta property="og:type" content="website"><meta property="og:title" content="Okey Scoring Chart: Points for Standard Okey"><meta property="og:description" content="A scoring chart for standard Okey with finish bonuses, loser penalties, wrong okey discards, a worked four-player example and pair scoring."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/okey-score-counter/okey-scoring-chart/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/okey-score-counter/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Okey Scoring Chart: Points for Standard Okey", "description": "A scoring chart for standard Okey with finish bonuses, loser penalties, wrong okey discards, a worked four-player example and pair scoring.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/okey-score-counter/okey-scoring-chart/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Okey Score Counter: 101 Okey</a></p><h1>Okey Scoring Chart: Points for Standard Okey</h1><article class="guide"><p>In standard Okey the winner of each round takes a small bonus and the other players take a penalty. As in 101 Okey, the <strong>lowest total</strong> leads. This page gives a chart of the usual values, shows how a round adds up and explains scoring in pairs.</p>
+<p>The numbers are the defaults in Okey Score Counter. Groups often agree on their own values, so settle them before you start.</p>
+<h2>Standard Okey scoring chart</h2>
+<div class="table"><table><thead><tr><th>Event</th><th>Points</th></tr></thead><tbody><tr><td>Finish normally</td><td>-2</td></tr><tr><td>Finish with the okey tile</td><td>-4</td></tr><tr><td>Finish from hand</td><td>-4</td></tr><tr><td>Every other player, after a normal finish</td><td>+2</td></tr><tr><td>Every other player, after a finish with okey</td><td>+4</td></tr><tr><td>Wrong okey or joker discard</td><td>+2 each</td></tr></tbody></table></div>
+<p>Negative points are good. The finisher's total goes down. Everyone else's goes up.</p>
+<h2>How a round is scored</h2>
+<ol><li>Mark who finished the round.</li><li>The finisher gets -2, or -4 if they finished with the okey tile or from hand.</li><li>Every other player gets +2 after a normal finish or from-hand finish.</li><li>After a finish <strong>with okey</strong>, every other player gets the loser penalty doubled, so +4.</li><li>Add +2 for each wrong okey or joker discard the player made.</li><li>Add the round to the running totals.</li></ol>
+<p>If nobody finished, nobody scores a base value. Only wrong discards and manual adjustments count.</p>
+<h3>Note on finishing from hand</h3>
+<p>Finishing from hand pays the finisher -4, the same as finishing with okey. The other players still pay the single penalty of +2, because only a finish with the okey tile doubles it.</p>
+<h2>Worked example</h2>
+<p>Four players with the default values.</p>
+<p><strong>Round 1.</strong> Dana finishes normally. Emre made one wrong okey discard.</p>
+<div class="table"><table><thead><tr><th>Player</th><th>Calculation</th><th>Round points</th></tr></thead><tbody><tr><td>Dana</td><td>-2</td><td>-2</td></tr><tr><td>Emre</td><td>2 + 2</td><td>4</td></tr><tr><td>Ayşe</td><td>2</td><td>2</td></tr><tr><td>Can</td><td>2</td><td>2</td></tr></tbody></table></div>
+<p><strong>Round 2.</strong> Ayşe finishes with the okey tile.</p>
+<div class="table"><table><thead><tr><th>Player</th><th>Calculation</th><th>Round points</th></tr></thead><tbody><tr><td>Dana</td><td>2 × 2</td><td>4</td></tr><tr><td>Emre</td><td>2 × 2</td><td>4</td></tr><tr><td>Ayşe</td><td>-4</td><td>-4</td></tr><tr><td>Can</td><td>2 × 2</td><td>4</td></tr></tbody></table></div>
+<p><strong>Totals after two rounds</strong></p>
+<div class="table"><table><thead><tr><th>Player</th><th>Round 1</th><th>Round 2</th><th>Total</th></tr></thead><tbody><tr><td>Dana</td><td>-2</td><td>4</td><td>2</td></tr><tr><td>Emre</td><td>4</td><td>4</td><td>8</td></tr><tr><td>Ayşe</td><td>2</td><td>-4</td><td>-2</td></tr><tr><td>Can</td><td>2</td><td>4</td><td>6</td></tr></tbody></table></div>
+<p>Ayşe leads with -2.</p>
+<p>``<code> Total (lower leads) Ayşe  -2 | Dana   2 |== Can    6 |====== Emre   8 |======== </code>``</p>
+<h2>Scoring in pairs (eşli)</h2>
+<p>Pair play needs exactly four players. Partners sit opposite each other: seats 1 and 3 against seats 2 and 4. Score every player as above, then add the totals of the two partners. The pair with the lower total leads.</p>
+<p>In the example, if Dana and Ayşe are partners, their pair total is 2 + (-2) = 0. Emre and Can have 8 + 6 = 14. Dana and Ayşe lead.</p>
+<h2>Ties</h2>
+<p>Players or pairs with equal totals share a rank. If they tie for the lowest total, both are shown as leading.</p>
+<h2>Common mistakes</h2>
+<ul><li><strong>Forgetting the double penalty.</strong> A finish with okey doubles what the others pay.</li><li><strong>Mixing up signs.</strong> Finish values are negative on purpose.</li><li><strong>Missing a wrong discard.</strong> It is added on top of the round score and applies to every player, including the finisher.</li><li><strong>Changing values mid-game.</strong> If you change a penalty, every earlier round needs recalculating. The app does this for you.</li></ul>
+<h2>Keeping score in the app</h2>
+<p>Okey Score Counter applies this chart so you do not have to add by hand.</p>
+<ul><li>Choose Okey, then individual or paired play, for 2 to 4 players.</li><li>Tap who finished and how. Options cover finishing with okey, finishing from hand and wrong okey or joker discards.</li><li>A live preview shows the round before you save it.</li><li>Edit or undo any earlier round and all totals recalculate.</li><li>Edit the penalty values for a match. Every round recalculates.</li><li>Browse match history and player stats, and share the scoreboard as text or image.</li></ul>
+<p>The app works offline and has no internet permission. It is available in English and Turkish for Android. Search for <strong>Okey Score Counter</strong> on Google Play.</p>
+<h2>Questions</h2>
+<h3>What is the difference between 101 Okey and standard Okey scoring?</h3>
+<p>In 101 Okey, players score the tile sum left in their hand, with big finish and no-open values (101 and 202 by default). In standard Okey, losers all take the same small penalty and the finisher takes a small bonus.</p>
+<h3>Can I use other values?</h3>
+<p>Yes. Many groups do. The app lets you edit every value for a match, and your defaults for new matches.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Okey Score Counter: 101 Okey</b><p>Score 101 Okey and Okey: penalties, history, player stats and a widget.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.okeyscorecounter&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Okey Score Counter: 101 Okey</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

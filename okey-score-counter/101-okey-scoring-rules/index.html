@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>101 Okey Scoring Rules: Points Table and Example</title><meta name="description" content="How 101 Okey scoring works: finish bonuses, tile sums, the no-open penalty, wrong okey discards, a worked round and a round calculator."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/okey-score-counter/101-okey-scoring-rules/"><meta property="og:type" content="website"><meta property="og:title" content="101 Okey Scoring Rules: Points Table and Example"><meta property="og:description" content="How 101 Okey scoring works: finish bonuses, tile sums, the no-open penalty, wrong okey discards, a worked round and a round calculator."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/okey-score-counter/101-okey-scoring-rules/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/okey-score-counter/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "101 Okey Scoring Rules: Points Table and Example", "description": "How 101 Okey scoring works: finish bonuses, tile sums, the no-open penalty, wrong okey discards, a worked round and a round calculator.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/okey-score-counter/101-okey-scoring-rules/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Okey Score Counter: 101 Okey</a></p><h1>101 Okey Scoring Rules: Points Table and Example</h1><article class="guide"><p>101 Okey is scored over many rounds. The player with the <strong>lowest total</strong> leads. This page gives the usual point values, a table you can copy, a worked round and a small calculator.</p>
+<p>The values below are the defaults used by Okey Score Counter. Many tables play with house rules, so treat them as a common starting point and agree on the numbers before the first round.</p>
+<h2>101 Okey points table</h2>
+<div class="table"><table><thead><tr><th>Event</th><th>Points</th></tr></thead><tbody><tr><td>Finish normally</td><td>-101</td></tr><tr><td>Finish with the okey tile</td><td>-202</td></tr><tr><td>Finish from hand</td><td>-202</td></tr><tr><td>Did not open (no melds shown)</td><td>+202</td></tr><tr><td>Wrong okey or joker discard</td><td>+101 each</td></tr><tr><td>Everyone else who opened</td><td>Sum of the tiles left in their hand</td></tr></tbody></table></div>
+<p>Negative points are good. A finish takes points off the finisher's total. Everyone else adds to theirs.</p>
+<h2>How one round is scored</h2>
+<ol><li>Find out who finished. At most one player finishes a round.</li><li>The finisher gets the finish value for how they finished: -101, -202 for okey, or -202 from hand.</li><li>Each other player who opened scores the <strong>sum of the tiles still in their hand</strong>.</li><li>Each other player who never opened scores <strong>202</strong> instead of their tile sum.</li><li>Add 101 for every wrong okey or joker discard a player made.</li><li>Add or subtract any manual adjustment your table agreed on.</li><li>Add the round to each player's running total.</li></ol>
+<p>The finisher's own tile sum is not counted. It is zero by definition, because they have no tiles left.</p>
+<h3>Wrong okey discards</h3>
+<p>A wrong discard is a penalty on top of the round score. It applies to any player, including the finisher. If a player makes two wrong discards in one round, add 101 twice.</p>
+<h2>Worked example</h2>
+<p>Four players, default values. Dana finishes normally.</p>
+<div class="table"><table><thead><tr><th>Player</th><th>Situation</th><th>Calculation</th><th>Round points</th></tr></thead><tbody><tr><td>Dana</td><td>Finished normally</td><td>-101</td><td>-101</td></tr><tr><td>Emre</td><td>Opened, 45 in hand</td><td>45</td><td>45</td></tr><tr><td>Ayşe</td><td>Never opened</td><td>202</td><td>202</td></tr><tr><td>Can</td><td>Opened, 60 in hand, one wrong okey discard</td><td>60 + 101</td><td>161</td></tr></tbody></table></div>
+<p>After this round Dana has -101, Emre 45, Ayşe 202 and Can 161. Dana leads.</p>
+<p>In the next round Emre finishes with the okey tile. He scores -202 and his total becomes 45 - 202 = <strong>-157</strong>. He now leads.</p>
+<h2>Paired play (eşli)</h2>
+<p>In paired mode four players sit in two teams. Partners sit opposite each other: seats 1 and 3 against seats 2 and 4. Each player is scored as above. The team total is the sum of both partners' totals, and the lower team total leads.</p>
+<h2>Equal totals</h2>
+<p>If two players or teams have the same total, they share the same rank. Both are shown as leading if they tie for the lowest total.</p>
+<h2>Calculator</h2>
+<div class="calc"><form id="calc101" onsubmit="return false">
+  <p>
+    <label>Finish normally <input type="number" id="c-fin" value="-101" min="-999" max="999"></label>
+    <label>Finish with okey <input type="number" id="c-okey" value="-202" min="-999" max="999"></label>
+    <label>Finish from hand <input type="number" id="c-hand" value="-202" min="-999" max="999"></label>
+  </p>
+  <p>
+    <label>No-open penalty <input type="number" id="c-noopen" value="202" min="-999" max="999"></label>
+    <label>Wrong okey penalty <input type="number" id="c-wrong" value="101" min="-999" max="999"></label>
+  </p>
+  <table>
+    <thead><tr><th>Player</th><th>Finished</th><th>Tile sum</th><th>No open</th><th>Wrong okey</th><th>Round points</th></tr></thead>
+    <tbody>
+      <tr data-row>
+        <td>1</td>
+        <td><select><option value="none">No</option><option value="normal">Normal</option><option value="okey">With okey</option><option value="hand">From hand</option></select></td>
+        <td><input type="number" value="0" min="-999" max="999"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="number" value="0" min="0" max="9"></td>
+        <td data-out>0</td>
+      </tr>
+      <tr data-row>
+        <td>2</td>
+        <td><select><option value="none">No</option><option value="normal">Normal</option><option value="okey">With okey</option><option value="hand">From hand</option></select></td>
+        <td><input type="number" value="0" min="-999" max="999"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="number" value="0" min="0" max="9"></td>
+        <td data-out>0</td>
+      </tr>
+      <tr data-row>
+        <td>3</td>
+        <td><select><option value="none">No</option><option value="normal">Normal</option><option value="okey">With okey</option><option value="hand">From hand</option></select></td>
+        <td><input type="number" value="0" min="-999" max="999"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="number" value="0" min="0" max="9"></td>
+        <td data-out>0</td>
+      </tr>
+      <tr data-row>
+        <td>4</td>
+        <td><select><option value="none">No</option><option value="normal">Normal</option><option value="okey">With okey</option><option value="hand">From hand</option></select></td>
+        <td><input type="number" value="0" min="-999" max="999"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="number" value="0" min="0" max="9"></td>
+        <td data-out>0</td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("calc101");
+  function clamp(v) { v = Math.round(Number(v)); if (isNaN(v)) v = 0; return Math.max(-999, Math.min(999, v)); }
+  function val(id) { return clamp(document.getElementById(id).value); }
+  function update() {
+    var bonus = { normal: val("c-fin"), okey: val("c-okey"), hand: val("c-hand") };
+    var noOpen = val("c-noopen"), wrong = val("c-wrong");
+    var rows = form.querySelectorAll("[data-row]");
+    var finisher = -1;
+    rows.forEach(function (r, i) {
+      if (finisher < 0 && r.querySelector("select").value !== "none") finisher = i;
+    });
+    rows.forEach(function (r, i) {
+      var type = r.querySelector("select").value;
+      var nums = r.querySelectorAll("input[type=number]");
+      var open = r.querySelector("input[type=checkbox]").checked;
+      var wc = Math.max(0, Math.min(9, Math.round(Number(nums[1].value) || 0)));
+      var base;
+      if (i === finisher) base = bonus[type];
+      else if (open) base = noOpen;
+      else base = clamp(nums[0].value);
+      r.querySelector("[data-out]").textContent = base + wc * wrong;
+    });
+  }
+  form.addEventListener("input", update);
+  form.addEventListener("change", update);
+  update();
+})();
+</script>
+</div>
+<p>The calculator uses the same rules as the app. Only one finisher counts per round. If you pick two, the first one is used. Tile sums and totals are limited to the range -999 to 999 per entry, and wrong discards to 9 per player per round.</p>
+<h2>Changing the values</h2>
+<p>Some groups use other numbers. Common changes are a different no-open penalty or a smaller finish bonus. Edit the values in the calculator above, or set them once in the app.</p>
+<h2>Keeping score in the app</h2>
+<p>Okey Score Counter keeps these rules for you.</p>
+<ul><li>Pick 101 Okey, then individual or paired play, for 2 to 4 players.</li><li>Enter each player's remaining tile sum and tap who finished.</li><li>One-tap options cover finishing with okey, finishing from hand, no open and a wrong okey or joker discard.</li><li>A live preview shows the round before you save it.</li><li>Edit or undo any past round and all totals recalculate.</li><li>Change the penalty values for a match and every round recalculates.</li><li>Share the scoreboard as text or as an image.</li></ul>
+<p>The app works offline and has no internet permission. It is available in English and Turkish for Android. Search for <strong>Okey Score Counter</strong> on Google Play.</p>
+<h2>Questions</h2>
+<h3>Who wins a game of 101 Okey?</h3>
+<p>The player or team with the lowest total at the end of the agreed number of rounds, or when a target is reached.</p>
+<h3>Why are finish points negative?</h3>
+<p>Because lower is better. A negative finish value lowers the finisher's total.</p>
+<h3>What if nobody can finish?</h3>
+<p>Agree on this before the game. If you mark no finisher, the app scores every player by tile sum (or the no-open penalty), so nobody gets a finish bonus.</p>
+<h3>Is the no-open penalty always 202?</h3>
+<p>It is the default in the app. Some tables use a different value, so check your house rules.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Okey Score Counter: 101 Okey</b><p>Score 101 Okey and Okey: penalties, history, player stats and a widget.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.okeyscorecounter&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Okey Score Counter: 101 Okey</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
