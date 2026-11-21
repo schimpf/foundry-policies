@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sourdough True Hydration Calculator With Starter</title><meta name="description" content="Work out sourdough hydration the right way: count the flour and water inside your starter. Formula, worked example and a small calculator."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/sourdough-hydration-journal/true-hydration-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Sourdough True Hydration Calculator With Starter"><meta property="og:description" content="Work out sourdough hydration the right way: count the flour and water inside your starter. Formula, worked example and a small calculator."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/sourdough-hydration-journal/true-hydration-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/sourdough-hydration-journal/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Sourdough True Hydration Calculator With Starter", "description": "Work out sourdough hydration the right way: count the flour and water inside your starter. Formula, worked example and a small calculator.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/sourdough-hydration-journal/true-hydration-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Sourdough Hydration Journal</a></p><h1>Sourdough True Hydration Calculator With Starter</h1><article class="guide"><p>Most sourdough recipes give one hydration number. That number usually ignores the flour and water in the starter. If you want to know how wet your dough really is, you need the true hydration. This page shows the formula, a worked example and a calculator you can use right here.</p>
+<h2>Formula hydration vs. true hydration</h2>
+<ul><li><strong>Formula hydration</strong> is the recipe water divided by the recipe flour. The starter is left out.</li><li><strong>True hydration</strong> is all the water divided by all the flour. The flour and water inside the starter are included.</li></ul>
+<p>Both are expressed as a percentage of flour weight. That is the idea behind baker's percentages: flour is always 100 %.</p>
+<p>The two numbers differ because a starter is not an ingredient on its own. It is flour and water that have already been mixed and fed. A 100 g starter at 100 % hydration holds 50 g of flour and 50 g of water. Those 100 g go into the dough as well.</p>
+<h2>The steps</h2>
+<ol><li>Find the flour in the starter: <strong>starter flour = starter weight / (1 + starter hydration / 100)</strong>.</li><li>Find the water in the starter: <strong>starter water = starter weight - starter flour</strong>.</li><li>Add up the flour: <strong>total flour = recipe flour + starter flour</strong>.</li><li>Add up the water: <strong>total water = recipe water + starter water</strong>, plus any liquid that counts as water, such as milk.</li><li>Divide: <strong>true hydration = total water / total flour x 100</strong>.</li></ol>
+<h2>Worked example</h2>
+<p>A loaf with these ingredients:</p>
+<div class="table"><table><thead><tr><th>Ingredient</th><th>Weight</th></tr></thead><tbody><tr><td>Bread flour</td><td>450 g</td></tr><tr><td>Whole wheat flour</td><td>50 g</td></tr><tr><td>Water</td><td>350 g</td></tr><tr><td>Starter at 100 % hydration</td><td>100 g</td></tr><tr><td>Salt</td><td>10 g</td></tr></tbody></table></div>
+<p><strong>Formula hydration.</strong> Recipe flour is 450 + 50 = 500 g. Recipe water is 350 g. So 350 / 500 = <strong>70.0 %</strong>.</p>
+<p><strong>True hydration.</strong></p>
+<ol><li>Starter flour = 100 / (1 + 100 / 100) = 50 g.</li><li>Starter water = 100 - 50 = 50 g.</li><li>Total flour = 500 + 50 = 550 g.</li><li>Total water = 350 + 50 = 400 g.</li><li>True hydration = 400 / 550 = <strong>72.7 %</strong>.</li></ol>
+<p>Total dough weight is 500 + 350 + 100 + 10 = 960 g. The salt is not part of the flour or the water, so it only adds to dough weight.</p>
+<h3>Baker's percentages for the same loaf</h3>
+<p>Baker's percentages use the recipe flour (500 g) as the base:</p>
+<div class="table"><table><thead><tr><th>Ingredient</th><th>Weight</th><th>Baker's %</th></tr></thead><tbody><tr><td>Bread flour</td><td>450 g</td><td>90.0 %</td></tr><tr><td>Whole wheat flour</td><td>50 g</td><td>10.0 %</td></tr><tr><td>Water</td><td>350 g</td><td>70.0 %</td></tr><tr><td>Starter</td><td>100 g</td><td>20.0 %</td></tr><tr><td>Salt</td><td>10 g</td><td>2.0 %</td></tr></tbody></table></div>
+<h2>The starter hydration changes the result</h2>
+<p>Keep the same recipe, but use a stiff starter at 50 % hydration:</p>
+<ul><li>Starter flour = 100 / 1.5 = 66.7 g.</li><li>Starter water = 33.3 g.</li><li>Total flour = 566.7 g. Total water = 383.3 g.</li><li>True hydration = 383.3 / 566.7 = <strong>67.6 %</strong>.</li></ul>
+<p>The recipe list looks identical, and formula hydration is still 70.0 %. But the dough is about five points drier than the 100 % starter version. If you swap starters between bakes, true hydration is the number that tells you what changed.</p>
+<h2>Liquids other than water</h2>
+<p>Milk, buttermilk and similar liquids are mostly water. If you want them in the total, add them to the water side. In the calculator below, use the milk field. The weight is added to total water and to total dough weight. Eggs, oil and honey are different, so leave them out of that field unless you want to treat them as water yourself.</p>
+<h2>Calculator</h2>
+<div class="calc"><form id="th-form" onsubmit="return false">
+  <p><label>Flour (g) <input id="th-flour" type="number" min="0" step="any" value="500"></label></p>
+  <p><label>Water (g) <input id="th-water" type="number" min="0" step="any" value="350"></label></p>
+  <p><label>Starter (g) <input id="th-starter" type="number" min="0" step="any" value="100"></label></p>
+  <p><label>Starter hydration (%) <input id="th-shyd" type="number" min="0" step="any" value="100"></label></p>
+  <p><label>Salt (g) <input id="th-salt" type="number" min="0" step="any" value="10"></label></p>
+  <p><label>Milk or other liquid that counts as water (g) <input id="th-liquid" type="number" min="0" step="any" value="0"></label></p>
+  <table>
+    <tr><th>Total dough</th><td id="th-dough"></td></tr>
+    <tr><th>Total flour</th><td id="th-tflour"></td></tr>
+    <tr><th>Total water</th><td id="th-twater"></td></tr>
+    <tr><th>True hydration</th><td id="th-true"></td></tr>
+    <tr><th>Formula hydration</th><td id="th-formula"></td></tr>
+  </table>
+</form>
+<script>
+(function () {
+  var ids = ["flour", "water", "starter", "shyd", "salt", "liquid"];
+  function val(id) {
+    var v = parseFloat(document.getElementById("th-" + id).value.replace(",", "."));
+    return isNaN(v) || v < 0 ? 0 : v;
+  }
+  function g(x) { return Math.round(x) + " g"; }
+  function pct(x) { return x === null ? "–" : x.toFixed(1) + " %"; }
+  function update() {
+    var flour = val("flour"), water = val("water"), starter = val("starter");
+    var shyd = val("shyd"), salt = val("salt"), liquid = val("liquid");
+    var starterFlour = starter <= 0 ? 0 : starter / (1 + shyd / 100);
+    var starterWater = starter - starterFlour;
+    var totalFlour = flour + starterFlour;
+    var totalWater = water + starterWater + liquid;
+    var dough = flour + water + starter + salt + liquid;
+    document.getElementById("th-dough").textContent = g(dough);
+    document.getElementById("th-tflour").textContent = g(totalFlour);
+    document.getElementById("th-twater").textContent = g(totalWater);
+    document.getElementById("th-true").textContent = pct(totalFlour > 0 ? totalWater / totalFlour * 100 : null);
+    document.getElementById("th-formula").textContent = pct(flour > 0 ? water / flour * 100 : null);
+  }
+  ids.forEach(function (id) {
+    document.getElementById("th-" + id).addEventListener("input", update);
+  });
+  update();
+})();
+</script>
+</div>
+<p>The calculator uses the formulas above. Enter grams. The starter hydration is the percentage of water to flour in your starter: 100 means equal weights of flour and water.</p>
+<h2>Common questions</h2>
+<h3>Which number should I use when I follow a recipe?</h3>
+<p>Use the one the recipe uses. Most printed recipes quote formula hydration. If a recipe says 75 % and ignores the starter, your dough will be a bit wetter than 75 % by true hydration. Compare like with like.</p>
+<h3>What if I have no starter in the dough?</h3>
+<p>Then both numbers match. Set the starter weight to 0.</p>
+<h3>Does salt count?</h3>
+<p>No. Salt is a percentage of flour like the other ingredients, but it is not flour or water.</p>
+<h2>Do the math in the kitchen</h2>
+<p>Sourdough Hydration Journal is an Android app that does this calculation as you type. You enter your flours, water, starter, salt and extras. The breakdown shows total dough, total flour, total water, true hydration and formula hydration side by side, with baker's percentages for each ingredient. You can mark an extra such as milk as "counts as water", switch between grams and ounces, and save the setup as a recipe. The app works offline.</p>
+<p><a href="https://play.google.com/store/apps/details?id=es.schimpf.sourdoughhydrationjournal">Get Sourdough Hydration Journal on Google Play</a></p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Sourdough Hydration Journal</b><p>Baker&#x27;s percentages, starter feeding log and bake journal for home sourdough.</p><a href="../">More about the app</a></div></aside><footer><a href="../">Sourdough Hydration Journal</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
