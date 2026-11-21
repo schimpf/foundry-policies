@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cuánto duran tus ahorros tras un despido: calculadora</title><meta name="description" content="Calcula cuántas semanas te duran los ahorros, la indemnización y la prestación por desempleo tras un despido. Fórmula, ejemplo y calculadora."><meta name="theme-color" content="#2b6a5e"><meta name="author" content="Gerrit Schimpf"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://apps.schimpf.es/job-loss-12-week-plan/es/layoff-runway-calculator/"><link rel="alternate" hreflang="en" href="https://apps.schimpf.es/job-loss-12-week-plan/layoff-runway-calculator/"><link rel="alternate" hreflang="de-DE" href="https://apps.schimpf.es/job-loss-12-week-plan/de/layoff-runway-calculator/"><link rel="alternate" hreflang="es-ES" href="https://apps.schimpf.es/job-loss-12-week-plan/es/layoff-runway-calculator/"><link rel="alternate" hreflang="x-default" href="https://apps.schimpf.es/job-loss-12-week-plan/layoff-runway-calculator/"><meta property="og:type" content="website"><meta property="og:site_name" content="Apps by Gerrit Schimpf"><meta property="og:locale" content="es_ES"><meta property="og:title" content="Cuánto duran tus ahorros tras un despido: calculadora"><meta property="og:description" content="Calcula cuántas semanas te duran los ahorros, la indemnización y la prestación por desempleo tras un despido. Fórmula, ejemplo y calculadora."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Cuánto duran tus ahorros tras un despido: calculadora"><meta name="twitter:description" content="Calcula cuántas semanas te duran los ahorros, la indemnización y la prestación por desempleo tras un despido. Fórmula, ejemplo y calculadora."><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:url" content="https://apps.schimpf.es/job-loss-12-week-plan/es/layoff-runway-calculator/"><meta property="og:image" content="https://apps.schimpf.es/job-loss-12-week-plan/feature.png"><meta name="twitter:image" content="https://apps.schimpf.es/job-loss-12-week-plan/feature.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="500"><meta property="og:image:alt" content="Plan tras despido: 12 semanas"><link rel="icon" href="../../icon.png"><link rel="apple-touch-icon" href="../../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cuánto duran tus ahorros tras un despido: calculadora", "description": "Calcula cuántas semanas te duran los ahorros, la indemnización y la prestación por desempleo tras un despido. Fórmula, ejemplo y calculadora.", "datePublished": "2026-11-21", "dateModified": "2026-11-21", "inLanguage": "es", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "publisher": {"@type": "Person", "name": "Gerrit Schimpf"}, "about": {"@type": "MobileApplication", "name": "Plan tras despido: 12 semanas", "operatingSystem": "Android", "url": "https://apps.schimpf.es/job-loss-12-week-plan/es/"}, "url": "https://apps.schimpf.es/job-loss-12-week-plan/es/layoff-runway-calculator/", "mainEntityOfPage": "https://apps.schimpf.es/job-loss-12-week-plan/es/layoff-runway-calculator/", "image": "https://apps.schimpf.es/job-loss-12-week-plan/feature.png"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Todas las apps", "item": "https://apps.schimpf.es/"}, {"@type": "ListItem", "position": 2, "name": "Plan tras despido: 12 semanas", "item": "https://apps.schimpf.es/job-loss-12-week-plan/es/"}, {"@type": "ListItem", "position": 3, "name": "Cuánto duran tus ahorros tras un despido: calculadora", "item": "https://apps.schimpf.es/job-loss-12-week-plan/es/layoff-runway-calculator/"}]}</script><style>
+:root{--bg:#0b0d0c;--bg2:#111413;--card:#161a19;--fg:#f2f4f3;--muted:#a1a8a4;--line:#252b29;--accent:#0f766e;--on:#fff;
+--hi:color-mix(in srgb,var(--accent) 55%,#fff);--soft:color-mix(in srgb,var(--accent) 18%,transparent);
+--frame:#050606;--edge:#2c3230;--shadow:0 40px 80px -30px rgba(0,0,0,.75)}
+@media (prefers-color-scheme:light){:root{--bg:#f7f7f5;--bg2:#eeefec;--card:#fff;--fg:#151816;--muted:#5a615d;--line:#e2e5e1;
+--hi:color-mix(in srgb,var(--accent) 80%,#000);--soft:color-mix(in srgb,var(--accent) 12%,transparent);
+--frame:#101312;--edge:#1f2422;--shadow:0 30px 60px -30px rgba(20,30,25,.45)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--hi)}img{max-width:100%;height:auto}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,5vw,3.6rem);overflow-wrap:break-word;font-weight:800}h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:750}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}@media (max-width:640px){.wrap{padding:0 16px}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--card);padding:8px 12px;z-index:9}.skip:focus{left:8px}
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 78%,transparent);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font-weight:700;min-width:0}
+.brand img{border-radius:9px;flex:none}.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.links{display:flex;gap:22px;margin-left:auto}.links a{color:var(--muted);text-decoration:none;font-size:.95rem}
+.links a:hover{color:var(--fg)}@media (max-width:760px){.links{display:none}.nav .btn{margin-left:auto}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on);padding:12px 22px;
+border-radius:999px;text-decoration:none;font-weight:650;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px var(--accent)}.nav .btn{padding:8px 16px;font-size:.9rem}
+.chip{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--soft);
+color:var(--hi);font-weight:600;font-size:.95rem}
+.band{padding:96px 0;position:relative}.band.alt{background:var(--bg2)}@media (max-width:640px){.band{padding:64px 0}}
+.eyebrow{display:block;color:var(--hi);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.lead{color:var(--muted);font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:640px}
+.hero{overflow:hidden;padding:72px 0 40px;background:
+radial-gradient(55% 60% at 78% 30%,color-mix(in srgb,var(--accent) 38%,transparent),transparent 70%),
+radial-gradient(40% 50% at 5% 100%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.hero .icon{border-radius:24px;box-shadow:0 20px 40px -18px var(--accent);margin-bottom:24px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.hero .actions .badge img{display:block;height:60px;width:auto}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr);text-align:center}.hero .lead{margin:0 auto}
+.hero .actions{justify-content:center}.hero .icon{margin:0 auto 20px}}
+.stack{display:flex;justify-content:center;align-items:flex-end;padding:20px 0 40px}
+.stack .phone{width:250px}.stack .phone:nth-child(2){width:280px;z-index:2}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(40px,30px)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-40px,30px)}
+@media (max-width:640px){.stack .phone{width:32vw;padding:6px;border-radius:26px}.stack .phone img{border-radius:21px}
+.stack .phone:nth-child(2){width:46vw}.stack .phone::before{top:12px;width:7px;height:7px;margin-left:-3.5px}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(9vw,4vw)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-9vw,4vw)}}
+.phone{position:relative;flex:none;margin:0;padding:9px;background:var(--frame);border-radius:42px;
+box-shadow:0 0 0 1.5px var(--edge),inset 0 0 0 1px #000,var(--shadow)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+background:#000;box-shadow:0 0 0 2px #111;z-index:1}
+.phone picture,.tablet picture{display:block}.phone img{display:block;width:100%;height:auto;border-radius:33px;background:#000}
+.tablet{max-width:860px;margin:0 auto;padding:14px;background:var(--frame);border-radius:30px;
+box-shadow:0 0 0 1.5px var(--edge),var(--shadow)}.tablet img{display:block;width:100%;border-radius:18px}
+.tablets{display:grid;gap:32px}
+.gallery{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px max(24px,calc(50vw - 576px)) 40px;
+scrollbar-width:thin}.gallery figure{margin:0;flex:none;width:240px;scroll-snap-align:center;text-align:center}
+.gallery figcaption{margin-top:18px;color:var(--muted);font-size:.95rem;font-weight:500}
+@media (max-width:640px){.gallery{gap:20px;padding:16px 16px 32px}.gallery figure{width:200px}}
+.head{max-width:720px;margin-bottom:48px}.center{text-align:center;margin-left:auto;margin-right:auto}
+.about p{max-width:720px;color:var(--muted);font-size:1.1rem}
+.features{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.fcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;transition:transform .25s,border-color .25s}
+.fcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.num{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--soft);color:var(--hi);
+font-weight:800;margin-bottom:18px}.fcard p{color:var(--muted);margin:0 0 12px}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:9px}.checks li{position:relative;padding-left:28px;color:var(--muted);font-size:.97rem}
+.checks li::before{content:"";position:absolute;left:0;top:.42em;width:16px;height:16px;border-radius:50%;background:var(--soft);
+box-shadow:inset 0 0 0 1.5px var(--hi)}
+.checks li::after{content:"";position:absolute;left:5.5px;top:calc(.42em + 4px);width:4px;height:7px;border:solid var(--hi);
+border-width:0 2px 2px 0;transform:rotate(45deg)}
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.cards li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:transform .2s,border-color .2s}
+.cards li:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.cards a{color:var(--fg);font-weight:700;text-decoration:none;font-size:1.08rem}.cards a::after{content:"";position:absolute;inset:0}
+.cards small{display:block;color:var(--muted);margin-top:6px;font-size:.93rem}
+.apps li{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--card)),var(--card) 60%)}
+.apps img{border-radius:14px;flex:none}.apps small{margin-top:2px}
+.cta-band{border-radius:32px;padding:64px 32px;text-align:center;border:1px solid var(--line);background:
+radial-gradient(70% 90% at 50% 0%,color-mix(in srgb,var(--accent) 35%,transparent),transparent 70%),var(--card)}
+.cta-band img.icon{border-radius:22px;margin-bottom:20px}.cta-band .lead{margin:0 auto 28px}.cta-band .badge img{height:60px;width:auto}
+.foot{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:.92rem}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}.foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+.foot a{color:var(--muted)}.foot a:hover{color:var(--fg)}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 20px;font-size:.92rem;color:var(--muted)}
+.crumbs li+li::before{content:"›";margin-right:6px}.crumbs a{color:var(--muted)}
+.ghero{padding:64px 0 32px;background:radial-gradient(60% 80% at 85% 0%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%)}
+.ghero h1{font-size:clamp(2rem,4.5vw,3.2rem);max-width:860px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start;padding-bottom:96px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+.guide{max-width:740px;font-size:1.06rem}.guide h2{font-size:1.7rem;margin-top:1.8em}.guide h3{margin-top:1.5em}
+.guide li{margin:.35em 0}.guide code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.9em}
+.table{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.96rem}th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:var(--shadow)}
+.calc input,.calc select,.calc button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
+.cta{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
+.cta .phone{width:170px;margin:0 auto 20px}.cta img.icon{border-radius:14px}.cta p{color:var(--muted);font-size:.95rem;margin:6px 0 16px}
+.cta .badge img{height:52px;width:auto;margin:12px auto 0;display:block}
+.faq{max-width:820px;display:grid;gap:12px}.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.faq summary{cursor:pointer;font-weight:650;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--hi);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}.faq details p{color:var(--muted);margin:12px 0 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:root{--accent:#2b6a5e;--on:#ffffff}</style></head><body><a class="skip" href="#main">Ir al contenido</a><header class="nav"><div class="wrap"><a class="brand" href="../"><img src="../../icon.png" alt="" width="32" height="32"><span>Plan tras despido: 12 semanas</span></a><a class="btn" href="https://play.google.com/store/apps/details?id=es.schimpf.jobloss12weekplan&amp;hl=es">Obtener la app</a></div></header><main id="main"><section class="ghero"><div class="wrap"><ol class="crumbs"><li><a href="../../../">Todas las apps</a></li><li><a href="../">Plan tras despido: 12 semanas</a></li><li>Cuánto duran tus ahorros tras un despido: calculadora</li></ol><h1>Cuánto duran tus ahorros tras un despido: calculadora</h1><p class="lead">Calcula cuántas semanas te duran los ahorros, la indemnización y la prestación por desempleo tras un despido. Fórmula, ejemplo y calculadora.</p></div></section><div class="wrap layout"><article class="guide"><p>Después de un despido, una cifra importa más que casi todas: cuántas semanas te dura el dinero. Esta página muestra la fórmula, un ejemplo con números reales y una calculadora que puedes usar aquí mismo.</p>
+<h2>Qué significa "margen"</h2>
+<p>El margen (en inglés "runway") es el número de semanas que puedes cubrir tus gastos sin una nómina nueva. Depende de tres cosas:</p>
+<ul><li><strong>Dinero disponible:</strong> ahorros más la indemnización que aún no has cobrado.</li><li><strong>Dinero que entra:</strong> la prestación semanal por desempleo, si la recibes.</li><li><strong>Dinero que sale:</strong> tus gastos mensuales, convertidos a una cifra semanal.</li></ul>
+<h2>La fórmula</h2>
+<p>La fórmula siguiente es la que usa la app Job Loss 12-Week Plan.</p>
+<ol><li><strong>Dinero disponible</strong> = ahorros + indemnización pendiente de cobro</li><li><strong>Gasto semanal</strong> = gasto mensual × 12 ÷ 52</li><li><strong>Coste neto semanal</strong> = gasto semanal − prestación semanal por desempleo</li><li><strong>Semanas restantes</strong> = dinero disponible ÷ coste neto semanal, redondeado hacia abajo a semanas completas</li></ol>
+<p>Dos detalles importan:</p>
+<ul><li>El paso de mensual a semanal usa × 12 ÷ 52. Un año tiene unas 4,33 semanas por mes, así que dividir entre 4 haría que tu margen pareciera más corto de lo que es.</li><li>Si la prestación es igual o mayor que tu gasto semanal, el coste neto es cero o negativo. Tu dinero no baja, así que no hay fecha de fin. La app lo muestra como "Covered" (cubierto).</li></ul>
+<h3>Cómo se cuenta la indemnización</h3>
+<p>La indemnización solo cuenta por la parte que aún no has cobrado. La app supone que se paga a partes iguales desde la fecha del despido hasta su fecha de fin:</p>
+<ul><li>Pendiente = indemnización total × días restantes ÷ días totales</li><li>Sin fecha de fin, el importe completo cuenta como pendiente.</li><li>Cuando la fecha de fin ya ha pasado, no queda nada por contar.</li></ul>
+<p>Ejemplo: 6000 $ de indemnización pagados en 60 días. Con 30 días restantes, quedan 3000 $ por cobrar.</p>
+<h2>Ejemplo con números</h2>
+<p>Supón que te han despedido y tienes estas cifras:</p>
+<div class="table"><table><thead><tr><th>Concepto</th><th>Importe</th></tr></thead><tbody><tr><td>Ahorros</td><td>12.000 $</td></tr><tr><td>Indemnización pendiente de cobro</td><td>4000 $</td></tr><tr><td>Prestación semanal por desempleo</td><td>400 $</td></tr><tr><td>Gasto mensual</td><td>3500 $</td></tr><tr><td>De eso, recortable (streaming, restaurantes, suscripciones)</td><td>600 $</td></tr></tbody></table></div>
+<p>Paso 1. Dinero disponible: 12.000 $ + 4000 $ = 16.000 $.</p>
+<p>Paso 2. Gasto semanal: 3500 $ × 12 ÷ 52 = 807,69 $.</p>
+<p>Paso 3. Coste neto semanal: 807,69 $ − 400 $ = 407,69 $.</p>
+<p>Paso 4. Semanas restantes: 16.000 $ ÷ 407,69 $ = 39,2, es decir, 39 semanas.</p>
+<p>Ahora recorta los 600 $ de gasto recortable:</p>
+<ol><li>Nuevo gasto mensual: 3500 $ − 600 $ = 2900 $</li><li>Gasto semanal: 2900 $ × 12 ÷ 52 = 669,23 $</li><li>Coste neto semanal: 669,23 $ − 400 $ = 269,23 $</li><li>Semanas restantes: 16.000 $ ÷ 269,23 $ = 59,4, es decir, 59 semanas</li></ol>
+<p>Recortar 600 $ al mes suma 20 semanas:</p>
+<p>``<code> Sin recorte    |#######################################          39 semanas Recorte 600 $  |###########################################################  59 semanas </code>``</p>
+<h2>Pruébalo tú</h2>
+<div class="calc"><form id="runway-form" style="display:grid;gap:8px;max-width:420px">
+  <label>Fecha del despido <input type="date" id="rw-layoff" required></label>
+  <label>Ahorros ($) <input type="number" id="rw-savings" min="0" step="0.01" value="12000"></label>
+  <label>Indemnización pendiente de cobro ($, opcional) <input type="number" id="rw-sev" min="0" step="0.01" value="4000"></label>
+  <label>Fecha de fin de la indemnización (opcional, vacío si se paga de una vez) <input type="date" id="rw-sevend"></label>
+  <label>Prestación semanal por desempleo ($, opcional) <input type="number" id="rw-ben" min="0" step="0.01" value="400"></label>
+  <label>Gasto mensual ($) <input type="number" id="rw-spend" min="0" step="0.01" value="3500"></label>
+  <label>De eso, recortable ($) <input type="number" id="rw-cut" min="0" step="0.01" value="600"></label>
+  <button type="submit">Calcular</button>
+  <p id="rw-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var f = document.getElementById("runway-form");
+  var out = document.getElementById("rw-out");
+  var l = document.getElementById("rw-layoff");
+  var t = new Date();
+  var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+  var todayStr = t.getFullYear() + "-" + pad(t.getMonth() + 1) + "-" + pad(t.getDate());
+  l.value = todayStr;
+  function cents(id) {
+    var v = parseFloat(document.getElementById(id).value);
+    return isNaN(v) || v < 0 ? 0 : Math.round(v * 100);
+  }
+  function day(s) { return Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)) / 86400000; }
+  function weekly(m) { return Math.round(m * 12 / 52); }
+  function money(c) { return (c / 100).toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " $"; }
+  function remaining(total, layoff, end, today) {
+    if (total <= 0) return 0;
+    if (!end) return total;
+    var totalDays = day(end) - day(layoff);
+    if (totalDays <= 0) return day(today) > day(end) ? 0 : total;
+    var left = Math.min(Math.max(day(end) - day(today), 0), totalDays);
+    return Math.round(total * left / totalDays);
+  }
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var monthly = cents("rw-spend");
+    if (monthly <= 0) { out.textContent = "Introduce tu gasto mensual."; return; }
+    if (!l.value) { out.textContent = "Introduce la fecha de tu despido."; return; }
+    var cuttable = Math.min(cents("rw-cut"), monthly);
+    var benefit = cents("rw-ben");
+    var avail = cents("rw-savings") + remaining(cents("rw-sev"), l.value, document.getElementById("rw-sevend").value, todayStr);
+    var net = weekly(monthly) - benefit;
+    if (net <= 0) { out.textContent = "Cubierto: tu prestación es al menos igual a tu gasto semanal, así que tu dinero no baja."; return; }
+    var weeks = Math.floor(avail / net);
+    var cutNet = weekly(monthly - cuttable) - benefit;
+    var msg = "Disponible: " + money(avail) + ". Coste neto semanal: " + money(net) + ". Semanas restantes: " + weeks + ".";
+    msg += cutNet <= 0 ? " Si recortas todo el gasto recortable: cubierto por tus ingresos." : " Si recortas todo el gasto recortable: " + Math.floor(avail / cutNet) + " semanas.";
+    out.textContent = msg;
+  });
+})();
+</script>
+</div>
+<p>La calculadora funciona en tu navegador. Nada de lo que escribes se envía a ningún sitio.</p>
+<h2>Por qué importa la suposición sobre la prestación</h2>
+<p>La fórmula supone que tu prestación por desempleo continúa durante todo el margen. La prestación termina tras un tiempo limitado. Según el Departamento de Trabajo de EE. UU., la mayoría de los estados pagan hasta 26 semanas y unos pocos pagan menos. Consulta las normas de tu estado en las páginas de seguro de desempleo del Departamento de Trabajo (dol.gov).</p>
+<p>Para probar el peor caso, pon la prestación semanal en 0 $. En el ejemplo anterior resulta:</p>
+<ul><li>Coste neto semanal: 807,69 $</li><li>Semanas restantes: 16.000 $ ÷ 807,69 $ = 19,8, es decir, 19 semanas</li></ul>
+<p>Calcula las dos versiones para ver tu rango.</p>
+<h2>Cómo acertar con los datos</h2>
+<ol><li><strong>Ahorros:</strong> cuenta solo el dinero al que puedes llegar rápido. Deja fuera las cuentas de jubilación. Retirarlas antes de tiempo puede generar impuestos y penalizaciones.</li><li><strong>Indemnización:</strong> usa el importe después de impuestos si puedes. Si solo conoces el importe bruto, tu resultado saldrá algo alto.</li><li><strong>Prestación:</strong> usa el importe semanal que te indica tu estado. Deja fuera el máximo.</li><li><strong>Gasto mensual:</strong> suma alquiler o hipoteca, comida, suministros, seguros, cuotas de deudas y todo lo demás que pagas cada mes. El seguro médico puede costar mucho más cuando tu empresa deja de pagar su parte.</li><li><strong>Gasto recortable:</strong> cuenta solo los costes que podrías cortar en un mes.</li></ol>
+<h2>Cómo usar las cifras</h2>
+<ul><li><strong>Menos de 12 semanas:</strong> recorta gastos primero y solicita ya el desempleo si aún no lo has hecho.</li><li><strong>De 12 a 26 semanas:</strong> tienes tiempo, pero empieza pronto a enviar solicitudes. Buscar empleo suele llevar meses.</li><li><strong>Más de 26 semanas:</strong> la prestación no es el riesgo principal. Vigila tus gastos y recalcula cada mes.</li></ul>
+<p>Estos rangos son reglas generales. Esta página ofrece información general sobre EE. UU. No es asesoramiento legal ni financiero.</p>
+<h2>Mantén la cifra al día</h2>
+<p>La cifra del margen se queda anticuada rápido. Los gastos cambian, la indemnización se va cobrando y las prestaciones empiezan o terminan.</p>
+<p>La app para Android Job Loss 12-Week Plan mantiene este cálculo al día. Toma tu presupuesto mensual de una lista de gastos marcados como esenciales o recortables, muestra el desglose línea por línea y indica cuántas semanas ganarías si recortas. También pone el margen en el widget de tu pantalla de inicio e incluye una lista semanal, recordatorios de plazos y un repaso semanal para las 12 semanas posteriores a un despido. No hay cuenta y tus datos se quedan en tu teléfono.</p>
+<p>Busca "Plan tras despido: 12 semanas" en Google Play.</p></article><aside class="cta"><div class="phone"><picture><source type="image/webp" srcset="../../screen-1.webp"><img src="../../screen-1.png" alt="Plan tras despido: 12 semanas" width="1080" height="2160" loading="lazy" decoding="async"></picture></div><div><b>Plan tras despido: 12 semanas</b><p>¿Despedido? Lista de 12 semanas con plazos, presupuesto y cálculo de margen.</p><a href="../">Más sobre la app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.jobloss12weekplan&amp;hl=es"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside></div><section class="band alt"><div class="wrap"><div class="head"><h2>Más guías</h2></div><ul class="cards"><li><a href="../cobra-election-deadline-60-days/">Plazo de COBRA: cómo funcionan los 60 días tras un despido</a><small>Cuánto tiempo tienes para elegir COBRA tras un despido en EE. UU., cuándo empiezan los 60 días y cómo contarlos. Con ejemplos de fechas.</small></li></ul></div></section><section class="band"><div class="wrap"><div class="head"><h2>Más apps</h2></div><ul class="cards apps"><li style="--accent:#4355b9"><img src="../../../alarm-clock/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../alarm-clock/">Alarm Clock: Wake-Up Missions</a><small>Reliable alarms for heavy sleepers. Solve a task to switch the alarm off.</small></span></li><li style="--accent:#3a6a2a"><img src="../../../german-allotment-club-ledger/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../german-allotment-club-ledger/">Allotment Club Ledger</a><small>Rent, dues, meters and receipts for allotment club treasurers</small></span></li><li style="--accent:#006a63"><img src="../../../anti-bucket-list/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../anti-bucket-list/">Anti-Bucket List: No Journal</a><small>Write down what you said no to and check later if you&#x27;re still glad.</small></span></li></ul></div></section></main><footer class="foot"><div class="wrap"><nav aria-label="Footer"><a href="../">Plan tras despido: 12 semanas</a><a href="../../privacy/">Privacidad</a><a href="../../../">Todas las apps</a><a href="https://apps.schimpf.es/job-loss-12-week-plan/layoff-runway-calculator/" hreflang="en">EN</a><a href="https://apps.schimpf.es/job-loss-12-week-plan/de/layoff-runway-calculator/" hreflang="de-DE">DE</a></nav><span>© 2026 Gerrit Schimpf</span></div></footer></body></html>
