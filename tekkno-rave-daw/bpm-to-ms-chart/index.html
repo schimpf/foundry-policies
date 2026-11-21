@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BPM to ms Chart for Hard Techno, 140 to 220 BPM</title><meta name="description" content="Milliseconds per beat, 16th note and bar for 140 to 220 BPM, with the formulas and a worked example for song length in seconds."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/tekkno-rave-daw/bpm-to-ms-chart/"><meta property="og:type" content="website"><meta property="og:title" content="BPM to ms Chart for Hard Techno, 140 to 220 BPM"><meta property="og:description" content="Milliseconds per beat, 16th note and bar for 140 to 220 BPM, with the formulas and a worked example for song length in seconds."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/tekkno-rave-daw/bpm-to-ms-chart/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/tekkno-rave-daw/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "BPM to ms Chart for Hard Techno, 140 to 220 BPM", "description": "Milliseconds per beat, 16th note and bar for 140 to 220 BPM, with the formulas and a worked example for song length in seconds.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/tekkno-rave-daw/bpm-to-ms-chart/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Tekkno Rave DAW: Beat Maker</a></p><h1>BPM to ms Chart for Hard Techno, 140 to 220 BPM</h1><article class="guide"><p>Delays, loop lengths and sample cuts are easier when you know how long a beat lasts in milliseconds. This page gives a chart for the tempo range used in hard techno and hardcore (140 to 220 BPM), the formulas behind it, and a small calculator.</p>
+<h2>The formulas</h2>
+<p>BPM means beats per minute. One minute has 60,000 milliseconds, so:</p>
+<ul><li><strong>Beat (quarter note)</strong> in ms = 60000 / BPM</li><li><strong>8th note</strong> in ms = 30000 / BPM</li><li><strong>16th note</strong> in ms = 15000 / BPM</li><li><strong>Bar of 4/4</strong> in ms = 240000 / BPM</li></ul>
+<p>A bar of 4/4 holds 4 beats, which is 16 sixteenth notes. Most step sequencers, including a 16-step pattern, treat one step as one 16th note.</p>
+<h2>BPM to ms chart</h2>
+<div class="table"><table><thead><tr><th>BPM</th><th>16th note (ms)</th><th>8th note (ms)</th><th>Beat (ms)</th><th>Bar (ms)</th></tr></thead><tbody><tr><td>140</td><td>107.14</td><td>214.29</td><td>428.57</td><td>1714.29</td></tr><tr><td>150</td><td>100.00</td><td>200.00</td><td>400.00</td><td>1600.00</td></tr><tr><td>160</td><td>93.75</td><td>187.50</td><td>375.00</td><td>1500.00</td></tr><tr><td>170</td><td>88.24</td><td>176.47</td><td>352.94</td><td>1411.76</td></tr><tr><td>175</td><td>85.71</td><td>171.43</td><td>342.86</td><td>1371.43</td></tr><tr><td>180</td><td>83.33</td><td>166.67</td><td>333.33</td><td>1333.33</td></tr><tr><td>190</td><td>78.95</td><td>157.89</td><td>315.79</td><td>1263.16</td></tr><tr><td>200</td><td>75.00</td><td>150.00</td><td>300.00</td><td>1200.00</td></tr><tr><td>210</td><td>71.43</td><td>142.86</td><td>285.71</td><td>1142.86</td></tr><tr><td>220</td><td>68.18</td><td>136.36</td><td>272.73</td><td>1090.91</td></tr></tbody></table></div>
+<p>Values are rounded to two decimals.</p>
+<h2>Worked example: how long is my track?</h2>
+<p>Say you write a track at 175 BPM and it is 32 bars long.</p>
+<ol><li>One bar at 175 BPM = 240000 / 175 = 1371.43 ms.</li><li>32 bars = 32 x 1371.43 = 43,885.7 ms.</li><li>That is about <strong>43.9 seconds</strong>.</li></ol>
+<p>You can check this a second way. 32 bars x 16 steps = 512 steps. One step at 175 BPM = 15000 / 175 = 85.71 ms. 512 x 85.71 = 43,885.7 ms. Same answer.</p>
+<p>Longer tracks scale in a straight line: 64 bars at 175 BPM is about 87.8 seconds, and 128 bars is about 175.6 seconds.</p>
+<h2>From milliseconds to audio frames</h2>
+<p>Digital audio counts in frames, not milliseconds. At a 44.1 kHz sample rate there are 44,100 frames per second.</p>
+<p>Frames per 16th note = 44100 x 60 / BPM / 4</p>
+<p>At 175 BPM that is 44100 x 60 / 175 / 4 = 3,780 frames per step. A tempo that divides evenly like this keeps steps on whole frames. At 170 BPM the result is 3,889.41 frames, so a sequencer has to track a fractional position to stay in time over a long loop.</p>
+<h2>Which tempo for which style?</h2>
+<p>Tempo ranges are conventions, not rules. Genre names overlap and producers break the ranges all the time. As a rough guide:</p>
+<ul><li><strong>Hard techno</strong> often sits around 150 to 160 BPM.</li><li><strong>Gabber and hardcore</strong> often sit around 170 to 200 BPM.</li><li><strong>Speedcore</strong> goes higher still.</li></ul>
+<p>The chart above covers 140 to 220 BPM, so it spans all of these.</p>
+<h2>Tips for using the numbers</h2>
+<ul><li>To set a delay time that lands on the grid, use the 8th note or 16th note value from the chart. A dotted 8th is 1.5 x the 8th note value.</li><li>A kick every beat at 175 BPM repeats every 342.86 ms. That is 175 kicks per minute.</li><li>Faster tempo shortens each step. Samples that ring longer than a step will overlap with the next hit, so trim long kicks and bass tails as you raise the BPM.</li><li>Tempo changes do not change pitch in a step sequencer. Only the spacing between triggers changes.</li></ul>
+<h2>Calculator</h2>
+<div class="calc"><form id="bpmcalc" onsubmit="return false">
+  <p><label>BPM (140 to 220) <input id="bc-bpm" type="number" min="140" max="220" step="1" value="175"></label></p>
+  <p><label>Song length in bars <input id="bc-bars" type="number" min="1" max="256" step="1" value="32"></label></p>
+  <p>16th note: <strong id="bc-step"></strong> ms</p>
+  <p>8th note: <strong id="bc-eighth"></strong> ms</p>
+  <p>Beat: <strong id="bc-beat"></strong> ms</p>
+  <p>Bar: <strong id="bc-bar"></strong> ms</p>
+  <p>Frames per step at 44.1 kHz: <strong id="bc-frames"></strong></p>
+  <p>Song length: <strong id="bc-song"></strong> seconds</p>
+</form>
+<script>
+(function () {
+  var f = document.getElementById("bpmcalc");
+  function run() {
+    var bpm = Math.min(220, Math.max(140, Math.round(Number(document.getElementById("bc-bpm").value) || 175)));
+    var bars = Math.min(256, Math.max(1, Math.round(Number(document.getElementById("bc-bars").value) || 1)));
+    var stepMs = 15000 / bpm;
+    document.getElementById("bc-step").textContent = stepMs.toFixed(2);
+    document.getElementById("bc-eighth").textContent = (30000 / bpm).toFixed(2);
+    document.getElementById("bc-beat").textContent = (60000 / bpm).toFixed(2);
+    document.getElementById("bc-bar").textContent = (240000 / bpm).toFixed(2);
+    document.getElementById("bc-frames").textContent = (44100 * 60 / bpm / 4).toFixed(2);
+    document.getElementById("bc-song").textContent = (bars * 16 * stepMs / 1000).toFixed(2);
+  }
+  f.addEventListener("input", run);
+  run();
+})();
+</script>
+</div>
+<h2>Try it in the app</h2>
+<p>Tekkno Rave DAW is an Android groovebox for hard techno and hardcore. Its tempo control runs from 140 to 220 BPM, a pattern has 8, 16, 32 or 64 steps, and one step is one 16th note. In the song view, one bar is 16 steps, so the song length formula above is the one the app uses for playback. Open the app, set your BPM, and the chart values apply directly to your pattern.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Tekkno Rave DAW: Beat Maker</b><p>Hard techno and hardcore groovebox with pads, a pitch grid and a song view.</p><a href="../">More about the app</a></div></aside><footer><a href="../">Tekkno Rave DAW: Beat Maker</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
