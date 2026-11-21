@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bee Treatment Withdrawal Period Calculator</title><meta name="description" content="Work out when a hive treatment withdrawal period ends. Formula, worked examples and what to do when honey supers are on."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/beekeeping-hive-log/bee-treatment-withdrawal-period-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Bee Treatment Withdrawal Period Calculator"><meta property="og:description" content="Work out when a hive treatment withdrawal period ends. Formula, worked examples and what to do when honey supers are on."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/beekeeping-hive-log/bee-treatment-withdrawal-period-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/beekeeping-hive-log/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Bee Treatment Withdrawal Period Calculator", "description": "Work out when a hive treatment withdrawal period ends. Formula, worked examples and what to do when honey supers are on.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/beekeeping-hive-log/bee-treatment-withdrawal-period-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Hive Log: Beekeeping Journal</a></p><h1>Bee Treatment Withdrawal Period Calculator</h1><article class="guide"><p>A withdrawal period is the time you must wait after a treatment before you can use honey from that hive. This page shows how to work out the end date, with examples and a small calculator.</p>
+<h2>How to calculate the end date</h2>
+<p>The rule is simple addition:</p>
+<p><strong>End date = treatment date + withdrawal days</strong></p>
+<p>Beekeeping Hive Log uses exactly this rule. If the withdrawal is 0 days, the treatment has no withdrawal period and no end date is shown.</p>
+<p>The number of days is not something you work out. It comes from the product label or from your national authority. Different products and countries give different numbers, and some products have none. Always read the label of the product you actually used.</p>
+<h2>Calculator</h2>
+<div class="calc"><form id="wd-form">
+  <p><label for="wd-date">Treatment date</label><br><input type="date" id="wd-date" required></p>
+  <p><label for="wd-days">Withdrawal days (0 to 365)</label><br><input type="number" id="wd-days" min="0" max="365" step="1" value="14" required></p>
+  <p><button type="submit">Calculate end date</button></p>
+  <p id="wd-result" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("wd-form");
+  var out = document.getElementById("wd-result");
+  var today = new Date();
+  var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+  document.getElementById("wd-date").value = today.getFullYear() + "-" + pad(today.getMonth() + 1) + "-" + pad(today.getDate());
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var parts = document.getElementById("wd-date").value.split("-");
+    var days = parseInt(document.getElementById("wd-days").value, 10);
+    if (parts.length !== 3 || isNaN(days) || days < 0 || days > 365) {
+      out.textContent = "Enter a date and a number of days from 0 to 365.";
+      return;
+    }
+    if (days === 0) {
+      out.textContent = "No withdrawal period, so there is no end date.";
+      return;
+    }
+    var start = Date.UTC(+parts[0], +parts[1] - 1, +parts[2]);
+    var end = new Date(start + days * 86400000);
+    var endText = end.getUTCFullYear() + "-" + pad(end.getUTCMonth() + 1) + "-" + pad(end.getUTCDate());
+    var todayUtc = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+    var active = end.getTime() > todayUtc;
+    out.textContent = "Withdrawal ends on " + endText + ". " + (active ? "It is still running today." : "It has already ended.");
+  });
+})();
+</script>
+</div>
+<h2>Worked examples</h2>
+<h3>Example 1: a 14-day withdrawal</h3>
+<ul><li>Treatment date: 10 June</li><li>Withdrawal: 14 days</li><li>End date: 10 June + 14 days = <strong>24 June</strong></li></ul>
+<p>Until 24 June, treat honey from that hive as not usable.</p>
+<h3>Example 2: crossing a month end</h3>
+<ul><li>Treatment date: 25 August</li><li>Withdrawal: 21 days</li><li>August has 31 days, so 25 August + 6 days = 31 August</li><li>21 − 6 = 15 days left, so the end date is <strong>15 September</strong></li></ul>
+<h3>Example 3: no withdrawal</h3>
+<ul><li>Treatment date: 3 October</li><li>Withdrawal: 0 days</li><li>No end date. The treatment does not restrict honey use.</li></ul>
+<h2>Quick table: end dates for common lengths</h2>
+<p>The table uses a treatment date of 1 July.</p>
+<div class="table"><table><thead><tr><th>Withdrawal days</th><th>End date</th></tr></thead><tbody><tr><td>7</td><td>8 July</td></tr><tr><td>14</td><td>15 July</td></tr><tr><td>21</td><td>22 July</td></tr><tr><td>28</td><td>29 July</td></tr><tr><td>42</td><td>12 August</td></tr><tr><td>60</td><td>30 August</td></tr></tbody></table></div>
+<h2>Two things people get wrong</h2>
+<ol><li><strong>Counting the treatment day as day 1.</strong> The rule above starts counting the day after treatment. If your label counts differently, follow the label and add a day if in doubt.</li><li><strong>Several treatments on one hive.</strong> The hive is in a withdrawal period until the latest end date. An older treatment ending sooner does not clear it.</li></ol>
+<h2>Why the end date matters</h2>
+<p>Honey taken during a withdrawal period may carry residues of the product. Beekeepers who sell or give away honey usually need to show when each hive was treated and when it was clear again. A written record with dates answers that question in seconds, and it also helps you plan: you can see which hives are clear before you put on supers or pull honey.</p>
+<h2>A simple routine</h2>
+<ol><li>Write down the product name and the date as soon as you treat.</li><li>Copy the withdrawal days from the label into the same entry.</li><li>Note the end date, or let the app work it out.</li><li>Set a reminder for the end date so you know when the hive is clear.</li><li>Check the date again before you harvest.</li></ol>
+<h2>Do not block yourself, but do not ignore it</h2>
+<p>A withdrawal date is a warning, not a lock. Real beekeeping is messy: you may need to log a late treatment or correct a date. A good log should warn you while the period is running and still let you write things down.</p>
+<h2>Keeping track in the app</h2>
+<p>Beekeeping Hive Log, on Google Play as "Hive Log: Beekeeping Journal", does this for each hive:</p>
+<ul><li>You log a treatment with the product, the date and the withdrawal days.</li><li>The hive shows an in-withdrawal status until the end date has passed. If the hive also needs attention, for example an overdue reminder, that status takes priority.</li><li>The app can offer a reminder on the end date, as long as that date is still ahead.</li><li>It warns but never stops you from saving.</li><li>Everything is stored on your device. There is no account.</li></ul>
+<p>The date rule in the app is the same as in the calculator above, so the dates match.</p>
+<h2>Important note</h2>
+<p>This page explains date arithmetic only. It is not treatment advice. Follow your local regulations and the product label for treatments and withdrawal periods, and ask your local bee inspector or veterinarian if you are unsure.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Hive Log: Beekeeping Journal</b><p>Log hive inspections, treatments and feedings, track varroa, set reminders.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.beekeepinghivelog&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Hive Log: Beekeeping Journal</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
