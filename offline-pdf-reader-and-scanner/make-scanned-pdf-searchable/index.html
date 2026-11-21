@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to Make a Scanned PDF Searchable on Android</title><meta name="description" content="Why a scanned PDF cannot be searched, how OCR adds a hidden text layer, and how to turn a scan into a searchable PDF on your phone."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-pdf-reader-and-scanner/make-scanned-pdf-searchable/"><meta property="og:type" content="website"><meta property="og:title" content="How to Make a Scanned PDF Searchable on Android"><meta property="og:description" content="Why a scanned PDF cannot be searched, how OCR adds a hidden text layer, and how to turn a scan into a searchable PDF on your phone."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-pdf-reader-and-scanner/make-scanned-pdf-searchable/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-pdf-reader-and-scanner/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Make a Scanned PDF Searchable on Android", "description": "Why a scanned PDF cannot be searched, how OCR adds a hidden text layer, and how to turn a scan into a searchable PDF on your phone.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-pdf-reader-and-scanner/make-scanned-pdf-searchable/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">PDF Reader &amp; Scanner</a></p><h1>How to Make a Scanned PDF Searchable on Android</h1><article class="guide"><p>You scan a contract, open it, type a word into search and get "no matches". The page looks like text, but the file only holds a picture of text. This page explains why, how to check it, and how to fix it on Android without uploading the file anywhere.</p>
+<h2>Why a scanned PDF has no searchable text</h2>
+<p>A PDF page can hold two kinds of content:</p>
+<ul><li><strong>Text objects.</strong> Real characters with a font and a position. Search, copy and highlight all work on them.</li><li><strong>Images.</strong> A photo of a page. Your eyes read the words, but the file has no characters at all.</li></ul>
+<p>A camera scan produces only an image. A PDF exported from Word or a web page usually has real text. So search fails on scans, not on documents made on a computer.</p>
+<h2>How to check if your PDF has a text layer</h2>
+<ol><li>Open the PDF in a reader.</li><li>Search for a word you can see on the page.</li><li>Try to select a line with a long press.</li></ol>
+<p>If search finds nothing and you cannot select text, the page is image-only.</p>
+<h2>What OCR does</h2>
+<p>OCR means optical character recognition. The software looks at the picture, finds lines of text and works out which characters they are. It then writes those characters into the PDF as an invisible layer on top of the image.</p>
+<ul><li>The page looks exactly the same.</li><li>Search, copy and highlight now work on the page.</li><li>The original image stays in the file.</li></ul>
+<p>Accuracy depends on the scan. Sharp, flat, well-lit pages with printed text give the most accurate results. Blurry photos, shadows, handwriting and unusual fonts give more mistakes.</p>
+<h2>Make a scan searchable with Offline PDF reader and scanner</h2>
+<p>The app runs text recognition on your phone with the bundled Google ML Kit Latin model. Nothing is uploaded, and the app has no internet permission. Text recognition is a Pro feature (a one-time purchase).</p>
+<h3>Option 1: automatically after each scan</h3>
+<ol><li>Open <strong>Settings</strong> and check that <strong>Make scans searchable</strong> is on. It is on by default once Pro is unlocked.</li><li>Tap <strong>Scan document</strong> on the home screen.</li><li>Scan the pages and tap <strong>Save scan</strong>.</li><li>Text recognition starts after saving. Progress shows on the scan's row in the library.</li></ol>
+<p>The result replaces the scan, so you keep one file per scan.</p>
+<h3>Option 2: a PDF you already have</h3>
+<ol><li>Open the image-only PDF in the reader.</li><li>Search for a word. The app tells you there is no text layer and asks if you want to make it searchable.</li><li>Confirm. The app starts text recognition.</li></ol>
+<p>For an imported PDF, the app saves the result as a library copy named "(searchable)". The original file is not changed.</p>
+<h3>Option 3: after adding pages</h3>
+<p>When you add pages to a saved scan in the page editor, the new pages get text recognition too. Saving replaces the scan.</p>
+<h2>What happens during recognition</h2>
+<ul><li>Each page is rendered at 2480 pixels wide. For an A4 page that is about 300 dpi, a common resolution for OCR.</li><li>The Latin-alphabet model reads each page and returns lines of text with their positions.</li><li>The app writes all lines into the PDF as invisible text, then replaces the file once.</li><li>It runs as normal background work. You can leave the app while it finishes.</li><li>If it takes longer than 30 minutes or fails, the scan is marked as failed. The file stays as it was.</li></ul>
+<p>Long documents take longer, because every page is processed one at a time.</p>
+<h2>Limits to know about</h2>
+<ul><li><strong>Latin alphabet only.</strong> English, German, Spanish and other languages written in Latin letters work. Cyrillic, Greek, Arabic, Chinese, Japanese and Korean are not supported.</li><li><strong>Pro only.</strong> Reading, plain scanning and search in PDFs that already have text do not need Pro.</li><li><strong>Google Play services.</strong> Scanning and Pro need them. Reading PDFs works without them.</li><li><strong>Check important numbers.</strong> OCR can misread a 5 as a 6. Compare amounts, dates and IDs against the page.</li></ul>
+<h2>After recognition: search and highlight</h2>
+<p>Once a page has a text layer you can:</p>
+<ol><li>Tap the search icon in the reader and type a word.</li><li>Use the next and previous buttons to jump between matches.</li><li>Long-press and drag over text to highlight it. Highlights are standard PDF annotations, so other readers show them. The app saves them as a copy in your library and never changes the original.</li></ol>
+<h2>Questions</h2>
+<h3>Does OCR make the file bigger?</h3>
+<p>A little. The text layer is small compared with the page images.</p>
+<h3>Can I search before OCR?</h3>
+<p>No. Without a text layer there is nothing to search. Run recognition first.</p>
+<h3>Is my scan sent to a server?</h3>
+<p>No. Recognition runs on the phone, and the app has no internet permission.</p>
+<h2>Try it</h2>
+<p>Offline PDF reader and scanner is on Google Play. Scan a page, let recognition finish, and search for a word in it.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>PDF Reader &amp; Scanner</b><p>Read, search, scan and sign PDFs on your phone.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.offlinepdfreaderandscanner&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">PDF Reader &amp; Scanner</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Open a Password-Protected PDF on Android</title><meta name="description" content="Why a PDF asks for a password, which Android versions can open it, what to do when it fails, and the difference between the two PDF passwords."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-pdf-reader-and-scanner/open-password-protected-pdf-on-android/"><meta property="og:type" content="website"><meta property="og:title" content="Open a Password-Protected PDF on Android"><meta property="og:description" content="Why a PDF asks for a password, which Android versions can open it, what to do when it fails, and the difference between the two PDF passwords."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-pdf-reader-and-scanner/open-password-protected-pdf-on-android/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-pdf-reader-and-scanner/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Open a Password-Protected PDF on Android", "description": "Why a PDF asks for a password, which Android versions can open it, what to do when it fails, and the difference between the two PDF passwords.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-pdf-reader-and-scanner/open-password-protected-pdf-on-android/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">PDF Reader &amp; Scanner</a></p><h1>Open a Password-Protected PDF on Android</h1><article class="guide"><p>You tap a PDF and it asks for a password, or it will not open at all. Whether you can open it depends on the password and on your Android version. This page covers both.</p>
+<h2>Two kinds of PDF password</h2>
+<p>The PDF specification (ISO 32000-1:2008, section 7.6, and ISO 32000-2:2020 for PDF 2.0) defines two passwords:</p>
+<div class="table"><table><thead><tr><th>Password</th><th>What it does</th></tr></thead><tbody><tr><td><strong>User (open) password</strong></td><td>Needed to open the file and read it.</td></tr><tr><td><strong>Owner (permissions) password</strong></td><td>Sets limits such as no printing or no copying. The file opens without it.</td></tr></tbody></table></div>
+<p>A reader asks you for a password only when the file has a user password. The sender chose it. Nobody can read it back from the file, and the app cannot recover a lost one.</p>
+<h2>Which Android versions can open them</h2>
+<p>In Offline PDF reader and scanner, the answer depends on the system PDF engine:</p>
+<div class="table"><table><thead><tr><th>Android version</th><th>Password-protected PDF</th></tr></thead><tbody><tr><td>Android 15 (API 35) and newer</td><td>Opens after you enter the password</td></tr><tr><td>Android 14 (API 34) and older</td><td>Not supported. The app shows a message.</td></tr></tbody></table></div>
+<p>On older versions the app tells you "Password PDFs need Android 15" and explains that the device cannot open them. It does not guess or try to work around it.</p>
+<h2>How to open one on Android 15 or newer</h2>
+<ol><li>Open the PDF from your files, an email attachment or a cloud app. Use <strong>Open with</strong> and choose the app, or pick it from inside the app.</li><li>A dialog says <strong>Password required</strong>.</li><li>Type the password and tap <strong>Open</strong>.</li><li>If it is wrong, the app says <strong>Wrong password</strong>. Try again.</li></ol>
+<p>Passwords are case-sensitive. Check for a trailing space if you copied it from a message.</p>
+<h2>If you do not have the password</h2>
+<ul><li>Ask the sender. Banks, employers and government offices often use a rule such as a date of birth or a customer number. Their email or letter usually says which.</li><li>Do not look for password-cracking tools for files that are not yours. Many of them are unsafe, and opening someone else's protected file may be illegal.</li><li>If the file is yours and the password is lost, the original source (for example your bank portal) can usually give you a new copy.</li></ul>
+<h2>If it fails on an older Android version</h2>
+<p>You have three choices:</p>
+<ol><li>Update the phone to Android 15 if the maker offers it.</li><li>Open the file on a computer, where most PDF readers accept a password.</li><li>Ask the sender for a copy without a user password, if the content is not sensitive.</li></ol>
+<h2>What else works once the file is open</h2>
+<ul><li>Continuous vertical scrolling and resuming at the last page.</li><li>The table of contents, if the file has one.</li><li>Text search, if the PDF has a text layer. If it is a scan, text recognition (Pro) adds one.</li><li>Night pages, which invert page colors for reading in the dark.</li></ul>
+<p>The app saves where you stopped, so you can come back later. Recent files only remember where a PDF is. The app does not upload or change the original, and you can clear the recent list in Settings.</p>
+<h2>Privacy of protected files</h2>
+<p>Opening happens on the device. The app has no internet permission, so the file and the password you type are not sent anywhere.</p>
+<h2>Questions</h2>
+<h3>Why does the same PDF open in my browser but not here?</h3>
+<p>Some browsers and desktop readers bring their own PDF engine. On Android, the app uses the system engine, which supports passwords from Android 15.</p>
+<h3>Does the owner password stop me from reading?</h3>
+<p>No. A file with only an owner password opens without a prompt. The limits apply to actions such as printing.</p>
+<h3>Does the app remove the password?</h3>
+<p>No. It only opens the file so you can read it.</p>
+<h2>Try it</h2>
+<p>Offline PDF reader and scanner is on Google Play. Open a protected PDF, enter the password and read it without leaving your phone.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>PDF Reader &amp; Scanner</b><p>Read, search, scan and sign PDFs on your phone.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.offlinepdfreaderandscanner&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">PDF Reader &amp; Scanner</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
