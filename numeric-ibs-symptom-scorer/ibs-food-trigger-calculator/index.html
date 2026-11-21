@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IBS Food Trigger Calculator: Score Your Food Diary</title><meta name="description" content="Work out whether a food is followed by worse IBS symptoms. Step-by-step formula, a worked example and a small calculator you can use here."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/numeric-ibs-symptom-scorer/ibs-food-trigger-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="IBS Food Trigger Calculator: Score Your Food Diary"><meta property="og:description" content="Work out whether a food is followed by worse IBS symptoms. Step-by-step formula, a worked example and a small calculator you can use here."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/numeric-ibs-symptom-scorer/ibs-food-trigger-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/numeric-ibs-symptom-scorer/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "IBS Food Trigger Calculator: Score Your Food Diary", "description": "Work out whether a food is followed by worse IBS symptoms. Step-by-step formula, a worked example and a small calculator you can use here.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/numeric-ibs-symptom-scorer/ibs-food-trigger-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Numeric IBS Symptom Scorer</a></p><h1>IBS Food Trigger Calculator: Score Your Food Diary</h1><article class="guide"><p>An IBS food diary is only useful if you can read it. The simple question is: after I eat a certain food, are my symptoms higher than usual? This page shows a plain way to answer it with arithmetic, with a worked example and a calculator.</p>
+<h2>The method in four steps</h2>
+<p>You need symptom scores on a 0 to 10 scale (0 none, 10 worst), logged several times a day, and a note of what you ate and when.</p>
+<ol><li><strong>Baseline.</strong> Average every symptom score you logged. This is your usual level.</li><li><strong>Window.</strong> Choose how long after eating to look. Two to six hours after the meal is a common starting point.</li><li><strong>Per meal.</strong> For each meal with a food tag, average the scores logged inside the window. A meal with no scores in its window is skipped.</li><li><strong>Per tag.</strong> Average those per-meal values for each tag. Subtract the baseline. A positive difference means symptoms ran higher than usual after that food.</li></ol>
+<p>Why average per meal first? A meal followed by five quick entries should not count five times. Each meal counts once.</p>
+<h2>Worked example</h2>
+<p>Baseline from all entries in the last month: <strong>3.2</strong>.</p>
+<p>You tagged "onion" on four meals. Window: 2 to 6 hours after eating.</p>
+<div class="table"><table><thead><tr><th>Meal</th><th>Scores in the window</th><th>Meal average</th></tr></thead><tbody><tr><td>Monday dinner</td><td>5, 7</td><td>6.0</td></tr><tr><td>Wednesday lunch</td><td>4</td><td>4.0</td></tr><tr><td>Friday dinner</td><td>6, 6, 3</td><td>5.0</td></tr><tr><td>Sunday lunch</td><td>7</td><td>7.0</td></tr></tbody></table></div>
+<ul><li>Onion average: (6.0 + 4.0 + 5.0 + 7.0) ÷ 4 = <strong>5.5</strong></li><li>Difference from baseline: 5.5 − 3.2 = <strong>+2.3</strong></li></ul>
+<p>Scores after onion ran 2.3 points above your usual level, across 4 meals. A possible link, nothing more.</p>
+<p>A second tag, "dairy", appears on only two meals with scores in the window. Two meals are too few to say anything, so a tag needs at least 3 meals before it is shown.</p>
+<h2>Try it</h2>
+<div class="calc"><form id="trigger-calc">
+  <p><label>Baseline (average of all your scores, 0 to 10)<br>
+    <input type="number" id="tc-base" min="0" max="10" step="0.1" value="3.2"></label></p>
+  <p><label>One line per meal with the tag. On each line, list the scores logged 2 to 6 hours after that meal, separated by commas. Leave out meals with no scores.<br>
+    <textarea id="tc-meals" rows="6" cols="30">5, 7
+4
+6, 6, 3
+7</textarea></label></p>
+  <p><button type="submit">Calculate</button></p>
+  <p id="tc-out" aria-live="polite"></p>
+  <script>
+    (function () {
+      var form = document.getElementById("trigger-calc");
+      var out = document.getElementById("tc-out");
+      function mean(a) { return a.reduce(function (s, v) { return s + v; }, 0) / a.length; }
+      function one(v) { return v.toFixed(1); }
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var base = parseFloat(document.getElementById("tc-base").value);
+        if (isNaN(base) || base < 0 || base > 10) { out.textContent = "Enter a baseline from 0 to 10."; return; }
+        var meals = [];
+        var lines = document.getElementById("tc-meals").value.split("\n");
+        for (var i = 0; i < lines.length; i++) {
+          var parts = lines[i].split(",");
+          var vals = [];
+          for (var j = 0; j < parts.length; j++) {
+            var t = parts[j].trim();
+            if (t === "") continue;
+            var n = Number(t);
+            if (isNaN(n) || n < 0 || n > 10 || Math.floor(n) !== n) { out.textContent = "Line " + (i + 1) + ": scores must be whole numbers from 0 to 10."; return; }
+            vals.push(n);
+          }
+          if (vals.length) meals.push(mean(vals));
+        }
+        if (meals.length < 3) { out.textContent = "Only " + meals.length + " meal(s) with scores. At least 3 are needed, so no result is shown."; return; }
+        var tag = mean(meals);
+        var d = tag - base;
+        out.textContent = "Meals: " + meals.length + ". Average after the tag: " + one(tag) + ". Baseline: " + one(base) + ". Difference: " + (d >= 0 ? "+" : "") + one(d) + ". A possible link only, not a diagnosis.";
+      });
+    })();
+  </script>
+</form>
+</div>
+<h2>How much to trust the result</h2>
+<ul><li><strong>Sample size matters most.</strong> Three meals is the minimum. Ten or more is much better.</li><li><strong>Chance is real.</strong> IBS symptoms change from day to day for many reasons. A gap of 0.5 points can be noise.</li><li><strong>Meals contain many foods.</strong> A tag that always appears with another food cannot be separated from it.</li><li><strong>Timing is a guess.</strong> The right window differs by person and by food. Try a different window and see whether the picture holds.</li><li><strong>Stress, sleep, hormones and medication</strong> are not part of this arithmetic.</li></ul>
+<p>Treat a high result as a question, not an answer. A dietitian can help you test it safely, for example with a structured low FODMAP reintroduction. Do not cut out whole food groups on the basis of a few meals.</p>
+<h2>Do this automatically in Numeric IBS Symptom Scorer</h2>
+<p>Numeric IBS Symptom Scorer is an Android diary for IBS that applies this same method for you.</p>
+<ul><li>Rate abdominal pain, bloating, gas, cramping and nausea from 0 to 10, by tapping or typing an exact number. Add up to five symptoms of your own.</li><li>Log food as text with reusable tags such as dairy, onion or coffee.</li><li>Pro adds a trigger report: your average score after each food tag, your baseline, the difference and the number of meals behind it. Tags with fewer than 3 meals are hidden.</li><li>The window defaults to 2 to 6 hours and you can change it. The report can cover all symptoms together or a single symptom, over 7, 30 or 90 days or all time.</li></ul>
+<p>Logging, charts, the home screen widget, the reminder and the app lock are available without Pro. Pro is a one-time purchase and also adds PDF and CSV export and encrypted backup.</p>
+<p>Your diary is stored in an encrypted database on your phone. There is no account and the app has no internet permission.</p>
+<p>The app is not medical advice and does not diagnose anything. Food links it shows are possible links only. Talk to your doctor about your symptoms.</p>
+<p>Search for "Numeric IBS Symptom Scorer" on Google Play.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Numeric IBS Symptom Scorer</b><p>Rate IBS symptoms 0-10, log bowel movements and food, spot possible triggers.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.numericibssymptomscorer&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Numeric IBS Symptom Scorer</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
