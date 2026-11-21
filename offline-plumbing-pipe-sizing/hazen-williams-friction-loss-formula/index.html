@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hazen-Williams Friction Loss Formula With Example</title><meta name="description" content="The Hazen-Williams formula in psi per 100 ft for water pipe, C values for copper and PEX, and a worked example with velocity."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-plumbing-pipe-sizing/hazen-williams-friction-loss-formula/"><meta property="og:type" content="website"><meta property="og:title" content="Hazen-Williams Friction Loss Formula With Example"><meta property="og:description" content="The Hazen-Williams formula in psi per 100 ft for water pipe, C values for copper and PEX, and a worked example with velocity."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-plumbing-pipe-sizing/hazen-williams-friction-loss-formula/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-plumbing-pipe-sizing/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Hazen-Williams Friction Loss Formula With Example", "description": "The Hazen-Williams formula in psi per 100 ft for water pipe, C values for copper and PEX, and a worked example with velocity.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-plumbing-pipe-sizing/hazen-williams-friction-loss-formula/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Pipe Sizing: IPC &amp; UPC Water</a></p><h1>Hazen-Williams Friction Loss Formula With Example</h1><article class="guide"><p>Hazen-Williams is the standard way to estimate friction loss in water supply pipe. It is simple, it works in US units, and it is accurate enough for sizing cold and hot water lines. This page gives the formula, the C values used for copper and plastic, and a worked example you can follow with a calculator.</p>
+<h2>The formula</h2>
+<p>For water in a full pipe, friction loss in psi per 100 feet of pipe is:</p>
+<p><strong>psi per 100 ft = 100 × 4.52 × Q^1.852 / (C^1.852 × d^4.8704)</strong></p>
+<p>Where:</p>
+<ul><li><strong>Q</strong> is the flow in gallons per minute (GPM).</li><li><strong>C</strong> is the Hazen-Williams roughness coefficient. A higher C means a smoother pipe.</li><li><strong>d</strong> is the actual inside diameter of the pipe in inches, not the nominal size.</li></ul>
+<p>The formula comes from the work of Williams and Hazen (*Hydraulic Tables*, 1905). The form above is the common US-unit version found in plumbing and fire protection references.</p>
+<p>To get the loss over a run, scale by length:</p>
+<p><strong>loss in psi = psi per 100 ft × length in ft / 100</strong></p>
+<p>This is straight pipe only. Fittings, valves and meters add loss that this formula does not include.</p>
+<h2>Velocity</h2>
+<p>Velocity matters as much as friction. Fast water causes noise and erosion, so most sizing starts from a velocity limit.</p>
+<p><strong>velocity in fps = 0.4085 × Q / d²</strong></p>
+<p>Q is in GPM and d is the inside diameter in inches.</p>
+<h2>C values to use</h2>
+<p>Design values, not new-pipe best cases:</p>
+<div class="table"><table><thead><tr><th>Material</th><th>C</th></tr></thead><tbody><tr><td>Copper (Types K, L, M)</td><td>130</td></tr><tr><td>PEX, PE-RT, CPVC, PEX-AL-PEX</td><td>150</td></tr></tbody></table></div>
+<h2>Use the inside diameter</h2>
+<p>Nominal size is only a name. Copper tube is sized by nominal diameter, and the real inside diameter changes with the wall type. These are the inside diameters used on this page, from ASTM B88 (copper Type L) and ASTM F876 (PEX, SDR 9):</p>
+<div class="table"><table><thead><tr><th>Nominal size</th><th>Copper L ID (in)</th><th>PEX SDR 9 ID (in)</th></tr></thead><tbody><tr><td>1/2"</td><td>0.545</td><td>0.475</td></tr><tr><td>3/4"</td><td>0.785</td><td>0.671</td></tr><tr><td>1"</td><td>1.025</td><td>0.862</td></tr><tr><td>1-1/4"</td><td>1.265</td><td>1.054</td></tr><tr><td>1-1/2"</td><td>1.505</td><td>1.244</td></tr><tr><td>2"</td><td>1.985</td><td>1.629</td></tr></tbody></table></div>
+<p>Because friction depends on d to the power 4.87, a small change in inside diameter has a big effect. A PEX line is often one size larger than copper for the same flow.</p>
+<h2>Worked example</h2>
+<p>A branch serves 10 water supply fixture units (WSFU) with flush tank fixtures. Using the Hunter curve, 10 WSFU is <strong>14.6 GPM</strong>. The pipe is copper Type L (C = 130) and the cold water velocity limit is 8 fps. The run is 60 ft.</p>
+<p><strong>Step 1: check each size.</strong> Compute velocity with 0.4085 × 14.6 / d², which is 5.964 / d²:</p>
+<div class="table"><table><thead><tr><th>Size</th><th>ID (in)</th><th>Velocity (fps)</th><th>Friction (psi/100 ft)</th><th>Within 8 fps?</th></tr></thead><tbody><tr><td>1/2"</td><td>0.545</td><td>20.1</td><td>152</td><td>No</td></tr><tr><td>3/4"</td><td>0.785</td><td>9.68</td><td>25.6</td><td>No</td></tr><tr><td>1"</td><td>1.025</td><td>5.68</td><td>6.99</td><td>Yes</td></tr></tbody></table></div>
+<p><strong>Step 2: pick the smallest size within the limit.</strong> That is 1".</p>
+<p><strong>Step 3: work out the 1" friction loss by hand.</strong></p>
+<ol><li>14.6^1.852 = 143.3</li><li>130^1.852 = 8,223</li><li>1.025^4.8704 = 1.128</li><li>psi per 100 ft = 100 × 4.52 × 143.3 / (8,223 × 1.128) = 64,785 / 9,274 = <strong>6.99</strong></li></ol>
+<p><strong>Step 4: scale to 60 ft.</strong> 6.99 × 60 / 100 = <strong>4.19 psi</strong> of loss through the straight run.</p>
+<p>The same flow in 3/4" copper would lose 25.6 psi per 100 ft and run at nearly 10 fps. That is why the velocity check comes first.</p>
+<h2>Try it</h2>
+<div class="calc"><form id="hw-form">
+  <p><label>Flow (GPM) <input id="hw-gpm" type="number" step="any" min="0" value="14.6"></label></p>
+  <p><label>Material
+    <select id="hw-mat">
+      <option value="copperL">Copper Type L (C = 130)</option>
+      <option value="pex">PEX, SDR 9 (C = 150)</option>
+    </select>
+  </label></p>
+  <p><label>Nominal size
+    <select id="hw-size"></select>
+  </label></p>
+  <p><label>Pipe length in feet (optional) <input id="hw-len" type="number" step="any" min="0" value=""></label></p>
+  <p><button type="submit">Calculate</button></p>
+  <p id="hw-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var sizes = ["1/2", "3/4", "1", "1-1/4", "1-1/2", "2", "2-1/2", "3", "4"];
+  var mats = {
+    copperL: { c: 130, id: [0.545, 0.785, 1.025, 1.265, 1.505, 1.985, 2.465, 2.945, 3.905] },
+    pex: { c: 150, id: [0.475, 0.671, 0.862, 1.054, 1.244, 1.629, 2.011, 2.4, 3.162] }
+  };
+  var sizeSel = document.getElementById("hw-size");
+  sizes.forEach(function (s, i) {
+    var o = document.createElement("option");
+    o.value = i;
+    o.textContent = s + " inch";
+    if (i === 2) o.selected = true;
+    sizeSel.appendChild(o);
+  });
+  function fmt(x) {
+    var d = x >= 99.95 ? 0 : x >= 9.995 ? 1 : 2;
+    return x.toFixed(d);
+  }
+  document.getElementById("hw-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var out = document.getElementById("hw-out");
+    var gpm = parseFloat(document.getElementById("hw-gpm").value);
+    var m = mats[document.getElementById("hw-mat").value];
+    var id = m.id[parseInt(sizeSel.value, 10)];
+    if (!(gpm > 0) || gpm > 593) {
+      out.textContent = "Enter a flow above 0 and up to 593 GPM.";
+      return;
+    }
+    var fps = 0.4085 * gpm / (id * id);
+    var psi = 100 * 4.52 * Math.pow(gpm, 1.852) / (Math.pow(m.c, 1.852) * Math.pow(id, 4.8704));
+    var text = "Velocity: " + fmt(fps) + " fps. Friction loss: " + fmt(psi) + " psi per 100 ft.";
+    var lenText = document.getElementById("hw-len").value;
+    if (lenText !== "") {
+      var len = parseFloat(lenText);
+      if (!(len >= 0) || len > 1000) {
+        out.textContent = "Enter a length from 0 to 1000 ft.";
+        return;
+      }
+      text += " Loss over " + len + " ft: " + fmt(psi * len / 100) + " psi.";
+    }
+    out.textContent = text;
+  });
+})();
+</script>
+</div>
+<p>The calculator uses the formulas and inside diameters above. Results are computed values and may differ slightly from printed tables.</p>
+<h2>What this does not cover</h2>
+<ul><li>Fittings and valves. Add their loss separately.</li><li>Elevation change and street pressure.</li><li>Water other than normal potable water at ordinary temperatures.</li></ul>
+<p>Check the adopted plumbing code and your local authority for sizing rules and minimum sizes. For example, the IPC (2024 edition) addresses water pipe sizing in section 604.3 and Appendix E, and the UPC (2024 edition) in section 610.1 and Appendix A.</p>
+<h2>Do it on site</h2>
+<p>The Offline Plumbing Pipe Sizing app for Android runs this calculation for every size from 1/2" to 4" at once. Enter WSFU or GPM, pick a material and it shows the recommended size, velocity and psi per 100 ft in one table. With a segment length it adds the total straight-pipe loss. It works without a connection and cites the IPC or UPC section for the edition you pick (2024 or 2021). Copper L and PEX are ready to use from the first launch.</p>
+<h2>Sources</h2>
+<ul><li>Williams, G. S. and Hazen, A., *Hydraulic Tables*, 1905.</li><li>ASTM B88, Standard Specification for Seamless Copper Water Tube (inside diameters, Type L).</li><li>ASTM F876, Standard Specification for Crosslinked Polyethylene (PEX) Tubing (SDR 9 inside diameters).</li><li>International Plumbing Code (ICC), 2024 edition, section 604.3 and Appendix E.</li><li>Uniform Plumbing Code (IAPMO), 2024 edition, section 610.1 and Appendix A.</li></ul></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Pipe Sizing: IPC &amp; UPC Water</b><p>Size water supply pipe from WSFU or GPM with velocity and friction loss</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.offlineplumbingpipesizing&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Pipe Sizing: IPC &amp; UPC Water</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

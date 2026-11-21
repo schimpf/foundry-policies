@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WSFU to GPM Conversion Chart (Hunter Curve)</title><meta name="description" content="Convert water supply fixture units to gallons per minute with the Hunter curve. Flush tank and flushometer values, plus a worked example."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-plumbing-pipe-sizing/wsfu-to-gpm-conversion-chart/"><meta property="og:type" content="website"><meta property="og:title" content="WSFU to GPM Conversion Chart (Hunter Curve)"><meta property="og:description" content="Convert water supply fixture units to gallons per minute with the Hunter curve. Flush tank and flushometer values, plus a worked example."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-plumbing-pipe-sizing/wsfu-to-gpm-conversion-chart/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-plumbing-pipe-sizing/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "WSFU to GPM Conversion Chart (Hunter Curve)", "description": "Convert water supply fixture units to gallons per minute with the Hunter curve. Flush tank and flushometer values, plus a worked example.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-plumbing-pipe-sizing/wsfu-to-gpm-conversion-chart/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Pipe Sizing: IPC &amp; UPC Water</a></p><h1>WSFU to GPM Conversion Chart (Hunter Curve)</h1><article class="guide"><p>Water supply fixture units (WSFU) rate how much load a fixture puts on a supply pipe. To size pipe you need flow in gallons per minute (GPM). The Hunter curve links the two. This page shows a conversion chart, explains the two curves, and works one example by hand.</p>
+<h2>What the Hunter curve is</h2>
+<p>Not every fixture runs at once. Roy B. Hunter used probability to estimate the peak flow a group of fixtures will really draw. His work, *Methods of Estimating Loads in Plumbing Systems* (National Bureau of Standards, Building Materials and Structures Report BMS 65, 1940), is public domain and still the base for the demand tables in plumbing codes.</p>
+<p>There are two curves:</p>
+<ul><li><strong>Flush tank:</strong> for systems where toilets use a tank. Lower peak flow.</li><li><strong>Flushometer (flush valve):</strong> for systems where toilets use flush valves. Higher peak flow, because a flush valve draws a lot of water fast.</li></ul>
+<p>Pick the curve by the type of toilet, not by the building. A job with flush valves uses the flushometer curve for the whole segment.</p>
+<h2>WSFU to GPM chart</h2>
+<p>Selected points from the curves. Values in between are found by straight-line interpolation.</p>
+<div class="table"><table><thead><tr><th>Total WSFU</th><th>Flush tank (GPM)</th><th>Flushometer (GPM)</th></tr></thead><tbody><tr><td>5</td><td>9.4</td><td>15.0</td></tr><tr><td>10</td><td>14.6</td><td>27.0</td></tr><tr><td>20</td><td>19.6</td><td>35.0</td></tr><tr><td>30</td><td>23.3</td><td>42.0</td></tr><tr><td>40</td><td>26.3</td><td>46.0</td></tr><tr><td>50</td><td>29.1</td><td>50.0</td></tr><tr><td>100</td><td>43.5</td><td>67.5</td></tr><tr><td>200</td><td>65.0</td><td>90.0</td></tr><tr><td>300</td><td>85.0</td><td>108.0</td></tr><tr><td>500</td><td>124.0</td><td>143.0</td></tr><tr><td>1,000</td><td>208.0</td><td>208.0</td></tr></tbody></table></div>
+<p>Notes on the ranges:</p>
+<ul><li>The flush tank curve runs from 1 to 5,000 WSFU. At 1 WSFU it is 3.0 GPM, at 2 WSFU 5.0 GPM.</li><li>The flushometer curve runs from 5 to 5,000 WSFU.</li><li>The two curves meet at 1,000 WSFU and above. Large systems have so many fixtures that the toilet type no longer changes the peak.</li></ul>
+<h2>How to convert</h2>
+<ol><li>Add up the WSFU of every fixture the pipe serves, using the fixture values from your adopted code.</li><li>Choose the flush tank or flushometer curve.</li><li>Find the two chart points on either side of your total.</li><li>Interpolate between them.</li></ol>
+<p>The interpolation is:</p>
+<p><strong>GPM = GPM₁ + (WSFU − WSFU₁) / (WSFU₂ − WSFU₁) × (GPM₂ − GPM₁)</strong></p>
+<h2>Worked example</h2>
+<p>A bathroom group on a flush tank system totals <strong>22 WSFU</strong>.</p>
+<ol><li>The chart points on each side are 20 WSFU (19.6 GPM) and 25 WSFU (21.5 GPM).</li><li>The position between them is (22 − 20) / (25 − 20) = 0.4.</li><li>GPM = 19.6 + 0.4 × (21.5 − 19.6) = 19.6 + 0.76 = 20.36, which rounds to <strong>20.4 GPM</strong>.</li></ol>
+<p>The same 22 WSFU on a flushometer system:</p>
+<ol><li>Points: 20 WSFU (35.0 GPM) and 25 WSFU (38.0 GPM).</li><li>GPM = 35.0 + 0.4 × (38.0 − 35.0) = <strong>36.2 GPM</strong>.</li></ol>
+<p>The flushometer system needs nearly 16 GPM more for the same fixture units.</p>
+<h2>What to do with the GPM</h2>
+<p>Flow alone does not give a pipe size. Next you compare velocity for each pipe size against a limit, and look at friction loss. See the Hazen-Williams page on this site for the formulas.</p>
+<p>For example, 20.4 GPM in Type L copper (inside diameter 1.025 in for 1") gives a velocity of 0.4085 × 20.4 / 1.025² = 7.9 fps. That is just inside an 8 fps cold water limit, so 1" works. At 36.2 GPM the same pipe would run at 14.1 fps, and you would need 1-1/2" (6.5 fps).</p>
+<h2>Limits of the method</h2>
+<ul><li>The Hunter curve gives a peak estimate for ordinary fixture mixes. Continuous loads such as irrigation or process water are added separately.</li><li>Modern low-flow fixtures often draw less than the curve predicts. Codes still use the curve, so follow the adopted code.</li><li>Your adopted code decides which fixture values and which edition apply. The IPC (2024 edition) covers demand in Appendix E, section E103.3. The UPC (2024 edition) covers it in Appendix A, section A 103.0.</li><li>Printed code tables can differ slightly from curve values computed this way.</li></ul>
+<h2>Convert and size in the app</h2>
+<p>The Offline Plumbing Pipe Sizing app for Android does this conversion for you. Enter the total WSFU, set flush tank or flushometer once, and it converts to GPM with the Hunter curve. It then shows the recommended pipe size, the velocity and the friction loss in psi per 100 ft for every size from 1/2" to 4". It works without a connection and shows the IPC or UPC section for the edition you choose.</p>
+<h2>Sources</h2>
+<ul><li>Hunter, R. B., *Methods of Estimating Loads in Plumbing Systems*, National Bureau of Standards, Building Materials and Structures Report BMS 65, 1940.</li><li>International Plumbing Code (ICC), 2024 edition, Appendix E.</li><li>Uniform Plumbing Code (IAPMO), 2024 edition, Appendix A.</li></ul></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Pipe Sizing: IPC &amp; UPC Water</b><p>Size water supply pipe from WSFU or GPM with velocity and friction loss</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.offlineplumbingpipesizing&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Pipe Sizing: IPC &amp; UPC Water</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
