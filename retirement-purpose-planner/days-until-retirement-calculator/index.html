@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Days Until Retirement Calculator and Formula</title><meta name="description" content="Count the days, weeks and months to your retirement date, or the day of retirement you are on, with the formula and a worked example."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/retirement-purpose-planner/days-until-retirement-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Days Until Retirement Calculator and Formula"><meta property="og:description" content="Count the days, weeks and months to your retirement date, or the day of retirement you are on, with the formula and a worked example."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/retirement-purpose-planner/days-until-retirement-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/retirement-purpose-planner/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Days Until Retirement Calculator and Formula", "description": "Count the days, weeks and months to your retirement date, or the day of retirement you are on, with the formula and a worked example.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/retirement-purpose-planner/days-until-retirement-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Purpose Planner: Retirement</a></p><h1>Days Until Retirement Calculator and Formula</h1><article class="guide"><p>Counting down to retirement is simple once you know exactly what is counted. This page gives the formula, a worked example, a small calculator, and what to do with the number once you have it.</p>
+<h2>Calculate it</h2>
+<div class="calc"><form id="rc-form">
+  <p>
+    <label for="rc-status">I am</label><br>
+    <select id="rc-status">
+      <option value="pre">Still working (count down)</option>
+      <option value="ret">Already retired (count up)</option>
+    </select>
+  </p>
+  <p>
+    <label for="rc-date">Retirement date</label><br>
+    <input type="date" id="rc-date" required>
+  </p>
+  <p>
+    <label for="rc-today">Today</label><br>
+    <input type="date" id="rc-today" required>
+  </p>
+  <p><button type="submit">Calculate</button></p>
+  <p id="rc-result" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("rc-form");
+  var today = document.getElementById("rc-today");
+  var t = new Date();
+  today.value = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
+  function utc(v) {
+    var p = v.split("-");
+    return Date.UTC(+p[0], +p[1] - 1, +p[2]);
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var out = document.getElementById("rc-result");
+    var date = document.getElementById("rc-date").value;
+    if (!date || !today.value) { out.textContent = "Enter both dates."; return; }
+    var status = document.getElementById("rc-status").value;
+    var diff = Math.round((utc(date) - utc(today.value)) / 86400000);
+    if (status === "pre") {
+      if (diff > 0) {
+        out.textContent = (diff === 1 ? "1 day to retirement" : diff + " days to retirement") +
+          " (about " + (diff / 7).toFixed(1) + " weeks).";
+      } else if (diff === 0) {
+        out.textContent = "Retirement day!";
+      } else {
+        out.textContent = "Your retirement date has passed.";
+      }
+    } else {
+      var day = -diff + 1;
+      out.textContent = day >= 1 ? "Day " + day + " of retirement." : "Your retirement date is still ahead.";
+    }
+  });
+})();
+</script>
+</div>
+<h2>The formula</h2>
+<p>Both results come from the number of calendar days between two dates.</p>
+<ul><li><strong>Before retirement:</strong> days left = retirement date − today.</li><li><strong>After retirement:</strong> day of retirement = today − retirement date + 1.</li></ul>
+<p>The "+ 1" matters. Your first day of retirement is day 1, not day 0. Before retirement, the retirement date itself shows 0 days left, which is "Retirement day".</p>
+<div class="table"><table><thead><tr><th>Situation</th><th>Result</th></tr></thead><tbody><tr><td>Retirement date is in the future</td><td>N days to retirement</td></tr><tr><td>Retirement date is today</td><td>Retirement day</td></tr><tr><td>Retirement date has passed, you are still counting down</td><td>Date has passed</td></tr><tr><td>You are retired</td><td>Day N of retirement</td></tr></tbody></table></div>
+<h2>Worked example: counting down</h2>
+<p>Say today is 1 March 2027 and your retirement date is 30 June 2027.</p>
+<ol><li>Days left in March after today: 30 (to 31 March).</li><li>April: 30 days.</li><li>May: 31 days.</li><li>June, up to the 30th: 30 days.</li><li>Total: 30 + 30 + 31 + 30 = <strong>121 days</strong>.</li></ol>
+<p>As a check: 121 days is 17 weeks and 2 days (17 × 7 = 119, plus 2).</p>
+<h2>Worked example: counting up</h2>
+<p>Say you retired on 1 January 2027 and today is 15 February 2027.</p>
+<ol><li>Days from 1 January to 15 February: 31 (January) + 14 = 45.</li><li>Add 1: <strong>day 46</strong> of retirement.</li></ol>
+<p>Day 1 was 1 January itself. That is why the first day is counted.</p>
+<h2>Days, weeks or months?</h2>
+<p>Days are exact. Weeks and months are easier to feel.</p>
+<ul><li><strong>Weeks:</strong> divide days by 7. 121 days is about 17.3 weeks.</li><li><strong>Months:</strong> divide days by about 30.4 for a rough figure. 121 days is about 4 months.</li></ul>
+<p>Months have different lengths, so use days when you need an exact number.</p>
+<h2>Does the count include weekends?</h2>
+<p>Yes. It counts every calendar day. If you want only working days, count the Monday-to-Friday days in the range and subtract any public holidays and leave days you plan to take. Public holidays depend on your country and region, so check your employer's calendar.</p>
+<h2>Use the countdown to plan, not just wait</h2>
+<p>A number on its own can add pressure. It helps more if it points at something to do. Some ideas for each stage:</p>
+<h3>More than a year out</h3>
+<ul><li>Think about what you want your weeks to look like. Try drafting a sample week.</li><li>Name one or two interests you want more time for.</li></ul>
+<h3>Six to twelve months out</h3>
+<ul><li>Try activities on weekends or leave days to see if you enjoy them.</li><li>Talk with your partner or family about expectations for time together and apart.</li></ul>
+<h3>The last weeks</h3>
+<ul><li>Plan your first week so it has some structure.</li><li>Pick a project and a first small milestone.</li></ul>
+<h3>After the date</h3>
+<ul><li>Build a weekly rhythm with a few fixed anchors, and look back once a week at what worked.</li></ul>
+<h2>How the app does it</h2>
+<p>Retirement Purpose Planner on Android uses these same rules. At setup you choose "pre-retirement" or "retired" and enter your retirement date. You can change both later in Settings.</p>
+<ul><li>Pre-retirement users see "N days to retirement" on the Home screen. If the date is today, it shows "Retirement day!". If the date has passed, it suggests switching your status to retired.</li><li>Retired users see "Day N of retirement".</li><li>A home screen widget shows today's plan and the same countdown or day count.</li></ul>
+<p>The app also has a weekly planner with time blocks, projects with milestones, a volunteering log, and a weekly check-in with an optional 1 to 5 score. It works offline, needs no account, and keeps your data on your device. It runs on Android 8.0 and later and is in English. Find it on Google Play as "Purpose Planner: Retirement".</p>
+<h2>Common questions</h2>
+<h3>Is the retirement date included in the countdown?</h3>
+<p>The date itself is not counted as a day left. On that date the count is 0 and the app shows "Retirement day!".</p>
+<h3>Why does a retired person see "day 1" and not "day 0"?</h3>
+<p>Because the first day you are retired is the first day. Counting from 1 matches how people say "my first day".</p>
+<h3>What about leap years?</h3>
+<p>The calculation uses calendar dates, so 29 February is counted when it falls in the range.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Purpose Planner: Retirement</b><p>Plan your week in retirement: routines, projects, volunteering and check-ins.</p><a href="../">More about the app</a></div></aside><footer><a href="../">Purpose Planner: Retirement</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
