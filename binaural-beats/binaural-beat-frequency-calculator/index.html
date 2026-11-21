@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Binaural Beat Frequency Calculator and Formula</title><meta name="description" content="Work out the left and right tone for any binaural beat with one formula, a worked example and a small calculator. Includes how a beat glides over time."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/binaural-beats/binaural-beat-frequency-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Binaural Beat Frequency Calculator and Formula"><meta property="og:description" content="Work out the left and right tone for any binaural beat with one formula, a worked example and a small calculator. Includes how a beat glides over time."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/binaural-beats/binaural-beat-frequency-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/binaural-beats/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Binaural Beat Frequency Calculator and Formula", "description": "Work out the left and right tone for any binaural beat with one formula, a worked example and a small calculator. Includes how a beat glides over time.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/binaural-beats/binaural-beat-frequency-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Binaural Beats</a></p><h1>Binaural Beat Frequency Calculator and Formula</h1><article class="guide"><p>A binaural beat is made from two pure tones, one per ear. The beat you perceive is the difference between them. This page gives the formula, a worked example and a calculator, then shows how to glide a beat from one rate to another.</p>
+<h2>The binaural beat formula</h2>
+<ul><li>Left ear tone = carrier frequency</li><li>Right ear tone = carrier frequency + beat frequency</li><li>Beat frequency = right tone − left tone</li></ul>
+<p>All values are in hertz (Hz). The carrier is the base tone you actually hear. The beat is the slow pulse you perceive from the difference.</p>
+<p>This is the layout the Binaural Beats app uses: left is the carrier and right is the carrier plus the beat.</p>
+<h2>Worked example</h2>
+<p>You want a 10 Hz beat on a 400 Hz carrier.</p>
+<ol><li>Left ear: 400 Hz.</li><li>Right ear: 400 + 10 = 410 Hz.</li><li>Check: 410 − 400 = 10 Hz, so you perceive 10 beats per second.</li></ol>
+<p>At 10 Hz the beat falls in the alpha range (8 to below 12 Hz). The app's default preset, Calm Focus, uses exactly these numbers.</p>
+<p>Another example: a 4 Hz beat on a 250 Hz carrier gives 250 Hz on the left and 254 Hz on the right. Four Hz is theta (4 to below 8 Hz).</p>
+<h2>Calculator</h2>
+<div class="calc"><form id="bb-calc" onsubmit="return false">
+  <p><label>Carrier (100 to 1000 Hz) <input id="bb-carrier" type="number" min="100" max="1000" step="any" value="400"></label></p>
+  <p><label>Beat (0.25 to 45 Hz) <input id="bb-beat" type="number" min="0.25" max="45" step="any" value="10"></label></p>
+  <p><button type="submit" id="bb-go">Calculate</button></p>
+  <p id="bb-out" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var c = document.getElementById("bb-carrier");
+  var b = document.getElementById("bb-beat");
+  var out = document.getElementById("bb-out");
+  function band(hz) {
+    if (hz < 4) return "Delta";
+    if (hz < 8) return "Theta";
+    if (hz < 12) return "Alpha";
+    if (hz < 30) return "Beta";
+    return "Gamma";
+  }
+  function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+  function fmt(n) { return String(Math.round(n * 100) / 100); }
+  function run() {
+    var cv = parseFloat(c.value);
+    var bv = parseFloat(b.value);
+    if (!isFinite(cv) || !isFinite(bv)) { out.textContent = "Enter both numbers."; return; }
+    cv = clamp(cv, 100, 1000);
+    bv = clamp(bv, 0.25, 45);
+    var text = "Left ear: " + fmt(cv) + " Hz. Right ear: " + fmt(cv + bv) + " Hz. Beat: " + fmt(bv) + " Hz (" + band(bv) + ").";
+    if (bv > 30) text += " Above 30 Hz binaural beats are hard to hear; try isochronic or monaural.";
+    out.textContent = text;
+  }
+  document.getElementById("bb-go").addEventListener("click", run);
+  c.addEventListener("input", run);
+  b.addEventListener("input", run);
+  run();
+})();
+</script>
+</div>
+<h2>Choosing the numbers</h2>
+<h3>Carrier frequency</h3>
+<p>Binaural beats are usually made with carriers below about 1000 Hz. The app accepts 100 to 1000 Hz and suggests 200 to 500 Hz as a comfortable range. Lower carriers sound deeper, higher carriers sound brighter. The carrier does not change the beat rate, only the tone you hear.</p>
+<h3>Beat frequency</h3>
+<p>The app accepts 0.25 to 45 Hz. Binaural beats become hard to perceive above about 30 Hz, so for rates above that the app suggests a monaural or isochronic beat instead.</p>
+<div class="table"><table><thead><tr><th>Beat (Hz)</th><th>Band</th></tr></thead><tbody><tr><td>below 4</td><td>Delta</td></tr><tr><td>4 to below 8</td><td>Theta</td></tr><tr><td>8 to below 12</td><td>Alpha</td></tr><tr><td>12 to below 30</td><td>Beta</td></tr><tr><td>30 and above</td><td>Gamma</td></tr></tbody></table></div>
+<h3>Headphones</h3>
+<p>A binaural beat only exists when each ear hears its own tone. Use stereo headphones or earbuds. On speakers the two tones mix in the air, and you hear a monaural beat instead. That is a different effect but also a real pulse.</p>
+<h2>Other beat types, same beat rate</h2>
+<p>The beat rate means the same in all four modes:</p>
+<ul><li><strong>Monaural:</strong> both tones, carrier and carrier plus beat, are added and played to both ears. The pulse is in the sound.</li><li><strong>Isochronic:</strong> one tone at the carrier, switched on and off at the beat rate.</li><li><strong>Bilateral:</strong> one tone at the carrier that alternates between ears once per beat cycle.</li></ul>
+<p>For isochronic and bilateral beats the pulse can be a smooth sine shape or a soft square shape with sharper edges.</p>
+<h2>Gliding a beat over time</h2>
+<p>A journey changes the beat gradually. The app glides the rate on a geometric scale, so each equal slice of time multiplies the rate by the same factor.</p>
+<p>Formula: beat at time t = start × (end ÷ start)^t, where t runs from 0 to 1 across the step.</p>
+<p>Worked example: a step glides from 12 Hz to 6 Hz.</p>
+<ol><li>At the halfway point, t = 0.5.</li><li>The ratio end ÷ start = 6 ÷ 12 = 0.5.</li><li>0.5 raised to the power 0.5 is about 0.707.</li><li>Beat = 12 × 0.707 ≈ 8.49 Hz.</li></ol>
+<p>A plain straight-line glide would give 9 Hz at the halfway point. The geometric version spends equal time on each doubling or halving, so 12 to 6 Hz takes as long as 6 to 3 Hz. This matches how pitch and rate are perceived, and it is why the beat slider in the app is logarithmic as well.</p>
+<p>If both ends of a step are equal, the beat is held. After the last step, the final values hold until the session ends.</p>
+<h2>What the research says</h2>
+<p>Evidence that binaural beats change mood, focus or sleep is mixed. The 2019 meta-analysis by Garcia-Argibay, Santed and Reales ("Efficacy of binaural auditory beats in cognition, anxiety, and pain perception: a meta-analysis", Psychological Research) found small to moderate effects, with large differences between studies. Treat beats as a relaxation aid, not a treatment. Keep the volume low and do not listen while driving. Ask your doctor first if you have epilepsy, a pacemaker or another medical condition.</p>
+<h2>Make it in the app</h2>
+<p>Binaural Beats for Android generates these tones live, so you can try any carrier and beat from the examples above.</p>
+<ol><li>Pick binaural mode, set the carrier and beat, and read the band label.</li><li>Add optional white, pink or brown noise at its own volume.</li><li>Start a session of 5 to 90 minutes, or build a journey and watch the beat on a chart.</li></ol>
+<p>It plays in the background with lock-screen controls and works offline. You can also save a session as a WAV file.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Binaural Beats</b><p>Binaural and isochronic beats to relax, focus or sleep.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.binauralbeats&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Binaural Beats</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
