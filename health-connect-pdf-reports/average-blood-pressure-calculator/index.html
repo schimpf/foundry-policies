@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Average Blood Pressure Calculator for Home Readings</title><meta name="description" content="Average your home blood pressure readings, see the lowest, highest and AHA category, and learn the formula with a worked example."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/health-connect-pdf-reports/average-blood-pressure-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Average Blood Pressure Calculator for Home Readings"><meta property="og:description" content="Average your home blood pressure readings, see the lowest, highest and AHA category, and learn the formula with a worked example."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/health-connect-pdf-reports/average-blood-pressure-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/health-connect-pdf-reports/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Average Blood Pressure Calculator for Home Readings", "description": "Average your home blood pressure readings, see the lowest, highest and AHA category, and learn the formula with a worked example.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/health-connect-pdf-reports/average-blood-pressure-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Health Reports: BP &amp; Sleep PDF</a></p><h1>Average Blood Pressure Calculator for Home Readings</h1><article class="guide"><p>Doctors rarely look at one reading. They look at the average of many. This page gives you a small calculator for a list of home readings, then explains the formula and a worked example so you can check it by hand.</p>
+<h2>Calculator</h2>
+<p>Type one reading per line as systolic/diastolic, for example <code>122/78</code>. Nothing you type leaves your browser.</p>
+<div class="calc"><form id="bp-calc">
+  <label for="bp-readings">Readings (one per line, systolic/diastolic)</label>
+  <textarea id="bp-readings" rows="8" cols="24" placeholder="128/82&#10;122/78&#10;135/85"></textarea>
+  <button type="submit">Calculate</button>
+  <div id="bp-result" aria-live="polite"></div>
+</form>
+<script>
+(function () {
+  var form = document.getElementById("bp-calc");
+  var out = document.getElementById("bp-result");
+
+  function category(s, d) {
+    if (s > 180 || d > 120) return "Above 180/120";
+    if (s >= 140 || d >= 90) return "Stage 2";
+    if (s >= 130 || d >= 80) return "Stage 1";
+    if (s >= 120) return "Elevated";
+    return "Normal";
+  }
+
+  function avg(list) {
+    var sum = 0;
+    for (var i = 0; i < list.length; i++) sum += list[i];
+    return Math.round(sum / list.length);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var lines = document.getElementById("bp-readings").value.split("\n");
+    var readings = [];
+    var bad = [];
+    lines.forEach(function (line) {
+      var text = line.trim();
+      if (!text) return;
+      var m = /^(\d{2,3})\s*\/\s*(\d{2,3})$/.exec(text);
+      if (!m || +m[2] >= +m[1]) { bad.push(text); return; }
+      readings.push({ s: +m[1], d: +m[2] });
+    });
+    if (bad.length) {
+      out.textContent = "Cannot read: " + bad.join(", ") + ". Use the form 120/80, with diastolic below systolic.";
+      return;
+    }
+    if (!readings.length) {
+      out.textContent = "Enter at least one reading.";
+      return;
+    }
+    var avgS = avg(readings.map(function (r) { return r.s; }));
+    var avgD = avg(readings.map(function (r) { return r.d; }));
+    var byBp = function (a, b) { return a.s - b.s || a.d - b.d; };
+    var sorted = readings.slice().sort(byBp);
+    var low = sorted[0];
+    var high = sorted[sorted.length - 1];
+    var counts = {};
+    readings.forEach(function (r) {
+      var c = category(r.s, r.d);
+      counts[c] = (counts[c] || 0) + 1;
+    });
+    var parts = Object.keys(counts).map(function (k) { return k + ": " + counts[k]; });
+    out.textContent = "Readings: " + readings.length +
+      ". Average: " + avgS + "/" + avgD + " mmHg (" + category(avgS, avgD) + ")" +
+      ". Lowest: " + low.s + "/" + low.d +
+      ". Highest: " + high.s + "/" + high.d +
+      ". By category: " + parts.join(", ") + ".";
+  });
+})();
+</script>
+</div>
+<h2>The formula</h2>
+<p>Systolic and diastolic are averaged separately.</p>
+<ul><li>Average systolic = sum of all systolic values ÷ number of readings</li><li>Average diastolic = sum of all diastolic values ÷ number of readings</li></ul>
+<p>Each result is rounded to the nearest whole number, with .5 rounding up. The lowest and highest reading are the ones with the lowest and highest systolic value. If two readings have the same systolic value, the diastolic value breaks the tie.</p>
+<p>The average is then placed in a category using the AHA limits.</p>
+<div class="table"><table><thead><tr><th>Category</th><th>Systolic</th><th></th><th>Diastolic</th></tr></thead><tbody><tr><td>Normal</td><td>below 120</td><td>and</td><td>below 80</td></tr><tr><td>Elevated</td><td>120–129</td><td>and</td><td>below 80</td></tr><tr><td>Stage 1</td><td>130–139</td><td>or</td><td>80–89</td></tr><tr><td>Stage 2</td><td>140 or higher</td><td>or</td><td>90 or higher</td></tr><tr><td>Above 180/120</td><td>above 180</td><td>and/or</td><td>above 120</td></tr></tbody></table></div>
+<p>Source: Whelton PK, et al. *2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults*. Hypertension, 2018; 71(6): e13–e115.</p>
+<h2>Worked example</h2>
+<p>Seven morning readings over one week:</p>
+<div class="table"><table><thead><tr><th>Day</th><th>Reading</th></tr></thead><tbody><tr><td>Monday</td><td>128/82</td></tr><tr><td>Tuesday</td><td>122/78</td></tr><tr><td>Wednesday</td><td>135/85</td></tr><tr><td>Thursday</td><td>126/80</td></tr><tr><td>Friday</td><td>131/84</td></tr><tr><td>Saturday</td><td>120/76</td></tr><tr><td>Sunday</td><td>124/79</td></tr></tbody></table></div>
+<h3>Step 1: add the systolic values</h3>
+<p>128 + 122 + 135 + 126 + 131 + 120 + 124 = 886</p>
+<h3>Step 2: add the diastolic values</h3>
+<p>82 + 78 + 85 + 80 + 84 + 76 + 79 = 564</p>
+<h3>Step 3: divide by the number of readings</h3>
+<ul><li>886 ÷ 7 = 126.57, which rounds to <strong>127</strong></li><li>564 ÷ 7 = 80.57, which rounds to <strong>81</strong></li></ul>
+<p>The average is <strong>127/81</strong>.</p>
+<h3>Step 4: find the lowest and highest</h3>
+<ul><li>Lowest systolic: 120/76</li><li>Highest systolic: 135/85</li></ul>
+<h3>Step 5: place the average in a category</h3>
+<p>Systolic 127 is in the 120–129 row. Diastolic 81 is in the 80–89 row. The two numbers point to different rows, so the higher one wins: <strong>Stage 1</strong>.</p>
+<p>Notice that the same week would land in Elevated if the diastolic average had been 79 or lower. One or two points can move an average across a line, which is another reason to look at the whole list and not only the average.</p>
+<h2>Category of the average versus category of each reading</h2>
+<p>The calculator averages the numbers first and categorizes afterward. You can also categorize each reading on its own. In the example:</p>
+<ul><li>Stage 1: 128/82, 135/85, 126/80, 131/84 (4 readings)</li><li>Elevated: 122/78, 120/76, 124/79 (3 readings)</li><li>Normal, Stage 2 and Above 180/120: 0 readings</li></ul>
+<p>The category of the average and the counts per category can differ. Both are useful to show a doctor.</p>
+<h2>Tips for a usable average</h2>
+<ul><li>Take readings over several days, not one sitting.</li><li>Use the same arm, the same cuff and a similar time of day.</li><li>Include every valid reading. Dropping the high ones makes the average meaningless.</li><li>Do not average readings from different devices without noting it. Cuffs can differ by a few mmHg.</li></ul>
+<p>A calculator cannot judge whether a number is a problem for you. Take the list and the average to your doctor.</p>
+<h2>Skip the arithmetic with the app</h2>
+<p><strong>Health Connect PDF Reports</strong> for Android does this work for the readings stored in Health Connect. Its summary page shows average, lowest and highest blood pressure, the resting heart rate trend, average sleep length and how many readings fall in each AHA category. The detail pages list every reading with its time and source app. The average uses the same method as above: systolic and diastolic averaged separately and rounded to whole numbers. Readings that two apps recorded for the same event are merged first, so they count once.</p>
+<p>You can also add a reading by hand in the app. It is saved to Health Connect. The app shows recorded values only and gives no diagnosis or medical advice.</p>
+<p>See also: <a href="blood-pressure-categories-chart">Blood pressure categories chart</a> and <a href="health-connect-blood-pressure-pdf">How to make a blood pressure PDF from Health Connect</a>.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Health Reports: BP &amp; Sleep PDF</b><p>Turn Health Connect blood pressure, heart rate and sleep into a PDF report.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.healthconnectpdfreports&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Health Reports: BP &amp; Sleep PDF</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
