@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pool CSI Calculator: Saturation Index Explained</title><meta name="description" content="Calculate the calcite saturation index (CSI) of your pool water with the full formula, a worked example, and what to change when it is off."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-pool-chemistry-log/pool-csi-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Pool CSI Calculator: Saturation Index Explained"><meta property="og:description" content="Calculate the calcite saturation index (CSI) of your pool water with the full formula, a worked example, and what to change when it is off."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-pool-chemistry-log/pool-csi-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-pool-chemistry-log/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Pool CSI Calculator: Saturation Index Explained", "description": "Calculate the calcite saturation index (CSI) of your pool water with the full formula, a worked example, and what to change when it is off.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-pool-chemistry-log/pool-csi-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Pool Chem Log: Water Tests</a></p><h1>Pool CSI Calculator: Saturation Index Explained</h1><article class="guide"><p>The calcite saturation index (CSI) tells you if your pool water tends to dissolve plaster and metal, or to leave scale behind. A CSI near zero means the water is balanced. This page gives you a calculator, the formula and a worked example.</p>
+<h2>CSI calculator</h2>
+<div class="calc"><form id="csi-form" onsubmit="return false;">
+  <p><label>pH <input id="csi-ph" type="number" step="any" inputmode="decimal"></label></p>
+  <p><label>Total alkalinity, TA (ppm) <input id="csi-ta" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>Calcium hardness, CH (ppm) <input id="csi-ch" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>CYA (ppm, blank = 0) <input id="csi-cya" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>Borates (ppm, blank = 0) <input id="csi-bor" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>Salt (ppm, blank = 1000) <input id="csi-salt" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>Water temperature (F) <input id="csi-temp" type="number" step="any" inputmode="decimal"></label></p>
+  <p><button type="button" id="csi-go">Calculate CSI</button></p>
+  <p id="csi-result" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function num(id, fallback) {
+    var v = parseFloat($(id).value);
+    return isNaN(v) ? fallback : v;
+  }
+  function calc() {
+    var out = $("csi-result");
+    var ph = num("csi-ph", null), ta = num("csi-ta", null), ch = num("csi-ch", null), tf = num("csi-temp", null);
+    if (ph === null || ta === null || ch === null || tf === null) {
+      out.textContent = "Enter pH, TA, CH and temperature.";
+      return;
+    }
+    var cya = num("csi-cya", 0), borates = num("csi-bor", 0), salt = num("csi-salt", 1000);
+    if (ch <= 0) { out.textContent = "CSI cannot be calculated: CH must be above 0."; return; }
+    var t = (tf - 32) * 5 / 9;
+    var carbAlk = ta - 0.38772 * cya / (1 + Math.pow(10, 6.83 - ph)) - 4.63 * borates / (1 + Math.pow(10, 9.11 - ph));
+    if (carbAlk <= 0) { out.textContent = "CSI cannot be calculated: carbonate alkalinity is 0 or below."; return; }
+    var ionic = (1.5 * ch + ta) / 50045 + salt / 58440;
+    var si = Math.sqrt(ionic);
+    var csi = ph - 6.9395 + Math.log10(ch) + Math.log10(carbAlk) - 2.56 * si / (1 + 1.65 * si) - 1412.5 / (t + 273.15);
+    var label = csi < -0.3 ? "Corrosive" : (csi > 0.3 ? "Scaling" : "Balanced");
+    out.textContent = "CSI " + (csi >= 0 ? "+" : "") + csi.toFixed(2) + ": " + label + " (balanced is -0.3 to +0.3).";
+  }
+  $("csi-go").addEventListener("click", calc);
+})();
+</script>
+</div>
+<h2>How to read the result</h2>
+<ul><li><strong>Below -0.3:</strong> corrosive. The water can etch plaster, damage grout and attack metal parts.</li><li><strong>-0.3 to +0.3:</strong> balanced. This is the range Pool Chem Log treats as the target.</li><li><strong>Above +0.3:</strong> scaling. Calcium can deposit on tiles, surfaces and in the salt cell or heater.</li></ul>
+<p>The -0.3 to +0.3 band is a practical target, not a law. Plaster pools tend to care most about staying inside it.</p>
+<h2>What goes into CSI</h2>
+<p>CSI uses these test results:</p>
+<ul><li>pH</li><li>Total alkalinity (TA), in ppm</li><li>Calcium hardness (CH), in ppm</li><li>Cyanuric acid (CYA), in ppm</li><li>Borates, in ppm (optional)</li><li>Salt, in ppm</li><li>Water temperature</li></ul>
+<p>Warm water is more likely to scale, so temperature matters. Salt has a small effect through ionic strength. If you do not know your salt level, the calculator assumes 1,000 ppm, which is typical for fill water plus chlorine by-products. If you leave CYA or borates blank, they count as 0.</p>
+<h2>The formula</h2>
+<p>The formula is the one used by Trouble Free Pool (TFP) and Pool Math, attributed to the chemist known as "chem geek".</p>
+<p>CSI = pH - 6.9395 + log10(CH) + log10(carbonate alkalinity) - 2.56 x sqrt(I) / (1 + 1.65 x sqrt(I)) - 1412.5 / T</p>
+<p>Where:</p>
+<ul><li><strong>Carbonate alkalinity</strong> = TA - 0.38772 x CYA / (1 + 10^(6.83 - pH)) - 4.63 x borates / (1 + 10^(9.11 - pH)). CYA and borates both count toward TA on a test kit, but they do not help the carbonate balance, so they are subtracted.</li><li><strong>I (ionic strength)</strong> = (1.5 x CH + TA) / 50045 + salt / 58440.</li><li><strong>T</strong> is the water temperature in kelvin: degrees C + 273.15.</li></ul>
+<p>If CH is 0 or carbonate alkalinity comes out at 0 or below, CSI cannot be calculated.</p>
+<h2>Worked example</h2>
+<p>A plaster pool tests like this:</p>
+<ul><li>pH 7.5</li><li>TA 70 ppm</li><li>CH 350 ppm</li><li>CYA 40 ppm</li><li>Borates 0</li><li>Salt 1,000 ppm (assumed)</li><li>Water 80 F, which is 26.67 C or 299.82 K</li></ul>
+<p>Step by step:</p>
+<ol><li>Carbonate alkalinity: 10^(6.83 - 7.5) = 0.2138, so CYA part = 0.38772 x 40 / 1.2138 = 12.78. Carbonate alkalinity = 70 - 12.78 = 57.22.</li><li>Ionic strength: (1.5 x 350 + 70) / 50045 + 1000 / 58440 = 0.01189 + 0.01711 = 0.02900. Its square root is 0.1703.</li><li>Ionic term: 2.56 x 0.1703 / (1 + 1.65 x 0.1703) = 0.4360 / 1.2810 = 0.3403.</li><li>Temperature term: 1412.5 / 299.82 = 4.7112.</li><li>Logs: log10(350) = 2.5441 and log10(57.22) = 1.7576.</li><li>Add up: 7.5 - 6.9395 + 2.5441 + 1.7576 - 0.3403 - 4.7112 = -0.19.</li></ol>
+<p>CSI is about -0.19. That is inside the balanced band, a little on the soft side.</p>
+<h2>What to change when CSI is off</h2>
+<p>If CSI is too low (corrosive), raise one of these:</p>
+<ul><li><strong>Calcium hardness:</strong> the biggest lever for plaster pools. Calcium chloride raises it, but slowly, so add it in steps.</li><li><strong>pH:</strong> raising pH by 0.1 raises CSI by about 0.1.</li><li><strong>Total alkalinity:</strong> baking soda raises it.</li></ul>
+<p>If CSI is too high (scaling), lower pH with acid, or lower TA. Lowering calcium means replacing water, since no product removes it.</p>
+<p>Calcium targets in Pool Chem Log depend on the surface:</p>
+<div class="table"><table><thead><tr><th>Surface</th><th>CH range (ppm)</th></tr></thead><tbody><tr><td>Plaster or pebble</td><td>250 to 650</td></tr><tr><td>Vinyl or fiberglass</td><td>50 to 350</td></tr><tr><td>Acrylic</td><td>150 to 250 (common range)</td></tr></tbody></table></div>
+<p>The plaster, pebble, vinyl and fiberglass ranges follow TFP guidance. The acrylic range is a common industry range.</p>
+<h2>Borates and salt</h2>
+<p>Borates are optional. Some owners keep 30 to 50 ppm as a pH buffer. If you use them, include them in the calculation, because borates raise the TA reading without helping the balance. Salt water pools should enter their real salt level.</p>
+<h2>Limits</h2>
+<p>CSI is a model, not a guarantee. It depends on accurate tests, especially for TA, CH and pH. A small test error can move CSI by 0.1 or more. Retest before you change anything big, never mix chemicals, wear protection, and follow the product label.</p>
+<h2>Track CSI over time</h2>
+<p>Pool Chem Log is an Android app that works offline. It calculates CSI from every test you enter, with borates and salt included, and it uses your temperature from the last test. It also shows your targets by surface type, calculates doses for calcium, alkalinity and pH, and keeps a history of all your tests. The formula in the app is the same as the one on this page.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Pool Chem Log: Water Tests</b><p>Log pool and spa water tests and get FC/CYA dosing for chlorine, pH and more.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.offlinepoolchemistrylog&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Pool Chem Log: Water Tests</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

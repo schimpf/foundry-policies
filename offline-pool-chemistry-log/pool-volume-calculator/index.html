@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pool Volume Calculator: Gallons by Shape</title><meta name="description" content="Calculate pool volume in gallons or liters for rectangle, round, oval, kidney and freeform pools, with the formulas and worked examples."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-pool-chemistry-log/pool-volume-calculator/"><meta property="og:type" content="website"><meta property="og:title" content="Pool Volume Calculator: Gallons by Shape"><meta property="og:description" content="Calculate pool volume in gallons or liters for rectangle, round, oval, kidney and freeform pools, with the formulas and worked examples."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-pool-chemistry-log/pool-volume-calculator/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-pool-chemistry-log/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Pool Volume Calculator: Gallons by Shape", "description": "Calculate pool volume in gallons or liters for rectangle, round, oval, kidney and freeform pools, with the formulas and worked examples.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-pool-chemistry-log/pool-volume-calculator/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Pool Chem Log: Water Tests</a></p><h1>Pool Volume Calculator: Gallons by Shape</h1><article class="guide"><p>Every chemical dose depends on your pool volume. If the volume is off by 20%, every dose is off by 20%. This page gives you a calculator and the formulas behind it.</p>
+<h2>Pool volume calculator</h2>
+<div class="calc"><form id="vol-form" onsubmit="return false;">
+  <p>
+    <label>Units
+      <select id="vol-units">
+        <option value="us">US (feet, gallons)</option>
+        <option value="metric">Metric (meters, liters)</option>
+      </select>
+    </label>
+  </p>
+  <p>
+    <label>Shape
+      <select id="vol-shape">
+        <option value="rectangle">Rectangle</option>
+        <option value="round">Round</option>
+        <option value="oval">Oval</option>
+        <option value="kidney">Kidney</option>
+        <option value="freeform">Freeform</option>
+      </select>
+    </label>
+  </p>
+  <p><label><span id="vol-a-label">Length</span> <input id="vol-a" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p id="vol-b-row"><label><span id="vol-b-label">Width</span> <input id="vol-b" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>Shallow depth <input id="vol-d1" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><label>Deep depth <input id="vol-d2" type="number" step="any" min="0" inputmode="decimal"></label></p>
+  <p><button type="button" id="vol-go">Calculate</button></p>
+  <p id="vol-result" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var GAL = 3.785411784, FT = 0.3048;
+  var $ = function (id) { return document.getElementById(id); };
+  function labels() {
+    var shape = $("vol-shape").value;
+    var us = $("vol-units").value === "us";
+    var len = us ? "ft" : "m";
+    var area = us ? "sq ft" : "sq m";
+    $("vol-a-label").textContent =
+      shape === "round" ? "Diameter (" + len + ")" :
+      shape === "freeform" ? "Surface area (" + area + ")" :
+      "Length (" + len + ")";
+    $("vol-b-label").textContent = shape === "kidney" ? "Average width (" + len + ")" : "Width (" + len + ")";
+    $("vol-b-row").style.display = (shape === "round" || shape === "freeform") ? "none" : "";
+  }
+  function calc() {
+    var us = $("vol-units").value === "us";
+    var shape = $("vol-shape").value;
+    var a = parseFloat($("vol-a").value);
+    var b = parseFloat($("vol-b").value);
+    var d1 = parseFloat($("vol-d1").value);
+    var d2 = parseFloat($("vol-d2").value);
+    var out = $("vol-result");
+    var needB = shape !== "round" && shape !== "freeform";
+    if (!(a > 0) || !(d1 > 0) || !(d2 > 0) || (needB && !(b > 0))) {
+      out.textContent = "Enter positive numbers in every field.";
+      return;
+    }
+    if (us) {
+      a = shape === "freeform" ? a * FT * FT : a * FT;
+      b = b * FT; d1 = d1 * FT; d2 = d2 * FT;
+    }
+    var depth = (d1 + d2) / 2;
+    var area;
+    if (shape === "rectangle") area = a * b;
+    else if (shape === "round") area = Math.PI * (a / 2) * (a / 2);
+    else if (shape === "oval") area = Math.PI * (a / 2) * (b / 2);
+    else if (shape === "kidney") area = 0.9 * a * b;
+    else area = a;
+    var litres = area * depth * 1000;
+    var gallons = litres / GAL;
+    out.textContent = "Volume: about " + Math.round(gallons).toLocaleString("en-US") +
+      " US gallons (" + Math.round(litres).toLocaleString("en-US") + " liters).";
+  }
+  $("vol-shape").addEventListener("change", labels);
+  $("vol-units").addEventListener("change", labels);
+  $("vol-go").addEventListener("click", calc);
+  labels();
+})();
+</script>
+</div>
+<h2>The formulas</h2>
+<p>All shapes work the same way: surface area times average depth gives cubic feet or cubic meters, and a conversion gives you gallons or liters.</p>
+<ol><li>Average depth = (shallow depth + deep depth) / 2.</li><li>Surface area depends on the shape (see below).</li><li>Volume = area x average depth.</li><li>Convert to gallons or liters.</li></ol>
+<h3>Area by shape</h3>
+<ul><li><strong>Rectangle:</strong> length x width.</li><li><strong>Round:</strong> pi x (diameter / 2) x (diameter / 2).</li><li><strong>Oval:</strong> pi x (length / 2) x (width / 2).</li><li><strong>Kidney:</strong> 0.9 x length x average width. This is the common pool industry formula, (A + B) x 0.45 x length, where A and B are the widths of the two ends. The calculator uses one average width.</li><li><strong>Freeform:</strong> measure or estimate the surface area yourself, then use it directly.</li></ul>
+<h3>Conversions</h3>
+<ul><li>1 cubic foot = 7.4805 US gallons.</li><li>1 cubic meter = 1,000 liters.</li><li>1 US gallon = 3.7854 liters.</li><li>1 foot = 0.3048 meters.</li></ul>
+<h2>Worked examples</h2>
+<h3>Rectangle</h3>
+<p>A pool is 32 ft long and 16 ft wide. It is 3 ft deep at the shallow end and 5.5 ft at the deep end.</p>
+<ol><li>Average depth = (3 + 5.5) / 2 = 4.25 ft.</li><li>Area = 32 x 16 = 512 sq ft.</li><li>Volume = 512 x 4.25 = 2,176 cu ft.</li><li>Gallons = 2,176 x 7.4805 = about 16,278 gallons.</li></ol>
+<h3>Round</h3>
+<p>An above-ground pool is 20 ft across and a steady 4 ft deep.</p>
+<ol><li>Area = 3.1416 x 10 x 10 = 314.16 sq ft.</li><li>Volume = 314.16 x 4 = 1,256.6 cu ft.</li><li>Gallons = 1,256.6 x 7.4805 = about 9,400 gallons.</li></ol>
+<h3>Oval</h3>
+<p>An oval pool is 30 ft by 15 ft and 4 ft deep.</p>
+<ol><li>Area = 3.1416 x 15 x 7.5 = 353.4 sq ft.</li><li>Volume = 353.4 x 4 = 1,413.7 cu ft.</li><li>Gallons = 1,413.7 x 7.4805 = about 10,575 gallons.</li></ol>
+<h2>How to measure</h2>
+<ul><li>Measure the water surface, not the outside of the pool wall.</li><li>For depth, measure from the waterline to the floor, not from the coping.</li><li>For a sloped floor, measure the shallow end and the deep end. The calculator averages them. If the floor has a steep drop in the middle, split the pool into two parts and add the results.</li><li>For a freeform pool, split the shape into rectangles and circles, work out each area, and add them up.</li><li>A spa or hot tub is often listed on the manufacturer's data sheet. Use that if you have it.</li></ul>
+<h2>How accurate is it?</h2>
+<p>Formulas assume straight walls and a floor that slopes evenly. Real pools have steps, benches and curved floors. Expect an error of about 5 to 10%. For dosing, a good estimate is enough, because you retest after each addition anyway.</p>
+<p>A check that helps: if you know how many gallons a hose adds per hour, or you read a water meter while filling, compare it with the result.</p>
+<h2>Why it matters</h2>
+<ul><li><strong>Chlorine:</strong> the number of ounces to raise FC by 1 ppm scales directly with volume.</li><li><strong>Acid and baking soda:</strong> doses for pH and total alkalinity scale the same way.</li><li><strong>Stabilizer and calcium:</strong> these are slow to correct, so an error in volume can cost you weeks.</li></ul>
+<p>Doses are estimates. Retest before you add more, never mix chemicals, wear protection, and follow the product label.</p>
+<h2>Use it inside your dosing</h2>
+<p>Pool Chem Log is an Android app that works offline. When you set up a pool or spa, you can type in the volume or use the built-in volume calculator for rectangle, round, oval, kidney and freeform shapes. It uses the same formulas as above, in US units or metric. The volume is then used for every dose the app calculates, from chlorine to pH, alkalinity, calcium, stabilizer, salt and borates.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Pool Chem Log: Water Tests</b><p>Log pool and spa water tests and get FC/CYA dosing for chlorine, pH and more.</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.offlinepoolchemistrylog&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Pool Chem Log: Water Tests</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
