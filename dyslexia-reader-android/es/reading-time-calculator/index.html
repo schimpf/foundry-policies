@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculadora de tiempo de lectura de un libro</title><meta name="description" content="Calcula cuánto tarda en leerse un libro a partir de sus palabras o caracteres. Fórmula, ejemplos resueltos y una calculadora para probar."><meta name="theme-color" content="#2f5d8c"><meta name="author" content="Gerrit Schimpf"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://apps.schimpf.es/dyslexia-reader-android/es/reading-time-calculator/"><link rel="alternate" hreflang="en" href="https://apps.schimpf.es/dyslexia-reader-android/reading-time-calculator/"><link rel="alternate" hreflang="de-DE" href="https://apps.schimpf.es/dyslexia-reader-android/de/reading-time-calculator/"><link rel="alternate" hreflang="es-ES" href="https://apps.schimpf.es/dyslexia-reader-android/es/reading-time-calculator/"><link rel="alternate" hreflang="x-default" href="https://apps.schimpf.es/dyslexia-reader-android/reading-time-calculator/"><meta property="og:type" content="website"><meta property="og:site_name" content="Apps by Gerrit Schimpf"><meta property="og:locale" content="es_ES"><meta property="og:title" content="Calculadora de tiempo de lectura de un libro"><meta property="og:description" content="Calcula cuánto tarda en leerse un libro a partir de sus palabras o caracteres. Fórmula, ejemplos resueltos y una calculadora para probar."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Calculadora de tiempo de lectura de un libro"><meta name="twitter:description" content="Calcula cuánto tarda en leerse un libro a partir de sus palabras o caracteres. Fórmula, ejemplos resueltos y una calculadora para probar."><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta property="og:url" content="https://apps.schimpf.es/dyslexia-reader-android/es/reading-time-calculator/"><meta property="og:image" content="https://apps.schimpf.es/dyslexia-reader-android/feature.png"><meta name="twitter:image" content="https://apps.schimpf.es/dyslexia-reader-android/feature.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="500"><meta property="og:image:alt" content="Dyslexia Reader: Leer libros"><link rel="icon" href="../../icon.png"><link rel="apple-touch-icon" href="../../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Calculadora de tiempo de lectura de un libro", "description": "Calcula cuánto tarda en leerse un libro a partir de sus palabras o caracteres. Fórmula, ejemplos resueltos y una calculadora para probar.", "datePublished": "2026-11-21", "dateModified": "2026-11-21", "inLanguage": "es", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "publisher": {"@type": "Person", "name": "Gerrit Schimpf"}, "about": {"@type": "MobileApplication", "name": "Dyslexia Reader: Leer libros", "operatingSystem": "Android", "url": "https://apps.schimpf.es/dyslexia-reader-android/es/"}, "url": "https://apps.schimpf.es/dyslexia-reader-android/es/reading-time-calculator/", "mainEntityOfPage": "https://apps.schimpf.es/dyslexia-reader-android/es/reading-time-calculator/", "image": "https://apps.schimpf.es/dyslexia-reader-android/feature.png"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Todas las apps", "item": "https://apps.schimpf.es/"}, {"@type": "ListItem", "position": 2, "name": "Dyslexia Reader: Leer libros", "item": "https://apps.schimpf.es/dyslexia-reader-android/es/"}, {"@type": "ListItem", "position": 3, "name": "Calculadora de tiempo de lectura de un libro", "item": "https://apps.schimpf.es/dyslexia-reader-android/es/reading-time-calculator/"}]}</script><style>
+:root{--bg:#0b0d0c;--bg2:#111413;--card:#161a19;--fg:#f2f4f3;--muted:#a1a8a4;--line:#252b29;--accent:#0f766e;--on:#fff;
+--hi:color-mix(in srgb,var(--accent) 55%,#fff);--soft:color-mix(in srgb,var(--accent) 18%,transparent);
+--frame:#050606;--edge:#2c3230;--shadow:0 40px 80px -30px rgba(0,0,0,.75)}
+@media (prefers-color-scheme:light){:root{--bg:#f7f7f5;--bg2:#eeefec;--card:#fff;--fg:#151816;--muted:#5a615d;--line:#e2e5e1;
+--hi:color-mix(in srgb,var(--accent) 80%,#000);--soft:color-mix(in srgb,var(--accent) 12%,transparent);
+--frame:#101312;--edge:#1f2422;--shadow:0 30px 60px -30px rgba(20,30,25,.45)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--hi)}img{max-width:100%;height:auto}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,5vw,3.6rem);overflow-wrap:break-word;font-weight:800}h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:750}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}@media (max-width:640px){.wrap{padding:0 16px}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--card);padding:8px 12px;z-index:9}.skip:focus{left:8px}
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 78%,transparent);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font-weight:700;min-width:0}
+.brand img{border-radius:9px;flex:none}.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.links{display:flex;gap:22px;margin-left:auto}.links a{color:var(--muted);text-decoration:none;font-size:.95rem}
+.links a:hover{color:var(--fg)}@media (max-width:760px){.links{display:none}.nav .btn{margin-left:auto}}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on);padding:12px 22px;
+border-radius:999px;text-decoration:none;font-weight:650;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px var(--accent)}.nav .btn{padding:8px 16px;font-size:.9rem}
+.chip{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--soft);
+color:var(--hi);font-weight:600;font-size:.95rem}
+.band{padding:96px 0;position:relative}.band.alt{background:var(--bg2)}@media (max-width:640px){.band{padding:64px 0}}
+.eyebrow{display:block;color:var(--hi);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.lead{color:var(--muted);font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:640px}
+.hero{overflow:hidden;padding:72px 0 40px;background:
+radial-gradient(55% 60% at 78% 30%,color-mix(in srgb,var(--accent) 38%,transparent),transparent 70%),
+radial-gradient(40% 50% at 5% 100%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.hero .icon{border-radius:24px;box-shadow:0 20px 40px -18px var(--accent);margin-bottom:24px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.hero .actions .badge img{display:block;height:60px;width:auto}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr);text-align:center}.hero .lead{margin:0 auto}
+.hero .actions{justify-content:center}.hero .icon{margin:0 auto 20px}}
+.stack{display:flex;justify-content:center;align-items:flex-end;padding:20px 0 40px}
+.stack .phone{width:250px}.stack .phone:nth-child(2){width:280px;z-index:2}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(40px,30px)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-40px,30px)}
+@media (max-width:640px){.stack .phone{width:32vw;padding:6px;border-radius:26px}.stack .phone img{border-radius:21px}
+.stack .phone:nth-child(2){width:46vw}.stack .phone::before{top:12px;width:7px;height:7px;margin-left:-3.5px}
+.stack .phone:nth-child(1){transform:rotate(-7deg) translate(9vw,4vw)}.stack .phone:nth-child(3){transform:rotate(7deg) translate(-9vw,4vw)}}
+.phone{position:relative;flex:none;margin:0;padding:9px;background:var(--frame);border-radius:42px;
+box-shadow:0 0 0 1.5px var(--edge),inset 0 0 0 1px #000,var(--shadow)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+background:#000;box-shadow:0 0 0 2px #111;z-index:1}
+.phone picture,.tablet picture{display:block}.phone img{display:block;width:100%;height:auto;border-radius:33px;background:#000}
+.tablet{max-width:860px;margin:0 auto;padding:14px;background:var(--frame);border-radius:30px;
+box-shadow:0 0 0 1.5px var(--edge),var(--shadow)}.tablet img{display:block;width:100%;border-radius:18px}
+.tablets{display:grid;gap:32px}
+.gallery{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px max(24px,calc(50vw - 576px)) 40px;
+scrollbar-width:thin}.gallery figure{margin:0;flex:none;width:240px;scroll-snap-align:center;text-align:center}
+.gallery figcaption{margin-top:18px;color:var(--muted);font-size:.95rem;font-weight:500}
+@media (max-width:640px){.gallery{gap:20px;padding:16px 16px 32px}.gallery figure{width:200px}}
+.head{max-width:720px;margin-bottom:48px}.center{text-align:center;margin-left:auto;margin-right:auto}
+.about p{max-width:720px;color:var(--muted);font-size:1.1rem}
+.features{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.fcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;transition:transform .25s,border-color .25s}
+.fcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.num{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--soft);color:var(--hi);
+font-weight:800;margin-bottom:18px}.fcard p{color:var(--muted);margin:0 0 12px}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:9px}.checks li{position:relative;padding-left:28px;color:var(--muted);font-size:.97rem}
+.checks li::before{content:"";position:absolute;left:0;top:.42em;width:16px;height:16px;border-radius:50%;background:var(--soft);
+box-shadow:inset 0 0 0 1.5px var(--hi)}
+.checks li::after{content:"";position:absolute;left:5.5px;top:calc(.42em + 4px);width:4px;height:7px;border:solid var(--hi);
+border-width:0 2px 2px 0;transform:rotate(45deg)}
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.cards li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:transform .2s,border-color .2s}
+.cards li:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.cards a{color:var(--fg);font-weight:700;text-decoration:none;font-size:1.08rem}.cards a::after{content:"";position:absolute;inset:0}
+.cards small{display:block;color:var(--muted);margin-top:6px;font-size:.93rem}
+.apps li{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--card)),var(--card) 60%)}
+.apps img{border-radius:14px;flex:none}.apps small{margin-top:2px}
+.cta-band{border-radius:32px;padding:64px 32px;text-align:center;border:1px solid var(--line);background:
+radial-gradient(70% 90% at 50% 0%,color-mix(in srgb,var(--accent) 35%,transparent),transparent 70%),var(--card)}
+.cta-band img.icon{border-radius:22px;margin-bottom:20px}.cta-band .lead{margin:0 auto 28px}.cta-band .badge img{height:60px;width:auto}
+.foot{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:.92rem}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}.foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+.foot a{color:var(--muted)}.foot a:hover{color:var(--fg)}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 20px;font-size:.92rem;color:var(--muted)}
+.crumbs li+li::before{content:"›";margin-right:6px}.crumbs a{color:var(--muted)}
+.ghero{padding:64px 0 32px;background:radial-gradient(60% 80% at 85% 0%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%)}
+.ghero h1{font-size:clamp(2rem,4.5vw,3.2rem);max-width:860px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start;padding-bottom:96px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+.guide{max-width:740px;font-size:1.06rem}.guide h2{font-size:1.7rem;margin-top:1.8em}.guide h3{margin-top:1.5em}
+.guide li{margin:.35em 0}.guide code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.9em}
+.table{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.96rem}th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--card);font-weight:700}tr:last-child td{border-bottom:0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:var(--shadow)}
+.calc input,.calc select,.calc button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.calc button{background:var(--accent);color:var(--on);border:0;font-weight:650;cursor:pointer}
+.cta{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
+.cta .phone{width:170px;margin:0 auto 20px}.cta img.icon{border-radius:14px}.cta p{color:var(--muted);font-size:.95rem;margin:6px 0 16px}
+.cta .badge img{height:52px;width:auto;margin:12px auto 0;display:block}
+.faq{max-width:820px;display:grid;gap:12px}.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.faq summary{cursor:pointer;font-weight:650;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--hi);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}.faq details p{color:var(--muted);margin:12px 0 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:root{--accent:#2f5d8c;--on:#ffffff}</style></head><body><a class="skip" href="#main">Ir al contenido</a><header class="nav"><div class="wrap"><a class="brand" href="../"><img src="../../icon.png" alt="" width="32" height="32"><span>Dyslexia Reader: Leer libros</span></a><a class="btn" href="https://play.google.com/store/apps/details?id=es.schimpf.dyslexiareaderandroid&amp;hl=es">Obtener la app</a></div></header><main id="main"><section class="ghero"><div class="wrap"><ol class="crumbs"><li><a href="../../../">Todas las apps</a></li><li><a href="../">Dyslexia Reader: Leer libros</a></li><li>Calculadora de tiempo de lectura de un libro</li></ol><h1>Calculadora de tiempo de lectura de un libro</h1><p class="lead">Calcula cuánto tarda en leerse un libro a partir de sus palabras o caracteres. Fórmula, ejemplos resueltos y una calculadora para probar.</p></div></section><div class="wrap layout"><article class="guide"><p>Con una sola división obtienes una buena estimación del tiempo de lectura. Esta página muestra la fórmula, tres ejemplos resueltos y una calculadora que puedes usar aquí mismo.</p>
+<h2>La respuesta rápida</h2>
+<ul><li>Supón unas 200 palabras por minuto.</li><li>Una palabra cuenta como seis caracteres: cinco letras y un espacio.</li><li>Eso da 1200 caracteres por minuto.</li><li>Divide los caracteres que faltan entre 1200 y redondea hacia arriba a minutos enteros.</li></ul>
+<p>Las personas con dislexia suelen leer a menos de 200 palabras por minuto, y la velocidad cambia según el texto. Toma el resultado como un número para planificar. Si lees a 100 palabras por minuto, duplícalo.</p>
+<div class="calc"><form id="rt-form" onsubmit="return false">
+  <p>
+    <label for="rt-unit">Conozco el número de</label>
+    <select id="rt-unit">
+      <option value="words">palabras</option>
+      <option value="chars">caracteres</option>
+    </select>
+  </p>
+  <p>
+    <label for="rt-total">Total</label>
+    <input id="rt-total" type="number" min="0" step="1" value="90000">
+  </p>
+  <p>
+    <label for="rt-read">Ya leído (misma unidad)</label>
+    <input id="rt-read" type="number" min="0" step="1" value="0">
+  </p>
+  <button type="submit" id="rt-go">Calcular</button>
+  <p id="rt-out" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function () {
+  var CHARS_PER_MINUTE = 1200;
+  var CHARS_PER_WORD = 6;
+  function calc() {
+    var unit = document.getElementById("rt-unit").value;
+    var k = unit === "words" ? CHARS_PER_WORD : 1;
+    var total = Math.max(0, Math.floor(Number(document.getElementById("rt-total").value) || 0)) * k;
+    var read = Math.max(0, Math.floor(Number(document.getElementById("rt-read").value) || 0)) * k;
+    var out = document.getElementById("rt-out");
+    if (total <= 0) { out.textContent = "Introduce un total mayor que 0."; return; }
+    read = Math.min(read, total);
+    var minutes = Math.ceil((total - read) / CHARS_PER_MINUTE);
+    var percent = Math.floor(read * 100 / total);
+    var text;
+    if (minutes <= 0) text = "Terminado";
+    else if (minutes < 60) text = "Quedan " + minutes + " min";
+    else text = "Quedan " + Math.floor(minutes / 60) + " h " + (minutes % 60) + " min";
+    out.textContent = text + " (" + percent + " % leído, a 200 palabras por minuto)";
+  }
+  document.getElementById("rt-go").addEventListener("click", calc);
+  document.getElementById("rt-form").addEventListener("submit", calc);
+})();
+</script>
+</div>
+<h2>La fórmula</h2>
+<p>minutos restantes = techo( (caracteres totales - caracteres ya leídos) / 1200 )</p>
+<ul><li>Caracteres totales cuenta letras, cifras, signos de puntuación y espacios.</li><li>Caracteres ya leídos es el punto donde te quedaste.</li><li>Techo redondea hacia arriba. Con 1 solo carácter pendiente el resultado es 1 minuto.</li><li>Si has terminado el libro, el resultado es 0.</li></ul>
+<p>Si solo conoces el número de palabras, multiplícalo por 6 para obtener los caracteres.</p>
+<p>caracteres = palabras × 6</p>
+<p>Es un promedio. Los libros con muchas palabras cortas salen algo altos, y los de palabras largas algo bajos. En un libro entero el error suele ser pequeño.</p>
+<h2>Cómo averiguar el número de palabras</h2>
+<ul><li>Un archivo TXT: ábrelo en un procesador de textos y lee el recuento en la barra de estado.</li><li>Un documento de un procesador de textos: usa su herramienta de recuento de palabras.</li><li>Un libro publicado: la página de la editorial suele indicarlo. Si no, estímalo por páginas. Una página de libro de bolsillo tiene unas 250 a 300 palabras.</li><li>En Dyslexia Reader Android no necesitas el recuento. La pantalla de importación muestra el tamaño del texto y el tiempo de lectura antes de añadir el libro.</li></ul>
+<h2>Porcentaje leído</h2>
+<p>El progreso es el número de caracteres leídos dividido entre el total, por 100, redondeado hacia abajo.</p>
+<p>porcentaje = suelo( caracteres leídos × 100 / caracteres totales )</p>
+<p>Al redondear hacia abajo, solo ves 100 % cuando de verdad has llegado al final.</p>
+<h2>Ejemplos resueltos</h2>
+<h3>Una novela de 90 000 palabras</h3>
+<ol><li>Caracteres: 90 000 × 6 = 540 000.</li><li>Minutos: 540 000 / 1200 = 450.</li><li>450 minutos son 7 horas 30 minutos.</li></ol>
+<h3>Un cuento, leído en parte</h3>
+<p>Tienes un texto de 54 000 caracteres y te quedaste en el carácter 20 000.</p>
+<ol><li>Caracteres restantes: 54 000 - 20 000 = 34 000.</li><li>Minutos: 34 000 / 1200 = 28,33. Redondeado hacia arriba, 29 minutos.</li><li>Progreso: 20 000 × 100 / 54 000 = 37,03. Redondeado hacia abajo, 37 %.</li></ol>
+<h3>Casi terminado</h3>
+<p>Te quedan 1000 caracteres.</p>
+<ol><li>1000 / 1200 = 0,83.</li><li>Redondeado hacia arriba: 1 minuto.</li></ol>
+<h2>Tabla rápida</h2>
+<p>Cada fila usa la regla de 200 palabras por minuto.</p>
+<div class="table"><table><thead><tr><th>Palabras</th><th>Caracteres</th><th>Tiempo de lectura</th></tr></thead><tbody><tr><td>5000</td><td>30 000</td><td>25 min</td></tr><tr><td>20 000</td><td>120 000</td><td>1 h 40 min</td></tr><tr><td>50 000</td><td>300 000</td><td>4 h 10 min</td></tr><tr><td>90 000</td><td>540 000</td><td>7 h 30 min</td></tr><tr><td>120 000</td><td>720 000</td><td>10 h</td></tr></tbody></table></div>
+<h2>Ajústalo a tu propia velocidad</h2>
+<p>Para usar tu propio ritmo, divide las palabras entre tus palabras por minuto en lugar de entre 200.</p>
+<ol><li>Lee durante un minuto una página de la que conozcas el número de palabras.</li><li>Cuenta las palabras que has leído. Ese es tu ritmo.</li><li>Divide las palabras del libro entre ese número.</li></ol>
+<p>Ejemplo: un libro de 60 000 palabras a 120 palabras por minuto son 60 000 / 120 = 500 minutos, es decir, 8 horas 20 minutos.</p>
+<h2>Dónde lo hace la aplicación por ti</h2>
+<p>Dyslexia Reader Android calcula este número para cada libro de tu biblioteca. Usa la misma regla de 1200 caracteres por minuto y el mismo redondeo. Ves el progreso y el tiempo restante en cada libro y en el lector. Un widget para la pantalla de inicio muestra lo mismo para el libro que estás leyendo y te lleva de vuelta a donde lo dejaste.</p>
+<ul><li>Importa archivos TXT, EPUB o PDF desde tu dispositivo.</li><li>Todo se queda en tu dispositivo. La aplicación no tiene permiso de internet.</li><li>Incluye un libro de muestra corto para que veas los números antes de añadir los tuyos.</li></ul>
+<p>Busca Dyslexia Reader: Leer libros en Google Play.</p></article><aside class="cta"><div class="phone"><picture><source type="image/webp" srcset="../../screen-1.webp"><img src="../../screen-1.png" alt="Dyslexia Reader: Leer libros" width="1080" height="2160" loading="lazy" decoding="async"></picture></div><div><b>Dyslexia Reader: Leer libros</b><p>Lee libros con fuentes para dislexia, una regla de lectura y lectura en voz alta</p><a href="../">Más sobre la app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.dyslexiareaderandroid&amp;hl=es"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside></div><section class="band alt"><div class="wrap"><div class="head"><h2>Más guías</h2></div><ul class="cards"><li><a href="../dyslexia-friendly-fonts-compared/">Fuentes para dislexia comparadas y cómo ajustarlas</a><small>Lexend, OpenDyslexic y Atkinson Hyperlegible comparadas, con estudios y valores de partida para tamaño de letra y espaciado de letras, palabras y líneas.</small></li><li><a href="../read-pdf-with-dyslexia-font/">Leer un PDF con fuente para dislexia en Android</a><small>Un PDF fija la fuente y el diseño. Así conviertes un PDF con texto en texto adaptable en Android, y estos son los límites que se aplican.</small></li></ul></div></section><section class="band"><div class="wrap"><div class="head"><h2>Más apps</h2></div><ul class="cards apps"><li style="--accent:#4355b9"><img src="../../../alarm-clock/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../alarm-clock/">Alarm Clock: Wake-Up Missions</a><small>Reliable alarms for heavy sleepers. Solve a task to switch the alarm off.</small></span></li><li style="--accent:#3a6a2a"><img src="../../../german-allotment-club-ledger/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../german-allotment-club-ledger/">Allotment Club Ledger</a><small>Rent, dues, meters and receipts for allotment club treasurers</small></span></li><li style="--accent:#006a63"><img src="../../../anti-bucket-list/icon.png" alt="" width="60" height="60" loading="lazy"><span><a href="../../../anti-bucket-list/">Anti-Bucket List: No Journal</a><small>Write down what you said no to and check later if you&#x27;re still glad.</small></span></li></ul></div></section></main><footer class="foot"><div class="wrap"><nav aria-label="Footer"><a href="../">Dyslexia Reader: Leer libros</a><a href="../../privacy/">Privacidad</a><a href="../../../">Todas las apps</a><a href="https://apps.schimpf.es/dyslexia-reader-android/reading-time-calculator/" hreflang="en">EN</a><a href="https://apps.schimpf.es/dyslexia-reader-android/de/reading-time-calculator/" hreflang="de-DE">DE</a></nav><span>© 2026 Gerrit Schimpf</span></div></footer></body></html>
