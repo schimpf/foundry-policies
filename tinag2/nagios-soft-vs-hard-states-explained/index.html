@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nagios and Icinga soft vs hard states explained</title><meta name="description" content="What soft and hard states mean in Nagios and Icinga 2, how check attempts work, and how long a failure takes to become hard. With a worked example."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/tinag2/nagios-soft-vs-hard-states-explained/"><meta property="og:type" content="website"><meta property="og:title" content="Nagios and Icinga soft vs hard states explained"><meta property="og:description" content="What soft and hard states mean in Nagios and Icinga 2, how check attempts work, and how long a failure takes to become hard. With a worked example."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/tinag2/nagios-soft-vs-hard-states-explained/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/tinag2/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Nagios and Icinga soft vs hard states explained", "description": "What soft and hard states mean in Nagios and Icinga 2, how check attempts work, and how long a failure takes to become hard. With a worked example.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/tinag2/nagios-soft-vs-hard-states-explained/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Tinag2: Icinga &amp; Nagios Alerts</a></p><h1>Nagios and Icinga soft vs hard states explained</h1><article class="guide"><p>A service in Nagios, Naemon or Icinga 2 does not alert on the first failed check. It first goes through a <strong>soft</strong> state and only becomes <strong>hard</strong> after several failed checks in a row. This page explains the states, the attempt counter and the timing, with one worked example.</p>
+<h2>The four service states</h2>
+<p>Every check plugin ends with an exit code. The monitoring core turns that code into a state. This follows the Nagios Plugin Development Guidelines (nagios-plugins.org) and the Icinga 2 documentation, chapter "Monitoring Basics".</p>
+<div class="table"><table><thead><tr><th>Exit code</th><th>State</th><th>Meaning</th></tr></thead><tbody><tr><td>0</td><td>OK</td><td>The check passed.</td></tr><tr><td>1</td><td>WARNING</td><td>The value is outside the warning threshold.</td></tr><tr><td>2</td><td>CRITICAL</td><td>The value is outside the critical threshold, or the service is failing.</td></tr><tr><td>3</td><td>UNKNOWN</td><td>The plugin could not decide, for example a bad argument or a timeout.</td></tr></tbody></table></div>
+<p>Hosts are simpler. A host is UP or DOWN. Thruk also reports UNREACHABLE, a host that cannot be reached because something between the monitoring server and the host is down.</p>
+<h2>Soft and hard state types</h2>
+<p>The state type says how sure the core is about the problem.</p>
+<ul><li><strong>Soft</strong>: a check failed, but the number of failed checks is still below <code>max_check_attempts</code>. The core keeps checking, now at the shorter retry interval.</li><li><strong>Hard</strong>: the failed checks reached <code>max_check_attempts</code>, or the state changed from one hard problem state to another. Notifications are normally sent from this point.</li></ul>
+<p>A soft state that returns to OK before the last attempt never becomes hard. That is the point of the system: it filters out short blips such as one lost packet.</p>
+<h2>The three settings that set the timing</h2>
+<p>Each host and service has these settings in its configuration:</p>
+<ol><li><code>check_interval</code>: time between checks while the state is stable.</li><li><code>retry_interval</code>: time between checks while the state is soft.</li><li><code>max_check_attempts</code>: how many failed checks in a row make the state hard. The first failed check counts as attempt 1.</li></ol>
+<h2>How long until a failure becomes hard</h2>
+<p>Counting from the first failed check:</p>
+<p>time to hard = (<code>max_check_attempts</code> − 1) × <code>retry_interval</code></p>
+<p>Counting from the moment the service really broke, the worst case adds one full check interval, because the failure can start right after a good check:</p>
+<p>worst case = <code>check_interval</code> + (<code>max_check_attempts</code> − 1) × <code>retry_interval</code></p>
+<h2>Worked example</h2>
+<p>Settings: <code>check_interval</code> 5 minutes, <code>retry_interval</code> 1 minute, <code>max_check_attempts</code> 3.</p>
+<ol><li>09:55:00. Check passes. State OK.</li><li>09:55:30. The service breaks. Nothing is noticed yet.</li><li>10:00:00. Check fails. State CRITICAL, soft, attempt 1/3.</li><li>10:01:00. Check fails. CRITICAL, soft, attempt 2/3.</li><li>10:02:00. Check fails. CRITICAL, <strong>hard</strong>, attempt 3/3. Notifications start.</li></ol>
+<p>The state became hard 2 minutes after the first failed check: (3 − 1) × 1 minute. It became hard 6.5 minutes after the service really broke. The worst case for these settings is 5 + 2 = 7 minutes.</p>
+<p>``` worst case: 5 min (check interval) + 2 x 1 min (retries) = 7 min</p>
+<div class="table"><table><thead><tr><th>#####</th><th>##</th></tr></thead><tbody></tbody></table></div>
+<p>```</p>
+<p>If the check at 10:01:00 had passed, the service would have returned to OK without ever becoming hard, and nobody would have been notified.</p>
+<h2>Tuning the numbers</h2>
+<ul><li>Raising <code>max_check_attempts</code> removes more false alarms but delays real ones.</li><li>A shorter <code>retry_interval</code> makes the hard state come sooner without more noise on the stable-state schedule.</li><li>For a very important service, a low <code>max_check_attempts</code> such as 2 plus a short retry interval keeps the delay small.</li></ul>
+<h2>One detail in Icinga 2</h2>
+<p>Icinga 2 resets its internal <code>check_attempt</code> counter to 1 when a state turns hard. If you read the raw API value on a hard problem, it can show 1/3 instead of 3/3. Tinag2 shows hard problems as max/max, like Nagios does.</p>
+<h2>Soft and hard states in Tinag2</h2>
+<p>Tinag2 is an Android client for Icinga 2 and for Nagios/Naemon through Thruk. It reads the state type and the attempt counter from the server and uses them in three places:</p>
+<ul><li><strong>Problem detail</strong> shows the state type and the attempts, for example "soft 2/3" or "hard 3/3".</li><li><strong>Hard only filter</strong> on the Problems screen hides soft problems.</li><li><strong>Alert rules</strong> skip soft states by default, so you are only notified about hard problems. You can switch that off on the Alerts screen. There is also an option to wait 5 minutes before alerting, measured from the problem's last state change, which damps checks that flip back and forth.</li></ul>
+<p>The app asks the server for data every 15 minutes in the background, and when you pull to refresh. A hard problem therefore reaches your phone at the next sync after it becomes hard, not at the exact second.</p>
+<p>Tinag2 only reads and acts on problems. It does not change check intervals or attempt counts; do that in your Icinga or Nagios configuration.</p>
+<h2>Quick reference</h2>
+<ul><li>Soft means failing, but not confirmed yet.</li><li>Hard means confirmed: <code>max_check_attempts</code> failures in a row.</li><li>Time to hard from the first failure: (attempts − 1) × retry interval.</li><li>Worst case from the real failure: check interval + that time.</li></ul>
+<p>Tinag2 lets you filter, search and acknowledge hard problems from your phone, and sends alerts only for the problems that matter to you. Add your Icinga 2 or Thruk server in the app to try it.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Tinag2: Icinga &amp; Nagios Alerts</b><p>Watch Icinga 2 and Nagios problems, acknowledge them and get alerts.</p><a href="../">More about the app</a></div></aside><footer><a href="../">Tinag2: Icinga &amp; Nagios Alerts</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

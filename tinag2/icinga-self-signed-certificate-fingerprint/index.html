@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Get the SHA-256 fingerprint of a self-signed Icinga certificate</title><meta name="description" content="How to read the SHA-256 fingerprint of an Icinga 2 or Thruk server certificate with openssl, and how to use it to connect a mobile app safely."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/tinag2/icinga-self-signed-certificate-fingerprint/"><meta property="og:type" content="website"><meta property="og:title" content="Get the SHA-256 fingerprint of a self-signed Icinga certificate"><meta property="og:description" content="How to read the SHA-256 fingerprint of an Icinga 2 or Thruk server certificate with openssl, and how to use it to connect a mobile app safely."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/tinag2/icinga-self-signed-certificate-fingerprint/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/tinag2/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Get the SHA-256 fingerprint of a self-signed Icinga certificate", "description": "How to read the SHA-256 fingerprint of an Icinga 2 or Thruk server certificate with openssl, and how to use it to connect a mobile app safely.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/tinag2/icinga-self-signed-certificate-fingerprint/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Tinag2: Icinga &amp; Nagios Alerts</a></p><h1>Get the SHA-256 fingerprint of a self-signed Icinga certificate</h1><article class="guide"><p>Many Icinga 2 servers use a self-signed certificate. A phone does not trust it, so connections fail. The safe fix is not to turn off certificate checks. Instead you <strong>pin</strong> the certificate: you tell the client the exact SHA-256 fingerprint to accept. This page shows how to read that fingerprint and what to check before you trust it.</p>
+<h2>What a fingerprint is</h2>
+<p>A certificate fingerprint is a hash of the certificate file in its binary (DER) form. SHA-256 gives 32 bytes, shown as 64 hex characters, often in pairs separated by colons:</p>
+<p><code>3A:9F:...:C1</code> (32 pairs)</p>
+<p>Two different certificates do not share a fingerprint. If the server certificate is replaced, the fingerprint changes.</p>
+<h2>Get the fingerprint with openssl</h2>
+<p>You need a computer that can reach the server and has OpenSSL installed.</p>
+<ol><li>Pick the host name and port. The Icinga 2 API listens on port 5665 by default (Icinga 2 documentation, chapter "Icinga 2 API"). Thruk and most web front ends use port 443.</li><li>Run this command, with your own host name and port:</li></ol>
+<p>``<code> openssl s_client -connect icinga.example.com:5665 -servername icinga.example.com &lt;/dev/null 2&gt;/dev/null | openssl x509 -noout -fingerprint -sha256 </code>``</p>
+<ol><li>The output looks like this:</li></ol>
+<p>``<code> sha256 Fingerprint=3A:9F:12:...:C1 </code>``</p>
+<ol><li>Copy the part after the equals sign.</li></ol>
+<p>The command takes the first certificate the server presents, which is the server's own (leaf) certificate. That is the one to pin.</p>
+<h2>Check it before you trust it</h2>
+<p>Reading the fingerprint over the network trusts whatever answered. On an untrusted network, someone could answer in place of your server. To be sure:</p>
+<ul><li>Run the command from a trusted network, ideally the server's own LAN or from the server itself.</li><li>Or compare with the certificate file on the server. For Icinga 2 the API certificate is in the Icinga 2 data directory (commonly <code>/var/lib/icinga2/certs/</code>). Run <code>openssl x509 -in &lt;file&gt; -noout -fingerprint -sha256</code> on it and compare the two values.</li></ul>
+<h2>Use the fingerprint in Tinag2</h2>
+<p>Tinag2 is an Android client for Icinga 2 and Nagios/Naemon through Thruk. Each server you add can have an optional certificate pin.</p>
+<ol><li>Open <strong>Instances</strong> and tap <strong>Add instance</strong>, or edit an existing one.</li><li>Enter the name, type, URL, user and password.</li><li>Paste the fingerprint into the field "Trusted certificate SHA-256 (optional)".</li><li>Save and refresh.</li></ol>
+<p>The app compares the fingerprint with the SHA-256 of the certificate the server presents. It ignores colons and upper or lower case, so you can paste the openssl output as it is, minus the <code>sha256 Fingerprint=</code> prefix.</p>
+<h2>What pinning does and does not do</h2>
+<ul><li>The server's leaf certificate is accepted if its fingerprint matches your pin. Any other certificate must pass the normal system checks.</li><li>With a pin set, the app does not require the host name in the certificate to match. The fingerprint identifies the server instead. This helps when you connect by IP address or an internal name that the certificate does not list.</li><li>The pin applies to that one server only. Other servers in the app keep their own settings.</li><li>Plain HTTP is also allowed for local networks. The instance dialog warns you when you use it, because passwords sent over HTTP are readable on the network. A pinned HTTPS connection is better.</li></ul>
+<h2>When the connection fails after it worked</h2>
+<p>The most common cause is a new certificate. Icinga 2 and Thruk certificates expire, and a renewed or regenerated certificate has a new fingerprint. Run the openssl command again and update the pin.</p>
+<p>Other causes:</p>
+<ul><li>Login rejected (HTTP 401 or 403): the user name or password is wrong, or the API user lacks permission.</li><li>API not found (HTTP 404): the base URL is wrong. For Icinga 2 use the API address with port, such as <code>https://icinga.example.com:5665</code>. For Thruk use the Thruk root, such as <code>https://mon.example.com/thruk</code>.</li><li>Can't reach the host: the phone is not on a network that can reach the server, for example a VPN is off.</li></ul>
+<h2>Summary</h2>
+<ul><li>Read the fingerprint with <code>openssl s_client</code> and <code>openssl x509 -noout -fingerprint -sha256</code>.</li><li>Verify it from a trusted place.</li><li>Paste it into the "Trusted certificate SHA-256" field of the instance in Tinag2.</li><li>Update it when the certificate is renewed.</li></ul>
+<p>Tinag2 shows the problems on your Icinga 2 or Thruk server, lets you acknowledge, recheck and set downtime, and notifies you about new or worse problems. Your passwords are encrypted with the Android Keystore, and the app talks only to the servers you enter.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Tinag2: Icinga &amp; Nagios Alerts</b><p>Watch Icinga 2 and Nagios problems, acknowledge them and get alerts.</p><a href="../">More about the app</a></div></aside><footer><a href="../">Tinag2: Icinga &amp; Nagios Alerts</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
