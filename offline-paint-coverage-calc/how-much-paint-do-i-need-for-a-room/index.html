@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How Much Paint Do I Need for a Room? Formula and Example</title><meta name="description" content="Work out the paint for any room: wall area, doors and windows, coats, waste and texture, with a worked example in gallons and a small calculator."><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/how-much-paint-do-i-need-for-a-room/"><meta property="og:type" content="website"><meta property="og:title" content="How Much Paint Do I Need for a Room? Formula and Example"><meta property="og:description" content="Work out the paint for any room: wall area, doors and windows, coats, waste and texture, with a worked example in gallons and a small calculator."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/how-much-paint-do-i-need-for-a-room/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How Much Paint Do I Need for a Room? Formula and Example", "description": "Work out the paint for any room: wall area, doors and windows, coats, waste and texture, with a worked example in gallons and a small calculator.", "dateModified": "2026-11-21", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/how-much-paint-do-i-need-for-a-room/"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><p class="crumbs"><a href="../">Paint Calc: Room Paint Amount</a></p><h1>How Much Paint Do I Need for a Room? Formula and Example</h1><article class="guide"><p>To find how much paint a room needs, work out the wall area, subtract doors and windows, multiply by the number of coats, divide by the coverage printed on the can, then add a margin for waste. This page shows each step with a worked example and a calculator you can use right here.</p>
+<div class="calc"><form id="paintcalc">
+  <h3>Paint calculator</h3>
+  <p>
+    <label>Units
+      <select id="pc-unit">
+        <option value="imperial">Feet and gallons</option>
+        <option value="metric">Meters and liters</option>
+      </select>
+    </label>
+  </p>
+  <p>
+    <label>Length <input id="pc-l" type="number" min="0" max="100" step="any" value="12"></label>
+    <label>Width <input id="pc-w" type="number" min="0" max="100" step="any" value="14"></label>
+    <label>Height <input id="pc-h" type="number" min="0" max="100" step="any" value="8"></label>
+  </p>
+  <p>
+    <label>Doors <input id="pc-doors" type="number" min="0" max="50" step="1" value="1"></label>
+    <label>Windows <input id="pc-wins" type="number" min="0" max="50" step="1" value="2"></label>
+  </p>
+  <p>
+    <label>Coats
+      <select id="pc-coats">
+        <option>1</option><option selected>2</option><option>3</option><option>4</option>
+      </select>
+    </label>
+    <label><span id="pc-covlabel">Coverage (sq ft per gallon)</span> <input id="pc-cov" type="number" min="1" step="any" value="350"></label>
+  </p>
+  <p>
+    <label>Texture
+      <select id="pc-tex">
+        <option value="1">Smooth</option>
+        <option value="1.1">Light texture</option>
+        <option value="1.2">Heavy texture</option>
+      </select>
+    </label>
+    <label>Waste % <input id="pc-waste" type="number" min="0" max="25" step="1" value="10"></label>
+  </p>
+  <p><button type="submit">Calculate walls</button></p>
+  <p id="pc-out" aria-live="polite"></p>
+  <script>
+  (function () {
+    var FT = 0.3048, GAL = 3.785411784, SQFT = FT * FT, EPS = 1e-9;
+    var f = document.getElementById("paintcalc");
+    var unit = document.getElementById("pc-unit");
+    function $(id) { return document.getElementById(id); }
+    function num(id) { var v = parseFloat($(id).value); return isFinite(v) ? v : NaN; }
+
+    unit.addEventListener("change", function () {
+      var imp = unit.value === "imperial";
+      $("pc-covlabel").textContent = imp ? "Coverage (sq ft per gallon)" : "Coverage (m² per liter)";
+      $("pc-cov").value = imp ? 350 : 10;
+    });
+
+    function containers(litres, imp) {
+      if (litres <= EPS) return "none";
+      var parts = [];
+      if (imp) {
+        var q = Math.ceil(litres / GAL * 4 - EPS), g = Math.floor(q / 4), r = q % 4;
+        if (r === 3) { g += 1; r = 0; }
+        if (g > 0) parts.push(g + (g === 1 ? " gallon" : " gallons"));
+        if (r > 0) parts.push(r + (r === 1 ? " quart" : " quarts"));
+      } else {
+        var h = Math.ceil(litres * 2 - EPS);
+        var sizes = [["5 L", 10], ["2.5 L", 5], ["1 L", 2], ["0.5 L", 1]];
+        for (var i = 0; i < sizes.length; i++) {
+          var n = Math.floor(h / sizes[i][1]);
+          h = h % sizes[i][1];
+          if (n > 0) parts.push(n + " × " + sizes[i][0]);
+        }
+      }
+      return parts.join(" + ");
+    }
+
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var imp = unit.value === "imperial";
+      var k = imp ? FT : 1;
+      var l = num("pc-l") * k, w = num("pc-w") * k, h = num("pc-h") * k;
+      var doors = num("pc-doors"), wins = num("pc-wins");
+      var coats = num("pc-coats"), tex = num("pc-tex"), waste = num("pc-waste");
+      var cov = num("pc-cov");
+      var out = $("pc-out");
+      var bad = [l, w, h, doors, wins, coats, tex, waste, cov].some(isNaN);
+      if (bad || l < 0 || w < 0 || h < 0 || doors < 0 || wins < 0 || waste < 0 || waste > 25 || cov <= 0) {
+        out.textContent = "Check your numbers.";
+        return;
+      }
+      var covM2PerL = imp ? cov * SQFT / GAL : cov;
+      if (covM2PerL < 0.5 || covM2PerL > 50) {
+        out.textContent = "Coverage looks wrong. Use the figure printed on the can.";
+        return;
+      }
+      var doorM2 = imp ? 3 * FT * 7 * FT : 0.9 * 2.1;
+      var winM2 = imp ? 3 * FT * 4 * FT : 1.0 * 1.2;
+      var gross = 2 * (l + w) * h;
+      var net = Math.max(0, gross - doors * doorM2 - wins * winM2);
+      var litres = net * coats / covM2PerL * tex * (1 + waste / 100);
+      var amount = imp ? (litres / GAL).toFixed(2) + " gal" : litres.toFixed(2) + " L";
+      var area = imp ? (net / SQFT).toFixed(0) + " sq ft" : net.toFixed(1) + " m²";
+      out.textContent = "Net wall area: " + area + ". Paint: " + amount + ". Buy: " + containers(litres, imp) + ".";
+    });
+  })();
+  </script>
+</form>
+</div>
+<h2>The formula</h2>
+<ol><li><strong>Gross wall area</strong> = 2 × (length + width) × height</li><li><strong>Openings</strong> = width × height × count, for every door and window</li><li><strong>Net wall area</strong> = gross wall area − openings</li><li><strong>Paint needed</strong> = net area × coats ÷ coverage × texture factor × (1 + waste %)</li></ol>
+<p>Coverage is the number on the can: how many square feet one gallon covers (or how many square meters one liter covers). Use the figure for the product you will actually buy. The app's starting value is 350 sq ft per gallon, or 10 m² per liter, which you can change.</p>
+<h3>Texture factor</h3>
+<p>Rough surfaces soak up more paint. The app uses these factors:</p>
+<div class="table"><table><thead><tr><th>Surface</th><th>Factor</th></tr></thead><tbody><tr><td>Smooth</td><td>1.00</td></tr><tr><td>Light texture</td><td>1.10 (10% more)</td></tr><tr><td>Heavy texture</td><td>1.20 (20% more)</td></tr></tbody></table></div>
+<h3>Waste</h3>
+<p>Waste covers spills, roller loss, touch-ups and the paint left in the tray. The app starts at 10% and lets you set anything from 0% to 25%.</p>
+<h2>Worked example</h2>
+<p>A bedroom is 12 ft long, 14 ft wide and has 8 ft walls. It has one door (3 × 7 ft) and two windows (3 × 4 ft each). You want two coats of smooth finish, the can says 350 sq ft per gallon, and you allow 10% waste.</p>
+<ol><li>Gross walls: 2 × (12 + 14) × 8 = 416 sq ft</li><li>Openings: 21 + 12 + 12 = 45 sq ft</li><li>Net walls: 416 − 45 = 371 sq ft</li><li>Paint: 371 × 2 ÷ 350 = 2.12 gal, × 1.00 texture = 2.12 gal</li><li>With waste: 2.12 × 1.10 = <strong>2.33 gal</strong></li></ol>
+<h3>Round up to cans you can buy</h3>
+<p>Nobody sells 2.33 gallons. The app rounds up to the next quart, which gives 10 quarts, or <strong>2 gallons and 2 quarts</strong>.</p>
+<p>One rule matters here: if the rounding ends on 3 quarts, the app gives you one more gallon instead. A gallon usually costs less than three quarts, so 2 gallons and 3 quarts becomes 3 gallons.</p>
+<p>In metric, the app rounds up to the next half liter and fills it with the largest tins first: 5 L, 2.5 L, 1 L and 0.5 L. For example, 9.22 L becomes 9.5 L, which is one 5 L tin, one 2.5 L tin and two 1 L tins.</p>
+<h2>The ceiling</h2>
+<p>The ceiling is length × width, so a 12 × 14 ft room has 168 sq ft. With two coats at the same coverage and 10% waste:</p>
+<p>168 × 2 ÷ 350 × 1.10 = 1.06 gal, which rounds to <strong>1 gallon and 1 quart</strong>.</p>
+<p>Ceilings are usually painted separately from walls, so calculate them as their own line. The app does that: walls, ceiling, trim and primer each have their own switch, coat count and coverage.</p>
+<h2>Trim and primer</h2>
+<ul><li><strong>Trim:</strong> length of trim × a 4 inch band (0.1 m in metric). By default the length is the room perimeter. Texture does not add paint to trim.</li><li><strong>Primer:</strong> net wall area, plus the ceiling when the ceiling is switched on.</li></ul>
+<h2>Common mistakes</h2>
+<ul><li><strong>Forgetting the second coat.</strong> Most color changes need two. Coats multiply the whole result.</li><li><strong>Using the wrong coverage.</strong> Coverage differs between products. Read the can, not a general chart.</li><li><strong>Skipping the waste margin.</strong> Running out mid-wall can cause color differences between batches.</li><li><strong>Rounding down.</strong> Always round up, then check whether the leftover is worth keeping for touch-ups.</li></ul>
+<h2>Do it on site</h2>
+<p>The formula is simple, but doing it for every room, with doors, windows and several surfaces, takes time. <strong>Offline Paint Coverage Calc</strong> for Android does all of it on your phone with no signal and no account. Enter length, width and height, tap a door or window preset, set coats and coverage, and get the answer in gallons and quarts or in liter tins. Rooms can be saved and shared as plain text.</p>
+<p>Results are estimates. Always check the coverage printed on your paint can.</p></article><aside class="cta"><img src="../icon.png" alt="" width="64" height="64"><div><b>Paint Calc: Room Paint Amount</b><p>Work out how much paint a room needs, with coats, doors and waste</p><a href="../">More about the app</a><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.offlinepaintcoveragecalc&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a></div></aside><footer><a href="../">Paint Calc: Room Paint Amount</a> · <a href="../../">All apps</a> · © 2026 Gerrit Schimpf</footer></main></body></html>

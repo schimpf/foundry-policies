@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Paint Calc: pintura por sala</title><meta name="description" content="Calcula cuánta pintura necesita una sala, con manos, puertas y desperdicio"><meta name="theme-color" content="#0f766e"><link rel="canonical" href="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/es/"><link rel="alternate" hreflang="en" href="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/"><link rel="alternate" hreflang="de-DE" href="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/de/"><link rel="alternate" hreflang="es-ES" href="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/es/"><link rel="alternate" hreflang="x-default" href="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/"><meta property="og:type" content="website"><meta property="og:title" content="Paint Calc: pintura por sala"><meta property="og:description" content="Calcula cuánta pintura necesita una sala, con manos, puertas y desperdicio"><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/es/"><meta property="og:image" content="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/feature.png"><link rel="icon" href="../icon.png"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Paint Calc: pintura por sala", "description": "Calcula cuánta pintura necesita una sala, con manos, puertas y desperdicio", "operatingSystem": "Android", "applicationCategory": "House &amp; Home", "inLanguage": "es", "author": {"@type": "Person", "name": "Gerrit Schimpf"}, "url": "https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/es/", "image": "https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/feature.png", "screenshot": ["https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/screen-1.png", "https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/screen-2.png", "https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/screen-3.png", "https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/screen-4.png", "https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/screen-5.png", "https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/screen-6.png"], "installUrl": "https://play.google.com/store/apps/details?id=es.schimpf.offlinepaintcoveragecalc"}</script><style>
+:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--card:#fff;--line:#e7e5e4;--accent:#0f766e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--card:#292524;--line:#44403c;--accent:#5eead4}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
+.hero{display:flex;gap:20px;align-items:center;margin-bottom:24px}.hero img{width:96px;height:96px;border-radius:22px;flex:none}
+h1{margin:0;font-size:2rem;line-height:1.2}.tag{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+.feature{width:100%;border-radius:12px;margin:8px 0 24px}.desc{white-space:pre-line;max-width:680px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;scroll-snap-type:x mandatory}
+.shots img{height:440px;max-height:70vh;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:10px 18px;border-radius:999px;
+text-decoration:none;font-weight:600;margin:8px 0 16px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.apps{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.apps a{display:flex;gap:14px;align-items:center;padding:14px;background:var(--card);border:1px solid var(--line);
+border-radius:14px;text-decoration:none;color:var(--fg)}.apps img{width:56px;height:56px;border-radius:13px;flex:none}
+.apps small{display:block;color:var(--muted)}
+.shots img{width:auto}.shots.wide img{height:360px}.badge{display:inline-block;margin:8px 0 16px}.badge img{display:block}
+.table{overflow-x:auto}table{border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.crumbs{margin:0 0 8px}.guide{max-width:720px}.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+.cta{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:32px 0}
+.cta img{border-radius:14px;flex:none}.cta p{margin:4px 0}small{color:var(--muted)}
+</style></head><body><main><header class="hero"><img src="../icon.png" alt="" width="96" height="96"><div><h1>Paint Calc: pintura por sala</h1><p class="tag">Calcula cuánta pintura necesita una sala, con manos, puertas y desperdicio</p></div></header><a class="badge" href="https://play.google.com/store/apps/details?id=es.schimpf.offlinepaintcoveragecalc&amp;hl=es"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="155" height="60"></a><img class="feature" src="../feature.png" alt="Paint Calc: pintura por sala" width="1024" height="500"><div class="shots"><img src="../screen-1.png" alt="Screenshot 1" width="1080" height="2160" loading="lazy"><img src="../screen-2.png" alt="Screenshot 2" width="1080" height="2160" loading="lazy"><img src="../screen-3.png" alt="Screenshot 3" width="1080" height="2160" loading="lazy"><img src="../screen-4.png" alt="Screenshot 4" width="1080" height="2160" loading="lazy"><img src="../screen-5.png" alt="Screenshot 5" width="1080" height="2160" loading="lazy"><img src="../screen-6.png" alt="Screenshot 6" width="1080" height="2160" loading="lazy"></div><h2>Acerca de la app</h2><p class="desc">Paint Calc calcula cuánta pintura necesita una sala y redondea el resultado a botes que realmente puedes comprar. Funciona en tu dispositivo, sin cuenta ni inicio de sesión, así que puedes usarla en la obra, en la tienda o en un sótano sin cobertura.
+
+RÁPIDO O PARED POR PARED
+- Modo rápido: escribe largo, ancho y alto y la superficie de las paredes se calcula sola.
+- Modo por paredes: añade las paredes una a una para salas irregulares, huecos de escalera y buhardillas.
+- Descuenta puertas y ventanas con un toque, con medidas estándar o medidas propias.
+
+CADA SUPERFICIE A TU MANERA
+- Paredes, techo, rodapiés e imprimación, cada uno con su interruptor, sus manos (de 1 a 4) y su rendimiento.
+- Escribe el rendimiento que indica el bote, en sq ft por galón o m2 por litro.
+- Textura lisa, ligera o fuerte: añade un 0, 10 o 20 por ciento más de pintura.
+- Control de desperdicio de 0 a 25 por ciento.
+
+RESPUESTAS EN BOTES, NO EN DECIMALES
+- Imperial: galones y cuartos. Si tres cuartos costarían más que un galón, recibes el galón.
+- Métrico: botes de 5 L, 2,5 L, 1 L y 0,5 L.
+- Consulta el total y el desglose de cada superficie.
+
+GUARDA Y COMPARTE
+- Guarda tantas salas como quieras.
+- Comparte el resultado de una sala como texto con cualquier app.
+- Un widget en la pantalla de inicio muestra la pintura de la última sala o proyecto que abriste.
+
+PRO (UNA COMPRA INTEGRADA)
+Las funciones anteriores están incluidas en la app base. Estas funciones requieren la compra Pro, que se hace a través de Google Play:
+- Proyectos: agrupa salas y obtén totales por superficie y por pintura. La pintura se agrupa por producto, así que puedes comprar menos botes que sala por sala.
+- Estimación de coste: guarda los precios de tu pintura por tamaño de bote y consulta el coste de cada proyecto en tu moneda.
+- Presupuestos en PDF: nombre de tu empresa, cliente, salas, cantidades de pintura, coste de la pintura y una línea opcional de mano de obra. Comparte el PDF desde el móvil.
+- Comparte proyectos completos como texto.
+
+PARA MÓVILES Y TABLETS
+- Diseño de dos paneles en tablets y plegables.
+- El tema claro y oscuro sigue el ajuste del sistema.
+- Etiquetas para lectores de pantalla y zonas táctiles grandes.
+
+TUS DATOS SE QUEDAN EN TU DISPOSITIVO
+Paint Calc no solicita el permiso de internet. Tus salas, proyectos y nombres de clientes se guardan solo en este dispositivo y se excluyen de la copia de seguridad en la nube. La única conexión es con Google Play, para la compra Pro opcional.
+
+Los resultados son estimaciones. Comprueba siempre el rendimiento indicado en el bote de pintura.</p><footer><a href="../privacy/">Privacy policy</a> · <a href="../../">All apps</a> · <a href="mailto:apps@schimpf.es">Contact</a> · <a href="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/" hreflang="en">EN</a> · <a href="https://schimpf.github.io/foundry-policies/offline-paint-coverage-calc/de/" hreflang="de">DE</a> · © 2026 Gerrit Schimpf</footer></main></body></html>
