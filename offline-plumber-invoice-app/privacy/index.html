@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plumber Invoice: Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.55; color: #1b2430; max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 1.8rem; margin-bottom: 4px; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; }
+  .meta { color: #55606e; margin-top: 0; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: 6px; }
+  a { color: #2B5EA7; }
+</style>
+<meta name="robots" content="noindex"><link rel="canonical" href="https://apps.schimpf.es/offline-plumber-invoice-app/privacy/"></head>
+<body>
+<h1>Plumber Invoice: Privacy Policy</h1>
+<p class="meta">App: Plumber Invoice (package es.schimpf.offlineplumberinvoiceapp)<br>
+Developer: Gerrit Schimpf<br>
+Contact: <a href="mailto:apps@schimpf.es">apps@schimpf.es</a><br>
+Effective: 2026-11-23</p>
+
+<h2>Short version</h2>
+<p>The app has no account, no server and no internet permission. The developer does not receive, collect or store any of your data. Your customers, quotes, invoices, photos and signatures stay on your device.</p>
+
+<h2>What the app stores on your device</h2>
+<ul>
+  <li>Your business profile: name, address, phone, email, license number, tax rate, payment terms and numbering prefixes.</li>
+  <li>Your customers: name, phone, email, service address and notes.</li>
+  <li>Jobs, quotes, invoices, line items, payments and the send queue.</li>
+  <li>Job photos, customer signature images and your logo (logo and signature images are Pro features).</li>
+  <li>App settings, such as whether the app lock is on and whether Pro is unlocked.</li>
+</ul>
+<p>The database is encrypted with SQLCipher. Photos, signatures and the logo are encrypted files. The keys are kept in the Android Keystore. The app turns off Android cloud backup and device transfer for its data (allowBackup is false). Uninstalling the app deletes all of this data.</p>
+
+<h2>Internet use</h2>
+<p>The app does not request the INTERNET permission, so it cannot send data over the network by itself. It uses the ACCESS_NETWORK_STATE permission only to learn whether the device has a connection. It uses this to decide whether to queue a document in the Outbox and when to remind you that you can send it.</p>
+
+<h2>Permissions</h2>
+<ul>
+  <li>ACCESS_NETWORK_STATE: detects whether the device is online.</li>
+  <li>POST_NOTIFICATIONS: shows one reminder when you have documents waiting in the Outbox and signal returns. The notification shows only a count.</li>
+  <li>USE_BIOMETRIC: lets you lock the app with fingerprint, face or device PIN. This is optional. The app does not see or store your biometric data. Android handles it.</li>
+  <li>com.android.vending.BILLING: lets you buy Pro through Google Play.</li>
+</ul>
+<p>The app has no location, contacts, microphone or storage permission. Photos are taken with your camera app through the standard Android camera intent. The app receives only the photo you take.</p>
+
+<h2>Sharing documents</h2>
+<p>When you send a quote or invoice, the app creates a PDF on the device and hands it to the app you choose in the Android share sheet (SMS, WhatsApp, email or another app). That app and its provider then handle the file under their own policies. The app deletes its temporary PDF copy after the item is sent, and after 24 hours at the latest. The developer never sees these documents.</p>
+
+<h2>Backups</h2>
+<p>Backups are created only when you ask for one. The app encrypts the backup file with a passphrase you choose, then writes it to a place you pick through the Android file picker, such as local storage or Google Drive. The passphrase is never stored. If you lose it, the backup cannot be opened and the developer cannot recover it. Where you save the file is governed by that storage provider.</p>
+
+<h2>Purchases</h2>
+<p>Pro is a one-time in-app purchase handled by Google Play. Google processes the payment and your account details under its own privacy policy. The developer does not receive your payment information. The app asks Google Play for your purchase status and keeps a local copy, so Pro keeps working without signal.</p>
+
+<h2>Ratings prompt</h2>
+<p>After you have sent documents on several days, the app may show the Google Play in-app review dialog. Google Play runs this dialog. The app does not receive your rating or review text.</p>
+
+<h2>Links</h2>
+<p>The "More apps" item in Settings opens the developer website (apps.schimpf.es) in your browser. Your browser and that website handle that visit.</p>
+
+<h2>Analytics, ads and tracking</h2>
+<p>The app has no analytics, no crash reporting, no advertising and no tracking. It does not share data with third parties.</p>
+
+<h2>Widget</h2>
+<p>The optional home screen widget shows your open balance and the number of unpaid invoices. It reads this from the local database. While the app lock is on, the widget hides the amounts.</p>
+
+<h2>Children</h2>
+<p>The app is a business tool and is not directed at children.</p>
+
+<h2>Your choices and deletion</h2>
+<p>You can edit or delete customers, jobs, photos and documents in the app. Uninstalling the app removes everything it stored on the device. Backup files you saved elsewhere stay where you saved them until you delete them.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version is published at this address with a new effective date.</p>
+
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:apps@schimpf.es">apps@schimpf.es</a></p>
+</body>
+</html>
