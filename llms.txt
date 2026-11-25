@@ -40,6 +40,7 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [TDS Section Calc India](https://apps.schimpf.es/india-offline-tds-section-calc/index.md): Calculate TDS by section with 1961 and 2025 Act numbers and due dates.
 - [Time Study Stopwatch](https://apps.schimpf.es/time-study-stopwatch/index.md): Time work elements with one lap tap. Averages, rating and standard time.
 - [Tinag2: Icinga & Nagios Alerts](https://apps.schimpf.es/tinag2/index.md): Watch Icinga 2 and Nagios problems, acknowledge them and get alerts.
+- [WiFi Scanner & Network Tools](https://apps.schimpf.es/wifi-manager-and-test-tool/index.md): See who is on your WiFi. Ping, traceroute, DNS lookup and port checks.
 - [Wire Gauge Calculator: NEC](https://apps.schimpf.es/offline-wire-gauge-calculator/index.md): Size wire by NEC ampacity, voltage drop and breaker rules
 
 ## Guides
@@ -127,5 +128,8 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [Standard Time Formula With a Worked Example](https://apps.schimpf.es/time-study-stopwatch/standard-time-formula-example/index.md): Time Study Stopwatch, How to calculate normal time and standard time from stopwatch readings, rating and allowance, with a worked example and a small calculator.
 - [SHA-256 fingerprint of a self-signed Icinga certificate](https://apps.schimpf.es/tinag2/icinga-self-signed-certificate-fingerprint/index.md): Tinag2: Icinga & Nagios Alerts, How to read the SHA-256 fingerprint of an Icinga 2 or Thruk server certificate with openssl, and how to use it to connect a mobile app safely.
 - [Nagios and Icinga soft vs hard states explained](https://apps.schimpf.es/tinag2/nagios-soft-vs-hard-states-explained/index.md): Tinag2: Icinga & Nagios Alerts, What soft and hard states mean in Nagios and Icinga 2, how check attempts work, and how long a failure takes to become hard. With a worked example.
+- [Common Network Ports List and What They Mean](https://apps.schimpf.es/wifi-manager-and-test-tool/common-network-ports-list/index.md): WiFi Scanner & Network Tools, A list of common TCP ports on home networks, what each service does, and how to check which ports a device has open on your own network.
+- [WiFi Channel and Frequency Chart (2.4, 5, 6 GHz)](https://apps.schimpf.es/wifi-manager-and-test-tool/wifi-channel-and-frequency-chart/index.md): WiFi Scanner & Network Tools, Convert a WiFi frequency in MHz to its channel number, with a chart for 2.4, 5 and 6 GHz and how to pick a channel.
+- [WiFi Signal Strength Chart (dBm to Signal Quality)](https://apps.schimpf.es/wifi-manager-and-test-tool/wifi-signal-strength-chart/index.md): WiFi Scanner & Network Tools, What WiFi dBm values mean, from -30 to -100 dBm. A chart, a quick lookup tool and what to do when your signal is weak.
 - [12V Wire Size and Voltage Drop Formula, With Example](https://apps.schimpf.es/offline-wire-gauge-calculator/12v-wire-size-voltage-drop/index.md): Wire Gauge Calculator: NEC, How to pick wire gauge for a 12V or 24V run: the voltage drop formula, a worked example, and the maximum length for each wire size.
 - [AWG to mm² Chart: Wire Size, Area and Resistance](https://apps.schimpf.es/offline-wire-gauge-calculator/awg-to-mm2-chart/index.md): Wire Gauge Calculator: NEC, Convert AWG to mm² with a chart of area, nearest metric size and copper resistance, plus the formula and a worked example.
