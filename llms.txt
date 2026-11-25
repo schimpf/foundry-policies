@@ -9,6 +9,7 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 
 - [Alarm Clock: Wake-Up Missions](https://apps.schimpf.es/alarm-clock/index.md): Reliable alarms for heavy sleepers. Solve a task to switch the alarm off.
 - [Storage Analyzer: Big Files](https://apps.schimpf.es/ad-free-storage-analyzer/index.md): Find large files, duplicates and old junk, then clear space safely.
+- [Stutter Practice: DAF](https://apps.schimpf.es/android-stutter-practice-offline/index.md): DAF, paced speech and easy onset practice for people who stutter.
 
 ## Guides
 
@@ -18,3 +19,6 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [How to Find Duplicate Files on Android](https://apps.schimpf.es/ad-free-storage-analyzer/find-duplicate-files-on-android/index.md): Storage Analyzer: Big Files, How to find exact duplicate files on an Android phone, how checksums prove two files are the same, and which copy to keep when you delete.
 - [How to Find Old Unused Files on Android](https://apps.schimpf.es/ad-free-storage-analyzer/find-old-files-on-android/index.md): Storage Analyzer: Big Files, Find files you have not changed for more than 90 days: old downloads, screenshots, WhatsApp media and APK installers. See the rules and a worked example.
 - [MB to GB Conversion Chart for Phone Storage](https://apps.schimpf.es/ad-free-storage-analyzer/mb-to-gb-conversion-chart/index.md): Storage Analyzer: Big Files, Convert MB to GB and back with a chart and a calculator. Learn why a 128 GB phone shows less space, with worked examples for GB and GiB.
+- [DAF Delay Settings in ms: What to Set and Why](https://apps.schimpf.es/android-stutter-practice-offline/daf-delay-settings-ms/index.md): Stutter Practice: DAF, How much delay to set for delayed auditory feedback, why your phone adds its own delay, and a worked example with a calculator.
+- [Easy Onset Exercises for Stuttering, Step by Step](https://apps.schimpf.es/android-stutter-practice-offline/easy-onset-exercises-stuttering/index.md): Stutter Practice: DAF, How to practice easy onset (gentle voice start) for stuttering, with a six-step exercise ladder and the 120 ms rise-time rule.
+- [Syllables Per Minute Chart for Paced Speech](https://apps.schimpf.es/android-stutter-practice-offline/syllables-per-minute-chart/index.md): Stutter Practice: DAF, Convert syllables per minute to beat time and sentence time, with a worked example and a small calculator for paced speech practice.
