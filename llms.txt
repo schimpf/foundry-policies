@@ -20,6 +20,7 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [Horse Care Log: Farrier & Vet](https://apps.schimpf.es/horse-care-log/index.md): Horse care log: farrier, vaccines, worming, vet notes, costs, reminders.
 - [Storage Analyzer: Big Files](https://apps.schimpf.es/ad-free-storage-analyzer/index.md): Find large files, duplicates and old junk, then clear space safely.
 - [Stutter Practice: DAF](https://apps.schimpf.es/android-stutter-practice-offline/index.md): DAF, paced speech and easy onset practice for people who stutter.
+- [TDS Section Calc India](https://apps.schimpf.es/india-offline-tds-section-calc/index.md): Calculate TDS by section with 1961 and 2025 Act numbers and due dates.
 
 ## Guides
 
@@ -56,3 +57,6 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [DAF Delay Settings in ms: What to Set and Why](https://apps.schimpf.es/android-stutter-practice-offline/daf-delay-settings-ms/index.md): Stutter Practice: DAF, How much delay to set for delayed auditory feedback, why your phone adds its own delay, and a worked example with a calculator.
 - [Easy Onset Exercises for Stuttering, Step by Step](https://apps.schimpf.es/android-stutter-practice-offline/easy-onset-exercises-stuttering/index.md): Stutter Practice: DAF, How to practice easy onset (gentle voice start) for stuttering, with a six-step exercise ladder and the 120 ms rise-time rule.
 - [Syllables Per Minute Chart for Paced Speech](https://apps.schimpf.es/android-stutter-practice-offline/syllables-per-minute-chart/index.md): Stutter Practice: DAF, Convert syllables per minute to beat time and sentence time, with a worked example and a small calculator for paced speech practice.
+- [TDS Due Dates and Late Interest Calculation](https://apps.schimpf.es/india-offline-tds-section-calc/tds-due-dates-and-late-interest/index.md): TDS Section Calc India, Monthly TDS deposit dates, 26Q return dates, and how to work out interest for late deduction or deposit and the late filing fee.
+- [TDS on Contractor Payment 194C: Calculator and Example](https://apps.schimpf.es/india-offline-tds-section-calc/tds-on-contractor-payment-194c-calculator/index.md): TDS Section Calc India, Work out TDS under section 194C: rate for individuals and companies, the Rs 30,000 and Rs 1,00,000 limits, and a worked example.
+- [TDS Rate Chart FY 2025-26 with New Section Numbers](https://apps.schimpf.es/india-offline-tds-section-calc/tds-rate-chart-fy-2025-26/index.md): TDS Section Calc India, Non-salary TDS rates, thresholds and no-PAN rates for FY 2025-26, with each section's matching number in the Income-tax Act 2025.
