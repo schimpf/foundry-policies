@@ -34,6 +34,7 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [Storage Analyzer: Big Files](https://apps.schimpf.es/ad-free-storage-analyzer/index.md): Find large files, duplicates and old junk, then clear space safely.
 - [Stutter Practice: DAF](https://apps.schimpf.es/android-stutter-practice-offline/index.md): DAF, paced speech and easy onset practice for people who stutter.
 - [TDS Section Calc India](https://apps.schimpf.es/india-offline-tds-section-calc/index.md): Calculate TDS by section with 1961 and 2025 Act numbers and due dates.
+- [Wire Gauge Calculator: NEC](https://apps.schimpf.es/offline-wire-gauge-calculator/index.md): Size wire by NEC ampacity, voltage drop and breaker rules
 
 ## Guides
 
@@ -107,3 +108,5 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [TDS Due Dates and Late Interest Calculation](https://apps.schimpf.es/india-offline-tds-section-calc/tds-due-dates-and-late-interest/index.md): TDS Section Calc India, Monthly TDS deposit dates, 26Q return dates, and how to work out interest for late deduction or deposit and the late filing fee.
 - [TDS on Contractor Payment 194C: Calculator and Example](https://apps.schimpf.es/india-offline-tds-section-calc/tds-on-contractor-payment-194c-calculator/index.md): TDS Section Calc India, Work out TDS under section 194C: rate for individuals and companies, the Rs 30,000 and Rs 1,00,000 limits, and a worked example.
 - [TDS Rate Chart FY 2025-26 with New Section Numbers](https://apps.schimpf.es/india-offline-tds-section-calc/tds-rate-chart-fy-2025-26/index.md): TDS Section Calc India, Non-salary TDS rates, thresholds and no-PAN rates for FY 2025-26, with each section's matching number in the Income-tax Act 2025.
+- [12V Wire Size and Voltage Drop Formula, With Example](https://apps.schimpf.es/offline-wire-gauge-calculator/12v-wire-size-voltage-drop/index.md): Wire Gauge Calculator: NEC, How to pick wire gauge for a 12V or 24V run: the voltage drop formula, a worked example, and the maximum length for each wire size.
+- [AWG to mm² Chart: Wire Size, Area and Resistance](https://apps.schimpf.es/offline-wire-gauge-calculator/awg-to-mm2-chart/index.md): Wire Gauge Calculator: NEC, Convert AWG to mm² with a chart of area, nearest metric size and copper resistance, plus the formula and a worked example.
