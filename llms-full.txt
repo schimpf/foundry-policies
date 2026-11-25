@@ -9,6 +9,7 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 
 - [Alarm Clock: Wake-Up Missions](https://apps.schimpf.es/alarm-clock/index.md): Reliable alarms for heavy sleepers. Solve a task to switch the alarm off.
 - [Anti-Bucket List: No Journal](https://apps.schimpf.es/anti-bucket-list/index.md): Write down what you said no to and check later if you're still glad.
+- [Hive Log: Beekeeping Journal](https://apps.schimpf.es/beekeeping-hive-log/index.md): Log hive inspections, treatments and feedings, track varroa, set reminders.
 - [Storage Analyzer: Big Files](https://apps.schimpf.es/ad-free-storage-analyzer/index.md): Find large files, duplicates and old junk, then clear space safely.
 - [Stutter Practice: DAF](https://apps.schimpf.es/android-stutter-practice-offline/index.md): DAF, paced speech and easy onset practice for people who stutter.
 
@@ -19,6 +20,8 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [Snooze Time Calculator: How Late Will You Wake Up?](https://apps.schimpf.es/alarm-clock/snooze-time-calculator/index.md): Alarm Clock: Wake-Up Missions, Work out how many minutes snoozing costs you and when the last alarm rings. Includes a calculator and a worked example.
 - [How to Keep a Journal of Things You Said No To](https://apps.schimpf.es/anti-bucket-list/how-to-keep-a-decision-journal-of-no/index.md): Anti-Bucket List: No Journal, A step-by-step way to record what you declined, why it felt that way, and when to review it. Includes a 30 and 90 day check-in schedule.
 - [Regret Rate Calculator: How Often Do You Regret No?](https://apps.schimpf.es/anti-bucket-list/regret-rate-calculator/index.md): Anti-Bucket List: No Journal, Work out your regret rate for the things you declined. Formula, a worked example and a small calculator you can use right here.
+- [Bee Syrup Ratio 1:1 and 2:1 Chart and Converter](https://apps.schimpf.es/beekeeping-hive-log/bee-syrup-ratio-1-1-and-2-1/index.md): Hive Log: Beekeeping Journal, Sugar and water amounts for 1:1 and 2:1 bee syrup, with a chart, worked examples and metric to imperial conversions.
+- [Bee Treatment Withdrawal Period Calculator](https://apps.schimpf.es/beekeeping-hive-log/bee-treatment-withdrawal-period-calculator/index.md): Hive Log: Beekeeping Journal, Work out when a hive treatment withdrawal period ends. Formula, three worked examples, a quick table and a calculator.
 - [How to Find Duplicate Files on Android](https://apps.schimpf.es/ad-free-storage-analyzer/find-duplicate-files-on-android/index.md): Storage Analyzer: Big Files, How to find exact duplicate files on an Android phone, how checksums prove two files are the same, and which copy to keep when you delete.
 - [How to Find Old Unused Files on Android](https://apps.schimpf.es/ad-free-storage-analyzer/find-old-files-on-android/index.md): Storage Analyzer: Big Files, Find files you have not changed for more than 90 days: old downloads, screenshots, WhatsApp media and APK installers. See the rules and a worked example.
 - [MB to GB Conversion Chart for Phone Storage](https://apps.schimpf.es/ad-free-storage-analyzer/mb-to-gb-conversion-chart/index.md): Storage Analyzer: Big Files, Convert MB to GB and back with a chart and a calculator. Learn why a 128 GB phone shows less space, with worked examples for GB and GiB.
@@ -253,6 +256,109 @@ Android 8.0 or newer. It works on phones and tablets, in light and dark mode.
 ### Can I move my journal to a new phone?
 
 Yes, with a backup. Save a JSON file on the old phone, copy it over, and restore it in Settings on the new one.
+
+---
+
+# Hive Log: Beekeeping Journal
+
+> Log hive inspections, treatments and feedings, track varroa, set reminders.
+
+- Android app, Gerrit Schimpf
+- Web: https://apps.schimpf.es/beekeeping-hive-log/
+- Google Play: https://play.google.com/store/apps/details?id=es.schimpf.beekeepinghivelog&hl=en
+- Privacy policy: https://apps.schimpf.es/beekeeping-hive-log/privacy/
+- Productivity
+- Contact: apps@schimpf.es
+- DE: https://apps.schimpf.es/beekeeping-hive-log/de/index.md
+- ES: https://apps.schimpf.es/beekeeping-hive-log/es/index.md
+
+## About
+
+Beekeeping Hive Log is a simple inspection log for backyard beekeepers. It works without an account and keeps all your data on your device.
+
+## Features
+
+### Fast inspections, even with gloves
+
+- Large buttons for queen seen, eggs, brood pattern and temperament
+- Optional varroa count with a minus and plus stepper
+- Answers from the last inspection are filled in, so a routine check takes a few taps
+
+### Everything per hive
+
+- One timeline per hive with inspections, treatments and feedings
+- Varroa trend chart with a guideline line at 3 mites per day, plus a text summary and a table view
+- Hive status at a glance: OK, needs attention, or in a withdrawal period
+- Archive hives you no longer keep without losing their history
+
+### Treatments and feeding
+
+- Log treatments with a withdrawal period. The app shows a warning until it ends and can remind you on the end date. It never blocks you.
+- Log feedings: syrup 1:1, syrup 2:1, fondant or pollen patty
+- Metric or imperial units
+
+### Reminders
+
+- One-off reminders or repeats every N days
+- Notifications at a time you choose, 08:00 by default
+- Home screen widget with your next reminders and the hives that need attention
+
+### Your data stays on your device
+
+- The app has no internet permission and sends nothing anywhere
+- No account, no analytics
+- Backup and restore to a file you pick. The backup is plain JSON and not encrypted, so keep it somewhere private.
+
+### For every screen
+
+- Phones and tablets, with a list and detail view side by side on larger screens
+- Light and dark theme follow your system setting
+- Screen reader labels, large touch targets and high-contrast support
+
+### Free and pro
+
+Included without purchase: up to 3 active hives, all logging, reminders, the widget and backup. Archived hives do not count towards the 3. Pro is a single purchase through Google Play, not a subscription. It unlocks unlimited hives and CSV and PDF export that you can share with a vet or inspector.
+
+The varroa guideline line is a display hint, not treatment advice. Follow local regulations and product labels for treatments and withdrawal periods.
+
+## Screenshots
+
+- [New hive](https://apps.schimpf.es/beekeeping-hive-log/screen-1.png)
+- [Inspection log](https://apps.schimpf.es/beekeeping-hive-log/screen-2.png)
+- [Hive list](https://apps.schimpf.es/beekeeping-hive-log/screen-3.png)
+- [Reminders](https://apps.schimpf.es/beekeeping-hive-log/screen-4.png)
+- [Settings](https://apps.schimpf.es/beekeeping-hive-log/screen-5.png)
+
+## Guides
+
+- [Bee Syrup Ratio 1:1 and 2:1 Chart and Converter](https://apps.schimpf.es/beekeeping-hive-log/bee-syrup-ratio-1-1-and-2-1/index.md): Sugar and water amounts for 1:1 and 2:1 bee syrup, with a chart, worked examples and metric to imperial conversions.
+- [Bee Treatment Withdrawal Period Calculator](https://apps.schimpf.es/beekeeping-hive-log/bee-treatment-withdrawal-period-calculator/index.md): Work out when a hive treatment withdrawal period ends. Formula, three worked examples, a quick table and a calculator.
+
+## Questions and answers
+
+### What does the app do?
+
+It logs inspections, treatments and feedings for each hive on one timeline, and charts varroa counts. It also sets one-off or repeating reminders and has a home screen widget.
+
+### What does it not do?
+
+It has no accounts, cloud sync, photos, harvest logging or multiple apiaries. It does not give treatment advice, and the varroa line at 3 mites per day is only a display hint.
+
+### Where is my data stored?
+
+Only on your device. The app has no internet permission, no account and no analytics. Backup and restore use a plain JSON file you pick, which is not encrypted, so keep it somewhere private.
+
+### What is free and what needs a purchase?
+
+Up to 3 active hives, all logging, reminders, the widget and backup are free, and archived hives do not count. Pro is a single purchase through Google Play, not a subscription, and adds unlimited hives and CSV and PDF export.
+
+### Does it block me during a withdrawal period?
+
+No. It shows a warning until the withdrawal ends and can offer a reminder for the end date, but you can always save.
+
+### Which Android versions are supported?
+
+Android 8.0 (API 26) and newer, on phones and tablets.
 
 ---
 
