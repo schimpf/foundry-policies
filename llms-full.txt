@@ -19,6 +19,7 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [Hive Log: Beekeeping Journal](https://apps.schimpf.es/beekeeping-hive-log/index.md): Log hive inspections, treatments and feedings, track varroa, set reminders.
 - [Horse Care Log: Farrier & Vet](https://apps.schimpf.es/horse-care-log/index.md): Horse care log: farrier, vaccines, worming, vet notes, costs, reminders.
 - [Job Loss Plan: 12-Week Guide](https://apps.schimpf.es/job-loss-12-week-plan/index.md): Laid off? A calm 12-week checklist with deadlines, budget and runway math.
+- [Metronome & Practice Log](https://apps.schimpf.es/metronome-and-practice-log/index.md): Metronome that logs your practice time automatically and tracks your streak
 - [Storage Analyzer: Big Files](https://apps.schimpf.es/ad-free-storage-analyzer/index.md): Find large files, duplicates and old junk, then clear space safely.
 - [Stutter Practice: DAF](https://apps.schimpf.es/android-stutter-practice-offline/index.md): DAF, paced speech and easy onset practice for people who stutter.
 - [TDS Section Calc India](https://apps.schimpf.es/india-offline-tds-section-calc/index.md): Calculate TDS by section with 1961 and 2025 Act numbers and due dates.
@@ -54,6 +55,9 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [Horse Vaccination Record: What to Write Down](https://apps.schimpf.es/horse-care-log/horse-vaccination-record-template/index.md): Horse Care Log: Farrier & Vet, What a horse vaccination record needs: product, batch number, vet, date and next due date. Includes a template table and a worked example.
 - [COBRA Election Deadline: How the 60 Days Work](https://apps.schimpf.es/job-loss-12-week-plan/cobra-election-deadline-60-days/index.md): Job Loss Plan: 12-Week Guide, How long you have to elect COBRA after a layoff, when the 60 days start, how to count them and which other health coverage dates to check.
 - [Layoff Runway Calculator: How Many Weeks Will Savings Last](https://apps.schimpf.es/job-loss-12-week-plan/layoff-runway-calculator/index.md): Job Loss Plan: 12-Week Guide, Work out how many weeks your savings, severance and unemployment benefit last after a layoff. Formula, worked example and a small calculator.
+- [How to Calculate Average BPM of a Practice Session](https://apps.schimpf.es/metronome-and-practice-log/average-bpm-practice-session/index.md): Metronome & Practice Log, Work out the time-weighted average tempo of a practice session when you change BPM along the way, with a worked example and common mistakes.
+- [BPM to Milliseconds Calculator and Formula](https://apps.schimpf.es/metronome-and-practice-log/bpm-to-milliseconds-calculator/index.md): Metronome & Practice Log, Convert BPM to milliseconds per beat with one formula, worked examples, and a table of note lengths from whole notes to sixteenths.
+- [Tempo Markings BPM Chart: Largo to Prestissimo](https://apps.schimpf.es/metronome-and-practice-log/tempo-markings-bpm-chart/index.md): Metronome & Practice Log, A chart of Italian tempo markings with BPM ranges, what each one feels like, and how to find the right marking for your piece.
 - [How to Find Duplicate Files on Android](https://apps.schimpf.es/ad-free-storage-analyzer/find-duplicate-files-on-android/index.md): Storage Analyzer: Big Files, How to find exact duplicate files on an Android phone, how checksums prove two files are the same, and which copy to keep when you delete.
 - [How to Find Old Unused Files on Android](https://apps.schimpf.es/ad-free-storage-analyzer/find-old-files-on-android/index.md): Storage Analyzer: Big Files, Find files you have not changed for more than 90 days: old downloads, screenshots, WhatsApp media and APK installers. See the rules and a worked example.
 - [MB to GB Conversion Chart for Phone Storage](https://apps.schimpf.es/ad-free-storage-analyzer/mb-to-gb-conversion-chart/index.md): Storage Analyzer: Big Files, Convert MB to GB and back with a chart and a calculator. Learn why a 128 GB phone shows less space, with worked examples for GB and GiB.
@@ -1188,6 +1192,115 @@ Android 8.0 (API 26) and newer, on phones and tablets.
 ### Can I protect my numbers?
 
 Yes, with an optional app lock using your fingerprint or screen lock. While it is on, screenshots of money screens are blocked and the widget hides your runway. Notifications never show amounts.
+
+---
+
+# Metronome & Practice Log
+
+> Metronome that logs your practice time automatically and tracks your streak
+
+- Android app, Gerrit Schimpf
+- Web: https://apps.schimpf.es/metronome-and-practice-log/
+- Google Play: https://play.google.com/store/apps/details?id=es.schimpf.metronomeandpracticelog&hl=en
+- Privacy policy: https://apps.schimpf.es/metronome-and-practice-log/privacy/
+- Music & Audio
+- Contact: apps@schimpf.es
+- DE: https://apps.schimpf.es/metronome-and-practice-log/de/index.md
+- ES: https://apps.schimpf.es/metronome-and-practice-log/es/index.md
+
+## About
+
+Press play and practise. Metronome & Practice Log keeps time and writes your practice diary for you.
+
+## Features
+
+### A metronome you can rely on
+
+- Tempo from 30 to 300 BPM with large minus and plus buttons, a slider and tap tempo
+- Time signatures 2/4, 3/4, 4/4, 5/4 and 6/8, with accents you set for each beat
+- Three sounds: click, wood and beep
+- Screen flash and vibration on the beat, with one simple switch for both
+- Steady timing in the background and with the screen off, with a notification to pause
+
+### Practice logging without extra taps
+
+- A session starts when you press play and ends when you pause
+- Sessions shorter than 30 seconds are ignored
+- Assign a piece, or log to "General"
+- Each session saves its time signature, your last tempo and the time-weighted average tempo
+- Edit or delete any session, with undo
+- Add, rename and delete your pieces
+
+### See your progress
+
+- Daily streak: every day with at least one minute of practice counts
+- Bar chart of your last 7 days
+
+### Pro (ONE-TIME PURCHASE)
+
+These features need the Pro purchase:
+
+The metronome, automatic logging, streaks and the 7-day chart work without it.
+
+- Export your log as CSV or JSON to a file you choose
+- Full graphs: 12 weeks of practice time and tempo progress for each piece
+- Accent colour themes
+- Home-screen widget with your streak, today's time and the last 7 days
+
+### Your data stays on your device
+
+- The app has no internet permission
+- No account, no analytics, no crash reporting
+- No cloud backup of your practice data. It stays on this device unless you export it.
+
+### Made to be easy to use
+
+Contact: apps@schimpf.es
+
+- Follows your system light or dark mode
+- Works with TalkBack: controls are labelled, the tempo is one adjustable control, and charts have a spoken summary
+- Large touch targets for quick use on a music stand
+- Phone and tablet layouts. On tablets, the metronome and your log sit side by side.
+
+## Screenshots
+
+- [Pieces](https://apps.schimpf.es/metronome-and-practice-log/screen-1.png)
+- [Metronome](https://apps.schimpf.es/metronome-and-practice-log/screen-2.png)
+- [Log](https://apps.schimpf.es/metronome-and-practice-log/screen-3.png)
+- [Stats](https://apps.schimpf.es/metronome-and-practice-log/screen-4.png)
+- [Settings](https://apps.schimpf.es/metronome-and-practice-log/screen-5.png)
+
+## Guides
+
+- [How to Calculate Average BPM of a Practice Session](https://apps.schimpf.es/metronome-and-practice-log/average-bpm-practice-session/index.md): Work out the time-weighted average tempo of a practice session when you change BPM along the way, with a worked example and common mistakes.
+- [BPM to Milliseconds Calculator and Formula](https://apps.schimpf.es/metronome-and-practice-log/bpm-to-milliseconds-calculator/index.md): Convert BPM to milliseconds per beat with one formula, worked examples, and a table of note lengths from whole notes to sixteenths.
+- [Tempo Markings BPM Chart: Largo to Prestissimo](https://apps.schimpf.es/metronome-and-practice-log/tempo-markings-bpm-chart/index.md): A chart of Italian tempo markings with BPM ranges, what each one feels like, and how to find the right marking for your piece.
+
+## Questions and answers
+
+### What does the app do?
+
+It is a metronome from 30 to 300 BPM with tap tempo, time signatures 2/4, 3/4, 4/4, 5/4 and 6/8, and three sounds. It also logs your practice automatically and counts a daily streak.
+
+### How does it log my practice?
+
+A session starts when you press play and ends when you pause. Sessions under 30 seconds are ignored, and each one saves its piece, time signature, last tempo and time-weighted average tempo. You can edit or delete any session.
+
+### Where is my data stored?
+
+On your device only. The app has no internet permission, no account, no analytics and no cloud backup, and your data leaves the device only if you export it.
+
+### What needs the Pro purchase?
+
+Export as CSV or JSON, the full graphs (12 weeks and tempo progress per piece), accent colour themes and the home-screen widget. The metronome, automatic logging, streaks and the 7-day chart are free.
+
+### Does it keep time with the screen off?
+
+Yes. It keeps steady time in the background and with the screen off, and a notification lets you pause it.
+
+### Which Android versions does it support?
+
+Android 8.0 or newer, on phones and tablets.
 
 ---
 
