@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://apps.schimpf.es/sitemap.xml
+# Markdown for AI agents: https://apps.schimpf.es/llms.txt
