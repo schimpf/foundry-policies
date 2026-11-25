@@ -9,6 +9,7 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 
 - [Alarm Clock: Wake-Up Missions](https://apps.schimpf.es/alarm-clock/index.md): Reliable alarms for heavy sleepers. Solve a task to switch the alarm off.
 - [Anti-Bucket List: No Journal](https://apps.schimpf.es/anti-bucket-list/index.md): Write down what you said no to and check later if you're still glad.
+- [Binaural Beats](https://apps.schimpf.es/binaural-beats/index.md): Binaural and isochronic beats to relax, focus or sleep.
 - [Hive Log: Beekeeping Journal](https://apps.schimpf.es/beekeeping-hive-log/index.md): Log hive inspections, treatments and feedings, track varroa, set reminders.
 - [Storage Analyzer: Big Files](https://apps.schimpf.es/ad-free-storage-analyzer/index.md): Find large files, duplicates and old junk, then clear space safely.
 - [Stutter Practice: DAF](https://apps.schimpf.es/android-stutter-practice-offline/index.md): DAF, paced speech and easy onset practice for people who stutter.
@@ -20,6 +21,8 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [Snooze Time Calculator: How Late Will You Wake Up?](https://apps.schimpf.es/alarm-clock/snooze-time-calculator/index.md): Alarm Clock: Wake-Up Missions, Work out how many minutes snoozing costs you and when the last alarm rings. Includes a calculator and a worked example.
 - [How to Keep a Journal of Things You Said No To](https://apps.schimpf.es/anti-bucket-list/how-to-keep-a-decision-journal-of-no/index.md): Anti-Bucket List: No Journal, A step-by-step way to record what you declined, why it felt that way, and when to review it. Includes a 30 and 90 day check-in schedule.
 - [Regret Rate Calculator: How Often Do You Regret No?](https://apps.schimpf.es/anti-bucket-list/regret-rate-calculator/index.md): Anti-Bucket List: No Journal, Work out your regret rate for the things you declined. Formula, a worked example and a small calculator you can use right here.
+- [Binaural Beat Frequency Calculator and Formula](https://apps.schimpf.es/binaural-beats/binaural-beat-frequency-calculator/index.md): Binaural Beats, Work out the left and right tone for any binaural beat with one formula, a worked example and a small calculator. Includes how a beat glides over time.
+- [Brainwave Frequency Chart: Delta, Theta, Alpha, Beta, Gamma](https://apps.schimpf.es/binaural-beats/brainwave-frequency-chart/index.md): Binaural Beats, A chart of the five brainwave bands in Hz, what each is usually linked to, and which beat rates to use when you listen to binaural beats.
 - [Bee Syrup Ratio 1:1 and 2:1 Chart and Converter](https://apps.schimpf.es/beekeeping-hive-log/bee-syrup-ratio-1-1-and-2-1/index.md): Hive Log: Beekeeping Journal, Sugar and water amounts for 1:1 and 2:1 bee syrup, with a chart, worked examples and metric to imperial conversions.
 - [Bee Treatment Withdrawal Period Calculator](https://apps.schimpf.es/beekeeping-hive-log/bee-treatment-withdrawal-period-calculator/index.md): Hive Log: Beekeeping Journal, Work out when a hive treatment withdrawal period ends. Formula, three worked examples, a quick table and a calculator.
 - [How to Find Duplicate Files on Android](https://apps.schimpf.es/ad-free-storage-analyzer/find-duplicate-files-on-android/index.md): Storage Analyzer: Big Files, How to find exact duplicate files on an Android phone, how checksums prove two files are the same, and which copy to keep when you delete.
@@ -256,6 +259,85 @@ Android 8.0 or newer. It works on phones and tablets, in light and dark mode.
 ### Can I move my journal to a new phone?
 
 Yes, with a backup. Save a JSON file on the old phone, copy it over, and restore it in Settings on the new one.
+
+---
+
+# Binaural Beats
+
+> Binaural and isochronic beats to relax, focus or sleep.
+
+- Android app, Gerrit Schimpf
+- Web: https://apps.schimpf.es/binaural-beats/
+- Google Play: https://play.google.com/store/apps/details?id=es.schimpf.binauralbeats&hl=en
+- Privacy policy: https://apps.schimpf.es/binaural-beats/privacy/
+- Music & Audio
+- Contact: apps@schimpf.es
+- DE: https://apps.schimpf.es/binaural-beats/de/index.md
+- ES: https://apps.schimpf.es/binaural-beats/es/index.md
+
+## About
+
+Binaural Beats creates soft beat tones live on your phone. Pick a starting preset, adjust it to your taste and let it play in the background while you relax, meditate, work or fall asleep.
+
+Four ways to hear a beat • Binaural: each ear gets a slightly different tone, and you hear the difference as a gentle pulse. Use headphones. • Monaural: both tones are mixed into both ears. Works on speakers too. • Isochronic: one tone that softly pulses on and off. • Bilateral: one tone moves calmly back and forth between your left and right ear. Switching modes crossfades smoothly, without clicks.
+
+Shape the sound • Beat from 0.25 to 45 Hz, with a live label for the band (Delta, Theta, Alpha, Beta, Gamma). • Carrier tone from 100 to 1000 Hz. • Optional white, pink or brown noise, with its own volume. • Sine or soft square pulse for isochronic and bilateral mode.
+
+Sessions that fade gently Choose 5 to 90 minutes or no limit. Every session fades in, fades out at the end, and pause, resume and stop fade softly too.
+
+Journeys Build a session from steps that hold a beat or glide it slowly to another one, for example from 12 Hz down to 3 Hz to wind down in the evening. A chart shows how the beat changes over time.
+
+Presets Eight starting points are included: Deep Sleep, Nap, Relax, Meditation, Calm Focus, Active Focus, Gamma Attention and Wind Down. Save your own versions, duplicate, rename and delete them, and import or export them as a file.
+
+Plays in the background Playback keeps going with the screen off, with controls in the notification and on the lock screen. A home-screen widget shows the current preset with a play button. The app does not pause other audio, so you can play beats quietly under your music or a podcast.
+
+Export as audio Save a session as a WAV file to play it anywhere.
+
+Honest about the evidence The About page sums up the research in plain words: effects are modest and mixed, with the clearest results for short-term relaxation. This app is a relaxation tool, not a medical device. Before the first play it shows a short safety note about volume, driving and medical conditions.
+
+Private by design No account, no ads, no tracking and no internet access. Your presets and settings stay on your device.
+
+Also: light and dark theme, a reduce motion option, and English, German and Spanish.
+
+## Screenshots
+
+- [Player running](https://apps.schimpf.es/binaural-beats/screen-1.png)
+- [Presets list](https://apps.schimpf.es/binaural-beats/screen-2.png)
+- [Wind Down journey](https://apps.schimpf.es/binaural-beats/screen-3.png)
+- [Deep Sleep tune sheet](https://apps.schimpf.es/binaural-beats/screen-4.png)
+- [Gamma Attention player](https://apps.schimpf.es/binaural-beats/screen-5.png)
+- [About](https://apps.schimpf.es/binaural-beats/screen-6.png)
+
+## Guides
+
+- [Binaural Beat Frequency Calculator and Formula](https://apps.schimpf.es/binaural-beats/binaural-beat-frequency-calculator/index.md): Work out the left and right tone for any binaural beat with one formula, a worked example and a small calculator. Includes how a beat glides over time.
+- [Brainwave Frequency Chart: Delta, Theta, Alpha, Beta, Gamma](https://apps.schimpf.es/binaural-beats/brainwave-frequency-chart/index.md): A chart of the five brainwave bands in Hz, what each is usually linked to, and which beat rates to use when you listen to binaural beats.
+
+## Questions and answers
+
+### What does the app do?
+
+It generates binaural, monaural, isochronic and bilateral beats live on your phone, with a beat from 0.25 to 45 Hz and a carrier from 100 to 1000 Hz. It plays sessions of 5 to 90 minutes or without a limit, and it can save a session as a WAV file.
+
+### Does it treat or diagnose anything?
+
+No. It is a relaxation tool and not a medical device. The About page says the research effects are modest and mixed, and a safety note about volume, driving, epilepsy and pacemakers appears before the first play.
+
+### Where is my data stored?
+
+Your presets and settings stay in the app's storage on your device. The app has no account, no ads, no tracking and no internet permission, so nothing leaves the phone.
+
+### Do I need headphones?
+
+Binaural mode needs headphones, because each ear must hear its own tone. Monaural and isochronic modes also work on speakers.
+
+### Does it keep playing with the screen off?
+
+Yes. A background service keeps playing with notification and lock-screen controls. The app does not pause other audio, so you can play beats quietly under music or a podcast.
+
+### Does it need a purchase, and which Android versions work?
+
+The app is meant to be bought once on Google Play. It has no ads, no in-app purchases and no account. It runs on Android 8.0 (API 26) and newer.
 
 ---
 
