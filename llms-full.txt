@@ -27,6 +27,7 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [Numeric IBS Symptom Scorer](https://apps.schimpf.es/numeric-ibs-symptom-scorer/index.md): Rate IBS symptoms 0-10, log bowel movements and food, spot possible triggers.
 - [Paint Calc: Room Paint Amount](https://apps.schimpf.es/offline-paint-coverage-calc/index.md): Work out how much paint a room needs, with coats, doors and waste
 - [PDF Reader & Scanner](https://apps.schimpf.es/offline-pdf-reader-and-scanner/index.md): Read, search, scan and sign PDFs on your phone.
+- [Pipe Sizing: IPC & UPC Water](https://apps.schimpf.es/offline-plumbing-pipe-sizing/index.md): Size water supply pipe from WSFU or GPM with velocity and friction loss
 - [Plumber Invoice & Quote Maker](https://apps.schimpf.es/offline-plumber-invoice-app/index.md): Plumbing quotes, signatures, invoices and payments for plumbers
 - [Steak Doneness Chart & Timer](https://apps.schimpf.es/offline-steak-doneness-chart/index.md): Pull temps for steak, pork, chicken, lamb and fish, with a rest and flip timer.
 - [Storage Analyzer: Big Files](https://apps.schimpf.es/ad-free-storage-analyzer/index.md): Find large files, duplicates and old junk, then clear space safely.
@@ -85,6 +86,9 @@ Sitemap: https://apps.schimpf.es/sitemap.xml
 - [How to Make a Scanned PDF Searchable on Android](https://apps.schimpf.es/offline-pdf-reader-and-scanner/make-scanned-pdf-searchable/index.md): PDF Reader & Scanner, Why a scanned PDF cannot be searched, how OCR adds a hidden text layer, and how to turn a scan into a searchable PDF on your phone.
 - [Open a Password-Protected PDF on Android](https://apps.schimpf.es/offline-pdf-reader-and-scanner/open-password-protected-pdf-on-android/index.md): PDF Reader & Scanner, Why a PDF asks for a password, which Android versions can open it, what to do when it fails, and the difference between the two PDF passwords.
 - [How to Sign a PDF on Android With Your Finger](https://apps.schimpf.es/offline-pdf-reader-and-scanner/sign-a-pdf-on-android/index.md): PDF Reader & Scanner, Draw your signature on your phone, place it on a PDF, resize it and save a signed copy. Includes a short note on when a drawn signature is accepted.
+- [Copper and PEX Pipe Size Chart by GPM and Velocity](https://apps.schimpf.es/offline-plumbing-pipe-sizing/copper-and-pex-pipe-size-chart-gpm/index.md): Pipe Sizing: IPC & UPC Water, Maximum GPM for copper Type L and PEX pipe from 1/2 to 4 inch at 5 and 8 fps, with inside diameters and a worked sizing example.
+- [Hazen-Williams Friction Loss Formula With Example](https://apps.schimpf.es/offline-plumbing-pipe-sizing/hazen-williams-friction-loss-formula/index.md): Pipe Sizing: IPC & UPC Water, The Hazen-Williams formula in psi per 100 ft for water pipe, C values for copper and PEX, and a worked example with velocity.
+- [WSFU to GPM Conversion Chart (Hunter Curve)](https://apps.schimpf.es/offline-plumbing-pipe-sizing/wsfu-to-gpm-conversion-chart/index.md): Pipe Sizing: IPC & UPC Water, Convert water supply fixture units to gallons per minute with the Hunter curve. Flush tank and flushometer values, plus a worked example.
 - [Plumbing Markup Calculator and Formula](https://apps.schimpf.es/offline-plumber-invoice-app/plumbing-markup-calculator/index.md): Plumber Invoice & Quote Maker, Work out the sell price of pipe, fittings and parts from your cost and markup %, and see the margin it gives. Formula, worked example and table.
 - [Plumbing Quote: Sales Tax and Deposit Math](https://apps.schimpf.es/offline-plumber-invoice-app/plumbing-quote-sales-tax-and-deposit/index.md): Plumber Invoice & Quote Maker, How to add sales tax to taxable lines only, set a deposit % on the total and find the balance due on a plumbing quote. Worked example and calculator.
 - [Safe Internal Temperature Chart for Meat and Fish](https://apps.schimpf.es/offline-steak-doneness-chart/safe-internal-temperature-chart-meat/index.md): Steak Doneness Chart & Timer, USDA minimum internal temperatures for beef, pork, lamb, chicken and fish, plus how chef-style doneness compares.
@@ -2012,6 +2016,112 @@ Android 8.0 and newer. Password-protected PDFs open on Android 15 and newer, and
 ### Does it change my original PDF?
 
 No. Highlights, signatures and text recognition on an imported PDF are saved as a copy in your library. Scans from the app are replaced by their searchable version.
+
+---
+
+# Pipe Sizing: IPC & UPC Water
+
+> Size water supply pipe from WSFU or GPM with velocity and friction loss
+
+- Android app, Gerrit Schimpf
+- Web: https://apps.schimpf.es/offline-plumbing-pipe-sizing/
+- Google Play: https://play.google.com/store/apps/details?id=es.schimpf.offlineplumbingpipesizing&hl=en
+- Privacy policy: https://apps.schimpf.es/offline-plumbing-pipe-sizing/privacy/
+- Tools
+- Contact: apps@schimpf.es
+- DE: https://apps.schimpf.es/offline-plumbing-pipe-sizing/de/index.md
+- ES: https://apps.schimpf.es/offline-plumbing-pipe-sizing/es/index.md
+
+## About
+
+Pipe Sizing sizes water supply pipe segments. Enter total water supply fixture units (WSFU) or gallons per minute (GPM), pick a material, and get the recommended size with velocity and friction loss. It works without a connection, has no account and runs on phones and tablets.
+
+Made for US plumbers, apprentices, estimators and people studying for the plumbing exam. Units are US units. The app is in English.
+
+## Features
+
+### What it does
+
+- Recommends the smallest pipe from 1/2 inch to 4 inch that stays within the velocity limit.
+- Shows velocity in feet per second and friction loss in psi per 100 ft for every size, in one compact table.
+- Shows total friction loss for a straight run when you enter a length.
+- Supports IPC and UPC, 2024 and 2021 editions, and shows the section numbers behind each result.
+- Converts WSFU to GPM with the public-domain Hunter curve, for flush tank or flushometer systems.
+- Uses Hazen-Williams with design C values and published inner pipe diameters.
+- Sets default velocity limits from the code, or from manufacturer guidance where the code gives none. Guidance is clearly marked as non-code. You can change the limit and reset it to the default.
+- Switches the default limit between cold and hot water.
+- Adds a note when the recommended size is below a code minimum, such as a 3/4 inch water service.
+- Shows your last calculation in a home-screen widget.
+
+### Included without purchase
+
+- Single-segment calculator.
+- Copper Type L and PEX.
+- Your last result is kept and shown in the widget.
+
+### Pro, a one-time in-app purchase
+
+- Saved jobs: name a job, set the code, edition and flush type once, then size every segment with its own material, temperature and velocity limit. Friction loss is shown per segment. There is no job total.
+- Five more materials: copper Type K and M, CPVC (CTS), PEX-AL-PEX and PE-RT.
+- After purchase, Pro works without a connection. You can restore the purchase on the Unlock screen.
+
+### Privacy
+
+- No account and no analytics.
+- Your last result and saved jobs stay on your device.
+- Cloud backup is turned off.
+- The app does not request the internet permission. Only Google Play handles the purchase.
+
+### Accessibility
+
+- Light and dark theme that follows your system setting.
+- Screen reader labels, sizes spoken in words, and large touch targets.
+
+### Important
+
+Values are computed from public-domain data and may differ slightly from printed code tables. The app is a reference tool. It does not replace the adopted code or the authority having jurisdiction. Fittings, meters, elevation, street pressure and state or local amendments are not included. Code minimum sizes are noted, not enforced.
+
+## Screenshots
+
+- [Onboarding disclaimer](https://apps.schimpf.es/offline-plumbing-pipe-sizing/screen-1.png)
+- [Calculator with WSFU load](https://apps.schimpf.es/offline-plumbing-pipe-sizing/screen-2.png)
+- [Result for 32 WSFU](https://apps.schimpf.es/offline-plumbing-pipe-sizing/screen-3.png)
+- [GPM input hot water](https://apps.schimpf.es/offline-plumbing-pipe-sizing/screen-4.png)
+- [Material list](https://apps.schimpf.es/offline-plumbing-pipe-sizing/screen-5.png)
+- [Unlock Pro](https://apps.schimpf.es/offline-plumbing-pipe-sizing/screen-6.png)
+- [Settings](https://apps.schimpf.es/offline-plumbing-pipe-sizing/screen-7.png)
+
+## Guides
+
+- [Copper and PEX Pipe Size Chart by GPM and Velocity](https://apps.schimpf.es/offline-plumbing-pipe-sizing/copper-and-pex-pipe-size-chart-gpm/index.md): Maximum GPM for copper Type L and PEX pipe from 1/2 to 4 inch at 5 and 8 fps, with inside diameters and a worked sizing example.
+- [Hazen-Williams Friction Loss Formula With Example](https://apps.schimpf.es/offline-plumbing-pipe-sizing/hazen-williams-friction-loss-formula/index.md): The Hazen-Williams formula in psi per 100 ft for water pipe, C values for copper and PEX, and a worked example with velocity.
+- [WSFU to GPM Conversion Chart (Hunter Curve)](https://apps.schimpf.es/offline-plumbing-pipe-sizing/wsfu-to-gpm-conversion-chart/index.md): Convert water supply fixture units to gallons per minute with the Hunter curve. Flush tank and flushometer values, plus a worked example.
+
+## Questions and answers
+
+### What does the app do?
+
+It sizes water supply pipe segments from 1/2 inch to 4 inch. You enter WSFU or GPM and pick a material, and it shows the recommended size plus velocity and friction loss (psi per 100 ft) for every size. With a segment length it adds the total loss for the straight run.
+
+### Which codes and editions does it use?
+
+IPC and UPC, in the 2024 and 2021 editions, and both are free. Each result shows the section numbers behind it. WSFU is converted to GPM with the public-domain Hunter curve, for flush tank or flushometer systems.
+
+### What does it not do?
+
+It leaves out fittings, meters, elevation, street pressure, drain and vent sizing and state or local amendments. Code minimum sizes, such as 3/4 inch for a water service, appear as a note and are not enforced. Values are computed and may differ slightly from printed code tables, so the adopted code and your local authority decide.
+
+### Does it need an internet connection, and where is my data kept?
+
+It works offline, needs no account and has no analytics. Your last result and saved jobs stay on your device, and cloud backup is turned off. The app does not request the internet permission, and only Google Play handles the purchase.
+
+### What is free and what needs a purchase?
+
+The single-segment calculator, copper Type L, PEX and the home-screen widget are free. Saved jobs and five more materials (copper Type K and M, CPVC, PEX-AL-PEX and PE-RT) need the one-time Pro purchase. Pro works offline afterward, and you can restore the purchase from the purchase screen in the app.
+
+### Which Android versions and units does it support?
+
+Android 8.0 (API level 26) or newer, on phones and tablets. The app is in English and uses US units only: GPM, fps, inches, feet and psi.
 
 ---
 
