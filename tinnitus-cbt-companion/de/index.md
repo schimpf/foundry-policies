@@ -4,7 +4,7 @@
 
 - Android-App, Gerrit Schimpf
 - Web: https://apps.schimpf.es/tinnitus-cbt-companion/de/
-- Bald bei Google Play
+- Google Play: https://play.google.com/store/apps/details?id=es.schimpf.tinnituscbtcompanion&hl=de
 - Datenschutz: https://apps.schimpf.es/tinnitus-cbt-companion/privacy/
 - Health & Fitness
 - Kontakt: apps@schimpf.es
