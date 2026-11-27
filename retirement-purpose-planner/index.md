@@ -4,7 +4,7 @@
 
 - Android app, Gerrit Schimpf
 - Web: https://apps.schimpf.es/retirement-purpose-planner/
-- Coming soon to Google Play
+- Google Play: https://play.google.com/store/apps/details?id=es.schimpf.retirementpurposeplanner&hl=en
 - Privacy policy: https://apps.schimpf.es/retirement-purpose-planner/privacy/
 - Lifestyle
 - Contact: apps@schimpf.es
