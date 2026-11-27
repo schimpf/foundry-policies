@@ -4,7 +4,7 @@
 
 - Android app, Gerrit Schimpf
 - Web: https://apps.schimpf.es/sourdough-hydration-journal/
-- Coming soon to Google Play
+- Google Play: https://play.google.com/store/apps/details?id=es.schimpf.sourdoughhydrationjournal&hl=en
 - Privacy policy: https://apps.schimpf.es/sourdough-hydration-journal/privacy/
 - Food &Amp; Drink
 - Contact: apps@schimpf.es
