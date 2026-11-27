@@ -4,7 +4,7 @@
 
 - Android-App, Gerrit Schimpf
 - Web: https://apps.schimpf.es/offline-plumber-invoice-app/de/
-- Bald bei Google Play
+- Google Play: https://play.google.com/store/apps/details?id=es.schimpf.offlineplumberinvoiceapp&hl=de
 - Datenschutz: https://apps.schimpf.es/offline-plumber-invoice-app/privacy/
 - Business
 - Kontakt: apps@schimpf.es
