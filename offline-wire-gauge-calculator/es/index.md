@@ -4,7 +4,7 @@
 
 - app para Android, Gerrit Schimpf
 - Web: https://apps.schimpf.es/offline-wire-gauge-calculator/es/
-- Pronto en Google Play
+- Google Play: https://play.google.com/store/apps/details?id=es.schimpf.offlinewiregaugecalculator&hl=es
 - Privacidad: https://apps.schimpf.es/offline-wire-gauge-calculator/privacy/
 - Tools
 - Contacto: apps@schimpf.es
