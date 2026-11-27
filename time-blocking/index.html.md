@@ -4,7 +4,7 @@
 
 - Android app, Gerrit Schimpf
 - Web: https://apps.schimpf.es/time-blocking/
-- Coming soon to Google Play
+- Google Play: https://play.google.com/store/apps/details?id=es.schimpf.timeblocking&hl=en
 - Privacy policy: https://apps.schimpf.es/time-blocking/privacy/
 - Productivity
 - Contact: apps@schimpf.es
